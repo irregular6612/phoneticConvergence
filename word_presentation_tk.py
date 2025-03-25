@@ -496,11 +496,6 @@ class StageInstructionWindow:
                "각 음성을 주의 깊게 들어주세요.\n" +
                "음성을 다 들으신 후에는 스페이스바를 눌러주세요.\n" +
                "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            3: "3단계: 단어 읽기\n\n" +
-               "이제부터 단어들을 다시 읽어주시면 됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 자동으로 다음 단계로 넘어갑니다.",
             4: "4단계: 음성 듣기\n\n" +
                "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
                "각 음성을 주의 깊게 들어주세요.\n" +
@@ -668,17 +663,12 @@ class MainExperimentWindow:
                "각 음성을 듣고 따라 읽어주세요.\n" +
                "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
                "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            3: "3단계: 단어 읽기\n\n" +
-               "이제부터 단어들을 다시 읽어주시면 됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 자동으로 다음 단계로 넘어갑니다.",
-            4: "4단계: 음성 듣기\n\n" +
+            3: "3단계: 음성 듣기\n\n" +
                "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
                "각 음성을 듣고 따라 읽어주세요.\n" +
                "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
                "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            5: "5단계: 단어 읽기\n\n" +
+            4: "4단계: 단어 읽기\n\n" +
                "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n" +
                "각 단어를 소리내어 읽어주세요.\n" +
                "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
@@ -723,20 +713,20 @@ class MainExperimentWindow:
             random.shuffle(self.words)
             self.current_word_index = 0
             
-        elif self.current_stage == 2 or self.current_stage == 4:
+        elif self.current_stage == 2 or self.current_stage == 3:
             self.main_label.config(text='음성을 듣고 따라 읽어주세요')
             self.instruction_label.config(text='스페이스바를 눌러 시작하세요')
             self.load_audio_files()
             # 녹음기 초기화 확인
             if not hasattr(self, 'recorder') or not self.recorder:
                 self.recorder = AudioRecorder(self.selected_device, self.folder_path)
-            # 2단계나 4단계 시작 시 연속 녹음 시작
+            # 2단계나 3단계 시작 시 연속 녹음 시작
             self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
             
-        elif self.current_stage == 3 or self.current_stage == 5:
+        elif self.current_stage == 4:
             self.main_label.config(text='단어를 소리내어 읽어주세요')
             self.instruction_label.config(text='스페이스바를 눌러 시작하세요')
-            random.seed(43 if self.current_stage == 3 else 44)  # 5단계는 다른 시드 사용
+            random.seed(44)  # 4단계는 다른 시드 사용
             random.shuffle(self.words)
             self.current_word_index = 0
 
@@ -783,7 +773,7 @@ class MainExperimentWindow:
             self.start_time = time.time()
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
             
-            if self.current_stage in [1, 3, 5]:
+            if self.current_stage in [1, 4]:
                 self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
                 # 타이밍 데이터에 단어와 시작 시간 기록
                 self.timing_data.append({
@@ -804,7 +794,7 @@ class MainExperimentWindow:
             self.window.update()
             
             next_stage = self.current_stage + 1
-            if next_stage <= 5:
+            if next_stage <= 4:
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
@@ -818,8 +808,8 @@ class MainExperimentWindow:
             # 현재 재생 중인 오디오 파일의 리스트 정보 확인
             current_list = 'list1' if 'list1' in audio_file else 'list2'
             
-            # 리스트에 따라 다른 메시지 표시 (4단계에서만)
-            if self.current_stage == 4:
+            # 리스트에 따라 다른 메시지 표시 (3단계에서만)
+            if self.current_stage == 3:
                 if current_list == self.selected_lists:
                     message = "사람이 발음했습니다."
                 else:
@@ -843,8 +833,8 @@ class MainExperimentWindow:
         else:
             self.save_current_stage_data()
             
-            # 2단계나 4단계가 끝날 때 녹음 중지
-            if self.current_stage in [2, 4]:
+            # 2단계나 3단계가 끝날 때 녹음 중지
+            if self.current_stage in [2, 3]:
                 if hasattr(self, 'recorder') and self.recorder:
                     self.recorder.stop_recording()
             
@@ -856,7 +846,7 @@ class MainExperimentWindow:
             self.window.update()
             
             next_stage = self.current_stage + 1
-            if next_stage <= 5:
+            if next_stage <= 4:
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
@@ -916,12 +906,12 @@ class MainExperimentWindow:
     def space_pressed_handler(self, event):
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         
-        if self.current_stage in [1, 3, 5]:
+        if self.current_stage in [1, 4]:
             if self.timing_data:
                 # 마지막 타이밍 데이터에 스페이스바 누른 시간 추가
                 self.timing_data[-1]['스페이스바_시간'] = current_time
             self.show_next_word()
-        elif self.current_stage in [2, 4]:
+        elif self.current_stage in [2, 3]:
             if hasattr(self, 'player') and not self.player.is_playing():
                 if self.timing_data:
                     # 마지막 타이밍 데이터에 스페이스바 누른 시간 추가

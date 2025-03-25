@@ -612,7 +612,7 @@ class ListSelectionWindow:
                 df['실험 리스트'] = selected
                 # 파일 다시 저장
                 df.to_excel(info_file, index=False)
-        
+         
         self.window.quit()
     
     def show(self):
@@ -730,6 +730,8 @@ class MainExperimentWindow:
             # 녹음기 초기화 확인
             if not hasattr(self, 'recorder') or not self.recorder:
                 self.recorder = AudioRecorder(self.selected_device, self.folder_path)
+            # 2단계나 4단계 시작 시 연속 녹음 시작
+            self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
             
         elif self.current_stage == 3 or self.current_stage == 5:
             self.main_label.config(text='단어를 소리내어 읽어주세요')
@@ -828,13 +830,6 @@ class MainExperimentWindow:
             self.main_label.config(text=message)
             self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
             
-            # 이전 녹음 중지
-            if hasattr(self, 'recorder') and self.recorder:
-                self.recorder.stop_recording()
-            
-            # 새로운 녹음 시작
-            self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
-            
             duration = self.player.play_audio(audio_file)
             
             # 타이밍 데이터에 음성 파일과 시작 시간 기록
@@ -848,9 +843,10 @@ class MainExperimentWindow:
         else:
             self.save_current_stage_data()
             
-            # 녹음 중지
-            if hasattr(self, 'recorder') and self.recorder:
-                self.recorder.stop_recording()
+            # 2단계나 4단계가 끝날 때 녹음 중지
+            if self.current_stage in [2, 4]:
+                if hasattr(self, 'recorder') and self.recorder:
+                    self.recorder.stop_recording()
             
             if self.player:
                 sd.stop()
@@ -930,9 +926,6 @@ class MainExperimentWindow:
                 if self.timing_data:
                     # 마지막 타이밍 데이터에 스페이스바 누른 시간 추가
                     self.timing_data[-1]['스페이스바_시간'] = current_time
-                # 이전 녹음 중지
-                if hasattr(self, 'recorder') and self.recorder:
-                    self.recorder.stop_recording()
                 self.play_next_audio()
 
     def start_experiment(self, participant_id, folder_path, selected_device, selected_lists):
@@ -972,9 +965,34 @@ class MainExperimentWindow:
         audio_dir = self.config['paths']['audio_sample_dir']
         
         if os.path.exists(audio_dir):
+            # 원본 오디오 파일 목록 가져오기
             audio_files = [os.path.join(audio_dir, f) for f in os.listdir(audio_dir) if f.endswith('.wav')]
-            self.remaining_files.extend(audio_files)
-            print(f"발견된 오디오 파일 수: {len(audio_files)}")  # 디버깅용
+            
+            # 3개의 리스트 생성
+            list1 = audio_files.copy()
+            list2 = audio_files.copy()
+            list3 = audio_files.copy()
+            
+            # 각 리스트마다 다른 랜덤 시드 설정
+            current_time = datetime.now()
+            seed1 = int(current_time.timestamp() * 1000)  # 밀리초 단위
+            seed2 = int(current_time.timestamp() * 1000) + 1000  # 1초 후
+            seed3 = int(current_time.timestamp() * 1000) + 2000  # 2초 후
+            
+            # 각 리스트를 개별적으로 셔플
+            random.seed(seed1)
+            random.shuffle(list1)
+            random.seed(seed2)
+            random.shuffle(list2)
+            random.seed(seed3)
+            random.shuffle(list3)
+            
+            # 3개의 리스트를 순서대로 합치기
+            self.remaining_files = list1 + list2 + list3
+            
+            print(f"발견된 오디오 파일 수: {len(audio_files)}")  # 원본 파일 수
+            print(f"복제 후 총 파일 수: {len(self.remaining_files)}")  # 복제 후 파일 수
+            print(f"사용된 랜덤 시드: {seed1}, {seed2}, {seed3}")  # 디버깅용
         else:
             print(f"디렉토리를 찾을 수 없음: {audio_dir}")  # 디버깅용
             messagebox.showerror("오류", "오디오 파일을 찾을 수 없습니다.")

@@ -918,15 +918,19 @@ class MainExperimentWindow:
                     self.timing_data[-1]['스페이스바_시간'] = current_time
                 self.play_next_audio()
 
-    def start_experiment(self, participant_id, folder_path, selected_device, selected_lists):
+    def start_experiment(self, participant_id, folder_path, selected_device, selected_lists, participant_age, participant_gender):
         self.participant_id = participant_id
         self.folder_path = folder_path
         self.selected_device = selected_device
         self.selected_lists = selected_lists
+        self.participant_age = participant_age
+        self.participant_gender = participant_gender
         
         # 참가자 정보를 experiment_data.xlsx 파일의 Info 시트에 저장
         info_df = pd.DataFrame({
             '참가자번호': [participant_id],
+            '성별': self.participant_gender,
+            '나이': self.participant_age,
             '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
             '녹음장치': [sd.query_devices(selected_device)['name']],
             '실험 리스트': [selected_lists]
@@ -986,9 +990,8 @@ class MainExperimentWindow:
         else:
             print(f"디렉토리를 찾을 수 없음: {audio_dir}")  # 디버깅용
             messagebox.showerror("오류", "오디오 파일을 찾을 수 없습니다.")
-        
-        if self.remaining_files:
-            random.shuffle(self.remaining_files)
+    
+            
 
     def show(self):
         """메인 윈도우를 표시하고 이벤트 루프를 시작합니다."""
@@ -1035,6 +1038,8 @@ def main():
         return
         
     participant_id = participant_info['participant_id']
+    participant_age = participant_info['age']
+    participant_gender = participant_info['gender']
     
     # 기존 데이터 확인
     if not check_existing_data(participant_id):
@@ -1057,18 +1062,9 @@ def main():
     # 폴더 생성 (config의 participant_data_dir 사용)
     folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
     
-    # 참가자 정보 저장
-    info_df = pd.DataFrame({
-        '참가자번호': [participant_id],
-        '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
-        '녹음장치': [sd.query_devices(selected_device)['name']],
-        '실험 리스트': [selected_lists]
-    })
-    info_df.to_excel(os.path.join(folder_path, f'participant_{participant_id}_info.xlsx'), index=False)
-    
     # 메인 실험 창 실행
     main_window = MainExperimentWindow(config_manager.config)  # config 전달
-    main_window.start_experiment(participant_id, folder_path, selected_device, selected_lists)
+    main_window.start_experiment(participant_id, folder_path, selected_device, selected_lists, participant_age, participant_gender)
     main_window.show()
 
 if __name__ == '__main__':

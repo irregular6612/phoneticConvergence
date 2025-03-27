@@ -151,12 +151,33 @@ def analyze_bottom_words(input_file='word_frequency.xlsx', n_words=100):
     
     return bottom_df
 
+def count_total_words(corpus_dir):
+    """코퍼스의 총 어절 수를 계산하는 함수"""
+    total_words = 0
+    json_files = get_all_files(corpus_dir)
+    
+    print("\n총 어절 수 계산 중...")
+    for file_path in tqdm(json_files, desc="파일 처리 중"):
+        try:
+            text = extract_text_from_json(file_path)
+            # 공백을 기준으로 어절 분리
+            words = text.split()
+            total_words += len(words)
+        except Exception as e:
+            print(f"\nError counting words in {os.path.basename(file_path)}: {e}")
+    
+    return total_words
+
 if __name__ == "__main__":
     # NIKL 코퍼스 디렉토리 경로 설정
     corpus_dir = "./NIKL_DIALOUGUE_2023"
     
+    # 총 어절 수 계산
+    total_words = count_total_words(corpus_dir)
+    print(f"\n총 어절 수: {total_words:,}개")
+    
     # 기존 분석 실행
-    print("=== 코퍼스 분석 시작 ===")
+    print("\n=== 코퍼스 분석 시작 ===")
     word_freq = analyze_corpus(corpus_dir)
     
     df = visualize_and_save(word_freq)

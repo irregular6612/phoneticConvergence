@@ -621,6 +621,139 @@ class ListSelectionWindow:
         self.window.destroy()
         return self.selected_lists
 
+class PathSettingWindow:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title('실험 파일 저장 경로 설정')
+        self.window.geometry('600x300')
+        
+        # 안내 메시지
+        tk.Label(
+            self.window,
+            text='실험 파일이 저장될 경로를 설정해주세요.',
+            font=('Arial', 12),
+            wraplength=550
+        ).pack(pady=20)
+        
+        # 경로 표시 프레임
+        path_frame = tk.Frame(self.window)
+        path_frame.pack(fill='x', padx=20, pady=10)
+        
+        self.path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
+        self.path_entry = tk.Entry(
+            path_frame,
+            textvariable=self.path_var,
+            width=50,
+            font=('Arial', 11)
+        )
+        self.path_entry.pack(side=tk.LEFT, padx=5)
+        
+        # 경로 선택 버튼
+        tk.Button(
+            path_frame,
+            text="경로 선택",
+            command=self.select_path,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT, padx=5)
+        
+        # 경로 생성 상태 표시
+        self.status_label = tk.Label(
+            self.window,
+            text='',
+            font=('Arial', 11),
+            fg='gray'
+        )
+        self.status_label.pack(pady=10)
+        
+        # 버튼 프레임
+        button_frame = tk.Frame(self.window)
+        button_frame.pack(pady=20)
+        
+        # 확인 버튼
+        tk.Button(
+            button_frame,
+            text="확인",
+            command=self.confirm,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT, padx=10)
+        
+        # 취소 버튼
+        tk.Button(
+            button_frame,
+            text="취소",
+            command=self.cancel,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT)
+        
+        self.selected_path = None
+        
+    def select_path(self):
+        path = tk.filedialog.askdirectory(
+            initialdir=self.path_var.get(),
+            title='실험 파일 저장 경로 선택'
+        )
+        if path:
+            self.path_var.set(path)
+            self.check_path()
+    
+    def check_path(self):
+        path = self.path_var.get()
+        if not path:
+            self.status_label.config(
+                text='경로를 입력해주세요.',
+                fg='red'
+            )
+            return
+            
+        if not os.path.exists(path):
+            try:
+                os.makedirs(path)
+                self.status_label.config(
+                    text=f'새 경로가 생성되었습니다: {path}',
+                    fg='blue'
+                )
+            except Exception as e:
+                self.status_label.config(
+                    text=f'경로 생성 실패: {str(e)}',
+                    fg='red'
+                )
+        else:
+            # 경로가 존재하는 경우, 쓰기 권한 확인
+            try:
+                test_file = os.path.join(path, '.test')
+                with open(test_file, 'w') as f:
+                    f.write('test')
+                os.remove(test_file)
+                self.status_label.config(
+                    text='경로가 유효합니다. 이 경로를 사용할 수 있습니다.',
+                    fg='green'
+                )
+            except Exception as e:
+                self.status_label.config(
+                    text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
+                    fg='red'
+                )
+    
+    def confirm(self):
+        path = self.path_var.get()
+        if not os.path.exists(path):
+            try:
+                os.makedirs(path)
+            except Exception as e:
+                messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
+                return
+        
+        self.selected_path = path
+        self.window.quit()
+    
+    def cancel(self):
+        self.window.quit()
+    
+    def show(self):
+        self.window.mainloop()
+        self.window.destroy()
+        return self.selected_path
+
 class MainExperimentWindow:
     def __init__(self, config):
         self.window = tk.Tk()
@@ -1017,8 +1150,19 @@ def create_participant_folder(participant_id, base_dir):
     return folder_path
 
 def main():
+    # 경로 설정 창 표시
+    path_window = PathSettingWindow()
+    save_path = path_window.show()
+    
+    if not save_path:  # 취소를 누른 경우
+        return
+    
     # 설정 관리자 초기화
     config_manager = ConfigManager()
+    
+    # 설정된 경로를 config에 저장
+    config_manager.config['paths']['participant_data_dir'] = save_path
+    config_manager.save_config(config_manager.config)  # config 인자 추가
     
     # 경로 유효성 검사
     invalid_paths = config_manager.verify_paths()

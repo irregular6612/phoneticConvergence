@@ -7,6 +7,7 @@ channels:
 dependencies:
   - bzip2=1.0.8=h99b78c6_7
   - ca-certificates=2025.1.31=hf0a4a13_0
+  - et_xmlfile=2.0.0=pyhd8ed1ab_1
   - libblas=3.9.0=31_h10e41b3_openblas
   - libcblas=3.9.0=31_hb3479ef_openblas
   - libcxx=20.1.1=ha82da77_0
@@ -22,6 +23,7 @@ dependencies:
   - llvm-openmp=20.1.1=hdb05f8b_1
   - ncurses=6.5=h5e97a16_3
   - numpy=2.2.4=py312h7c1f314_0
+  - openpyxl=3.1.5=py312hf6e0af7_1
   - openssl=3.4.1=h81ee809_0
   - pandas=2.2.3=py312hcd31e36_1
   - pip=25.0.1=pyh8b19718_0

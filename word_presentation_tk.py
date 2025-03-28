@@ -1093,13 +1093,14 @@ class MainExperimentWindow:
             return []
 
     def load_audio_files(self):
+        """오디오 파일 목록을 로드합니다."""
         self.remaining_files = []
-        # config에서 오디오 샘플 디렉토리 경로 가져오기 (participants 폴더 외부)
-        audio_dir = self.config['paths']['audio_sample_dir']
+        audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'audio-sample')
         
         if os.path.exists(audio_dir):
             # 원본 오디오 파일 목록 가져오기
-            audio_files = [os.path.join(audio_dir, f) for f in os.listdir(audio_dir) if f.endswith('.wav')]
+            audio_files = [os.path.join(audio_dir, f) for f in os.listdir(audio_dir) 
+                         if f.endswith('.wav') and not f.startswith('._')]
             
             # 3개의 리스트 생성
             list1 = audio_files.copy()
@@ -1129,8 +1130,6 @@ class MainExperimentWindow:
         else:
             print(f"디렉토리를 찾을 수 없음: {audio_dir}")  # 디버깅용
             messagebox.showerror("오류", "오디오 파일을 찾을 수 없습니다.")
-    
-            
 
     def show(self):
         """메인 윈도우를 표시하고 이벤트 루프를 시작합니다."""

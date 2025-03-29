@@ -571,10 +571,6 @@ class WordPresentationWindow:
 class StageInstruction:
     @staticmethod
     def get_instruction(stage_number, selected_lists):
-        if selected_lists == "list1":
-            flag = "AI"
-        else:
-            flag = "사람"
         instructions = {
             1: "1단계: 단어 읽기\n\n" + 
                "이제부터 화면에 단어들이 하나씩 제시됩니다.\n\n" +
@@ -588,17 +584,31 @@ class StageInstruction:
                "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
                "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
                "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
-            3: f"3단계: {flag} 음성 듣고 따라하기\n\n" +
-               f"방금 들은 {flag}의 음성을 다시 한 번 잘 들어주세요.\n\n" +
-               "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
-               "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
-               "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
-               "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
             4: "4단계: 단어 읽기\n\n" +
                "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n\n" +
                "각 단어를 소리내어 읽어주세요.\n\n" +
                "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n"
         }
+
+        if selected_lists == "list1":
+            instructions[3] = ("3단계: AI가 생성한 음성 듣고 따라하기\n\n" +
+            "방금 들었던 음성은 AI로 만들어진 아바타가 생성한 것입니다. \n\n" +
+            "이 음성을 한 번 더 듣고 따라해주세요.\n\n" +
+            "이번에는 음성을 생성한 AI 아바타의 이미지도 함께 제시됩니다.\n\n" +
+            "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
+            "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
+            "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
+            "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.")
+        else:
+            instructions[3] = ("3단계: 표준 성인 발음 듣고 따라하기\n\n" 
+            + "방금 들었던 음성은 20대 성인 남성이 녹음한 발음입니다. \n\n" 
+            + "이 음성을 한 번 더 듣고 따라해주세요.\n\n" 
+            + "이번에는 음성을 녹음한 사람의 이미지도 함께 제시됩니다.\n\n" 
+            + "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" 
+            + "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" 
+            + "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" 
+            + "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.")
+        
         return instructions.get(stage_number, "")
 
 class DataManager:
@@ -703,11 +713,11 @@ class MainExperimentWindow:
         screen_height = self.window.winfo_screenheight()
         
         # 기본 폰트 크기 계산 (화면 크기에 비례)
-        self.base_font_size = int(min(screen_height / 25, screen_width / 45))  # 더 작은 값으로 조정
+        self.base_font_size = int(min(screen_height / 30, screen_width / 50))  # 더 작은 값으로 조정
         self.large_font_size = int(self.base_font_size * 1.8)  # 비율 조정
         self.small_font_size = int(self.base_font_size * 0.8)
         
-        # 창 크기 설정 (화면 크기의 70%로 조정)
+        # 창 크기 설정 (화면 크기의 70%로 조정하고 여백 추가)
         window_width = int(screen_width * 0.7)
         window_height = int(screen_height * 0.7)
         
@@ -716,8 +726,8 @@ class MainExperimentWindow:
         y = (screen_height - window_height) // 2
         self.window.geometry(f'{window_width}x{window_height}+{x}+{y}')
         
-        # wraplength 계산 (창 너비의 80%로 조정)
-        self.wrap_length = int(window_width * 0.8)
+        # wraplength 계산 (창 너비의 90%로 조정)
+        self.wrap_length = int(window_width * 0.9)
         
         # config에서 경로 설정
         self.config = config
@@ -740,15 +750,15 @@ class MainExperimentWindow:
         
         # 이미지 표시 레이블 (가장 위에 배치)
         self.image_label = tk.Label(self.center_frame)
-        self.image_label.pack(pady=(0, 30))  # 아래쪽 여백만 추가
+        self.image_label.pack(pady=(0, 50))  # 아래쪽 여백 증가
         
         # 메인 텍스트 레이블
         self.main_label = tk.Label(self.center_frame, text='', font=('Arial', self.large_font_size))
-        self.main_label.pack(pady=20)
+        self.main_label.pack(pady=30)  # 여백 증가
         
         # 안내 텍스트 레이블
         self.instruction_label = tk.Label(self.center_frame, text='', font=('Arial', self.small_font_size))
-        self.instruction_label.pack(pady=20)
+        self.instruction_label.pack(pady=30)  # 여백 증가
         
         self.current_stage = 0
         self.timing_data = []
@@ -770,9 +780,9 @@ class MainExperimentWindow:
         """창 크기가 변경될 때 폰트 크기와 wraplength 조절"""
         if event.widget == self.window:
             # 새로운 기본 폰트 크기 계산
-            new_base_size = int(min(event.height / 25, event.width / 45))  # 더 작은 값으로 조정
+            new_base_size = int(min(event.height / 30, event.width / 50))  # 더 작은 값으로 조정
             new_large_size = int(new_base_size * 1.8)  # 비율 조정
-            new_wrap_length = int(event.width * 0.8)  # wraplength를 창 너비의 80%로 설정
+            new_wrap_length = int(event.width * 0.9)  # wraplength를 창 너비의 90%로 설정
             
             # 모든 레이블 업데이트
             for widget in self.window.winfo_children():
@@ -1104,10 +1114,10 @@ class MainExperimentWindow:
             # 리스트에 따라 다른 메시지 표시 (3단계에서만)
             if self.current_stage == 3:
                 if current_list == self.selected_lists:
-                    message = "사람"
+                    message = "20대 한국인 남성"
                     self.show_speaker_image(is_ai=False)
                 else:
-                    message = "AI"
+                    message = "AI 아바타 GT-25"
                     self.show_speaker_image(is_ai=True)
             else:  # 2단계
                 message = "발음을 잘 들어주세요."

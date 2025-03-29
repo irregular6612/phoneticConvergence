@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import messagebox, ttk, filedialog
 import os
 import pandas as pd
 import time
@@ -1354,357 +1354,6 @@ def create_participant_folder(participant_id, base_dir, selected_device=None, se
         return folder_path
     return None
 
-class PathSettingWindow:
-    def __init__(self):
-        self.window = tk.Tk()
-        self.window.title('실험 파일 저장 경로 설정')
-        self.window.geometry('600x500')  # 높이 증가
-        
-        # 화면 중앙에 위치하도록 설정
-        screen_width = self.window.winfo_screenwidth()
-        screen_height = self.window.winfo_screenheight()
-        x = (screen_width - 600) // 2
-        y = (screen_height - 500) // 2
-        self.window.geometry(f'600x500+{x}+{y}')
-        
-        # config 파일에서 경로 확인
-        config_manager = ConfigManager()
-        config_data_path = config_manager.config['paths'].get('participant_data_dir', '')
-        config_image_path = config_manager.config['paths'].get('images_dir', '')
-        config_audio_path = config_manager.config['paths'].get('audio_sample_dir', '')
-        
-        # 실험 데이터 경로 유효성 검사
-        if config_data_path and os.path.exists(config_data_path):
-            self.data_path_var = tk.StringVar(value=config_data_path)
-        else:
-            self.data_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
-        
-        # 이미지 경로 유효성 검사
-        if config_image_path and os.path.exists(config_image_path):
-            # 필수 이미지 파일 확인
-            ai_image_path = os.path.join(config_image_path, 'ai.png')
-            human_image_path = os.path.join(config_image_path, 'human.png')
-            
-            if os.path.exists(ai_image_path) and os.path.exists(human_image_path):
-                self.image_path_var = tk.StringVar(value=config_image_path)
-            else:
-                missing_files = []
-                if not os.path.exists(ai_image_path):
-                    missing_files.append('ai.png')
-                if not os.path.exists(human_image_path):
-                    missing_files.append('human.png')
-                messagebox.showwarning("이미지 파일 누락", 
-                                     f"설정된 이미지 경로에 다음 파일이 없습니다:\n{', '.join(missing_files)}\n\n"
-                                     "올바른 이미지 경로를 선택해주세요.")
-                self.image_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'images')))
-        else:
-            self.image_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'images')))
-            
-        # 오디오 경로 유효성 검사
-        if config_audio_path and os.path.exists(config_audio_path):
-            # 오디오 파일 확인
-            audio_files = [f for f in os.listdir(config_audio_path) 
-                         if f.endswith('.wav') and not f.startswith('._')]
-            if audio_files:
-                self.audio_path_var = tk.StringVar(value=config_audio_path)
-            else:
-                messagebox.showwarning("오디오 파일 누락", 
-                                     "설정된 오디오 경로에 WAV 파일이 없습니다.\n"
-                                     "올바른 오디오 경로를 선택해주세요.")
-                self.audio_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'audio_samples')))
-        else:
-            self.audio_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'audio_samples')))
-        
-        # 안내 메시지
-        tk.Label(
-            self.window,
-            text='실험 파일이 저장될 경로와 이미지, 오디오 디렉토리 경로를 설정해주세요.',
-            font=('Arial', 12),
-            wraplength=800
-        ).pack(pady=20)
-        
-        # 실험 데이터 경로 설정
-        tk.Label(
-            self.window,
-            text='실험 데이터 저장 경로:',
-            font=('Arial', 11)
-        ).pack(pady=(10, 5))
-        
-        # 실험 데이터 경로 표시 프레임
-        data_path_frame = tk.Frame(self.window)
-        data_path_frame.pack(fill='x', padx=20, pady=5)
-        
-        self.data_path_entry = tk.Entry(
-            data_path_frame,
-            textvariable=self.data_path_var,
-            width=50,
-            font=('Arial', 11)
-        )
-        self.data_path_entry.pack(side=tk.LEFT, padx=5)
-        
-        # 실험 데이터 경로 선택 버튼
-        tk.Button(
-            data_path_frame,
-            text="경로 선택",
-            command=lambda: self.select_path(self.data_path_var),
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=5)
-        
-        # 이미지 디렉토리 경로 설정
-        tk.Label(
-            self.window,
-            text='이미지 디렉토리 경로:',
-            font=('Arial', 11)
-        ).pack(pady=(20, 5))
-        
-        # 이미지 경로 표시 프레임
-        image_path_frame = tk.Frame(self.window)
-        image_path_frame.pack(fill='x', padx=20, pady=5)
-        
-        self.image_path_entry = tk.Entry(
-            image_path_frame,
-            textvariable=self.image_path_var,
-            width=50,
-            font=('Arial', 11)
-        )
-        self.image_path_entry.pack(side=tk.LEFT, padx=5)
-        
-        # 이미지 경로 선택 버튼
-        tk.Button(
-            image_path_frame,
-            text="경로 선택",
-            command=lambda: self.select_path(self.image_path_var),
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=5)
-        
-        # 오디오 디렉토리 경로 설정
-        tk.Label(
-            self.window,
-            text='오디오 샘플 디렉토리 경로:',
-            font=('Arial', 11)
-        ).pack(pady=(20, 5))
-        
-        # 오디오 경로 표시 프레임
-        audio_path_frame = tk.Frame(self.window)
-        audio_path_frame.pack(fill='x', padx=20, pady=5)
-        
-        self.audio_path_entry = tk.Entry(
-            audio_path_frame,
-            textvariable=self.audio_path_var,
-            width=50,
-            font=('Arial', 11)
-        )
-        self.audio_path_entry.pack(side=tk.LEFT, padx=5)
-        
-        # 오디오 경로 선택 버튼
-        tk.Button(
-            audio_path_frame,
-            text="경로 선택",
-            command=lambda: self.select_path(self.audio_path_var),
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=5)
-        
-        # 경로 생성 상태 표시
-        self.status_label = tk.Label(
-            self.window,
-            text='',
-            font=('Arial', 11),
-            fg='gray'
-        )
-        self.status_label.pack(pady=10)
-        
-        # 버튼 프레임
-        button_frame = tk.Frame(self.window)
-        button_frame.pack(pady=20)
-        
-        # 확인 버튼
-        tk.Button(
-            button_frame,
-            text="확인",
-            command=self.confirm,
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=10)
-        
-        # 취소 버튼
-        tk.Button(
-            button_frame,
-            text="취소",
-            command=self.cancel,
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT)
-        
-        self.selected_paths = None
-
-    def select_path(self, path_var):
-        """디렉토리 경로를 선택합니다."""
-        path = tk.filedialog.askdirectory(
-            initialdir=path_var.get(),
-            title='디렉토리 선택'
-        )
-        if path:
-            path_var.set(path)
-            # config 즉시 업데이트
-            config_manager = ConfigManager()
-            if path_var == self.data_path_var:
-                config_manager.config['paths']['participant_data_dir'] = path
-            elif path_var == self.image_path_var:
-                config_manager.config['paths']['images_dir'] = path
-            elif path_var == self.audio_path_var:
-                config_manager.config['paths']['audio_sample_dir'] = path
-            config_manager.save_config(config_manager.config)
-            self.check_paths()
-            
-    def check_paths(self):
-        data_path = self.data_path_var.get()
-        image_path = self.image_path_var.get()
-        audio_path = self.audio_path_var.get()
-        
-        if not all([data_path, image_path, audio_path]):
-            self.status_label.config(
-                text='모든 경로를 입력해주세요.',
-                fg='red'
-            )
-            return
-            
-        # 실험 데이터 경로 확인
-        if not os.path.exists(data_path):
-            try:
-                os.makedirs(data_path)
-            except Exception as e:
-                self.status_label.config(
-                    text=f'실험 데이터 경로 생성 실패: {str(e)}',
-                    fg='red'
-                )
-                return
-                
-        # 이미지 경로 확인
-        if not os.path.exists(image_path):
-            try:
-                os.makedirs(image_path)
-            except Exception as e:
-                self.status_label.config(
-                    text=f'이미지 경로 생성 실패: {str(e)}',
-                    fg='red'
-                )
-                return
-                
-        # 필수 이미지 파일 확인
-        ai_image_path = os.path.join(image_path, 'ai.png')
-        human_image_path = os.path.join(image_path, 'human.png')
-        
-        if not os.path.exists(ai_image_path) or not os.path.exists(human_image_path):
-            missing_files = []
-            if not os.path.exists(ai_image_path):
-                missing_files.append('ai.png')
-            if not os.path.exists(human_image_path):
-                missing_files.append('human.png')
-            self.status_label.config(
-                text=f'필수 이미지 파일이 없습니다: {", ".join(missing_files)}',
-                fg='red'
-            )
-            return
-            
-        # 오디오 경로 확인
-        if not os.path.exists(audio_path):
-            try:
-                os.makedirs(audio_path)
-            except Exception as e:
-                self.status_label.config(
-                    text=f'오디오 경로 생성 실패: {str(e)}',
-                    fg='red'
-                )
-                return
-                
-        # 오디오 파일 확인
-        audio_files = [f for f in os.listdir(audio_path) 
-                      if f.endswith('.wav') and not f.startswith('._')]
-        if not audio_files:
-            self.status_label.config(
-                text='오디오 경로에 WAV 파일이 없습니다.',
-                fg='red'
-            )
-            return
-                
-        # 쓰기 권한 확인
-        try:
-            test_file = os.path.join(data_path, '.test')
-            with open(test_file, 'w') as f:
-                f.write('test')
-            os.remove(test_file)
-            
-            test_file = os.path.join(image_path, '.test')
-            with open(test_file, 'w') as f:
-                f.write('test')
-            os.remove(test_file)
-            
-            test_file = os.path.join(audio_path, '.test')
-            with open(test_file, 'w') as f:
-                f.write('test')
-            os.remove(test_file)
-            
-            self.status_label.config(
-                text='모든 경로와 파일이 유효합니다.',
-                fg='green'
-            )
-        except Exception as e:
-            self.status_label.config(
-                text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
-                fg='red'
-            )
-
-    def confirm(self):
-        data_path = self.data_path_var.get()
-        image_path = self.image_path_var.get()
-        audio_path = self.audio_path_var.get()
-        
-        if not os.path.exists(data_path):
-            try:
-                os.makedirs(data_path)
-            except Exception as e:
-                messagebox.showerror("오류", f"실험 데이터 경로를 생성할 수 없습니다:\n{str(e)}")
-                return
-                
-        if not os.path.exists(image_path):
-            try:
-                os.makedirs(image_path)
-            except Exception as e:
-                messagebox.showerror("오류", f"이미지 경로를 생성할 수 없습니다:\n{str(e)}")
-                return
-                
-        if not os.path.exists(audio_path):
-            try:
-                os.makedirs(audio_path)
-            except Exception as e:
-                messagebox.showerror("오류", f"오디오 경로를 생성할 수 없습니다:\n{str(e)}")
-                return
-        
-        # config 파일 업데이트
-        config_manager = ConfigManager()
-        config_manager.config['paths'].update({
-            'participant_data_dir': data_path,
-            'images_dir': image_path,
-            'audio_sample_dir': audio_path
-        })
-        config_manager.save_config(config_manager.config)
-        
-        self.selected_paths = {
-            'participant_data_dir': data_path,
-            'images_dir': image_path,
-            'audio_sample_dir': audio_path
-        }
-        self.window.quit()
-    
-    def cancel(self):
-        if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
-            self.selected_paths = None
-            self.window.quit()
-            sys.exit()  # 프로그램 완전 종료
-    
-    def show(self):
-        self.window.mainloop()
-        self.window.destroy()
-        return self.selected_paths
-
 class ListSelectionWindow:
     def __init__(self):
         self.window = tk.Tk()
@@ -1817,8 +1466,8 @@ class ListSelectionWindow:
 def main():
     while True:  # 참가자 정보 입력을 반복할 수 있도록 루프 추가
         # 경로 설정 창 표시
-        path_window = PathSettingWindow()
-        selected_paths = path_window.show()
+        config_window = ConfigWindow()
+        selected_paths = config_window.show()
         
         if not selected_paths:  # 취소를 누른 경우
             return
@@ -1831,16 +1480,6 @@ def main():
                 except Exception as e:
                     messagebox.showerror("오류", f"{path_name} 경로를 생성할 수 없습니다:\n{str(e)}")
                     return
-                    
-            # 경로에 대한 쓰기 권한 확인
-            try:
-                test_file = os.path.join(path, '.test')
-                with open(test_file, 'w') as f:
-                    f.write('test')
-                os.remove(test_file)
-            except Exception as e:
-                messagebox.showerror("오류", f"경로에 대한 쓰기 권한이 없습니다:\n{str(e)}")
-                return
         
         # 설정 관리자 초기화
         config_manager = ConfigManager()
@@ -1850,17 +1489,12 @@ def main():
         config_manager.save_config(config_manager.config)
         
         # 경로 유효성 검사
-        invalid_paths = config_manager.verify_paths()
-        
-        # 유효하지 않은 경로가 있으면 설정 창 표시
-        if invalid_paths:
-            message = "다음 경로들이 올바르지 않습니다:\n\n"
-            for _, path_name in invalid_paths:
-                message += f"- {path_name}\n"
-            message += "\n설정을 수정하시겠습니까?"
-            
-            if messagebox.askyesno("경로 오류", message):
-                config_window = ConfigWindow(config_manager)
+        if not config_manager.verify_paths():
+            messagebox.showwarning("경로 검증", 
+                                 "일부 경로가 올바르지 않습니다.\n"
+                                 "설정을 확인해주세요.")
+            if messagebox.askyesno("설정 수정", "설정을 수정하시겠습니까?"):
+                config_window = ConfigWindow()
                 config_window.show()
             else:
                 if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):

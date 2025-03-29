@@ -96,7 +96,10 @@ class AudioDeviceWindow:
                 device_index = self.device_indices[selected_index]
                 
                 # 테스트 녹음 시작
-                messagebox.showinfo("마이크 테스트", "3초간 테스트 녹음을 시작합니다.\n아무 말씀이나 해주세요.")
+                messagebox.showinfo("마이크 테스트", "3초간 테스트 녹음을 시작합니다.\n\n"
+                                                "1. '확인' 버튼을 누르면 녹음이 시작됩니다.\n"
+                                                "2. 마이크에 대고 '테스트'라고 말씀해주세요.\n"
+                                                "3. 녹음이 끝나면 자동으로 재생됩니다.")
                 
                 # 3초 녹음
                 recording = sd.rec(
@@ -111,12 +114,24 @@ class AudioDeviceWindow:
                 if len(recording.shape) > 1:
                     recording = recording.flatten()
                 
+                # 볼륨 레벨 확인
+                volume_level = np.abs(recording).mean()
+                if volume_level < 0.01:  # 볼륨이 매우 낮은 경우
+                    messagebox.showwarning("마이크 볼륨 경고", 
+                                         "마이크 입력이 매우 낮습니다.\n"
+                                         "1. 마이크가 올바르게 연결되어 있는지 확인해주세요.\n"
+                                         "2. 시스템 설정에서 마이크 입력 레벨을 확인해주세요.\n"
+                                         "3. 다른 마이크를 선택하거나 다시 테스트해보세요.")
+                    return
+                
                 # 임시 파일로 저장
                 temp_file = "temp_test_recording.wav"
                 sf.write(temp_file, recording, AudioConstants.SAMPLE_RATE)
                 
                 # 녹음 재생
-                messagebox.showinfo("마이크 테스트", "녹음된 소리를 재생합니다.")
+                messagebox.showinfo("마이크 테스트", "녹음된 소리를 재생합니다.\n\n"
+                                                "1. 소리가 잘 들리는지 확인해주세요.\n"
+                                                "2. 소리가 너무 작거나 들리지 않는다면 '취소'를 눌러 다른 마이크를 선택해주세요.")
                 data, samplerate = sf.read(temp_file)
                 sd.play(data, samplerate)
                 sd.wait()
@@ -126,7 +141,10 @@ class AudioDeviceWindow:
                     os.remove(temp_file)
                 
         except Exception as e:
-            messagebox.showerror("오류", f"마이크 테스트 중 오류가 발생했습니다:\n{str(e)}")
+            messagebox.showerror("오류", f"마이크 테스트 중 오류가 발생했습니다:\n\n{str(e)}\n\n"
+                                     "1. 마이크가 올바르게 연결되어 있는지 확인해주세요.\n"
+                                     "2. 다른 마이크를 선택해보세요.\n"
+                                     "3. 시스템 설정에서 마이크 권한을 확인해주세요.")
     
     def confirm(self):
         selected_index = self.device_combo.current()
@@ -301,18 +319,21 @@ class AudioPlaybackWindow:
             # 리스트에 따라 다른 메시지 표시 (3단계에서만)
             if self.current_stage == 3:
                 if current_list == self.selected_lists:
-                    message = "사람이 발음했습니다."
+                    message = "사람"
+                    self.show_speaker_image(is_ai=False)
                 else:
-                    message = "AI가 발음했습니다."
+                    message = "AI"
+                    self.show_speaker_image(is_ai=True)
             else:  # 2단계
-                message = "발음을 듣고 따라하세요"
+                message = "발음을 잘 들어주세요."
+                self.show_speaker_image(is_ai=None)
                 
             # 첫 번째 메시지 표시
             self.instruction_label.config(text=message)
             self.window.update()
             
             # 1초 대기
-            time.sleep(1)
+            #time.sleep(.3)
             
             # 오디오 재생
             duration = self.player.play_audio(audio_file)
@@ -322,7 +343,7 @@ class AudioPlaybackWindow:
                 time.sleep(0.1)
             
             # 오디오 재생이 끝나면 두 번째 메시지 표시
-            self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
+            self.instruction_label.config(text='소리내어 따라하신 후, 스페이스바를 눌러 다음으로 넘어가세요.')
             self.window.update()
             
             # 타이밍 데이터에 음성 파일과 시작 시간 기록
@@ -444,7 +465,7 @@ class WordPresentationWindow:
         self.word_label.pack(expand=True)
         
         # 안내 메시지
-        self.instruction_label = tk.Label(self.window, text='스페이스바를 눌러 다음 단어로 넘어가세요', font=('Arial', 12))
+        self.instruction_label = tk.Label(self.window, text='단어를 읽고, 스페이스바를 눌러 다음 단어로 넘어가세요', font=('Arial', 12))
         self.instruction_label.pack()
         
         # 데이터 저장용 변수들
@@ -479,7 +500,7 @@ class WordPresentationWindow:
         if self.remaining_words:
             self.current_word = self.remaining_words.pop()
             self.word_label.config(text=self.current_word)
-            self.instruction_label.config(text='스페이스바를 눌러 다음 단어로 넘어가세요')
+            self.instruction_label.config(text='단어를 읽고, 스페이스바를 눌러 다음 단어로 넘어가세요')
             self.start_time = time.time()
         else:
             self.save_current_stage_data()
@@ -552,27 +573,33 @@ class WordPresentationWindow:
 class StageInstruction:
     @staticmethod
     def get_instruction(stage_number, selected_lists):
+        if selected_lists == "list2":
+            flag = "AI"
+        else:
+            flag = "사람"
         instructions = {
             1: "1단계: 단어 읽기\n\n" + 
-               "이제부터 화면에 단어들이 하나씩 제시됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 자동으로 다음 단계로 넘어갑니다.",
-            2: "2단계: 음성 듣기\n\n" +
-               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
-               "각 음성을 듣고 따라 읽어주세요.\n" +
-               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
-               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            3: "3단계: 음성 듣기\n\n" +
-               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
-               "각 음성을 듣고 따라 읽어주세요.\n" +
-               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
-               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
+               "이제부터 화면에 단어들이 하나씩 제시됩니다.\n\n" +
+               "각 단어를 소리내어 읽어주세요.\n\n" +
+               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n" +
+               "모든 단어를 읽으면 다음 단계의 안내가 제시됩니다.",
+            2: "2단계: 음성 듣고 따라하기\n\n" +
+               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n\n" +
+               "각 음성을 잘 들어주세요.\n\n" +
+               "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
+               "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
+               "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
+               "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
+            3: f"3단계: {flag} 음성 듣고 따라하기\n\n" +
+               f"방금 들은 {flag}의 음성을 다시 한 번 잘 들어주세요.\n\n" +
+               "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
+               "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
+               "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
+               "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
             4: "4단계: 단어 읽기\n\n" +
-               "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 실험이 종료됩니다."
+               "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n\n" +
+               "각 단어를 소리내어 읽어주세요.\n\n" +
+               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n"
         }
         return instructions.get(stage_number, "")
 
@@ -658,15 +685,32 @@ class MainExperimentWindow:
         self.config = config
         self.word_path = config['paths']['word_file']
         
+        # 이미지 경로 설정
+        self.image_dir = config['paths']['images_dir']
+        self.ai_image_path = os.path.join(self.image_dir, 'ai.png')
+        self.human_image_path = os.path.join(self.image_dir, 'human.png')
+        
+        # 이미지 로드
+        self.ai_image = None
+        self.human_image = None
+        self.current_image = None
+        self.load_images()
+        
         # 중앙 정렬을 위한 프레임 생성
         self.center_frame = tk.Frame(self.window)
         self.center_frame.place(relx=0.5, rely=0.5, anchor='center')
         
-        self.main_label = tk.Label(self.center_frame, text='', font=('Arial', 64))
-        self.main_label.pack(pady=50)
+        # 이미지 표시 레이블 (가장 위에 배치)
+        self.image_label = tk.Label(self.center_frame)
+        self.image_label.pack(pady=(0, 30))  # 아래쪽 여백만 추가
         
+        # 메인 텍스트 레이블
+        self.main_label = tk.Label(self.center_frame, text='', font=('Arial', 64))
+        self.main_label.pack(pady=20)
+        
+        # 안내 텍스트 레이블
         self.instruction_label = tk.Label(self.center_frame, text='', font=('Arial', 36))
-        self.instruction_label.pack(pady=30)
+        self.instruction_label.pack(pady=20)
         
         self.current_stage = 0
         self.timing_data = []
@@ -680,6 +724,43 @@ class MainExperimentWindow:
         
         # 하위 창들을 위한 변수
         self.current_dialog = None
+
+    def load_images(self):
+        """이미지 파일들을 로드합니다."""
+        try:
+            if os.path.exists(self.ai_image_path):
+                self.ai_image = tk.PhotoImage(file=self.ai_image_path)
+                # 이미지 크기 조정 (예: 200x200)
+                self.ai_image = self.ai_image.subsample(2, 2)
+            else:
+                print(f"AI 이미지를 찾을 수 없음: {self.ai_image_path}")
+                
+            if os.path.exists(self.human_image_path):
+                self.human_image = tk.PhotoImage(file=self.human_image_path)
+                # 이미지 크기 조정 (예: 200x200)
+                self.human_image = self.human_image.subsample(2, 2)
+            else:
+                print(f"사람 이미지를 찾을 수 없음: {self.human_image_path}")
+        except Exception as e:
+            print(f"이미지 로드 중 오류 발생: {str(e)}")
+
+    def show_speaker_image(self, is_ai):
+        """발음자 이미지를 표시합니다."""
+        if self.current_stage == 3:  # 3단계에서만 이미지 표시
+            if is_ai and self.ai_image:
+                self.current_image = self.ai_image
+                self.image_label.config(image=self.current_image)
+                self.image_label.pack(pady=20)
+            elif not is_ai and self.human_image:
+                self.current_image = self.human_image
+                self.image_label.config(image=self.current_image)
+                self.image_label.pack(pady=20)
+            else:
+                self.current_image = None
+                self.image_label.pack_forget()
+        else:
+            self.current_image = None
+            self.image_label.pack_forget()
 
     def show_experiment_intro(self):
         """전체 실험 설명을 보여주는 창을 표시합니다."""
@@ -727,9 +808,6 @@ class MainExperimentWindow:
 4. 실험 시간
 - 전체 실험은 약 15-20분 정도 소요됩니다.
 - 각 단계는 약 3-5분 정도 소요됩니다.
-
-5. 보상
-- 실험 완료 후 소정의 보상이 제공됩니다.
 
 위 내용을 모두 읽고 이해하셨다면, '시작하기' 버튼을 눌러 실험을 시작해주세요.
 """
@@ -927,7 +1005,7 @@ class MainExperimentWindow:
         if self.current_word_index < len(self.words):
             word = self.words[self.current_word_index]
             self.main_label.config(text=word)
-            self.instruction_label.config(text='스페이스바를 눌러 다음 단어로 넘어가세요')
+            self.instruction_label.config(text='단어를 소리내어 읽어주신 후 스페이스바를 눌러 다음 단어로 넘어가세요.')
             self.current_word_index += 1
             self.start_time = time.time()
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
@@ -970,11 +1048,14 @@ class MainExperimentWindow:
             # 리스트에 따라 다른 메시지 표시 (3단계에서만)
             if self.current_stage == 3:
                 if current_list == self.selected_lists:
-                    message = "사람이 발음했습니다."
+                    message = "사람"
+                    self.show_speaker_image(is_ai=False)
                 else:
-                    message = "AI가 발음했습니다."
+                    message = "AI"
+                    self.show_speaker_image(is_ai=True)
             else:  # 2단계
-                message = "발음을 듣고 따라하세요"
+                message = "발음을 잘 들어주세요."
+                self.show_speaker_image(is_ai=None)
                 
             # 첫 번째 메시지 표시
             self.main_label.config(text=message)
@@ -982,7 +1063,7 @@ class MainExperimentWindow:
             self.window.update()
             
             # 1초 대기
-            time.sleep(1)
+            #time.sleep(.3)
             
             # 오디오 재생
             duration = self.player.play_audio(audio_file)
@@ -992,7 +1073,7 @@ class MainExperimentWindow:
                 time.sleep(0.1)
             
             # 오디오 재생이 끝나면 두 번째 메시지 표시
-            self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
+            self.instruction_label.config(text='소리내어 따라하신 후, 스페이스바를 눌러 다음으로 넘어가세요.')
             self.window.update()
             
             # 타이밍 데이터에 음성 파일과 시작 시간 기록
@@ -1016,6 +1097,7 @@ class MainExperimentWindow:
             
             self.main_label.config(text='')
             self.instruction_label.config(text='')
+            self.image_label.pack_forget()  # 이미지 숨기기
             self.window.update()
             
             next_stage = self.current_stage + 1
@@ -1039,7 +1121,7 @@ class MainExperimentWindow:
     def load_audio_files(self):
         """오디오 파일 목록을 로드합니다."""
         self.remaining_files = []
-        audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'audio-sample')
+        audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.config['paths']['audio_sample_dir'])
         
         if os.path.exists(audio_dir):
             # 원본 오디오 파일 목록 가져오기
@@ -1110,7 +1192,10 @@ def check_existing_data(participant_id, base_dir):
                         time_str = current_time.strftime('%Y%m%d_%H%M')
                         new_folder_path = os.path.join(base_dir, f'participant_{participant_id}_{time_str}')
                         return new_folder_path
-                    return None
+                    else:
+                        # 덮어쓰기를 거절한 경우
+                        messagebox.showinfo("알림", "다른 참가자 번호를 입력해주세요.")
+                        return None
             except Exception as e:
                 messagebox.showerror("오류", f"기존 데이터 확인 중 오류가 발생했습니다:\n{str(e)}")
                 return None
@@ -1129,41 +1214,103 @@ class PathSettingWindow:
     def __init__(self):
         self.window = tk.Tk()
         self.window.title('실험 파일 저장 경로 설정')
-        self.window.geometry('600x300')
+        self.window.geometry('600x400')  # 높이 증가
         
         # 화면 중앙에 위치하도록 설정
         screen_width = self.window.winfo_screenwidth()
         screen_height = self.window.winfo_screenheight()
         x = (screen_width - 600) // 2
-        y = (screen_height - 300) // 2
-        self.window.geometry(f'600x300+{x}+{y}')
+        y = (screen_height - 400) // 2
+        self.window.geometry(f'600x400+{x}+{y}')
+        
+        # config 파일에서 이미지 경로 확인
+        config_manager = ConfigManager()
+        config_image_path = config_manager.config['paths'].get('images_dir', '')
+        
+        # 이미지 경로 유효성 검사
+        if config_image_path and os.path.exists(config_image_path):
+            # 필수 이미지 파일 확인
+            ai_image_path = os.path.join(config_image_path, 'ai.png')
+            human_image_path = os.path.join(config_image_path, 'human.png')
+            
+            if os.path.exists(ai_image_path) and os.path.exists(human_image_path):
+                # 이미지 파일이 모두 존재하는 경우
+                self.image_path_var = tk.StringVar(value=config_image_path)
+            else:
+                # 이미지 파일이 없는 경우
+                missing_files = []
+                if not os.path.exists(ai_image_path):
+                    missing_files.append('ai.png')
+                if not os.path.exists(human_image_path):
+                    missing_files.append('human.png')
+                messagebox.showwarning("이미지 파일 누락", 
+                                     f"설정된 이미지 경로에 다음 파일이 없습니다:\n{', '.join(missing_files)}\n\n"
+                                     "올바른 이미지 경로를 선택해주세요.")
+                self.image_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'images')))
+        else:
+            # config에 이미지 경로가 없거나 경로가 존재하지 않는 경우
+            self.image_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'images')))
         
         # 안내 메시지
         tk.Label(
             self.window,
-            text='실험 파일이 저장될 경로를 설정해주세요.',
+            text='실험 파일이 저장될 경로와 이미지 디렉토리 경로를 설정해주세요.',
             font=('Arial', 12),
             wraplength=550
         ).pack(pady=20)
         
-        # 경로 표시 프레임
-        path_frame = tk.Frame(self.window)
-        path_frame.pack(fill='x', padx=20, pady=10)
+        # 실험 데이터 경로 설정
+        tk.Label(
+            self.window,
+            text='실험 데이터 저장 경로:',
+            font=('Arial', 11)
+        ).pack(pady=(10, 5))
         
-        self.path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
-        self.path_entry = tk.Entry(
-            path_frame,
-            textvariable=self.path_var,
+        # 실험 데이터 경로 표시 프레임
+        data_path_frame = tk.Frame(self.window)
+        data_path_frame.pack(fill='x', padx=20, pady=5)
+        
+        self.data_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
+        self.data_path_entry = tk.Entry(
+            data_path_frame,
+            textvariable=self.data_path_var,
             width=50,
             font=('Arial', 11)
         )
-        self.path_entry.pack(side=tk.LEFT, padx=5)
+        self.data_path_entry.pack(side=tk.LEFT, padx=5)
         
-        # 경로 선택 버튼
+        # 실험 데이터 경로 선택 버튼
         tk.Button(
-            path_frame,
+            data_path_frame,
             text="경로 선택",
-            command=self.select_path,
+            command=lambda: self.select_path(self.data_path_var),
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT, padx=5)
+        
+        # 이미지 디렉토리 경로 설정
+        tk.Label(
+            self.window,
+            text='이미지 디렉토리 경로:',
+            font=('Arial', 11)
+        ).pack(pady=(20, 5))
+        
+        # 이미지 경로 표시 프레임
+        image_path_frame = tk.Frame(self.window)
+        image_path_frame.pack(fill='x', padx=20, pady=5)
+        
+        self.image_path_entry = tk.Entry(
+            image_path_frame,
+            textvariable=self.image_path_var,
+            width=50,
+            font=('Arial', 11)
+        )
+        self.image_path_entry.pack(side=tk.LEFT, padx=5)
+        
+        # 이미지 경로 선택 버튼
+        tk.Button(
+            image_path_frame,
+            text="경로 선택",
+            command=lambda: self.select_path(self.image_path_var),
             font=('Arial', 11)
         ).pack(side=tk.LEFT, padx=5)
         
@@ -1196,77 +1343,130 @@ class PathSettingWindow:
             font=('Arial', 11)
         ).pack(side=tk.LEFT)
         
-        self.selected_path = None
+        self.selected_paths = None
         
-    def select_path(self):
+    def select_path(self, path_var):
         path = tk.filedialog.askdirectory(
-            initialdir=self.path_var.get(),
-            title='실험 파일 저장 경로 선택'
+            initialdir=path_var.get(),
+            title='디렉토리 선택'
         )
         if path:
-            self.path_var.set(path)
-            self.check_path()
+            path_var.set(path)
+            self.check_paths()
     
-    def check_path(self):
-        path = self.path_var.get()
-        if not path:
+    def check_paths(self):
+        data_path = self.data_path_var.get()
+        image_path = self.image_path_var.get()
+        
+        if not data_path or not image_path:
             self.status_label.config(
-                text='경로를 입력해주세요.',
+                text='모든 경로를 입력해주세요.',
                 fg='red'
             )
             return
             
-        if not os.path.exists(path):
+        # 실험 데이터 경로 확인
+        if not os.path.exists(data_path):
             try:
-                os.makedirs(path)
-                self.status_label.config(
-                    text=f'새 경로가 생성되었습니다: {path}',
-                    fg='blue'
-                )
+                os.makedirs(data_path)
             except Exception as e:
                 self.status_label.config(
-                    text=f'경로 생성 실패: {str(e)}',
+                    text=f'실험 데이터 경로 생성 실패: {str(e)}',
                     fg='red'
                 )
-        else:
-            # 경로가 존재하는 경우, 쓰기 권한 확인
+                return
+                
+        # 이미지 경로 확인
+        if not os.path.exists(image_path):
             try:
-                test_file = os.path.join(path, '.test')
-                with open(test_file, 'w') as f:
-                    f.write('test')
-                os.remove(test_file)
-                self.status_label.config(
-                    text='경로가 유효합니다. 이 경로를 사용할 수 있습니다.',
-                    fg='green'
-                )
+                os.makedirs(image_path)
             except Exception as e:
                 self.status_label.config(
-                    text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
+                    text=f'이미지 경로 생성 실패: {str(e)}',
                     fg='red'
                 )
+                return
+                
+        # 필수 이미지 파일 확인
+        ai_image_path = os.path.join(image_path, 'ai.png')
+        human_image_path = os.path.join(image_path, 'human.png')
+        
+        if not os.path.exists(ai_image_path) or not os.path.exists(human_image_path):
+            missing_files = []
+            if not os.path.exists(ai_image_path):
+                missing_files.append('ai.png')
+            if not os.path.exists(human_image_path):
+                missing_files.append('human.png')
+            self.status_label.config(
+                text=f'필수 이미지 파일이 없습니다: {", ".join(missing_files)}',
+                fg='red'
+            )
+            return
+                
+        # 쓰기 권한 확인
+        try:
+            test_file = os.path.join(data_path, '.test')
+            with open(test_file, 'w') as f:
+                f.write('test')
+            os.remove(test_file)
+            
+            test_file = os.path.join(image_path, '.test')
+            with open(test_file, 'w') as f:
+                f.write('test')
+            os.remove(test_file)
+            
+            self.status_label.config(
+                text='모든 경로와 이미지 파일이 유효합니다.',
+                fg='green'
+            )
+        except Exception as e:
+            self.status_label.config(
+                text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
+                fg='red'
+            )
     
     def confirm(self):
-        path = self.path_var.get()
-        if not os.path.exists(path):
+        data_path = self.data_path_var.get()
+        image_path = self.image_path_var.get()
+        
+        if not os.path.exists(data_path):
             try:
-                os.makedirs(path)
+                os.makedirs(data_path)
             except Exception as e:
-                messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
+                messagebox.showerror("오류", f"실험 데이터 경로를 생성할 수 없습니다:\n{str(e)}")
+                return
+                
+        if not os.path.exists(image_path):
+            try:
+                os.makedirs(image_path)
+            except Exception as e:
+                messagebox.showerror("오류", f"이미지 경로를 생성할 수 없습니다:\n{str(e)}")
                 return
         
-        self.selected_path = path
+        # config 파일 업데이트
+        config_manager = ConfigManager()
+        config_manager.config['paths'].update({
+            'participant_data_dir': data_path,
+            'images_dir': image_path
+        })
+        config_manager.save_config(config_manager.config)
+        
+        self.selected_paths = {
+            'participant_data_dir': data_path,
+            'images_dir': image_path
+        }
         self.window.quit()
     
     def cancel(self):
         if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
-            self.selected_path = None
+            self.selected_paths = None
             self.window.quit()
             sys.exit()  # 프로그램 완전 종료
     
     def show(self):
         self.window.mainloop()
         self.window.destroy()
-        return self.selected_path
+        return self.selected_paths
 
 class ListSelectionWindow:
     def __init__(self):
@@ -1357,6 +1557,10 @@ class ListSelectionWindow:
                 df = pd.read_excel(info_file)
                 # 실험 리스트 열만 추가
                 df['실험 리스트'] = selected
+                if selected == "list1":
+                    df['음성 정체성'] = "사람"
+                elif selected == "list2":
+                    df['음성 정체성'] = "AI"
                 # 파일 다시 저장
                 df.to_excel(info_file, index=False)
          
@@ -1374,95 +1578,98 @@ class ListSelectionWindow:
         return self.selected_lists
 
 def main():
-    # 경로 설정 창 표시
-    path_window = PathSettingWindow()
-    save_path = path_window.show()
-    
-    if not save_path:  # 취소를 누른 경우
-        return
+    while True:  # 참가자 정보 입력을 반복할 수 있도록 루프 추가
+        # 경로 설정 창 표시
+        path_window = PathSettingWindow()
+        selected_paths = path_window.show()
         
-    # 경로 유효성 검사
-    if not os.path.exists(save_path):
-        try:
-            os.makedirs(save_path)
-        except Exception as e:
-            messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
+        if not selected_paths:  # 취소를 누른 경우
             return
             
-    # 경로에 대한 쓰기 권한 확인
-    try:
-        test_file = os.path.join(save_path, '.test')
-        with open(test_file, 'w') as f:
-            f.write('test')
-        os.remove(test_file)
-    except Exception as e:
-        messagebox.showerror("오류", f"선택한 경로에 대한 쓰기 권한이 없습니다:\n{str(e)}")
-        return
-    
-    # 설정 관리자 초기화
-    config_manager = ConfigManager()
-    
-    # 설정된 경로를 config에 저장
-    config_manager.config['paths']['participant_data_dir'] = save_path
-    config_manager.save_config(config_manager.config)
-    
-    # 경로 유효성 검사
-    invalid_paths = config_manager.verify_paths()
-    
-    # 유효하지 않은 경로가 있으면 설정 창 표시
-    if invalid_paths:
-        message = "다음 경로들이 올바르지 않습니다:\n\n"
-        for _, path_name in invalid_paths:
-            message += f"- {path_name}\n"
-        message += "\n설정을 수정하시겠습니까?"
+        # 경로 유효성 검사
+        for path_name, path in selected_paths.items():
+            if not os.path.exists(path):
+                try:
+                    os.makedirs(path)
+                except Exception as e:
+                    messagebox.showerror("오류", f"{path_name} 경로를 생성할 수 없습니다:\n{str(e)}")
+                    return
+                    
+            # 경로에 대한 쓰기 권한 확인
+            try:
+                test_file = os.path.join(path, '.test')
+                with open(test_file, 'w') as f:
+                    f.write('test')
+                os.remove(test_file)
+            except Exception as e:
+                messagebox.showerror("오류", f"경로에 대한 쓰기 권한이 없습니다:\n{str(e)}")
+                return
         
-        if messagebox.askyesno("경로 오류", message):
-            config_window = ConfigWindow(config_manager)
-            config_window.show()
-        else:
-            if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
-                sys.exit()
+        # 설정 관리자 초기화
+        config_manager = ConfigManager()
+        
+        # 설정된 경로들을 config에 저장
+        config_manager.config['paths'].update(selected_paths)
+        config_manager.save_config(config_manager.config)
+        
+        # 경로 유효성 검사
+        invalid_paths = config_manager.verify_paths()
+        
+        # 유효하지 않은 경로가 있으면 설정 창 표시
+        if invalid_paths:
+            message = "다음 경로들이 올바르지 않습니다:\n\n"
+            for _, path_name in invalid_paths:
+                message += f"- {path_name}\n"
+            message += "\n설정을 수정하시겠습니까?"
+            
+            if messagebox.askyesno("경로 오류", message):
+                config_window = ConfigWindow(config_manager)
+                config_window.show()
+            else:
+                if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+                    sys.exit()
+                return
+        
+        # 참가자 정보 입력
+        info_window = ParticipantInfoWindow()
+        participant_info = info_window.show()
+        
+        if not participant_info:
             return
-    
-    # 참가자 정보 입력
-    info_window = ParticipantInfoWindow()
-    participant_info = info_window.show()
-    
-    if not participant_info:
-        return
+            
+        participant_id = participant_info['participant_id']
         
-    participant_id = participant_info['participant_id']
-    
-    # 폴더 생성
-    folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
-    
-    if not folder_path:
-        return
-    
-    # 리스트 선택
-    list_window = ListSelectionWindow()
-    selected_lists = list_window.show()
-    
-    if not selected_lists:
-        return
-    
-    # 녹음 장치 선택
-    device_window = AudioDeviceWindow()
-    selected_device = device_window.show()
-    
-    if selected_device is None:
-        return
-    
-    # 메인 실험 창 실행
-    main_window = MainExperimentWindow(config_manager.config)
-    main_window.start_experiment(
-        participant_id=participant_id,
-        folder_path=folder_path,
-        selected_device=selected_device,
-        selected_lists=selected_lists,
-        participant_info=participant_info
-    )
-    main_window.show()
+        # 폴더 생성
+        folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
+        
+        if not folder_path:
+            continue  # 참가자 정보 입력 창으로 돌아가기
+        
+        # 리스트 선택
+        list_window = ListSelectionWindow()
+        selected_lists = list_window.show()
+        
+        if not selected_lists:
+            return
+        
+        # 녹음 장치 선택
+        device_window = AudioDeviceWindow()
+        selected_device = device_window.show()
+        
+        if selected_device is None:
+            return
+        
+        # 메인 실험 창 실행
+        main_window = MainExperimentWindow(config_manager.config)
+        main_window.start_experiment(
+            participant_id=participant_id,
+            folder_path=folder_path,
+            selected_device=selected_device,
+            selected_lists=selected_lists,
+            participant_info=participant_info
+        )
+        main_window.show()
+        break  # 실험이 완료되면 루프 종료
 
 if __name__ == '__main__':
     main() 

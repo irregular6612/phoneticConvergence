@@ -2,7 +2,8 @@
     "paths": {
         "word_file": "filtered_df.xlsx",
         "audio_sample_dir": "audio-sample",
-        "participant_data_dir": "/Users/bagjuhyeon/Documents/test"
+        "participant_data_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/experiment_data",
+        "images_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/img-GPT4o(250329)"
     },
     "recording": {
         "sample_rate": 44100,

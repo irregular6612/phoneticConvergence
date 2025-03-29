@@ -5,13 +5,72 @@ from tkinter import ttk, messagebox, filedialog
 
 class ConfigManager:
     def __init__(self):
-        self.config_file = 'config.json'
+        self.config_file = self.find_config_file()
         self.config = self.load_config()
+        
+    def find_config_file(self):
+        """config.json 파일을 찾습니다."""
+        # 현재 디렉토리에서 config.json 찾기
+        if os.path.exists('config.json'):
+            return 'config.json'
+            
+        # 상위 디렉토리에서 config.json 찾기
+        parent_dir = os.path.dirname(os.path.abspath(os.getcwd()))
+        parent_config = os.path.join(parent_dir, 'config.json')
+        if os.path.exists(parent_config):
+            return parent_config
+            
+        # 사용자의 홈 디렉토리에서 config.json 찾기
+        home_dir = os.path.expanduser('~')
+        home_config = os.path.join(home_dir, 'config.json')
+        if os.path.exists(home_config):
+            return home_config
+            
+        # config.json을 찾을 수 없는 경우 사용자에게 선택권 제공
+        response = messagebox.askyesno(
+            "설정 파일 찾기",
+            "config.json 파일을 찾을 수 없습니다.\n\n"
+            "기존 설정 파일을 찾으시겠습니까?\n"
+            "아니오를 선택하면 새 파일을 생성합니다."
+        )
+        
+        if response:
+            # 기존 파일 찾기
+            config_path = filedialog.askopenfilename(
+                title='config.json 파일 찾기',
+                filetypes=[('JSON files', '*.json')],
+                initialdir=os.getcwd()
+            )
+            if config_path:
+                return config_path
+            else:
+                # 파일 선택을 취소한 경우 새 파일 생성 여부 확인
+                if messagebox.askyesno(
+                    "설정 파일 생성",
+                    "파일을 선택하지 않았습니다.\n"
+                    "새로운 config.json 파일을 생성하시겠습니까?"
+                ):
+                    return self.create_new_config()
+                return None
+        else:
+            # 새 파일 생성
+            return self.create_new_config()
+            
+    def create_new_config(self):
+        """새로운 config.json 파일을 생성합니다."""
+        config_path = filedialog.asksaveasfilename(
+            title='새 config.json 파일 생성',
+            defaultextension='.json',
+            initialfile='config.json',
+            filetypes=[('JSON files', '*.json')],
+            initialdir=os.getcwd()
+        )
+        return config_path if config_path else None
         
     def load_config(self):
         """config.json 파일에서 설정을 로드합니다."""
         try:
-            if os.path.exists(self.config_file):
+            if self.config_file and os.path.exists(self.config_file):
                 with open(self.config_file, 'r', encoding='utf-8') as f:
                     return json.load(f)
             else:

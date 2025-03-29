@@ -1268,10 +1268,6 @@ def check_existing_data(participant_id, base_dir, selected_device=None, selected
                                 })
                                 info_df.to_excel(writer, sheet_name='Info', index=False)
                             
-                            # config의 participant_data_dir을 새 폴더로 업데이트
-                            config_manager.config['paths']['participant_data_dir'] = new_folder_path
-                            config_manager.save_config(config_manager.config)
-                            
                             return new_folder_path
                         else:
                             # 덮어쓰기를 거절한 경우
@@ -1328,10 +1324,6 @@ def check_existing_data(participant_id, base_dir, selected_device=None, selected
                                 '실험 리스트': [selected_lists if selected_lists else '']
                             })
                             info_df.to_excel(writer, sheet_name='Info', index=False)
-                        
-                        # config의 participant_data_dir을 새 폴더로 업데이트
-                        config_manager.config['paths']['participant_data_dir'] = new_folder_path
-                        config_manager.save_config(config_manager.config)
                         
                         return new_folder_path
                     else:

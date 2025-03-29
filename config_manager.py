@@ -14,7 +14,8 @@ class ConfigManager:
                 'participant_data_dir': os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')),
                 'images_dir': os.path.abspath(os.path.join(os.getcwd(), 'images')),
                 'audio_sample_dir': os.path.abspath(os.path.join(os.getcwd(), 'audio_samples')),
-                'practice_word_file': os.path.abspath(os.path.join(os.getcwd(), 'practice_words.xlsx')),
+                'main_word_list': os.path.abspath(os.path.join(os.getcwd(), 'main_words.xlsx')),
+                'practice_word_list': os.path.abspath(os.path.join(os.getcwd(), 'practice_words.xlsx')),
                 'practice_audio_dir': os.path.abspath(os.path.join(os.getcwd(), 'practice_audio'))
             }
         }
@@ -130,7 +131,8 @@ class ConfigManager:
             'participant_data_dir',
             'images_dir',
             'audio_sample_dir',
-            'practice_word_file',
+            'main_word_list',
+            'practice_word_list',
             'practice_audio_dir'
         ]
         
@@ -165,7 +167,7 @@ class ConfigManager:
             return False
             
         # 예비 연습 단어 파일 확인
-        practice_word_file = paths['practice_word_file']
+        practice_word_file = paths['practice_word_list']
         try:
             df = pd.read_excel(practice_word_file)
             if '단어' not in df.columns:
@@ -241,9 +243,17 @@ class ConfigWindow:
         ttk.Label(path_frame, text='예비 연습 단어 파일:').pack(anchor='w')
         practice_word_path_frame = ttk.Frame(path_frame)
         practice_word_path_frame.pack(fill='x', pady=5)
-        self.practice_word_path_var = tk.StringVar(value=self.config_manager.config['paths']['practice_word_file'])
+        self.practice_word_path_var = tk.StringVar(value=self.config_manager.config['paths']['practice_word_list'])
         ttk.Entry(practice_word_path_frame, textvariable=self.practice_word_path_var).pack(side='left', fill='x', expand=True)
-        ttk.Button(practice_word_path_frame, text='찾아보기', command=lambda: self.select_file('practice_word_file')).pack(side='left', padx=5)
+        ttk.Button(practice_word_path_frame, text='찾아보기', command=lambda: self.select_file('practice_word_list')).pack(side='left', padx=5)
+        
+        # 본시행 단어 파일
+        ttk.Label(path_frame, text='본시행 단어 파일:').pack(anchor='w')
+        main_word_path_frame = ttk.Frame(path_frame)
+        main_word_path_frame.pack(fill='x', pady=5)
+        self.main_word_path_var = tk.StringVar(value=self.config_manager.config['paths']['main_word_list'])
+        ttk.Entry(main_word_path_frame, textvariable=self.main_word_path_var).pack(side='left', fill='x', expand=True)
+        ttk.Button(main_word_path_frame, text='찾아보기', command=lambda: self.select_file('main_word_list')).pack(side='left', padx=5)
         
         # 예비 연습 오디오 경로
         ttk.Label(path_frame, text='예비 연습 오디오 디렉토리 경로:').pack(anchor='w')
@@ -307,7 +317,13 @@ class ConfigWindow:
                                        "선택된 Excel 파일에 '단어' 열이 없습니다.\n"
                                        "올바른 형식의 파일을 선택해주세요.")
                     return
-                self.practice_word_path_var.set(file)
+                
+                # path_key에 따라 올바른 변수 업데이트
+                if path_key == 'practice_word_list':
+                    self.practice_word_path_var.set(file)
+                elif path_key == 'main_word_list':
+                    self.main_word_path_var.set(file)
+                    
                 self.check_paths()
             except Exception as e:
                 messagebox.showerror("파일 읽기 오류", 
@@ -320,9 +336,10 @@ class ConfigWindow:
         image_path = self.image_path_var.get()
         audio_path = self.audio_path_var.get()
         practice_word_path = self.practice_word_path_var.get()
+        main_word_path = self.main_word_path_var.get()
         practice_audio_path = self.practice_audio_path_var.get()
         
-        if not all([data_path, image_path, audio_path, practice_word_path, practice_audio_path]):
+        if not all([data_path, image_path, audio_path, practice_word_path, main_word_path, practice_audio_path]):
             self.status_label.config(
                 text='모든 경로를 입력해주세요.',
                 fg='red'
@@ -397,17 +414,41 @@ class ConfigWindow:
             return
             
         try:
-            # Excel 파일 읽기 테스트
+            # 예비 연습 단어 파일 읽기 테스트
             df = pd.read_excel(practice_word_path)
             if '단어' not in df.columns:
                 self.status_label.config(
-                    text='단어 파일에 "단어" 열이 없습니다.',
+                    text='예비 연습 단어 파일에 "단어" 열이 없습니다.',
                     fg='red'
                 )
                 return
         except Exception as e:
             self.status_label.config(
-                text=f'단어 파일을 읽을 수 없습니다: {str(e)}',
+                text=f'예비 연습 단어 파일을 읽을 수 없습니다: {str(e)}',
+                fg='red'
+            )
+            return
+            
+        # 본시행 단어 파일 확인
+        if not os.path.exists(main_word_path):
+            self.status_label.config(
+                text='본시행 단어 파일이 없습니다.',
+                fg='red'
+            )
+            return
+            
+        try:
+            # 본시행 단어 파일 읽기 테스트
+            df = pd.read_excel(main_word_path)
+            if '단어' not in df.columns:
+                self.status_label.config(
+                    text='본시행 단어 파일에 "단어" 열이 없습니다.',
+                    fg='red'
+                )
+                return
+        except Exception as e:
+            self.status_label.config(
+                text=f'본시행 단어 파일을 읽을 수 없습니다: {str(e)}',
                 fg='red'
             )
             return
@@ -444,6 +485,7 @@ class ConfigWindow:
         image_path = self.image_path_var.get()
         audio_path = self.audio_path_var.get()
         practice_word_path = self.practice_word_path_var.get()
+        main_word_path = self.main_word_path_var.get()
         practice_audio_path = self.practice_audio_path_var.get()
         
         if not os.path.exists(data_path):
@@ -479,7 +521,8 @@ class ConfigWindow:
             'participant_data_dir': data_path,
             'images_dir': image_path,
             'audio_sample_dir': audio_path,
-            'practice_word_file': practice_word_path,
+            'main_word_list': main_word_path,
+            'practice_word_list': practice_word_path,
             'practice_audio_dir': practice_audio_path
         })
         self.config_manager.save_config(self.config_manager.config)
@@ -488,7 +531,8 @@ class ConfigWindow:
             'participant_data_dir': data_path,
             'images_dir': image_path,
             'audio_sample_dir': audio_path,
-            'practice_word_file': practice_word_path,
+            'main_word_list': main_word_path,
+            'practice_word_list': practice_word_path,
             'practice_audio_dir': practice_audio_path
         }
         self.window.quit()

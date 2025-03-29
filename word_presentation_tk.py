@@ -320,10 +320,10 @@ class AudioPlaybackWindow:
             # 리스트에 따라 다른 메시지 표시 (3단계에서만)
             if self.current_stage == 3:
                 if current_list == self.selected_lists:
-                    message = "사람"
+                    message = "20대 한국인 남성"
                     self.show_speaker_image(is_ai=False)
                 else:
-                    message = "AI"
+                    message = "AI 아바타 GT-25"
                     self.show_speaker_image(is_ai=True)
             else:  # 2단계
                 message = "발음을 잘 들어주세요."
@@ -371,7 +371,7 @@ class AudioPlaybackWindow:
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
-    
+
     def close_window(self, event):
         if not self.remaining_files:
             self.on_closing()
@@ -495,27 +495,40 @@ class WordPresentationWindow:
         self.recorder.start_recording(f"{self.participant_id}_stage{self.stage}")
 
     def show_next_word(self):
-        if self.remaining_words:
-            self.current_word = self.remaining_words.pop()
-            self.word_label.config(text=self.current_word)
-            self.instruction_label.config(text='단어를 읽고, 스페이스바를 눌러 다음 단어로 넘어가세요')
+        if self.current_word_index < len(self.words):
+            word = self.words[self.current_word_index]
+            self.main_label.config(text=word)
+            self.instruction_label.config(text='단어를 소리내어 읽어주신 후 스페이스바를 눌러 다음 단어로 넘어가세요.')
+            self.current_word_index += 1
             self.start_time = time.time()
+            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+            
+            if self.current_stage in [1, 2, 6]:  # 1단계, 1단계 반복, 4단계
+                self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
+                # 타이밍 데이터에 단어와 시작 시간 기록
+                self.timing_data.append({
+                    '단어': word,
+                    '시작시간': current_time,
+                    '단계': self.current_stage,
+                    '참가자번호': self.participant_id,
+                    '선택된_리스트': self.selected_lists
+                })
         else:
             self.save_current_stage_data()
             
             if self.recorder:
                 self.recorder.stop_recording()
             
-            self.word_label.config(text='')
+            self.main_label.config(text='')
             self.instruction_label.config(text='')
             self.window.update()
             
-            next_stage = self.stage + 1
-            if next_stage <= 3:
+            next_stage = self.current_stage + 1
+            if next_stage <= 6:  # 6단계까지 진행
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
-        
+
     def next_word(self, event):
         end_time = time.time()
         duration = end_time - self.start_time
@@ -576,22 +589,42 @@ class StageInstruction:
                "이제부터 화면에 단어들이 하나씩 제시됩니다.\n\n" +
                "각 단어를 소리내어 읽어주세요.\n\n" +
                "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n" +
+               "스페이스바를 누르면 예비 시행이 시작됩니다.",
+            2: "1단계: 단어 읽기 (본시행)\n\n" + 
+               "이제부터 화면에 단어들이 하나씩 제시됩니다.\n\n" +
+               "각 단어를 소리내어 읽어주세요.\n\n" +
+               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n" +
                "모든 단어를 읽으면 다음 단계의 안내가 제시됩니다.",
-            2: "2단계: 음성 듣고 따라하기\n\n" +
+            3: "2단계: 음성 듣고 따라하기\n\n" +
+               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n\n" +
+               "각 음성을 잘 들어주세요.\n\n" +
+               "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
+               "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
+               "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
+               "스페이스바를 누르면 예비시행이 시작됩니다.",
+            4: "2단계: 음성 듣고 따라하기 (본시행)\n\n" +
                "이제부터 녹음된 음성이 하나씩 재생됩니다.\n\n" +
                "각 음성을 잘 들어주세요.\n\n" +
                "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
                "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
                "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
                "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
-            4: "4단계: 단어 읽기\n\n" +
+            5: "3단계: AI가 생성한 음성 듣고 따라하기\n\n" +
+               "방금 들었던 음성은 AI로 만들어진 아바타가 생성한 것입니다. \n\n" +
+               "이 음성을 한 번 더 듣고 따라해주세요.\n\n" +
+               "이번에는 음성을 생성한 AI 아바타의 이미지도 함께 제시됩니다.\n\n" +
+               "각 음원의 재생이 끝나면 나오는 지시문의 안내에 따라\n\n" +
+               "소리내어 따라해주신 후, 스페이스바를 눌러주세요.\n\n" +
+               "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
+               "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.",
+            6: "4단계: 단어 읽기\n\n" +
                "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n\n" +
                "각 단어를 소리내어 읽어주세요.\n\n" +
                "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n\n"
         }
 
         if selected_lists == "list1":
-            instructions[3] = ("3단계: AI가 생성한 음성 듣고 따라하기\n\n" +
+            instructions[5] = ("3단계: AI가 생성한 음성 듣고 따라하기\n\n" +
             "방금 들었던 음성은 AI로 만들어진 아바타가 생성한 것입니다. \n\n" +
             "이 음성을 한 번 더 듣고 따라해주세요.\n\n" +
             "이번에는 음성을 생성한 AI 아바타의 이미지도 함께 제시됩니다.\n\n" +
@@ -600,7 +633,7 @@ class StageInstruction:
             "반드시, 음원의 재생이 종료된 이후에 따라 말해주세요.\n\n" +
             "모든 음성을 들으면 다음 단계의 안내가 제시됩니다.")
         else:
-            instructions[3] = ("3단계: 표준 성인 발음 듣고 따라하기\n\n" 
+            instructions[5] = ("3단계: 표준 성인 발음 듣고 따라하기\n\n" 
             + "방금 들었던 음성은 20대 성인 남성이 녹음한 발음입니다. \n\n" 
             + "이 음성을 한 번 더 듣고 따라해주세요.\n\n" 
             + "이번에는 음성을 녹음한 사람의 이미지도 함께 제시됩니다.\n\n" 
@@ -629,12 +662,8 @@ class DataManager:
         existing_columns = [col for col in columns_order if col in df.columns]
         df = df[existing_columns]
         
-        # config에서 저장 경로 가져오기
-        config_manager = ConfigManager()
-        save_dir = config_manager.config['paths']['participant_data_dir']
-        
-        # 참가자 폴더 경로 생성
-        participant_folder = os.path.join(save_dir, f'participant_{participant_id}')
+        # 참가자 폴더 경로 사용 (folder_path는 이미 올바른 경로를 포함)
+        participant_folder = folder_path
         if not os.path.exists(participant_folder):
             os.makedirs(participant_folder)
             
@@ -671,7 +700,6 @@ class DataManager:
                     '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
                     '녹음장치': [sd.query_devices(selected_device)['name']],
                     '실험 리스트': [selected_lists]
-                    
                 })
                 info_df.to_excel(writer, sheet_name='Info', index=False)
                 # 현재 단계 데이터 저장
@@ -680,12 +708,8 @@ class DataManager:
     @staticmethod
     def save_participant_info(participant_id, folder_path, participant_info, selected_device, selected_lists):
         """참가자 정보를 Excel 파일의 Info 시트에 저장합니다."""
-        # config에서 저장 경로 가져오기
-        config_manager = ConfigManager()
-        save_dir = config_manager.config['paths']['participant_data_dir']
-        
-        # 참가자 폴더 경로 생성
-        participant_folder = os.path.join(save_dir, f'participant_{participant_id}')
+        # 참가자 폴더 경로 사용 (folder_path는 이미 올바른 경로를 포함)
+        participant_folder = folder_path
         if not os.path.exists(participant_folder):
             os.makedirs(participant_folder)
             
@@ -731,7 +755,8 @@ class MainExperimentWindow:
         
         # config에서 경로 설정
         self.config = config
-        self.word_path = config['paths']['word_file']
+        self.main_word_list_path = config['paths']['main_word_list']  # 본시행 단어 리스트
+        self.practice_word_list_path = config['paths']['practice_word_list']  # 예비시행 단어 리스트
         
         # 이미지 경로 설정
         self.image_dir = config['paths']['images_dir']
@@ -824,7 +849,7 @@ class MainExperimentWindow:
 
     def show_speaker_image(self, is_ai):
         """발음자 이미지를 표시합니다."""
-        if self.current_stage == 3:  # 3단계에서만 이미지 표시
+        if self.current_stage == 5:  # 5단계에서만 이미지 표시
             if is_ai and self.ai_image:
                 self.current_image = self.ai_image
                 self.image_label.config(image=self.current_image)
@@ -965,28 +990,27 @@ class MainExperimentWindow:
         """스페이스바 이벤트 핸들러"""
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         
-        if self.current_stage in [1, 4]:
-            if self.timing_data:
-                self.timing_data[-1]['스페이스바_시간'] = current_time
+        # 음성 재생 중에는 스페이스바 입력 무시
+        if hasattr(self, 'player') and self.player.is_playing():
+            return
+            
+        # 이미 스페이스바가 눌린 상태라면 무시
+        if self.space_pressed:
+            return
+            
+        self.space_pressed = True
+        
+        # 모든 단계에서 스페이스바 시간 기록
+        if self.timing_data:
+            self.timing_data[-1]['스페이스바_시간'] = current_time
+            
+        if self.current_stage in [1, 2, 6]:  # 1단계, 1단계 반복, 4단계
             self.show_next_word()
-        elif self.current_stage in [2, 3]:
-            # 음성 재생 중에만 스페이스바 입력 무시
-            if hasattr(self, 'player') and self.player.is_playing():
-                return
-                
-            # 음성이 재생 중이 아닐 때만 처리
-            if hasattr(self, 'player') and not self.player.is_playing():
-                # 이미 스페이스바가 눌린 상태라면 무시
-                if self.space_pressed:
-                    return
-                    
-                self.space_pressed = True
-                if self.timing_data:
-                    self.timing_data[-1]['스페이스바_시간'] = current_time
-                self.play_next_audio()
-                
-                # 0.5초 후에 스페이스바 상태 초기화
-                self.window.after(500, self.reset_space_pressed)
+        elif self.current_stage in [3, 4, 5]:  # 2단계, 2단계 반복, 3단계
+            self.play_next_audio()
+            
+        # 0.5초 후에 스페이스바 상태 초기화
+        self.window.after(500, self.reset_space_pressed)
 
     def reset_space_pressed(self):
         """스페이스바 입력 상태를 초기화합니다."""
@@ -1008,28 +1032,34 @@ class MainExperimentWindow:
         self.current_stage = stage_number
         self.timing_data = []
         
-        if self.current_stage == 1:
+        # 녹음기 초기화 확인
+        if not hasattr(self, 'recorder') or not self.recorder:
+            self.recorder = AudioRecorder(self.selected_device, self.folder_path)
+            
+        # 모든 단계에서 녹음 시작
+        self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
+        
+        if self.current_stage in [1, 2]:  # 1단계와 1단계 반복
             self.main_label.config(text='단어를 소리내어 읽어주세요')
             self.instruction_label.config(text='스페이스바를 눌러 시작하세요')
             self.words = self.load_words()
-            random.seed(42)
+            # 시간 기반 랜덤 시드 설정
+            current_time = int(datetime.now().timestamp() * 1000)  # 밀리초 단위
+            random.seed(current_time + stage_number)  # 단계별로 다른 시드 사용
             random.shuffle(self.words)
             self.current_word_index = 0
             
-        elif self.current_stage == 2 or self.current_stage == 3:
+        elif self.current_stage in [3, 4, 5]:  # 2단계와 2단계 반복
             self.main_label.config(text='음성을 듣고 따라 읽어주세요')
             self.instruction_label.config(text='스페이스바를 눌러 시작하세요')
             self.load_audio_files()
-            # 녹음기 초기화 확인
-            if not hasattr(self, 'recorder') or not self.recorder:
-                self.recorder = AudioRecorder(self.selected_device, self.folder_path)
-            # 2단계나 3단계 시작 시 연속 녹음 시작
-            self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
             
-        elif self.current_stage == 4:
+        elif self.current_stage == 6:  # 4단계
             self.main_label.config(text='단어를 소리내어 읽어주세요')
             self.instruction_label.config(text='스페이스바를 눌러 시작하세요')
-            random.seed(44)  # 4단계는 다른 시드 사용
+            # 시간 기반 랜덤 시드 설정
+            current_time = int(datetime.now().timestamp() * 1000)  # 밀리초 단위
+            random.seed(current_time + stage_number)  # 단계별로 다른 시드 사용
             random.shuffle(self.words)
             self.current_word_index = 0
 
@@ -1076,7 +1106,7 @@ class MainExperimentWindow:
             self.start_time = time.time()
             current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
             
-            if self.current_stage in [1, 4]:
+            if self.current_stage in [1, 2, 6]:  # 1단계, 1단계 반복, 4단계
                 self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
                 # 타이밍 데이터에 단어와 시작 시간 기록
                 self.timing_data.append({
@@ -1097,7 +1127,7 @@ class MainExperimentWindow:
             self.window.update()
             
             next_stage = self.current_stage + 1
-            if next_stage <= 4:
+            if next_stage <= 6:  # 6단계까지 진행
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
@@ -1111,15 +1141,15 @@ class MainExperimentWindow:
             # 현재 재생 중인 오디오 파일의 리스트 정보 확인
             current_list = 'list1' if 'list1' in audio_file else 'list2'
             
-            # 리스트에 따라 다른 메시지 표시 (3단계에서만)
-            if self.current_stage == 3:
+            # 리스트에 따라 다른 메시지 표시 (5단계에서만)
+            if self.current_stage == 5:  # 5단계
                 if current_list == self.selected_lists:
                     message = "20대 한국인 남성"
                     self.show_speaker_image(is_ai=False)
                 else:
                     message = "AI 아바타 GT-25"
                     self.show_speaker_image(is_ai=True)
-            else:  # 2단계
+            else:  # 2단계, 2단계 반복, 3단계
                 message = "발음을 잘 들어주세요."
                 self.show_speaker_image(is_ai=None)
                 
@@ -1150,8 +1180,8 @@ class MainExperimentWindow:
         else:
             self.save_current_stage_data()
             
-            # 2단계나 3단계가 끝날 때 녹음 중지
-            if self.current_stage in [2, 3]:
+            # 2단계, 2단계 반복, 3단계가 끝날 때 녹음 중지
+            if self.current_stage in [3, 4, 5]:
                 if hasattr(self, 'recorder') and self.recorder:
                     self.recorder.stop_recording()
             
@@ -1164,7 +1194,7 @@ class MainExperimentWindow:
             self.window.update()
             
             next_stage = self.current_stage + 1
-            if next_stage <= 4:
+            if next_stage <= 6:  # 6단계까지 진행
                 self.start_stage(next_stage)
             else:
                 self.show_experiment_completion()
@@ -1175,8 +1205,14 @@ class MainExperimentWindow:
 
     def load_words(self):
         try:
-            df = pd.read_excel(self.word_path)
-            return df['단어'].tolist()
+            if self.current_stage == 1:
+                df = pd.read_excel(self.practice_word_list_path)
+                return df['단어'].tolist()
+            elif self.current_stage == 2:
+                df = pd.read_excel(self.main_word_list_path)
+                return df['단어'].tolist()
+            else:
+                raise ValueError(f"현재 단계 {self.current_stage}에 대한 단어 목록을 불러오는 데 실패했습니다.")
         except Exception as e:
             messagebox.showerror("오류", f"단어 목록을 불러오는데 실패했습니다: {str(e)}")
             return []
@@ -1184,7 +1220,12 @@ class MainExperimentWindow:
     def load_audio_files(self):
         """오디오 파일 목록을 로드합니다."""
         self.remaining_files = []
-        audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.config['paths']['audio_sample_dir'])
+        
+        # 3단계는 practice_audio_dir, 4단계는 audio_sample_dir 사용
+        if self.current_stage == 3:
+            audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.config['paths']['practice_audio_dir'])
+        else:  # 4단계
+            audio_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.config['paths']['audio_sample_dir'])
         
         if os.path.exists(audio_dir):
             # 원본 오디오 파일 목록 가져오기

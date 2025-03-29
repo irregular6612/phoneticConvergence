@@ -26,6 +26,13 @@ class AudioDeviceWindow:
         self.window.title('녹음 장치 선택')
         self.window.geometry('400x250')
         
+        # 화면 중앙에 위치하도록 설정
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 400) // 2
+        y = (screen_height - 250) // 2
+        self.window.geometry(f'400x250+{x}+{y}')
+        
         # 안내 메시지
         tk.Label(
             self.window,
@@ -331,6 +338,13 @@ class ParticipantInfoWindow:
         self.window = tk.Tk()
         self.window.title('참가자 정보')
         self.window.geometry('300x200')
+        
+        # 화면 중앙에 위치하도록 설정
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 300) // 2
+        y = (screen_height - 200) // 2
+        self.window.geometry(f'300x200+{x}+{y}')
         
         # 참가자 정보 입력 필드
         tk.Label(self.window, text='참가자 정보 입력').pack(pady=10)
@@ -1030,6 +1044,13 @@ class PathSettingWindow:
         self.window.title('실험 파일 저장 경로 설정')
         self.window.geometry('600x300')
         
+        # 화면 중앙에 위치하도록 설정
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 600) // 2
+        y = (screen_height - 300) // 2
+        self.window.geometry(f'600x300+{x}+{y}')
+        
         # 안내 메시지
         tk.Label(
             self.window,
@@ -1162,6 +1183,13 @@ class ListSelectionWindow:
         self.window = tk.Tk()
         self.window.title('리스트 선택')
         self.window.geometry('400x250')
+        
+        # 화면 중앙에 위치하도록 설정
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width - 400) // 2
+        y = (screen_height - 250) // 2
+        self.window.geometry(f'400x250+{x}+{y}')
         
         # 안내 메시지
         tk.Label(

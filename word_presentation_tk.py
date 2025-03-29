@@ -12,6 +12,7 @@ import threading
 import glob
 import soundfile as sf
 from config_manager import ConfigManager, ConfigWindow
+import sys
 
 class AudioConstants:
     SAMPLE_RATE = 44100
@@ -106,10 +107,23 @@ class AudioDeviceWindow:
                 )
                 sd.wait()
                 
+                # 녹음된 데이터가 2차원 배열인 경우 1차원으로 변환
+                if len(recording.shape) > 1:
+                    recording = recording.flatten()
+                
+                # 임시 파일로 저장
+                temp_file = "temp_test_recording.wav"
+                sf.write(temp_file, recording, AudioConstants.SAMPLE_RATE)
+                
                 # 녹음 재생
                 messagebox.showinfo("마이크 테스트", "녹음된 소리를 재생합니다.")
-                sd.play(recording, AudioConstants.SAMPLE_RATE)
+                data, samplerate = sf.read(temp_file)
+                sd.play(data, samplerate)
                 sd.wait()
+                
+                # 임시 파일 삭제
+                if os.path.exists(temp_file):
+                    os.remove(temp_file)
                 
         except Exception as e:
             messagebox.showerror("오류", f"마이크 테스트 중 오류가 발생했습니다:\n{str(e)}")
@@ -121,6 +135,12 @@ class AudioDeviceWindow:
             self.window.quit()
         else:
             messagebox.showerror("오류", "녹음 장치를 선택해주세요.")
+    
+    def cancel(self):
+        if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+            self.selected_device = None
+            self.window.quit()
+            sys.exit()  # 프로그램 완전 종료
     
     def show(self):
         self.window.mainloop()
@@ -387,7 +407,10 @@ class ParticipantInfoWindow:
         self.window.quit()
         
     def cancel(self):
-        self.window.quit()
+        if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+            self.result = None
+            self.window.quit()
+            sys.exit()  # 프로그램 완전 종료
         
     def show(self):
         self.window.mainloop()
@@ -636,6 +659,9 @@ class MainExperimentWindow:
         self.current_stage = 0
         self.timing_data = []
         
+        # 스페이스바 입력 상태 추적을 위한 변수 추가
+        self.space_pressed = False
+        
         # 이벤트 핸들러 바인딩
         self.window.bind('<space>', self.handle_space_press)
         self.window.bind('<Return>', self.handle_return_press)
@@ -788,10 +814,27 @@ class MainExperimentWindow:
                 self.timing_data[-1]['스페이스바_시간'] = current_time
             self.show_next_word()
         elif self.current_stage in [2, 3]:
+            # 음성 재생 중에만 스페이스바 입력 무시
+            if hasattr(self, 'player') and self.player.is_playing():
+                return
+                
+            # 음성이 재생 중이 아닐 때만 처리
             if hasattr(self, 'player') and not self.player.is_playing():
+                # 이미 스페이스바가 눌린 상태라면 무시
+                if self.space_pressed:
+                    return
+                    
+                self.space_pressed = True
                 if self.timing_data:
                     self.timing_data[-1]['스페이스바_시간'] = current_time
                 self.play_next_audio()
+                
+                # 0.5초 후에 스페이스바 상태 초기화
+                self.window.after(500, self.reset_space_pressed)
+
+    def reset_space_pressed(self):
+        """스페이스바 입력 상태를 초기화합니다."""
+        self.space_pressed = False
 
     def handle_return_press(self, event):
         """엔터키 이벤트 핸들러"""
@@ -1171,7 +1214,10 @@ class PathSettingWindow:
         self.window.quit()
     
     def cancel(self):
-        self.window.quit()
+        if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+            self.selected_path = None
+            self.window.quit()
+            sys.exit()  # 프로그램 완전 종료
     
     def show(self):
         self.window.mainloop()
@@ -1223,14 +1269,25 @@ class ListSelectionWindow:
         )
         self.selection_label.pack(pady=10)
         
+        # 버튼 프레임
+        button_frame = tk.Frame(self.window)
+        button_frame.pack(pady=20)
+        
         # 확인 버튼
-        self.confirm_button = tk.Button(
-            self.window,
+        tk.Button(
+            button_frame,
             text="선택",
             command=self.confirm,
             font=('Arial', 11)
-        )
-        self.confirm_button.pack(pady=20)
+        ).pack(side=tk.LEFT, padx=10)
+        
+        # 취소 버튼
+        tk.Button(
+            button_frame,
+            text="취소",
+            command=self.cancel,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT)
         
         self.selected_lists = None
         
@@ -1260,6 +1317,12 @@ class ListSelectionWindow:
                 df.to_excel(info_file, index=False)
          
         self.window.quit()
+        
+    def cancel(self):
+        if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+            self.selected_lists = None
+            self.window.quit()
+            sys.exit()  # 프로그램 완전 종료
     
     def show(self):
         self.window.mainloop()
@@ -1272,6 +1335,24 @@ def main():
     save_path = path_window.show()
     
     if not save_path:  # 취소를 누른 경우
+        return
+        
+    # 경로 유효성 검사
+    if not os.path.exists(save_path):
+        try:
+            os.makedirs(save_path)
+        except Exception as e:
+            messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
+            return
+            
+    # 경로에 대한 쓰기 권한 확인
+    try:
+        test_file = os.path.join(save_path, '.test')
+        with open(test_file, 'w') as f:
+            f.write('test')
+        os.remove(test_file)
+    except Exception as e:
+        messagebox.showerror("오류", f"선택한 경로에 대한 쓰기 권한이 없습니다:\n{str(e)}")
         return
     
     # 설정 관리자 초기화
@@ -1295,6 +1376,8 @@ def main():
             config_window = ConfigWindow(config_manager)
             config_window.show()
         else:
+            if messagebox.askyesno("종료 확인", "실험을 종료하시겠습니까?"):
+                sys.exit()
             return
     
     # 참가자 정보 입력

@@ -254,42 +254,65 @@ class AudioPlaybackWindow:
         if self.remaining_files:
             audio_file = self.remaining_files.pop()
             self.current_file = os.path.basename(audio_file)
-            word = os.path.splitext(self.current_file)[0].split('_')[-1]  # 파일명에서 단어 추출
+            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
             
-            # 리스트에 따라 다른 메시지 표시
-            if 'list1' in audio_file:
-                message = "사람의 발음입니다."
-            else:
-                message = "AI의 발음입니다."
+            # 현재 재생 중인 오디오 파일의 리스트 정보 확인
+            current_list = 'list1' if 'list1' in audio_file else 'list2'
+            
+            # 리스트에 따라 다른 메시지 표시 (3단계에서만)
+            if self.current_stage == 3:
+                if current_list == self.selected_lists:
+                    message = "사람이 발음했습니다."
+                else:
+                    message = "AI가 발음했습니다."
+            else:  # 2단계
+                message = "발음을 듣고 따라하세요"
                 
+            # 첫 번째 메시지 표시
             self.instruction_label.config(text=message)
+            self.window.update()
             
-            # 이전 녹음 중지
-            if hasattr(self, 'recorder') and self.recorder:
-                self.recorder.stop_recording()
+            # 1초 대기
+            time.sleep(1)
             
-            # 새로운 녹음 시작
-            self.recorder.start_recording(f"{self.participant_id}_stage{self.current_stage}")
-            
+            # 오디오 재생
             duration = self.player.play_audio(audio_file)
-            self.start_time = time.time()
-        else:
-            self.instruction_label.config(text='모든 음성 청취가 끝났습니다.\n엔터를 눌러 다음 단계로 진행하세요')
-            self.window.unbind('<space>')
-        
-    def next_audio(self, event):
-        if self.start_time:
-            end_time = time.time()
-            duration = end_time - self.start_time
             
-            # 타이밍 데이터 저장
+            # 오디오 재생이 끝날 때까지 대기
+            while self.player.is_playing():
+                time.sleep(0.1)
+            
+            # 오디오 재생이 끝나면 두 번째 메시지 표시
+            self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
+            self.window.update()
+            
+            # 타이밍 데이터에 음성 파일과 시작 시간 기록
             self.timing_data.append({
                 '음성파일': self.current_file,
-                '제시시간': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                '청취시간(초)': round(duration, 3)
+                '시작시간': current_time,
+                '단계': self.current_stage,
+                '참가자번호': self.participant_id,
+                '선택된_리스트': current_list
             })
+        else:
+            self.save_current_stage_data()
             
-        self.play_next_audio()
+            # 2단계나 3단계가 끝날 때 녹음 중지
+            if self.current_stage in [2, 3]:
+                if hasattr(self, 'recorder') and self.recorder:
+                    self.recorder.stop_recording()
+            
+            if self.player:
+                sd.stop()
+            
+            self.instruction_label.config(text='')
+            self.window.update()
+            
+            next_stage = self.current_stage + 1
+            if next_stage <= 4:
+                self.start_stage(next_stage)
+            else:
+                self.show_experiment_completion()
     
     def close_window(self, event):
         if not self.remaining_files:
@@ -884,10 +907,24 @@ class MainExperimentWindow:
             else:  # 2단계
                 message = "발음을 듣고 따라하세요"
                 
+            # 첫 번째 메시지 표시
             self.main_label.config(text=message)
-            self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
+            self.instruction_label.config(text='')
+            self.window.update()
             
+            # 1초 대기
+            time.sleep(1)
+            
+            # 오디오 재생
             duration = self.player.play_audio(audio_file)
+            
+            # 오디오 재생이 끝날 때까지 대기
+            while self.player.is_playing():
+                time.sleep(0.1)
+            
+            # 오디오 재생이 끝나면 두 번째 메시지 표시
+            self.instruction_label.config(text='스페이스바를 눌러 다음으로 넘어가세요')
+            self.window.update()
             
             # 타이밍 데이터에 음성 파일과 시작 시간 기록
             self.timing_data.append({

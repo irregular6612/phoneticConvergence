@@ -13,6 +13,7 @@ import glob
 import soundfile as sf
 from config_manager import ConfigManager, ConfigWindow
 import sys
+import shutil
 
 class AudioConstants:
     SAMPLE_RATE = 44100
@@ -39,7 +40,7 @@ class AudioDeviceWindow:
             self.window,
             text='녹음에 사용할 오디오 입력 장치를 선택해주세요.',
             font=('Arial', 12),
-            wraplength=350
+            wraplength=500
         ).pack(pady=20)
         
         # 장치 목록 가져오기
@@ -332,9 +333,6 @@ class AudioPlaybackWindow:
             self.instruction_label.config(text=message)
             self.window.update()
             
-            # 1초 대기
-            #time.sleep(.3)
-            
             # 오디오 재생
             duration = self.player.play_audio(audio_file)
             
@@ -573,7 +571,7 @@ class WordPresentationWindow:
 class StageInstruction:
     @staticmethod
     def get_instruction(stage_number, selected_lists):
-        if selected_lists == "list2":
+        if selected_lists == "list1":
             flag = "AI"
         else:
             flag = "사람"
@@ -605,7 +603,7 @@ class StageInstruction:
 
 class DataManager:
     @staticmethod
-    def save_stage_data(timing_data, participant_id, folder_path, current_stage):
+    def save_stage_data(timing_data, participant_id, folder_path, current_stage, selected_device, selected_lists):
         """현재 단계의 타이밍 데이터를 Excel 파일로 저장합니다."""
         if not timing_data:
             return
@@ -621,8 +619,17 @@ class DataManager:
         existing_columns = [col for col in columns_order if col in df.columns]
         df = df[existing_columns]
         
+        # config에서 저장 경로 가져오기
+        config_manager = ConfigManager()
+        save_dir = config_manager.config['paths']['participant_data_dir']
+        
+        # 참가자 폴더 경로 생성
+        participant_folder = os.path.join(save_dir, f'participant_{participant_id}')
+        if not os.path.exists(participant_folder):
+            os.makedirs(participant_folder)
+            
         # Excel 파일 경로
-        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
+        excel_path = os.path.join(participant_folder, f"{participant_id}_experiment_data.xlsx")
         
         # 기존 파일이 있는지 확인
         if os.path.exists(excel_path):
@@ -654,6 +661,7 @@ class DataManager:
                     '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
                     '녹음장치': [sd.query_devices(selected_device)['name']],
                     '실험 리스트': [selected_lists]
+                    
                 })
                 info_df.to_excel(writer, sheet_name='Info', index=False)
                 # 현재 단계 데이터 저장
@@ -662,6 +670,15 @@ class DataManager:
     @staticmethod
     def save_participant_info(participant_id, folder_path, participant_info, selected_device, selected_lists):
         """참가자 정보를 Excel 파일의 Info 시트에 저장합니다."""
+        # config에서 저장 경로 가져오기
+        config_manager = ConfigManager()
+        save_dir = config_manager.config['paths']['participant_data_dir']
+        
+        # 참가자 폴더 경로 생성
+        participant_folder = os.path.join(save_dir, f'participant_{participant_id}')
+        if not os.path.exists(participant_folder):
+            os.makedirs(participant_folder)
+            
         info_df = pd.DataFrame({
             '참가자번호': [participant_id],
             '성별': participant_info['gender'],
@@ -671,7 +688,7 @@ class DataManager:
             '실험 리스트': [selected_lists]
         })
         
-        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
+        excel_path = os.path.join(participant_folder, f"{participant_id}_experiment_data.xlsx")
         with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
             info_df.to_excel(writer, sheet_name='Info', index=False)
 
@@ -680,6 +697,27 @@ class MainExperimentWindow:
         self.window = tk.Tk()
         self.window.title('단어 제시 실험')
         self.window.attributes('-fullscreen', True)
+        
+        # 화면 크기 가져오기
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        
+        # 기본 폰트 크기 계산 (화면 크기에 비례)
+        self.base_font_size = int(min(screen_height / 25, screen_width / 45))  # 더 작은 값으로 조정
+        self.large_font_size = int(self.base_font_size * 1.8)  # 비율 조정
+        self.small_font_size = int(self.base_font_size * 0.8)
+        
+        # 창 크기 설정 (화면 크기의 70%로 조정)
+        window_width = int(screen_width * 0.7)
+        window_height = int(screen_height * 0.7)
+        
+        # 창을 화면 중앙에 위치
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        self.window.geometry(f'{window_width}x{window_height}+{x}+{y}')
+        
+        # wraplength 계산 (창 너비의 80%로 조정)
+        self.wrap_length = int(window_width * 0.8)
         
         # config에서 경로 설정
         self.config = config
@@ -705,11 +743,11 @@ class MainExperimentWindow:
         self.image_label.pack(pady=(0, 30))  # 아래쪽 여백만 추가
         
         # 메인 텍스트 레이블
-        self.main_label = tk.Label(self.center_frame, text='', font=('Arial', 64))
+        self.main_label = tk.Label(self.center_frame, text='', font=('Arial', self.large_font_size))
         self.main_label.pack(pady=20)
         
         # 안내 텍스트 레이블
-        self.instruction_label = tk.Label(self.center_frame, text='', font=('Arial', 36))
+        self.instruction_label = tk.Label(self.center_frame, text='', font=('Arial', self.small_font_size))
         self.instruction_label.pack(pady=20)
         
         self.current_stage = 0
@@ -722,8 +760,38 @@ class MainExperimentWindow:
         self.window.bind('<space>', self.handle_space_press)
         self.window.bind('<Return>', self.handle_return_press)
         
+        # 창 크기 변경 시 폰트 크기 조절
+        self.window.bind('<Configure>', self.on_window_resize)
+        
         # 하위 창들을 위한 변수
         self.current_dialog = None
+
+    def on_window_resize(self, event):
+        """창 크기가 변경될 때 폰트 크기와 wraplength 조절"""
+        if event.widget == self.window:
+            # 새로운 기본 폰트 크기 계산
+            new_base_size = int(min(event.height / 25, event.width / 45))  # 더 작은 값으로 조정
+            new_large_size = int(new_base_size * 1.8)  # 비율 조정
+            new_wrap_length = int(event.width * 0.8)  # wraplength를 창 너비의 80%로 설정
+            
+            # 모든 레이블 업데이트
+            for widget in self.window.winfo_children():
+                if isinstance(widget, tk.Label):
+                    current_font = widget['font']
+                    if isinstance(current_font, tuple):
+                        font_family = current_font[0]
+                        # 큰 폰트인지 작은 폰트인지 확인
+                        if float(current_font[1]) > self.base_font_size:
+                            new_size = new_large_size
+                        else:
+                            new_size = new_base_size
+                        widget.configure(font=(font_family, new_size))
+                        widget.configure(wraplength=new_wrap_length)
+            
+            # 현재 값 업데이트
+            self.base_font_size = new_base_size
+            self.large_font_size = new_large_size
+            self.wrap_length = new_wrap_length
 
     def load_images(self):
         """이미지 파일들을 로드합니다."""
@@ -782,22 +850,8 @@ class MainExperimentWindow:
 
 2. 실험 구성
 실험은 총 4단계로 구성되어 있습니다:
-
-1단계: 단어 읽기
-- 화면에 제시되는 단어들을 소리내어 읽어주세요.
-- 각 단어를 읽은 후 스페이스바를 눌러 다음 단어로 넘어갑니다.
-
-2단계: 음성 듣기
-- 녹음된 음성을 듣고 따라 읽어주세요.
-- 각 음성을 듣고 따라 읽은 후 스페이스바를 눌러 다음으로 넘어갑니다.
-
-3단계: 음성 듣기
-- 이전 단계에서 들은 음성들을 다시 한번 따라 읽어주세요.
-- 각 음성을 듣고 따라 읽은 후 스페이스바를 눌러 다음으로 넘어갑니다.
-
-4단계: 단어 읽기
-- 마지막으로 단어들을 한 번 더 읽어주세요.
-- 각 단어를 읽은 후 스페이스바를 눌러 다음 단어로 넘어갑니다.
+각 단계별 안내는 단계별 시작 전 제공될 예정이며,
+청각, 시각적 자극을 바탕으로 따라 말하는 과제입니다.
 
 3. 주의사항
 - 모든 단계에서 마이크를 통해 음성이 녹음됩니다.
@@ -817,7 +871,7 @@ class MainExperimentWindow:
             text=intro_text,
             font=('Arial', 24),
             justify=tk.CENTER,
-            wraplength=800
+            wraplength=self.wrap_length
         )
         instruction_text.pack(expand=True, padx=20, pady=20)
         
@@ -865,7 +919,9 @@ class MainExperimentWindow:
             self.timing_data,
             self.participant_id,
             self.folder_path,
-            self.current_stage
+            self.current_stage,
+            self.selected_device,
+            self.selected_lists
         )
 
     def show_stage_instruction(self, stage_number):
@@ -881,7 +937,7 @@ class MainExperimentWindow:
             text=StageInstruction.get_instruction(stage_number, self.selected_lists),
             font=('Arial', 36),
             justify=tk.CENTER,
-            wraplength=800
+            wraplength=self.wrap_length
         )
         instruction_text.pack(expand=True, padx=20, pady=20)
         
@@ -1062,9 +1118,6 @@ class MainExperimentWindow:
             self.instruction_label.config(text='')
             self.window.update()
             
-            # 1초 대기
-            #time.sleep(.3)
-            
             # 오디오 재생
             duration = self.player.play_audio(audio_file)
             
@@ -1161,8 +1214,74 @@ class MainExperimentWindow:
         """메인 윈도우를 표시하고 이벤트 루프를 시작합니다."""
         self.window.mainloop()
 
-def check_existing_data(participant_id, base_dir):
+def check_existing_data(participant_id, base_dir, selected_device=None, selected_lists=None, participant_info=None):
     """기존 데이터가 있는지 확인하고, 있는 경우 새로운 파일 이름을 생성합니다."""
+    # config에서 저장 경로 가져오기
+    config_manager = ConfigManager()
+    save_dir = config_manager.config['paths']['participant_data_dir']
+    
+    # base_dir이 config의 경로와 다른 경우, config의 경로도 확인
+    if base_dir != save_dir:
+        config_folder_path = os.path.join(save_dir, f'participant_{participant_id}')
+        if os.path.exists(config_folder_path):
+            excel_path = os.path.join(config_folder_path, f"{participant_id}_experiment_data.xlsx")
+            if os.path.exists(excel_path):
+                try:
+                    # 기존 데이터 읽기
+                    with pd.ExcelFile(excel_path) as xls:
+                        # 완료된 단계 확인
+                        completed_stages = []
+                        for sheet_name in xls.sheet_names:
+                            if sheet_name.startswith('Stage'):
+                                completed_stages.append(int(sheet_name[5:]))
+                        
+                        if completed_stages:
+                            message = f"참가자 {participant_id}의 기존 데이터가 있습니다.\n"
+                            message += f"완료된 단계: {', '.join(map(str, sorted(completed_stages)))}\n\n"
+                            message += "기존 데이터를 덮어쓰시겠습니까?"
+                        else:
+                            message = f"참가자 {participant_id}의 기존 데이터가 있습니다.\n"
+                            message += "아직 완료된 단계가 없습니다.\n\n"
+                            message += "기존 데이터를 덮어쓰시겠습니까?"
+                            
+                        if messagebox.askyesno('확인', message):
+                            # 현재 날짜와 시간 정보를 포함한 새로운 파일 이름 생성
+                            current_time = datetime.now()
+                            time_str = current_time.strftime('%Y%m%d_%H%M')
+                            new_folder_path = os.path.join(save_dir, f'participant_{participant_id}_{time_str}')
+                            
+                            # 새 폴더 생성
+                            if not os.path.exists(new_folder_path):
+                                os.makedirs(new_folder_path)
+                            
+                            # 새로운 Excel 파일 생성
+                            new_excel_path = os.path.join(new_folder_path, f"{participant_id}_experiment_data.xlsx")
+                            with pd.ExcelWriter(new_excel_path, engine='openpyxl') as writer:
+                                # Info 시트 생성
+                                info_df = pd.DataFrame({
+                                    '참가자번호': [participant_id],
+                                    '성별': [participant_info['gender'] if participant_info else ''],
+                                    '나이': [participant_info['age'] if participant_info else ''],
+                                    '실험일시': [current_time.strftime('%Y-%m-%d %H:%M:%S')],
+                                    '녹음장치': [sd.query_devices(selected_device)['name'] if selected_device else ''],
+                                    '실험 리스트': [selected_lists if selected_lists else '']
+                                })
+                                info_df.to_excel(writer, sheet_name='Info', index=False)
+                            
+                            # config의 participant_data_dir을 새 폴더로 업데이트
+                            config_manager.config['paths']['participant_data_dir'] = new_folder_path
+                            config_manager.save_config(config_manager.config)
+                            
+                            return new_folder_path
+                        else:
+                            # 덮어쓰기를 거절한 경우
+                            messagebox.showinfo("알림", "다른 참가자 번호를 입력해주세요.")
+                            return None
+                except Exception as e:
+                    messagebox.showerror("오류", f"기존 데이터 확인 중 오류가 발생했습니다:\n{str(e)}")
+                    return None
+    
+    # base_dir 경로 확인
     folder_path = os.path.join(base_dir, f'participant_{participant_id}')
     if os.path.exists(folder_path):
         # 실험 데이터 파일 확인
@@ -1191,6 +1310,29 @@ def check_existing_data(participant_id, base_dir):
                         current_time = datetime.now()
                         time_str = current_time.strftime('%Y%m%d_%H%M')
                         new_folder_path = os.path.join(base_dir, f'participant_{participant_id}_{time_str}')
+                        
+                        # 새 폴더 생성
+                        if not os.path.exists(new_folder_path):
+                            os.makedirs(new_folder_path)
+                        
+                        # 새로운 Excel 파일 생성
+                        new_excel_path = os.path.join(new_folder_path, f"{participant_id}_experiment_data.xlsx")
+                        with pd.ExcelWriter(new_excel_path, engine='openpyxl') as writer:
+                            # Info 시트 생성
+                            info_df = pd.DataFrame({
+                                '참가자번호': [participant_id],
+                                '성별': [participant_info['gender'] if participant_info else ''],
+                                '나이': [participant_info['age'] if participant_info else ''],
+                                '실험일시': [current_time.strftime('%Y-%m-%d %H:%M:%S')],
+                                '녹음장치': [sd.query_devices(selected_device)['name'] if selected_device else ''],
+                                '실험 리스트': [selected_lists if selected_lists else '']
+                            })
+                            info_df.to_excel(writer, sheet_name='Info', index=False)
+                        
+                        # config의 participant_data_dir을 새 폴더로 업데이트
+                        config_manager.config['paths']['participant_data_dir'] = new_folder_path
+                        config_manager.save_config(config_manager.config)
+                        
                         return new_folder_path
                     else:
                         # 덮어쓰기를 거절한 경우
@@ -1201,9 +1343,9 @@ def check_existing_data(participant_id, base_dir):
                 return None
     return folder_path
 
-def create_participant_folder(participant_id, base_dir):
+def create_participant_folder(participant_id, base_dir, selected_device=None, selected_lists=None, participant_info=None):
     """참가자 데이터 폴더를 생성합니다."""
-    folder_path = check_existing_data(participant_id, base_dir)
+    folder_path = check_existing_data(participant_id, base_dir, selected_device, selected_lists, participant_info)
     if folder_path:
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
@@ -1223,9 +1365,16 @@ class PathSettingWindow:
         y = (screen_height - 400) // 2
         self.window.geometry(f'600x400+{x}+{y}')
         
-        # config 파일에서 이미지 경로 확인
+        # config 파일에서 경로 확인
         config_manager = ConfigManager()
+        config_data_path = config_manager.config['paths'].get('participant_data_dir', '')
         config_image_path = config_manager.config['paths'].get('images_dir', '')
+        
+        # 실험 데이터 경로 유효성 검사
+        if config_data_path and os.path.exists(config_data_path):
+            self.data_path_var = tk.StringVar(value=config_data_path)
+        else:
+            self.data_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
         
         # 이미지 경로 유효성 검사
         if config_image_path and os.path.exists(config_image_path):
@@ -1256,7 +1405,7 @@ class PathSettingWindow:
             self.window,
             text='실험 파일이 저장될 경로와 이미지 디렉토리 경로를 설정해주세요.',
             font=('Arial', 12),
-            wraplength=550
+            wraplength=800
         ).pack(pady=20)
         
         # 실험 데이터 경로 설정
@@ -1270,7 +1419,6 @@ class PathSettingWindow:
         data_path_frame = tk.Frame(self.window)
         data_path_frame.pack(fill='x', padx=20, pady=5)
         
-        self.data_path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
         self.data_path_entry = tk.Entry(
             data_path_frame,
             textvariable=self.data_path_var,
@@ -1486,7 +1634,7 @@ class ListSelectionWindow:
             self.window,
             text='실험에 사용할 리스트를 선택해주세요.',
             font=('Arial', 12),
-            wraplength=350
+            wraplength=500
         ).pack(pady=20)
         
         # 리스트 선택
@@ -1639,12 +1787,6 @@ def main():
             
         participant_id = participant_info['participant_id']
         
-        # 폴더 생성
-        folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
-        
-        if not folder_path:
-            continue  # 참가자 정보 입력 창으로 돌아가기
-        
         # 리스트 선택
         list_window = ListSelectionWindow()
         selected_lists = list_window.show()
@@ -1658,6 +1800,12 @@ def main():
         
         if selected_device is None:
             return
+        
+        # 폴더 생성
+        folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'], selected_device, selected_lists, participant_info)
+        
+        if not folder_path:
+            continue  # 참가자 정보 입력 창으로 돌아가기
         
         # 메인 실험 창 실행
         main_window = MainExperimentWindow(config_manager.config)

@@ -13,13 +13,12 @@ import glob
 import soundfile as sf
 from config_manager import ConfigManager, ConfigWindow
 
+class AudioConstants:
+    SAMPLE_RATE = 44100
+    CHANNELS = 1
 
 # 단어 리스트 (예시)
 WORDS = ['사과', '바나나', '오렌지', '포도', '키위', '딸기', '수박', '참외']
-
-# 녹음 설정
-SAMPLE_RATE = 44100  # 샘플링 레이트
-CHANNELS = 1  # 모노 녹음
 
 class AudioDeviceWindow:
     def __init__(self):
@@ -93,16 +92,16 @@ class AudioDeviceWindow:
                 
                 # 3초 녹음
                 recording = sd.rec(
-                    int(3 * SAMPLE_RATE),
-                    samplerate=SAMPLE_RATE,
-                    channels=CHANNELS,
+                    int(3 * AudioConstants.SAMPLE_RATE),
+                    samplerate=AudioConstants.SAMPLE_RATE,
+                    channels=AudioConstants.CHANNELS,
                     device=device_index
                 )
                 sd.wait()
                 
                 # 녹음 재생
                 messagebox.showinfo("마이크 테스트", "녹음된 소리를 재생합니다.")
-                sd.play(recording, SAMPLE_RATE)
+                sd.play(recording, AudioConstants.SAMPLE_RATE)
                 sd.wait()
                 
         except Exception as e:
@@ -150,7 +149,7 @@ class AudioRecorder:
         self.stream = sd.InputStream(
             device=self.device_index,
             channels=1,
-            samplerate=44100,
+            samplerate=AudioConstants.SAMPLE_RATE,
             callback=callback
         )
         self.stream.start()
@@ -167,7 +166,7 @@ class AudioRecorder:
             
         if self.frames:
             data = np.concatenate(self.frames, axis=0)
-            sf.write(self.filename, data, 44100)
+            sf.write(self.filename, data, AudioConstants.SAMPLE_RATE)
             self.frames = []
 
 class AudioPlayer:
@@ -478,281 +477,104 @@ class WordPresentationWindow:
         )
         exit_button.pack(pady=40)
 
-class StageInstructionWindow:
-    def __init__(self, stage_number):
-        self.window = tk.Tk()
-        self.window.title(f'{stage_number}단계 설명')
-        self.window.geometry('500x300')
-
-        flag = 'AI가' if self.selected_lists == 'list1' else '사람이'
-
-        
-        # 설명 텍스트
+class StageInstruction:
+    @staticmethod
+    def get_instruction(stage_number, selected_lists):
         instructions = {
             1: "1단계: 단어 읽기\n\n" + 
-                "이번 단계는 화면에 제시되는 단어를 소래내어 읽어주시는 과제입니다.\n" +
-                "화면에는 단어들이 차례대로 하나씩 제시됩니다.\n" +
-                "각 단어를 소리내어 읽어주신 후, \n" +
-                "스페이스바를 눌러주시면 다음 단어가 제시됩니다.\n" +
-                "바로 본 시행이 이행되니, 마이크에 녹음이 잘되도록 주의하셔서 읽어주세요.",
+               "이제부터 화면에 단어들이 하나씩 제시됩니다.\n" +
+               "각 단어를 소리내어 읽어주세요.\n" +
+               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
+               "모든 단어를 읽으면 자동으로 다음 단계로 넘어갑니다.",
             2: "2단계: 음성 듣기\n\n" +
-                "이번 단계는 들리는 단어를 따라 읽어주시는 과제입니다.\n" +
-               "스피커를 통해 단어가 하나씩 재생됩니다.\n" +
-               "각 단어를 주의 깊게 듣고 따라 읽어주신 후, \n" +
-               "스페이스바를 눌러주시면 다음 단어가 제시됩니다.\n" +
-               "바로 본 시행이 이행되니, 마이크에 녹음이 잘되도록 주의하셔서 읽어주세요.",
+               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
+               "각 음성을 듣고 따라 읽어주세요.\n" +
+               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
+               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
             3: "3단계: 음성 듣기\n\n" +
-               "이번 단계는 이전 단계에서 들은" + flag + " 녹음한 단어들을 다시 한번 따라 읽어주시는 과제입니다.\n" +
-               "마찬가지로, 스피커를 통해 단어가 하나씩 재생됩니다.\n" +
-               "각 단어를 주의 깊게 듣고 따라 읽어주신 후, \n" +
-               "스페이스바를 눌러주시면 다음 단어가 제시됩니다.\n" +
-               "바로 본 시행이 이행되니, 마이크에 녹음이 잘되도록 주의하셔서 읽어주세요.",
-            4: "5단계: 단어 읽기\n\n" +
+               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
+               "각 음성을 듣고 따라 읽어주세요.\n" +
+               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
+               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
+            4: "4단계: 단어 읽기\n\n" +
                "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n" +
                "각 단어를 소리내어 읽어주세요.\n" +
                "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
                "모든 단어를 읽으면 실험이 종료됩니다."
         }
-        
-        # 설명 레이블 
-        self.instruction_label = tk.Label(
-            self.window,
-            text=instructions[stage_number],
-            font=('Arial', 12),
-            justify=tk.LEFT,
-            wraplength=450
-        )
-        self.instruction_label.pack(expand=True, padx=20, pady=20)
-        
-        # 시작 버튼
-        self.start_button = tk.Button(
-            self.window,
-            text="시작하기",
-            command=self.start,
-            font=('Arial', 12)
-        )
-        self.start_button.pack(pady=20)
-        
-    def start(self):
-        self.window.quit()
-        
-    def show(self):
-        self.window.mainloop()
-        self.window.destroy()
+        return instructions.get(stage_number, "")
 
-class ListSelectionWindow:
-    def __init__(self):
-        self.window = tk.Tk()
-        self.window.title('리스트 선택')
-        self.window.geometry('400x250')
-        
-        # 안내 메시지
-        tk.Label(
-            self.window,
-            text='실험에 사용할 리스트를 선택해주세요.',
-            font=('Arial', 12),
-            wraplength=350
-        ).pack(pady=20)
-        
-        # 리스트 선택
-        tk.Label(
-            self.window,
-            text='리스트:',
-            font=('Arial', 11)
-        ).pack(pady=5)
-        
-        self.list_combo = ttk.Combobox(
-            self.window,
-            width=40
-        )
-        self.list_combo['values'] = ['list1', 'list2']  # 리스트 1, 2만 표시
-        self.list_combo.current(0)
-        self.list_combo.pack(pady=5)
-        
-        # 현재 선택된 리스트 표시
-        self.selection_label = tk.Label(
-            self.window,
-            text='',
-            font=('Arial', 11),
-            wraplength=350
-        )
-        self.selection_label.pack(pady=10)
-        
-        # 확인 버튼
-        self.confirm_button = tk.Button(
-            self.window,
-            text="선택",
-            command=self.confirm,
-            font=('Arial', 11)
-        )
-        self.confirm_button.pack(pady=20)
-        
-        self.selected_lists = None
-        
-    def confirm(self):
-        selected = self.list_combo.get()
-        self.selected_lists = selected
-        
-        # 선택된 리스트 정보를 참가자의 info 파일에 저장
-        config_manager = ConfigManager()
-        folder_path = config_manager.config['paths']['participant_data_dir']
-        
-        # 참가자 ID 가져오기
-        participant_id = None
-        for file in os.listdir(folder_path):
-            if file.startswith('participant_') and file.endswith('_info.xlsx'):
-                participant_id = file.split('_')[1]
-                break
-        
-        if participant_id:
-            info_file = os.path.join(folder_path, f'participant_{participant_id}_info.xlsx')
-            if os.path.exists(info_file):
-                # 기존 파일 읽기
-                df = pd.read_excel(info_file)
-                # 실험 리스트 열만 추가
-                df['실험 리스트'] = selected
-                # 파일 다시 저장
-                df.to_excel(info_file, index=False)
-         
-        self.window.quit()
-    
-    def show(self):
-        self.window.mainloop()
-        self.window.destroy()
-        return self.selected_lists
-
-class PathSettingWindow:
-    def __init__(self):
-        self.window = tk.Tk()
-        self.window.title('실험 파일 저장 경로 설정')
-        self.window.geometry('600x300')
-        
-        # 안내 메시지
-        tk.Label(
-            self.window,
-            text='실험 파일이 저장될 경로를 설정해주세요.',
-            font=('Arial', 12),
-            wraplength=550
-        ).pack(pady=20)
-        
-        # 경로 표시 프레임
-        path_frame = tk.Frame(self.window)
-        path_frame.pack(fill='x', padx=20, pady=10)
-        
-        self.path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
-        self.path_entry = tk.Entry(
-            path_frame,
-            textvariable=self.path_var,
-            width=50,
-            font=('Arial', 11)
-        )
-        self.path_entry.pack(side=tk.LEFT, padx=5)
-        
-        # 경로 선택 버튼
-        tk.Button(
-            path_frame,
-            text="경로 선택",
-            command=self.select_path,
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=5)
-        
-        # 경로 생성 상태 표시
-        self.status_label = tk.Label(
-            self.window,
-            text='',
-            font=('Arial', 11),
-            fg='gray'
-        )
-        self.status_label.pack(pady=10)
-        
-        # 버튼 프레임
-        button_frame = tk.Frame(self.window)
-        button_frame.pack(pady=20)
-        
-        # 확인 버튼
-        tk.Button(
-            button_frame,
-            text="확인",
-            command=self.confirm,
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT, padx=10)
-        
-        # 취소 버튼
-        tk.Button(
-            button_frame,
-            text="취소",
-            command=self.cancel,
-            font=('Arial', 11)
-        ).pack(side=tk.LEFT)
-        
-        self.selected_path = None
-        
-    def select_path(self):
-        path = tk.filedialog.askdirectory(
-            initialdir=self.path_var.get(),
-            title='실험 파일 저장 경로 선택'
-        )
-        if path:
-            self.path_var.set(path)
-            self.check_path()
-    
-    def check_path(self):
-        path = self.path_var.get()
-        if not path:
-            self.status_label.config(
-                text='경로를 입력해주세요.',
-                fg='red'
-            )
+class DataManager:
+    @staticmethod
+    def save_stage_data(timing_data, participant_id, folder_path, current_stage):
+        """현재 단계의 타이밍 데이터를 Excel 파일로 저장합니다."""
+        if not timing_data:
             return
             
-        if not os.path.exists(path):
-            try:
-                os.makedirs(path)
-                self.status_label.config(
-                    text=f'새 경로가 생성되었습니다: {path}',
-                    fg='blue'
-                )
-            except Exception as e:
-                self.status_label.config(
-                    text=f'경로 생성 실패: {str(e)}',
-                    fg='red'
-                )
-        else:
-            # 경로가 존재하는 경우, 쓰기 권한 확인
-            try:
-                test_file = os.path.join(path, '.test')
-                with open(test_file, 'w') as f:
-                    f.write('test')
-                os.remove(test_file)
-                self.status_label.config(
-                    text='경로가 유효합니다. 이 경로를 사용할 수 있습니다.',
-                    fg='green'
-                )
-            except Exception as e:
-                self.status_label.config(
-                    text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
-                    fg='red'
-                )
-    
-    def confirm(self):
-        path = self.path_var.get()
-        if not os.path.exists(path):
-            try:
-                os.makedirs(path)
-            except Exception as e:
-                messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
-                return
+        df = pd.DataFrame(timing_data)
         
-        self.selected_path = path
-        self.window.quit()
-    
-    def cancel(self):
-        self.window.quit()
-    
-    def show(self):
-        self.window.mainloop()
-        self.window.destroy()
-        return self.selected_path
+        # 열 순서 정렬
+        columns_order = [
+            '참가자번호', '단계', '단어', '음성파일', 
+            '시작시간', '스페이스바_시간'
+        ]
+        # 존재하는 열만 선택
+        existing_columns = [col for col in columns_order if col in df.columns]
+        df = df[existing_columns]
+        
+        # Excel 파일 경로
+        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
+        
+        # 기존 파일이 있는지 확인
+        if os.path.exists(excel_path):
+            # 기존 파일 읽기
+            with pd.ExcelFile(excel_path) as xls:
+                # Info 시트는 그대로 유지
+                info_df = pd.read_excel(xls, sheet_name='Info')
+                
+                # 기존 데이터 시트들 읽기
+                existing_sheets = {}
+                for sheet_name in xls.sheet_names:
+                    if sheet_name != 'Info':
+                        existing_sheets[sheet_name] = pd.read_excel(xls, sheet_name=sheet_name)
+                
+                # 현재 단계 데이터 추가
+                existing_sheets[f'Stage{current_stage}'] = df
+                
+                # 모든 데이터를 하나의 파일로 저장
+                with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+                    info_df.to_excel(writer, sheet_name='Info', index=False)
+                    for sheet_name, sheet_data in existing_sheets.items():
+                        sheet_data.to_excel(writer, sheet_name=sheet_name, index=False)
+        else:
+            # 새 파일 생성
+            with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+                # Info 시트 생성
+                info_df = pd.DataFrame({
+                    '참가자번호': [participant_id],
+                    '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
+                    '녹음장치': [sd.query_devices(selected_device)['name']],
+                    '실험 리스트': [selected_lists]
+                })
+                info_df.to_excel(writer, sheet_name='Info', index=False)
+                # 현재 단계 데이터 저장
+                df.to_excel(writer, sheet_name=f'Stage{current_stage}', index=False)
+
+    @staticmethod
+    def save_participant_info(participant_id, folder_path, participant_info, selected_device, selected_lists):
+        """참가자 정보를 Excel 파일의 Info 시트에 저장합니다."""
+        info_df = pd.DataFrame({
+            '참가자번호': [participant_id],
+            '성별': participant_info['gender'],
+            '나이': participant_info['age'],
+            '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
+            '녹음장치': [sd.query_devices(selected_device)['name']],
+            '실험 리스트': [selected_lists]
+        })
+        
+        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
+        with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+            info_df.to_excel(writer, sheet_name='Info', index=False)
 
 class MainExperimentWindow:
     def __init__(self, config):
@@ -777,11 +599,121 @@ class MainExperimentWindow:
         self.current_stage = 0
         self.timing_data = []
         
-        self.space_pressed = self.space_pressed_handler
-        self.window.bind('<space>', self.space_pressed)
+        # 이벤트 핸들러 바인딩
+        self.window.bind('<space>', self.handle_space_press)
+        self.window.bind('<Return>', self.handle_return_press)
         
         # 하위 창들을 위한 변수
         self.current_dialog = None
+
+    def show_experiment_intro(self):
+        """전체 실험 설명을 보여주는 창을 표시합니다."""
+        if self.current_dialog:
+            self.current_dialog.destroy()
+            
+        instruction_frame = tk.Frame(self.window)
+        instruction_frame.place(relx=0.5, rely=0.5, anchor='center')
+        
+        intro_text = """
+[실험 안내]
+
+안녕하세요. 본 실험에 참여해 주셔서 감사합니다.
+
+1. 실험 목적
+이 실험은 음성 학습 과정에서 발생하는 발음 변화를 연구하기 위한 것입니다.
+참가자 여러분의 발음이 어떻게 변화하는지 관찰하고 분석하여, 
+음성 학습의 특성과 패턴을 이해하는 것이 목적입니다.
+
+2. 실험 구성
+실험은 총 4단계로 구성되어 있습니다:
+
+1단계: 단어 읽기
+- 화면에 제시되는 단어들을 소리내어 읽어주세요.
+- 각 단어를 읽은 후 스페이스바를 눌러 다음 단어로 넘어갑니다.
+
+2단계: 음성 듣기
+- 녹음된 음성을 듣고 따라 읽어주세요.
+- 각 음성을 듣고 따라 읽은 후 스페이스바를 눌러 다음으로 넘어갑니다.
+
+3단계: 음성 듣기
+- 이전 단계에서 들은 음성들을 다시 한번 따라 읽어주세요.
+- 각 음성을 듣고 따라 읽은 후 스페이스바를 눌러 다음으로 넘어갑니다.
+
+4단계: 단어 읽기
+- 마지막으로 단어들을 한 번 더 읽어주세요.
+- 각 단어를 읽은 후 스페이스바를 눌러 다음 단어로 넘어갑니다.
+
+3. 주의사항
+- 모든 단계에서 마이크를 통해 음성이 녹음됩니다.
+- 각 단계 시작 전에 마이크가 정상적으로 작동하는지 확인해주세요.
+- 실험 중에는 조용한 환경에서 진행해주세요.
+- 실험 중간에 중단이 필요한 경우 언제든 말씀해 주세요.
+
+4. 실험 시간
+- 전체 실험은 약 15-20분 정도 소요됩니다.
+- 각 단계는 약 3-5분 정도 소요됩니다.
+
+5. 보상
+- 실험 완료 후 소정의 보상이 제공됩니다.
+
+위 내용을 모두 읽고 이해하셨다면, '시작하기' 버튼을 눌러 실험을 시작해주세요.
+"""
+        
+        instruction_text = tk.Label(
+            instruction_frame,
+            text=intro_text,
+            font=('Arial', 24),
+            justify=tk.CENTER,
+            wraplength=800
+        )
+        instruction_text.pack(expand=True, padx=20, pady=20)
+        
+        start_button = tk.Button(
+            instruction_frame,
+            text="시작하기",
+            command=lambda: self.start_stage_after_intro(instruction_frame),
+            font=('Arial', 24)
+        )
+        start_button.pack(pady=40)
+        
+        self.current_dialog = instruction_frame
+
+    def start_stage_after_intro(self, instruction_frame):
+        """전체 실험 설명 창을 닫고 1단계를 시작합니다."""
+        instruction_frame.destroy()
+        self.current_dialog = None
+        self.start_stage(1)
+
+    def start_experiment(self, participant_id, folder_path, selected_device, selected_lists, participant_info):
+        """실험을 시작합니다."""
+        self.participant_id = participant_id
+        self.folder_path = folder_path
+        self.selected_device = selected_device
+        self.selected_lists = selected_lists
+        
+        # 참가자 정보 저장
+        DataManager.save_participant_info(
+            participant_id, 
+            folder_path, 
+            participant_info, 
+            selected_device, 
+            selected_lists
+        )
+        
+        self.player = AudioPlayer(self.folder_path)
+        self.recorder = AudioRecorder(selected_device, folder_path)
+        
+        # 전체 실험 설명 표시
+        self.show_experiment_intro()
+
+    def save_current_stage_data(self):
+        """현재 단계의 데이터를 저장합니다."""
+        DataManager.save_stage_data(
+            self.timing_data,
+            self.participant_id,
+            self.folder_path,
+            self.current_stage
+        )
 
     def show_stage_instruction(self, stage_number):
         """각 단계별 안내 창을 표시합니다."""
@@ -791,32 +723,9 @@ class MainExperimentWindow:
         instruction_frame = tk.Frame(self.window)
         instruction_frame.place(relx=0.5, rely=0.5, anchor='center')
         
-        instructions = {
-            1: "1단계: 단어 읽기\n\n" + 
-               "이제부터 화면에 단어들이 하나씩 제시됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 자동으로 다음 단계로 넘어갑니다.",
-            2: "2단계: 음성 듣기\n\n" +
-               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
-               "각 음성을 듣고 따라 읽어주세요.\n" +
-               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
-               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            3: "3단계: 음성 듣기\n\n" +
-               "이제부터 녹음된 음성이 하나씩 재생됩니다.\n" +
-               "각 음성을 듣고 따라 읽어주세요.\n" +
-               "따라 읽기가 끝나면 스페이스바를 눌러주세요.\n" +
-               "모든 음성을 들으면 자동으로 다음 단계로 넘어갑니다.",
-            4: "4단계: 단어 읽기\n\n" +
-               "마지막으로 단어들을 한 번 더 읽어주시면 됩니다.\n" +
-               "각 단어를 소리내어 읽어주세요.\n" +
-               "단어를 다 읽으신 후에는 스페이스바를 눌러주세요.\n" +
-               "모든 단어를 읽으면 실험이 종료됩니다."
-        }
-        
         instruction_text = tk.Label(
             instruction_frame,
-            text=instructions[stage_number],
+            text=StageInstruction.get_instruction(stage_number, self.selected_lists),
             font=('Arial', 36),
             justify=tk.CENTER,
             wraplength=800
@@ -832,6 +741,25 @@ class MainExperimentWindow:
         start_button.pack(pady=40)
         
         self.current_dialog = instruction_frame
+
+    def handle_space_press(self, event):
+        """스페이스바 이벤트 핸들러"""
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        
+        if self.current_stage in [1, 4]:
+            if self.timing_data:
+                self.timing_data[-1]['스페이스바_시간'] = current_time
+            self.show_next_word()
+        elif self.current_stage in [2, 3]:
+            if hasattr(self, 'player') and not self.player.is_playing():
+                if self.timing_data:
+                    self.timing_data[-1]['스페이스바_시간'] = current_time
+                self.play_next_audio()
+
+    def handle_return_press(self, event):
+        """엔터키 이벤트 핸들러"""
+        if not self.remaining_files:
+            self.on_closing()
 
     def start_stage_after_instruction(self, instruction_frame, stage_number):
         """안내 창을 닫고 단계를 시작합니다."""
@@ -990,99 +918,9 @@ class MainExperimentWindow:
             else:
                 self.show_experiment_completion()
 
-    def save_current_stage_data(self):
-        # 현재 단계의 타이밍 데이터를 Excel 파일로 저장
-        if self.timing_data:
-            df = pd.DataFrame(self.timing_data)
-            
-            # 열 순서 정렬
-            columns_order = [
-                '참가자번호', '단계', '단어', '음성파일', 
-                '시작시간', '스페이스바_시간'
-            ]
-            # 존재하는 열만 선택
-            existing_columns = [col for col in columns_order if col in df.columns]
-            df = df[existing_columns]
-            
-            # Excel 파일 경로
-            excel_path = os.path.join(self.folder_path, f"{self.participant_id}_experiment_data.xlsx")
-            
-            # 기존 파일이 있는지 확인
-            if os.path.exists(excel_path):
-                # 기존 파일 읽기
-                with pd.ExcelFile(excel_path) as xls:
-                    # Info 시트는 그대로 유지
-                    info_df = pd.read_excel(xls, sheet_name='Info')
-                    
-                    # 기존 데이터 시트들 읽기
-                    existing_sheets = {}
-                    for sheet_name in xls.sheet_names:
-                        if sheet_name != 'Info':
-                            existing_sheets[sheet_name] = pd.read_excel(xls, sheet_name=sheet_name)
-                    
-                    # 현재 단계 데이터 추가
-                    existing_sheets[f'Stage{self.current_stage}'] = df
-                    
-                    # 모든 데이터를 하나의 파일로 저장
-                    with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-                        info_df.to_excel(writer, sheet_name='Info', index=False)
-                        for sheet_name, sheet_data in existing_sheets.items():
-                            sheet_data.to_excel(writer, sheet_name=sheet_name, index=False)
-            else:
-                # 새 파일 생성
-                with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-                    # Info 시트 생성
-                    info_df = pd.DataFrame({
-                        '참가자번호': [self.participant_id],
-                        '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
-                        '녹음장치': [sd.query_devices(self.selected_device)['name']],
-                        '실험 리스트': [self.selected_lists]
-                    })
-                    info_df.to_excel(writer, sheet_name='Info', index=False)
-                    # 현재 단계 데이터 저장
-                    df.to_excel(writer, sheet_name=f'Stage{self.current_stage}', index=False)
-
-    def space_pressed_handler(self, event):
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
-        
-        if self.current_stage in [1, 4]:
-            if self.timing_data:
-                # 마지막 타이밍 데이터에 스페이스바 누른 시간 추가
-                self.timing_data[-1]['스페이스바_시간'] = current_time
-            self.show_next_word()
-        elif self.current_stage in [2, 3]:
-            if hasattr(self, 'player') and not self.player.is_playing():
-                if self.timing_data:
-                    # 마지막 타이밍 데이터에 스페이스바 누른 시간 추가
-                    self.timing_data[-1]['스페이스바_시간'] = current_time
-                self.play_next_audio()
-
-    def start_experiment(self, participant_id, folder_path, selected_device, selected_lists, participant_age, participant_gender):
-        self.participant_id = participant_id
-        self.folder_path = folder_path
-        self.selected_device = selected_device
-        self.selected_lists = selected_lists
-        self.participant_age = participant_age
-        self.participant_gender = participant_gender
-        
-        # 참가자 정보를 experiment_data.xlsx 파일의 Info 시트에 저장
-        info_df = pd.DataFrame({
-            '참가자번호': [participant_id],
-            '성별': self.participant_gender,
-            '나이': self.participant_age,
-            '실험일시': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')],
-            '녹음장치': [sd.query_devices(selected_device)['name']],
-            '실험 리스트': [selected_lists]
-        })
-        
-        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
-        with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-            info_df.to_excel(writer, sheet_name='Info', index=False)
-        
-        self.player = AudioPlayer(self.folder_path)
-        self.recorder = AudioRecorder(selected_device, folder_path)
-        
-        self.start_stage(1)
+    def on_closing(self):
+        sd.stop()  # 재생 중인 오디오 정지
+        self.window.quit()
 
     def load_words(self):
         try:
@@ -1136,6 +974,7 @@ class MainExperimentWindow:
         self.window.mainloop()
 
 def check_existing_data(participant_id):
+    """기존 데이터가 있는지 확인합니다."""
     folder_path = f'participant_{participant_id}'
     if os.path.exists(folder_path):
         return messagebox.askyesno('확인', '기존 데이터가 있습니다. 덮어쓰시겠습니까?')
@@ -1147,6 +986,220 @@ def create_participant_folder(participant_id, base_dir):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
     return folder_path
+
+class PathSettingWindow:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title('실험 파일 저장 경로 설정')
+        self.window.geometry('600x300')
+        
+        # 안내 메시지
+        tk.Label(
+            self.window,
+            text='실험 파일이 저장될 경로를 설정해주세요.',
+            font=('Arial', 12),
+            wraplength=550
+        ).pack(pady=20)
+        
+        # 경로 표시 프레임
+        path_frame = tk.Frame(self.window)
+        path_frame.pack(fill='x', padx=20, pady=10)
+        
+        self.path_var = tk.StringVar(value=os.path.abspath(os.path.join(os.getcwd(), 'experiment_data')))
+        self.path_entry = tk.Entry(
+            path_frame,
+            textvariable=self.path_var,
+            width=50,
+            font=('Arial', 11)
+        )
+        self.path_entry.pack(side=tk.LEFT, padx=5)
+        
+        # 경로 선택 버튼
+        tk.Button(
+            path_frame,
+            text="경로 선택",
+            command=self.select_path,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT, padx=5)
+        
+        # 경로 생성 상태 표시
+        self.status_label = tk.Label(
+            self.window,
+            text='',
+            font=('Arial', 11),
+            fg='gray'
+        )
+        self.status_label.pack(pady=10)
+        
+        # 버튼 프레임
+        button_frame = tk.Frame(self.window)
+        button_frame.pack(pady=20)
+        
+        # 확인 버튼
+        tk.Button(
+            button_frame,
+            text="확인",
+            command=self.confirm,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT, padx=10)
+        
+        # 취소 버튼
+        tk.Button(
+            button_frame,
+            text="취소",
+            command=self.cancel,
+            font=('Arial', 11)
+        ).pack(side=tk.LEFT)
+        
+        self.selected_path = None
+        
+    def select_path(self):
+        path = tk.filedialog.askdirectory(
+            initialdir=self.path_var.get(),
+            title='실험 파일 저장 경로 선택'
+        )
+        if path:
+            self.path_var.set(path)
+            self.check_path()
+    
+    def check_path(self):
+        path = self.path_var.get()
+        if not path:
+            self.status_label.config(
+                text='경로를 입력해주세요.',
+                fg='red'
+            )
+            return
+            
+        if not os.path.exists(path):
+            try:
+                os.makedirs(path)
+                self.status_label.config(
+                    text=f'새 경로가 생성되었습니다: {path}',
+                    fg='blue'
+                )
+            except Exception as e:
+                self.status_label.config(
+                    text=f'경로 생성 실패: {str(e)}',
+                    fg='red'
+                )
+        else:
+            # 경로가 존재하는 경우, 쓰기 권한 확인
+            try:
+                test_file = os.path.join(path, '.test')
+                with open(test_file, 'w') as f:
+                    f.write('test')
+                os.remove(test_file)
+                self.status_label.config(
+                    text='경로가 유효합니다. 이 경로를 사용할 수 있습니다.',
+                    fg='green'
+                )
+            except Exception as e:
+                self.status_label.config(
+                    text=f'경로에 대한 쓰기 권한이 없습니다: {str(e)}',
+                    fg='red'
+                )
+    
+    def confirm(self):
+        path = self.path_var.get()
+        if not os.path.exists(path):
+            try:
+                os.makedirs(path)
+            except Exception as e:
+                messagebox.showerror("오류", f"경로를 생성할 수 없습니다:\n{str(e)}")
+                return
+        
+        self.selected_path = path
+        self.window.quit()
+    
+    def cancel(self):
+        self.window.quit()
+    
+    def show(self):
+        self.window.mainloop()
+        self.window.destroy()
+        return self.selected_path
+
+class ListSelectionWindow:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title('리스트 선택')
+        self.window.geometry('400x250')
+        
+        # 안내 메시지
+        tk.Label(
+            self.window,
+            text='실험에 사용할 리스트를 선택해주세요.',
+            font=('Arial', 12),
+            wraplength=350
+        ).pack(pady=20)
+        
+        # 리스트 선택
+        tk.Label(
+            self.window,
+            text='리스트:',
+            font=('Arial', 11)
+        ).pack(pady=5)
+        
+        self.list_combo = ttk.Combobox(
+            self.window,
+            width=40
+        )
+        self.list_combo['values'] = ['list1', 'list2']  # 리스트 1, 2만 표시
+        self.list_combo.current(0)
+        self.list_combo.pack(pady=5)
+        
+        # 현재 선택된 리스트 표시
+        self.selection_label = tk.Label(
+            self.window,
+            text='',
+            font=('Arial', 11),
+            wraplength=350
+        )
+        self.selection_label.pack(pady=10)
+        
+        # 확인 버튼
+        self.confirm_button = tk.Button(
+            self.window,
+            text="선택",
+            command=self.confirm,
+            font=('Arial', 11)
+        )
+        self.confirm_button.pack(pady=20)
+        
+        self.selected_lists = None
+        
+    def confirm(self):
+        selected = self.list_combo.get()
+        self.selected_lists = selected
+        
+        # 선택된 리스트 정보를 참가자의 info 파일에 저장
+        config_manager = ConfigManager()
+        folder_path = config_manager.config['paths']['participant_data_dir']
+        
+        # 참가자 ID 가져오기
+        participant_id = None
+        for file in os.listdir(folder_path):
+            if file.startswith('participant_') and file.endswith('_info.xlsx'):
+                participant_id = file.split('_')[1]
+                break
+        
+        if participant_id:
+            info_file = os.path.join(folder_path, f'participant_{participant_id}_info.xlsx')
+            if os.path.exists(info_file):
+                # 기존 파일 읽기
+                df = pd.read_excel(info_file)
+                # 실험 리스트 열만 추가
+                df['실험 리스트'] = selected
+                # 파일 다시 저장
+                df.to_excel(info_file, index=False)
+         
+        self.window.quit()
+    
+    def show(self):
+        self.window.mainloop()
+        self.window.destroy()
+        return self.selected_lists
 
 def main():
     # 경로 설정 창 표시
@@ -1161,7 +1214,7 @@ def main():
     
     # 설정된 경로를 config에 저장
     config_manager.config['paths']['participant_data_dir'] = save_path
-    config_manager.save_config(config_manager.config)  # config 인자 추가
+    config_manager.save_config(config_manager.config)
     
     # 경로 유효성 검사
     invalid_paths = config_manager.verify_paths()
@@ -1187,8 +1240,6 @@ def main():
         return
         
     participant_id = participant_info['participant_id']
-    participant_age = participant_info['age']
-    participant_gender = participant_info['gender']
     
     # 기존 데이터 확인
     if not check_existing_data(participant_id):
@@ -1208,12 +1259,18 @@ def main():
     if selected_device is None:
         return
         
-    # 폴더 생성 (config의 participant_data_dir 사용)
+    # 폴더 생성
     folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
     
     # 메인 실험 창 실행
-    main_window = MainExperimentWindow(config_manager.config)  # config 전달
-    main_window.start_experiment(participant_id, folder_path, selected_device, selected_lists, participant_age, participant_gender)
+    main_window = MainExperimentWindow(config_manager.config)
+    main_window.start_experiment(
+        participant_id=participant_id,
+        folder_path=folder_path,
+        selected_device=selected_device,
+        selected_lists=selected_lists,
+        participant_info=participant_info
+    )
     main_window.show()
 
 if __name__ == '__main__':

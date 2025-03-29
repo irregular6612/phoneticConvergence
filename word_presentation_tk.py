@@ -160,11 +160,23 @@ class AudioRecorder:
             return
             
         self.frames = []
+        # 현재 시간 정보를 포함한 파일 이름 생성
+        current_time = datetime.now()
+        time_str = current_time.strftime('%Y%m%d_%H%M')
+        
+        # 참가자 ID와 단계 정보 추출
+        participant_id = filename.split('_')[0]
+        stage = filename.split('stage')[1]
+        
+        # 새로운 파일 이름 생성
+        new_filename = f"{participant_id}_stage{stage}_{time_str}"
+        
         # 참가자 폴더 경로에 파일 저장
         if self.folder_path:
-            self.filename = os.path.join(self.folder_path, filename + '.wav')
+            self.filename = os.path.join(self.folder_path, new_filename + '.wav')
         else:
-            self.filename = filename + '.wav'
+            self.filename = new_filename + '.wav'
+            
         self.recording = True
         
         def callback(indata, frames, time, status):
@@ -1067,19 +1079,51 @@ class MainExperimentWindow:
         """메인 윈도우를 표시하고 이벤트 루프를 시작합니다."""
         self.window.mainloop()
 
-def check_existing_data(participant_id):
-    """기존 데이터가 있는지 확인합니다."""
-    folder_path = f'participant_{participant_id}'
+def check_existing_data(participant_id, base_dir):
+    """기존 데이터가 있는지 확인하고, 있는 경우 새로운 파일 이름을 생성합니다."""
+    folder_path = os.path.join(base_dir, f'participant_{participant_id}')
     if os.path.exists(folder_path):
-        return messagebox.askyesno('확인', '기존 데이터가 있습니다. 덮어쓰시겠습니까?')
-    return True
+        # 실험 데이터 파일 확인
+        excel_path = os.path.join(folder_path, f"{participant_id}_experiment_data.xlsx")
+        if os.path.exists(excel_path):
+            try:
+                # 기존 데이터 읽기
+                with pd.ExcelFile(excel_path) as xls:
+                    # 완료된 단계 확인
+                    completed_stages = []
+                    for sheet_name in xls.sheet_names:
+                        if sheet_name.startswith('Stage'):
+                            completed_stages.append(int(sheet_name[5:]))
+                    
+                    if completed_stages:
+                        message = f"참가자 {participant_id}의 기존 데이터가 있습니다.\n"
+                        message += f"완료된 단계: {', '.join(map(str, sorted(completed_stages)))}\n\n"
+                        message += "기존 데이터를 덮어쓰시겠습니까?"
+                    else:
+                        message = f"참가자 {participant_id}의 기존 데이터가 있습니다.\n"
+                        message += "아직 완료된 단계가 없습니다.\n\n"
+                        message += "기존 데이터를 덮어쓰시겠습니까?"
+                        
+                    if messagebox.askyesno('확인', message):
+                        # 현재 날짜와 시간 정보를 포함한 새로운 파일 이름 생성
+                        current_time = datetime.now()
+                        time_str = current_time.strftime('%Y%m%d_%H%M')
+                        new_folder_path = os.path.join(base_dir, f'participant_{participant_id}_{time_str}')
+                        return new_folder_path
+                    return None
+            except Exception as e:
+                messagebox.showerror("오류", f"기존 데이터 확인 중 오류가 발생했습니다:\n{str(e)}")
+                return None
+    return folder_path
 
 def create_participant_folder(participant_id, base_dir):
     """참가자 데이터 폴더를 생성합니다."""
-    folder_path = os.path.join(base_dir, f'participant_{participant_id}')
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-    return folder_path
+    folder_path = check_existing_data(participant_id, base_dir)
+    if folder_path:
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        return folder_path
+    return None
 
 class PathSettingWindow:
     def __init__(self):
@@ -1389,8 +1433,10 @@ def main():
         
     participant_id = participant_info['participant_id']
     
-    # 기존 데이터 확인
-    if not check_existing_data(participant_id):
+    # 폴더 생성
+    folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
+    
+    if not folder_path:
         return
     
     # 리스트 선택
@@ -1406,9 +1452,6 @@ def main():
     
     if selected_device is None:
         return
-        
-    # 폴더 생성
-    folder_path = create_participant_folder(participant_id, config_manager.config['paths']['participant_data_dir'])
     
     # 메인 실험 창 실행
     main_window = MainExperimentWindow(config_manager.config)

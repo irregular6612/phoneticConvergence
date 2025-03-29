@@ -1,0 +1,10 @@
+{
+    "paths": {
+        "participant_data_dir": "C:/Users/juhyeon/Desktop/PhoneticConvergence/results",
+        "images_dir": "C:/Users/juhyeon/Desktop/PhoneticConvergence/img-GPT4o(250329)",
+        "audio_sample_dir": "C:/Users/juhyeon/Desktop/PhoneticConvergence/audio-sample",
+        "main_word_list": "C:/Users/juhyeon/Desktop/PhoneticConvergence/filtered_df.xlsx",
+        "practice_word_list": "C:/Users/juhyeon/Desktop/PhoneticConvergence/bottom_words.xlsx",
+        "practice_audio_dir": "C:/Users/juhyeon/Desktop/PhoneticConvergence/audio-sample/temp"
+    }
+}

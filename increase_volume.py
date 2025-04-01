@@ -69,8 +69,8 @@ def main():
     # 사용자로부터 입력 받기
     input_dir = input("처리할 WAV 파일이 있는 디렉토리 경로를 입력하세요: ").strip()
     output_dir = input("증가된 볼륨의 파일을 저장할 디렉토리 경로를 입력하세요: ").strip()
-    input_dir = "./original-voice"
-    output_dir = "./increased-voice"
+    input_dir = "./audio-sample/new"
+    output_dir = "./audio-sample/new/4x"
     
     try:
         volume_factor = float(input("볼륨을 몇 배로 증가시킬까요? (기본값: 2.0): ").strip() or "2.0")

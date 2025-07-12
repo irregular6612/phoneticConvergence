@@ -1,6 +1,5 @@
-audio-sample
-audio-samples-typecast
-Korean Language Usage Frequency Study
-NIKL_DIALOUGUE_2023
-sora-sample
-src
+data/audio/
+data/experiments_data/
+data/research_data/
+data/video/
+src/exp_src_files/__pycache__/

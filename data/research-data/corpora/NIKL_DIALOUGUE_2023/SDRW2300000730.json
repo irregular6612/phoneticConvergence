@@ -1,0 +1,4095 @@
+{
+    "id": "SDRW2300000730",
+    "metadata": {
+        "title": "국립국어원 구어 말뭉치 SDRW2300000730",
+        "creator": "국립국어원",
+        "distributor": "국립국어원",
+        "year": "2023",
+        "category": "구어 > 사적대화 > 일상대화",
+        "annotation_level": [
+            "원시"
+        ],
+        "sampling": "본문 전체"
+    },
+    "document": [
+        {
+            "id": "SDRW2300000730.1",
+            "metadata": {
+                "title": "2인 일상 대화",
+                "author": "개인 발화자",
+                "publisher": "개인 발화 녹음",
+                "date": "20230726",
+                "topic": "인간관계 > 친구",
+                "speaker": [
+                    {
+                        "id": "SD2300681",
+                        "age": "20대",
+                        "occupation": "무직/취업준비생",
+                        "sex": "여성",
+                        "birthplace": "인천",
+                        "principal_residence": "대구",
+                        "current_residence": "대구",
+                        "education": "고졸"
+                    },
+                    {
+                        "id": "SD2300682",
+                        "age": "50대",
+                        "occupation": "주부",
+                        "sex": "여성",
+                        "birthplace": "부산",
+                        "principal_residence": "인천",
+                        "current_residence": "대구",
+                        "education": "대졸"
+                    }
+                ],
+                "setting": {
+                    "relation": "부모/자녀",
+                    "contact_frequency": "5"
+                }
+            },
+            "utterance": [
+                {
+                    "id": "SDRW2300000730.1.1.1",
+                    "form": "엄마 제일 친한 단짝 친구가 누구야?",
+                    "original_form": "엄마 제일 친한 단짝 친구가 누구야?",
+                    "speaker_id": "SD2300681",
+                    "start": 0.09177,
+                    "end": 3.37563,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.2",
+                    "form": "어 name1 아줌마",
+                    "original_form": "어~ &name1& 아줌마",
+                    "speaker_id": "SD2300682",
+                    "start": 3.54063,
+                    "end": 4.68970,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.3",
+                    "form": "어",
+                    "original_form": "어~",
+                    "speaker_id": "SD2300682",
+                    "start": 4.91064,
+                    "end": 5.42564,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.4",
+                    "form": "초등학교",
+                    "original_form": "초등학교",
+                    "speaker_id": "SD2300682",
+                    "start": 5.59064,
+                    "end": 6.51096,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.5",
+                    "form": "중학교",
+                    "original_form": "중학교",
+                    "speaker_id": "SD2300682",
+                    "start": 6.74064,
+                    "end": 7.33918,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.6",
+                    "form": "그다음에 고등학교 1학년 때까지",
+                    "original_form": "그다음에 고등학교 일 학년 때까지",
+                    "speaker_id": "SD2300682",
+                    "start": 7.85164,
+                    "end": 10.01350,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.7",
+                    "form": "동창인데",
+                    "original_form": "동창인데",
+                    "speaker_id": "SD2300682",
+                    "start": 10.51565,
+                    "end": 11.51565,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.8",
+                    "form": "어 엄청",
+                    "original_form": "어~ 엄청",
+                    "speaker_id": "SD2300682",
+                    "start": 12.14065,
+                    "end": 13.28958,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.9",
+                    "form": "응 오래 사귀었지.",
+                    "original_form": "응~ 오래 사귀'었지.",
+                    "speaker_id": "SD2300682",
+                    "start": 14.06066,
+                    "end": 15.39426,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.10",
+                    "form": "근데",
+                    "original_form": "근데",
+                    "speaker_id": "SD2300682",
+                    "start": 16.06066,
+                    "end": 16.68873,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.11",
+                    "form": "맨 처음부터는",
+                    "original_form": "맨 처음부터는",
+                    "speaker_id": "SD2300682",
+                    "start": 17.10566,
+                    "end": 18.24520,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.12",
+                    "form": "아주 친했던 건 아니고",
+                    "original_form": "아주 친했던 건 아니구",
+                    "speaker_id": "SD2300682",
+                    "start": 19.57067,
+                    "end": 21.04067,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.13",
+                    "form": "이제",
+                    "original_form": "이제",
+                    "speaker_id": "SD2300682",
+                    "start": 21.68067,
+                    "end": 22.01567,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.14",
+                    "form": "어 연 연수가 갈수록",
+                    "original_form": "어~ -연- 연수가 갈수록",
+                    "speaker_id": "SD2300682",
+                    "start": 23.32068,
+                    "end": 25.01068,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.15",
+                    "form": "오래",
+                    "original_form": "오래",
+                    "speaker_id": "SD2300682",
+                    "start": 25.34568,
+                    "end": 26.03068,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.16",
+                    "form": "보다 보니까",
+                    "original_form": "보다 보니까",
+                    "speaker_id": "SD2300682",
+                    "start": 26.43068,
+                    "end": 27.40068,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.17",
+                    "form": "친해진 거 같아.",
+                    "original_form": "친해진 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 27.60068,
+                    "end": 28.50569,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.18",
+                    "form": "그러면",
+                    "original_form": "그러면",
+                    "speaker_id": "SD2300681",
+                    "start": 28.74069,
+                    "end": 29.48569,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.19",
+                    "form": "초등학교 때 만난 거야?",
+                    "original_form": "초등학교 때 만난 거야?",
+                    "speaker_id": "SD2300681",
+                    "start": 30.62069,
+                    "end": 31.88769,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.20",
+                    "form": "어 초등학교 4학년 때 만났는데",
+                    "original_form": "어~ 초등학교 사 학년 때 만났는데",
+                    "speaker_id": "SD2300682",
+                    "start": 32.04070,
+                    "end": 34.52570,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.21",
+                    "form": "그때는 같은 반이었는데",
+                    "original_form": "그때는 같은 반이었는데",
+                    "speaker_id": "SD2300682",
+                    "start": 34.89170,
+                    "end": 36.66930,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.22",
+                    "form": "서로",
+                    "original_form": "서루",
+                    "speaker_id": "SD2300682",
+                    "start": 37.02071,
+                    "end": 37.83696,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.23",
+                    "form": "서로 친하지 않았어.",
+                    "original_form": "서루 친하지 않았어.",
+                    "speaker_id": "SD2300682",
+                    "start": 39.12571,
+                    "end": 40.39071,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.24",
+                    "form": "친하지 않았고",
+                    "original_form": "친하지 않았고",
+                    "speaker_id": "SD2300682",
+                    "start": 40.89072,
+                    "end": 41.90315,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.25",
+                    "form": "그리고",
+                    "original_form": "그르구",
+                    "speaker_id": "SD2300682",
+                    "start": 42.75572,
+                    "end": 43.37387,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.26",
+                    "form": "서로 내성적인 성격 때문에",
+                    "original_form": "서로 내성적인 성격 때문에",
+                    "speaker_id": "SD2300682",
+                    "start": 43.62572,
+                    "end": 45.43572,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.27",
+                    "form": "어",
+                    "original_form": "어~",
+                    "speaker_id": "SD2300682",
+                    "start": 46.28573,
+                    "end": 46.94073,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.28",
+                    "form": "이렇게",
+                    "original_form": "이렇게",
+                    "speaker_id": "SD2300682",
+                    "start": 47.82073,
+                    "end": 48.38190,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.29",
+                    "form": "서로 다가가지 않았거든.",
+                    "original_form": "서로 다가가지 않았거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 48.96673,
+                    "end": 50.29074,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.30",
+                    "form": "그리고 인제 학년이",
+                    "original_form": "그르구 인제 학년이",
+                    "speaker_id": "SD2300682",
+                    "start": 51.03174,
+                    "end": 52.66339,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.31",
+                    "form": "지나서 중학교 때",
+                    "original_form": "지나서 중학교 때",
+                    "speaker_id": "SD2300682",
+                    "start": 53.21074,
+                    "end": 55.02219,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.32",
+                    "form": "또 같은 반이 된 거야.",
+                    "original_form": "또 같은 반이 된 거야.",
+                    "speaker_id": "SD2300682",
+                    "start": 55.47075,
+                    "end": 56.81211,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.33",
+                    "form": "그때까지도",
+                    "original_form": "그때까지도",
+                    "speaker_id": "SD2300682",
+                    "start": 57.65575,
+                    "end": 58.73576,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.34",
+                    "form": "서로 친하지 않았어.",
+                    "original_form": "서로 친하지 않았어.",
+                    "speaker_id": "SD2300682",
+                    "start": 59.69576,
+                    "end": 61.46076,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.35",
+                    "form": "그리고",
+                    "original_form": "그르구",
+                    "speaker_id": "SD2300682",
+                    "start": 62.43076,
+                    "end": 62.92630,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.36",
+                    "form": "인제 고등학교 인문계",
+                    "original_form": "인제 고등학교 인문계",
+                    "speaker_id": "SD2300682",
+                    "start": 64.07077,
+                    "end": 65.58077,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.37",
+                    "form": "갔을 때",
+                    "original_form": "갔을 때",
+                    "speaker_id": "SD2300682",
+                    "start": 65.82677,
+                    "end": 66.83334,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.38",
+                    "form": "어 2학년 때 같은 반이었는데",
+                    "original_form": "어~ 이 학년 때 같은 반이었는데",
+                    "speaker_id": "SD2300682",
+                    "start": 67.02577,
+                    "end": 68.96930,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.39",
+                    "form": "아는 사람이 없잖아.",
+                    "original_form": "아는 사람이 없잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 69.50578,
+                    "end": 70.86578,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.40",
+                    "form": "그러니까 맨날 본",
+                    "original_form": "그니까 맨날 본",
+                    "speaker_id": "SD2300682",
+                    "start": 71.56569,
+                    "end": 72.58072,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.41",
+                    "form": "그 여태까지 익숙한 얼굴이 name1 아줌마였어.",
+                    "original_form": "그~ 여태까지 익숙한 얼굴이 &name1& 아줌마였어.",
+                    "speaker_id": "SD2300682",
+                    "start": 72.73072,
+                    "end": 75.63079,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.42",
+                    "form": "그래서 name1 아줌마한테 내가 먼저 말을 걸었어.",
+                    "original_form": "그래서 &name1& 아줌마한테 내가 먼저 말을 걸었어.",
+                    "speaker_id": "SD2300682",
+                    "start": 76.09579,
+                    "end": 78.44850,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.43",
+                    "form": "어",
+                    "original_form": "어~",
+                    "speaker_id": "SD2300682",
+                    "start": 79.15080,
+                    "end": 79.64590,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.44",
+                    "form": "그래서 나랑 점심 같이 먹자고",
+                    "original_form": "그래서 나랑 점심 같이 먹자고",
+                    "speaker_id": "SD2300682",
+                    "start": 80.02080,
+                    "end": 81.94367,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.45",
+                    "form": "근데 인제",
+                    "original_form": "근데 인제",
+                    "speaker_id": "SD2300682",
+                    "start": 82.69581,
+                    "end": 83.23081,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.46",
+                    "form": "name1 아줌마도 약간 내성적인 성격이라서",
+                    "original_form": "&name1& 아줌마도 약간 내성적인 성격이라서",
+                    "speaker_id": "SD2300682",
+                    "start": 83.45581,
+                    "end": 85.70082,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.47",
+                    "form": "그냥 이렇게 적극적으로는 하진 않았지만",
+                    "original_form": "그냥 이렇게 적극적으로는 하진 않았지만",
+                    "speaker_id": "SD2300682",
+                    "start": 85.87682,
+                    "end": 88.09403,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.48",
+                    "form": "그냥 점심 같이 먹고 체육 활동 같이 하고",
+                    "original_form": "그냥 점심 같이 먹고 체육 활동 같이 하고",
+                    "speaker_id": "SD2300682",
+                    "start": 88.78082,
+                    "end": 91.81583,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.49",
+                    "form": "그러다 보니까",
+                    "original_form": "그러다 보니까",
+                    "speaker_id": "SD2300682",
+                    "start": 92.34583,
+                    "end": 93.24083,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.50",
+                    "form": "1년을 같이 보내면서 그때 좀 많이",
+                    "original_form": "일 년을 같이 보내면서 그때 좀 많이",
+                    "speaker_id": "SD2300682",
+                    "start": 94.21583,
+                    "end": 96.34184,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.51",
+                    "form": "친해졌 진 거 같아 음 그리고",
+                    "original_form": "친해졌 진 거 같애 음~ 그르구",
+                    "speaker_id": "SD2300682",
+                    "start": 96.51084,
+                    "end": 98.85699,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.52",
+                    "form": "뭐 그때 엄마",
+                    "original_form": "뭐~ 그때 엄마",
+                    "speaker_id": "SD2300682",
+                    "start": 99.76157,
+                    "end": 101.07097,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.53",
+                    "form": "나이대에는",
+                    "original_form": "나이대에는",
+                    "speaker_id": "SD2300682",
+                    "start": 101.32585,
+                    "end": 102.37467,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.54",
+                    "form": "그",
+                    "original_form": "그~",
+                    "speaker_id": "SD2300682",
+                    "start": 103.35585,
+                    "end": 103.76094,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.55",
+                    "form": "인천에",
+                    "original_form": "인천에",
+                    "speaker_id": "SD2300682",
+                    "start": 104.22086,
+                    "end": 105.24586,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.56",
+                    "form": "그 부평 지하상가라는 데가 있었거든.",
+                    "original_form": "그~ 부평 지하상가라는 데가 있었거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 105.69586,
+                    "end": 107.87086,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.57",
+                    "form": "거기에",
+                    "original_form": "거기에",
+                    "speaker_id": "SD2300682",
+                    "start": 108.85587,
+                    "end": 109.39587,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.58",
+                    "form": "모든",
+                    "original_form": "모든",
+                    "speaker_id": "SD2300682",
+                    "start": 109.90587,
+                    "end": 111.09159,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.59",
+                    "form": "부평 인천에",
+                    "original_form": "부평 인천에",
+                    "speaker_id": "SD2300682",
+                    "start": 112.38587,
+                    "end": 114.05329,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.60",
+                    "form": "그 학생들이",
+                    "original_form": "그~ 학생들이",
+                    "speaker_id": "SD2300682",
+                    "start": 114.85588,
+                    "end": 116.03588,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.61",
+                    "form": "그 지하상가 쪽으로 모여서",
+                    "original_form": "그~ 지하상가 쪽으로 모여서",
+                    "speaker_id": "SD2300682",
+                    "start": 116.31088,
+                    "end": 118.33089,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.62",
+                    "form": "분식 먹고",
+                    "original_form": "분식 먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 118.94089,
+                    "end": 120.02589,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.63",
+                    "form": "옷 사고",
+                    "original_form": "옷 사고",
+                    "speaker_id": "SD2300682",
+                    "start": 120.39589,
+                    "end": 121.38589,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.64",
+                    "form": "친구들하고",
+                    "original_form": "친구들하고",
+                    "speaker_id": "SD2300682",
+                    "start": 121.97089,
+                    "end": 122.94011,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.65",
+                    "form": "빵 먹고 그랬거든.",
+                    "original_form": "빵 먹고 그랬거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 123.60590,
+                    "end": 124.82090,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.66",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 125.34590,
+                    "end": 125.84502,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.67",
+                    "form": "인제",
+                    "original_form": "인제",
+                    "speaker_id": "SD2300682",
+                    "start": 126.06090,
+                    "end": 126.43090,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.68",
+                    "form": "어 중간고사나 기말고사",
+                    "original_form": "어~ 중간고사나 기말고사",
+                    "speaker_id": "SD2300682",
+                    "start": 126.53090,
+                    "end": 128.79091,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.69",
+                    "form": "끝나면",
+                    "original_form": "끝나면",
+                    "speaker_id": "SD2300682",
+                    "start": 129.53591,
+                    "end": 130.52091,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.70",
+                    "form": "음 내 엄마가 아줌마한테",
+                    "original_form": "음~ 내 엄마가 아줌마한테",
+                    "speaker_id": "SD2300682",
+                    "start": 131.90592,
+                    "end": 135.18092,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.71",
+                    "form": "가서 지하상가에서 놀자고",
+                    "original_form": "가서 지하상가에서 놀자고",
+                    "speaker_id": "SD2300682",
+                    "start": 135.62093,
+                    "end": 137.91093,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.72",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 138.25593,
+                    "end": 138.76593,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.73",
+                    "form": "아줌마랑 손잡고",
+                    "original_form": "아줌마랑 손잡고",
+                    "speaker_id": "SD2300682",
+                    "start": 139.04593,
+                    "end": 140.39598,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.74",
+                    "form": "학교에서",
+                    "original_form": "학교에서",
+                    "speaker_id": "SD2300682",
+                    "start": 141.06594,
+                    "end": 141.91742,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.75",
+                    "form": "어 와서",
+                    "original_form": "어~ 와서",
+                    "speaker_id": "SD2300682",
+                    "start": 143.18594,
+                    "end": 143.95517,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.76",
+                    "form": "지하상가에서 쫄면 먹고",
+                    "original_form": "지하상가에서 쫄면 먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 144.13094,
+                    "end": 145.87653,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.77",
+                    "form": "그다음에 만두 먹고",
+                    "original_form": "그다음에 만두 먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 147.04095,
+                    "end": 148.37595,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.78",
+                    "form": "그다음에 김치볶음밥 먹고",
+                    "original_form": "그다음에 김치볶음밥 먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 149.70096,
+                    "end": 151.36914,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.79",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 152.39596,
+                    "end": 152.73096,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.80",
+                    "form": "즐거운 시간을 많이 보냈던 거 같아.",
+                    "original_form": "즐거운 시간을 많이 보냈던 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 153.55097,
+                    "end": 155.80312,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.81",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 156.61597,
+                    "end": 157.16597,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.82",
+                    "form": "이제",
+                    "original_form": "이제",
+                    "speaker_id": "SD2300682",
+                    "start": 157.82597,
+                    "end": 158.25598,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.83",
+                    "form": "졸업할 때는",
+                    "original_form": "졸업할 때는",
+                    "speaker_id": "SD2300682",
+                    "start": 158.71698,
+                    "end": 159.79786,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.84",
+                    "form": "이제 절친이 돼서 아줌마는",
+                    "original_form": "이제 절친이 돼서 아줌마는",
+                    "speaker_id": "SD2300682",
+                    "start": 160.33598,
+                    "end": 162.61369,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.85",
+                    "form": "이제",
+                    "original_form": "이제",
+                    "speaker_id": "SD2300682",
+                    "start": 163.05599,
+                    "end": 163.56160,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.86",
+                    "form": "어 경영학과 쪽으로 진",
+                    "original_form": "어~ 경영학과 쪽으로 -진-",
+                    "speaker_id": "SD2300682",
+                    "start": 164.44599,
+                    "end": 166.38599,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.87",
+                    "form": "진학을 했고",
+                    "original_form": "진학을 했고",
+                    "speaker_id": "SD2300682",
+                    "start": 166.57599,
+                    "end": 167.48100,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.88",
+                    "form": "엄마는 식품 영학과로 진 진학을 해서",
+                    "original_form": "엄마는 식품 영학과로 -진- 진학을 해서",
+                    "speaker_id": "SD2300682",
+                    "start": 167.92600,
+                    "end": 170.75600,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.89",
+                    "form": "각자의",
+                    "original_form": "각자의",
+                    "speaker_id": "SD2300682",
+                    "start": 171.24200,
+                    "end": 172.07406,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.90",
+                    "form": "어 인제 인생을 살아가는 거지.",
+                    "original_form": "어~ 인제 인생을 살아가는 거지.",
+                    "speaker_id": "SD2300682",
+                    "start": 173.01101,
+                    "end": 175.37101,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.91",
+                    "form": "둘이",
+                    "original_form": "둘이",
+                    "speaker_id": "SD2300681",
+                    "start": 175.50601,
+                    "end": 176.32597,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.92",
+                    "form": "만나면",
+                    "original_form": "만나면",
+                    "speaker_id": "SD2300681",
+                    "start": 176.55602,
+                    "end": 177.48602,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.93",
+                    "form": "막",
+                    "original_form": "막",
+                    "speaker_id": "SD2300681",
+                    "start": 178.27102,
+                    "end": 178.52102,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.94",
+                    "form": "남자 친구 얘기도 하고 그랬어?",
+                    "original_form": "남자 친구 얘기도 하고 그랬어?",
+                    "speaker_id": "SD2300681",
+                    "start": 179.35602,
+                    "end": 181.13103,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.95",
+                    "form": "무슨 주로 둘이 무슨 얘기했어?",
+                    "original_form": "무슨 주로 둘이 무슨 얘기했어?",
+                    "speaker_id": "SD2300681",
+                    "start": 181.21103,
+                    "end": 183.68103,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.96",
+                    "form": "어쨌든",
+                    "original_form": "어쨌든",
+                    "speaker_id": "SD2300681",
+                    "start": 183.94603,
+                    "end": 184.56103,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.97",
+                    "form": "친구다 보니까 뭔가",
+                    "original_form": "친구다 보니까 뭔가",
+                    "speaker_id": "SD2300681",
+                    "start": 184.99604,
+                    "end": 186.96305,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.98",
+                    "form": "그러니까 아무리",
+                    "original_form": "그니까 아무리",
+                    "speaker_id": "SD2300681",
+                    "start": 187.25604,
+                    "end": 188.16604,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.99",
+                    "form": "아무리",
+                    "original_form": "아무리",
+                    "speaker_id": "SD2300681",
+                    "start": 188.60604,
+                    "end": 189.66105,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.100",
+                    "form": "성격이 달라도 뭐 공통 조 주제가 있어야지 깊이 친해질 수 있잖아.",
+                    "original_form": "성격이 달라두 뭐~ 공통 조 주제가 있어야지 깊이 친해질 수 있잖아.",
+                    "speaker_id": "SD2300681",
+                    "start": 189.81205,
+                    "end": 194.45786,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.101",
+                    "form": "해서 뭔가 둘을",
+                    "original_form": "해서 뭔가 둘을",
+                    "speaker_id": "SD2300681",
+                    "start": 194.68286,
+                    "end": 195.93106,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.102",
+                    "form": "되게",
+                    "original_form": "되게",
+                    "speaker_id": "SD2300681",
+                    "start": 196.93606,
+                    "end": 197.59278,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.103",
+                    "form": "끈끈하게 해 주는 친해지게 된 계기라건가 아니면",
+                    "original_form": "끈끈하게 해 주는 친해지게 된 계기라건가 아니면",
+                    "speaker_id": "SD2300681",
+                    "start": 198.00106,
+                    "end": 201.65607,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.104",
+                    "form": "뭐 갓 좋아하는 남자애가 같다든가 뭐 이런 식으로 이유가 있었어 둘이 서로 얘기할",
+                    "original_form": "뭐~ 갓 좋아하는 남자애가 같다던가 뭐~ 이런 식으로 이유가 있었어 둘이 서로 얘기할",
+                    "speaker_id": "SD2300681",
+                    "start": 201.91107,
+                    "end": 207.04608,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.105",
+                    "form": "우리 둘이는",
+                    "original_form": "우리 둘이는",
+                    "speaker_id": "SD2300682",
+                    "start": 207.16609,
+                    "end": 208.26498,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.106",
+                    "form": "이성에 대해서",
+                    "original_form": "이성에 대해서",
+                    "speaker_id": "SD2300682",
+                    "start": 209.36033,
+                    "end": 210.62573,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.107",
+                    "form": "그렇게 서로한테",
+                    "original_form": "그렇게 서로한테",
+                    "speaker_id": "SD2300682",
+                    "start": 211.77609,
+                    "end": 213.18610,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.108",
+                    "form": "이렇게 관심이 없었거든.",
+                    "original_form": "이렇게 관심이 없었거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 213.83110,
+                    "end": 215.39013,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.109",
+                    "form": "그리고 특히",
+                    "original_form": "그르구 특히",
+                    "speaker_id": "SD2300682",
+                    "start": 216.05610,
+                    "end": 216.99711,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.110",
+                    "form": "엄마 친구 name1 아줌마는 약간",
+                    "original_form": "엄마 친구 &name1& 아줌마는 약간",
+                    "speaker_id": "SD2300682",
+                    "start": 218.04111,
+                    "end": 220.47611,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.111",
+                    "form": "이의 이과 성향에",
+                    "original_form": "이의 이과 성향에",
+                    "speaker_id": "SD2300682",
+                    "start": 220.67611,
+                    "end": 222.35234,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.112",
+                    "form": "남성스러운 성향을 가졌어.",
+                    "original_form": "남성스러운 성향을 가졌어.",
+                    "speaker_id": "SD2300682",
+                    "start": 222.81612,
+                    "end": 225.47277,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.113",
+                    "form": "그래서 고등학교 시절에 대입을 준비하잖아.",
+                    "original_form": "그래서 고등학교 시절에 대입을 준비하잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 226.17113,
+                    "end": 229.58613,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.114",
+                    "form": "근데 우리 인제 점심 먹고 나서",
+                    "original_form": "근데 우리 인제 점심 먹고 나서",
+                    "speaker_id": "SD2300682",
+                    "start": 229.68613,
+                    "end": 231.73114,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.115",
+                    "form": "학생들이 많이",
+                    "original_form": "학생들이 많이",
+                    "speaker_id": "SD2300682",
+                    "start": 231.87114,
+                    "end": 233.08770,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.116",
+                    "form": "졸잖아.",
+                    "original_form": "졸잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 233.24114,
+                    "end": 233.84614,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.117",
+                    "form": "근데 우리 반에서 유일하게",
+                    "original_form": "근데 우리 반에서 유일하게",
+                    "speaker_id": "SD2300682",
+                    "start": 234.48115,
+                    "end": 236.15115,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.118",
+                    "form": "항상 부동의 자세로",
+                    "original_form": "항상 부동의 자세로",
+                    "speaker_id": "SD2300682",
+                    "start": 236.93115,
+                    "end": 238.53880,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.119",
+                    "form": "칠판을 바라보면서",
+                    "original_form": "칠판을 바라보면서 {laughing}",
+                    "speaker_id": "SD2300682",
+                    "start": 238.89616,
+                    "end": 240.38616,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.120",
+                    "form": "어 그 선생님 말에 주시했던",
+                    "original_form": "어~ 그~ 선생님 말에 주시했던",
+                    "speaker_id": "SD2300682",
+                    "start": 241.59116,
+                    "end": 243.92117,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.121",
+                    "form": "졸지 않았던",
+                    "original_form": "졸지 않았던",
+                    "speaker_id": "SD2300682",
+                    "start": 244.19617,
+                    "end": 245.17449,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.122",
+                    "form": "학생이 name1 아줌마였어.",
+                    "original_form": "학생이 &name1& 아줌마였어.",
+                    "speaker_id": "SD2300682",
+                    "start": 245.78717,
+                    "end": 247.34194,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.123",
+                    "form": "그래서 뭐",
+                    "original_form": "그래서 뭐~",
+                    "speaker_id": "SD2300682",
+                    "start": 248.54043,
+                    "end": 249.20118,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.124",
+                    "form": "둘이 공통 주제 뭐 이성이라든가",
+                    "original_form": "둘이 공통 주제 뭐~ 이성이라든가",
+                    "speaker_id": "SD2300682",
+                    "start": 249.67118,
+                    "end": 252.27118,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.125",
+                    "form": "그런 부분은 없었고",
+                    "original_form": "그런 부분은 없었고",
+                    "speaker_id": "SD2300682",
+                    "start": 252.96619,
+                    "end": 255.40619,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.126",
+                    "form": "둘이 그냥",
+                    "original_form": "둘이 그냥",
+                    "speaker_id": "SD2300682",
+                    "start": 256.13119,
+                    "end": 257.19867,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.127",
+                    "form": "뭐 여자들이 여자들끼리 학생들끼리 하는 얘기 있잖아.",
+                    "original_form": "뭐~ 여자들이 여자들끼리 학생들끼리 하는 얘기 있잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 257.80120,
+                    "end": 262.03108,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.128",
+                    "form": "뭐",
+                    "original_form": "뭐~",
+                    "speaker_id": "SD2300682",
+                    "start": 262.21121,
+                    "end": 262.63621,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.129",
+                    "form": "뭐 먹었냐 뭐 내일은 뭐 할 거냐",
+                    "original_form": "뭐~ 먹었냐 뭐~ 내일은 뭐~ 할 거냐",
+                    "speaker_id": "SD2300682",
+                    "start": 262.76121,
+                    "end": 265.59740,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.130",
+                    "form": "뭐 엄마랑 아빠랑",
+                    "original_form": "뭐~ 엄마랑 아빠랑",
+                    "speaker_id": "SD2300682",
+                    "start": 265.83621,
+                    "end": 267.03857,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.131",
+                    "form": "한테 뭐",
+                    "original_form": "한테 뭐~",
+                    "speaker_id": "SD2300682",
+                    "start": 267.59622,
+                    "end": 268.48850,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.132",
+                    "form": "어 혼났다 뭐 그런 일상적인 얘기",
+                    "original_form": "어~ 혼났다 뭐~ 그런 일상적인 얘기",
+                    "speaker_id": "SD2300682",
+                    "start": 269.06622,
+                    "end": 271.52623,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.133",
+                    "form": "그런 얘기를 많이 했고",
+                    "original_form": "그런 얘기를 많이 했고",
+                    "speaker_id": "SD2300682",
+                    "start": 272.11723,
+                    "end": 273.48623,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.134",
+                    "form": "또 엄마는 인제",
+                    "original_form": "또 엄마는 인제",
+                    "speaker_id": "SD2300682",
+                    "start": 274.35623,
+                    "end": 275.99651,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.135",
+                    "form": "그",
+                    "original_form": "그~",
+                    "speaker_id": "SD2300682",
+                    "start": 276.57624,
+                    "end": 276.89624,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.136",
+                    "form": "어 할머니랑",
+                    "original_form": "어~ 할머니랑",
+                    "speaker_id": "SD2300682",
+                    "start": 277.45624,
+                    "end": 278.56059,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.137",
+                    "form": "약간 싸웠을 때",
+                    "original_form": "약간 싸웠을 때",
+                    "speaker_id": "SD2300682",
+                    "start": 278.76124,
+                    "end": 279.97048,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.138",
+                    "form": "name1 아줌마네로 가서",
+                    "original_form": "&name1& 아줌마네로 가서",
+                    "speaker_id": "SD2300682",
+                    "start": 281.46625,
+                    "end": 282.60625,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.139",
+                    "form": "밥 얻어먹고",
+                    "original_form": "밥 얻어먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 283.63625,
+                    "end": 284.58126,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.140",
+                    "form": "그 거기서 지냈 그러니까",
+                    "original_form": "그~ 거기서 지냈 그니까",
+                    "speaker_id": "SD2300682",
+                    "start": 285.76626,
+                    "end": 287.34126,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.141",
+                    "form": "지내고 올 오고 아줌마랑 얘기하고",
+                    "original_form": "지내고 올 오고 아줌마랑 얘기하고",
+                    "speaker_id": "SD2300682",
+                    "start": 287.97126,
+                    "end": 290.47127,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.142",
+                    "form": "그러면서 풀었던 거 같아.",
+                    "original_form": "그러면서 풀었던 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 291.04127,
+                    "end": 292.47991,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.143",
+                    "form": "정말",
+                    "original_form": "정말",
+                    "speaker_id": "SD2300681",
+                    "start": 292.62127,
+                    "end": 293.29120,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.144",
+                    "form": "좋은 친구를 뒀네.",
+                    "original_form": "좋은 친구를 뒀네.",
+                    "speaker_id": "SD2300681",
+                    "start": 294.27628,
+                    "end": 295.66128,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.145",
+                    "form": "나도",
+                    "original_form": "나도",
+                    "speaker_id": "SD2300681",
+                    "start": 296.04128,
+                    "end": 296.61128,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.146",
+                    "form": "name1 아줌마 보면",
+                    "original_form": "&name1& 아줌마 보면",
+                    "speaker_id": "SD2300681",
+                    "start": 297.77629,
+                    "end": 299.06629,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.147",
+                    "form": "내 친구가 name2 많이 생각나.",
+                    "original_form": "내 친구가 &name2& 많이 생각나.",
+                    "speaker_id": "SD2300681",
+                    "start": 299.56629,
+                    "end": 301.79129,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.148",
+                    "form": "name2",
+                    "original_form": "&name2&",
+                    "speaker_id": "SD2300681",
+                    "start": 302.24630,
+                    "end": 303.15130,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.149",
+                    "form": "성격이",
+                    "original_form": "성격이",
+                    "speaker_id": "SD2300681",
+                    "start": 303.86130,
+                    "end": 304.71391,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.150",
+                    "form": "성격이 쪼금",
+                    "original_form": "성격이 쪼금",
+                    "speaker_id": "SD2300681",
+                    "start": 305.33130,
+                    "end": 306.43130,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.151",
+                    "form": "그 친구도 이성에 별로 관심이 없고",
+                    "original_form": "그 친구도 이성에 별로 관심이 없고",
+                    "speaker_id": "SD2300681",
+                    "start": 306.97631,
+                    "end": 309.42682,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.152",
+                    "form": "자기 할 일을 되게 똑 부러지게 하는 친구라서",
+                    "original_form": "자기 할 일을 되게 똑 부러지게 하는 친구라서",
+                    "speaker_id": "SD2300681",
+                    "start": 309.71631,
+                    "end": 312.81632,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.153",
+                    "form": "내가 그 친구 보고 배울 점이 정말 많아.",
+                    "original_form": "내가 그 친구 보고 배울 점이 정말 많아.",
+                    "speaker_id": "SD2300681",
+                    "start": 313.17632,
+                    "end": 315.46632,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.154",
+                    "form": "친구 사이에서도 솔직히",
+                    "original_form": "친구 사이에서도 솔직히",
+                    "speaker_id": "SD2300681",
+                    "start": 315.59133,
+                    "end": 317.68633,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.155",
+                    "form": "배울 점이 있어야지.",
+                    "original_form": "배울 점이 있어야지.",
+                    "speaker_id": "SD2300681",
+                    "start": 318.23133,
+                    "end": 319.61283,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.156",
+                    "form": "단순히 뭐",
+                    "original_form": "단순히 뭐~",
+                    "speaker_id": "SD2300681",
+                    "start": 319.95634,
+                    "end": 321.17634,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.157",
+                    "form": "그런",
+                    "original_form": "그런",
+                    "speaker_id": "SD2300681",
+                    "start": 321.68134,
+                    "end": 322.27575,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.158",
+                    "form": "음 일상 얘기하는 것도 좋지만 그 친구한테 배울 게 있어야지 또",
+                    "original_form": "음~ 일상 얘기하는 것도 좋지만 그 친구한테 배울 게 있어야지 또",
+                    "speaker_id": "SD2300681",
+                    "start": 322.61634,
+                    "end": 326.85805,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.159",
+                    "form": "오래가는 거 같아 친구 사이도 엄마도 되게",
+                    "original_form": "오래가는 거 같애 친구 사이도 엄마도 되게",
+                    "speaker_id": "SD2300681",
+                    "start": 327.09305,
+                    "end": 329.94805,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.160",
+                    "form": "name1 아줌마랑",
+                    "original_form": "&name1& 아줌마랑",
+                    "speaker_id": "SD2300681",
+                    "start": 330.64636,
+                    "end": 331.35136,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.161",
+                    "form": "되게 오랫동안 지금까지 연락을 하잖아 거의 지금",
+                    "original_form": "되게 오랫동안 지금까지 연락을 하잖아 거의 지금",
+                    "speaker_id": "SD2300681",
+                    "start": 331.62136,
+                    "end": 335.18637,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.162",
+                    "form": "한 30년",
+                    "original_form": "한 삼십 년",
+                    "speaker_id": "SD2300681",
+                    "start": 335.70637,
+                    "end": 336.82137,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.163",
+                    "form": "그 넘게 연락하는데",
+                    "original_form": "그~ 넘게 연락하는데",
+                    "speaker_id": "SD2300681",
+                    "start": 337.00137,
+                    "end": 338.60638,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.164",
+                    "form": "좀 둘이 멀어졌던 적은 없었어?",
+                    "original_form": "좀 둘이 멀어졌던 적은 없었어?",
+                    "speaker_id": "SD2300681",
+                    "start": 339.68638,
+                    "end": 341.90424,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.165",
+                    "form": "어 있었지 당연히",
+                    "original_form": "어~ 있었지 당연히",
+                    "speaker_id": "SD2300682",
+                    "start": 342.04424,
+                    "end": 343.30925,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.166",
+                    "form": "그러니까 멀어졌",
+                    "original_form": "그니까 멀어졌",
+                    "speaker_id": "SD2300682",
+                    "start": 343.97639,
+                    "end": 344.83139,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.167",
+                    "form": "자연스럽게 멀어지는 거지.",
+                    "original_form": "자연스럽게 멀어지는 거지.",
+                    "speaker_id": "SD2300682",
+                    "start": 345.15139,
+                    "end": 346.66139,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.168",
+                    "form": "인제",
+                    "original_form": "인제",
+                    "speaker_id": "SD2300682",
+                    "start": 346.85640,
+                    "end": 347.24639,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.169",
+                    "form": "각자",
+                    "original_form": "각자",
+                    "speaker_id": "SD2300682",
+                    "start": 347.77640,
+                    "end": 348.44640,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.170",
+                    "form": "대학교 졸업하고",
+                    "original_form": "대학교 졸업하고",
+                    "speaker_id": "SD2300682",
+                    "start": 348.55740,
+                    "end": 349.74297,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.171",
+                    "form": "인제",
+                    "original_form": "인제",
+                    "speaker_id": "SD2300682",
+                    "start": 350.52140,
+                    "end": 351.08640,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.172",
+                    "form": "그때는 지금처럼 여자들의 사회 활동이 그렇게",
+                    "original_form": "그때는 지금처럼 여자들의 사회 활동이 그렇게",
+                    "speaker_id": "SD2300682",
+                    "start": 351.31141,
+                    "end": 354.29141,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.173",
+                    "form": "두드러지진 않았거든.",
+                    "original_form": "두드러지진 않았거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 355.01641,
+                    "end": 356.23142,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.174",
+                    "form": "보통 대학교 졸업하면",
+                    "original_form": "보통 대학교 졸업하면",
+                    "speaker_id": "SD2300682",
+                    "start": 356.46642,
+                    "end": 357.87642,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.175",
+                    "form": "어 몰라 몇 퍼센튼지는 모르겠지만 전업주부로",
+                    "original_form": "어~ 몰라 몇 퍼센튼지는 모르겠지만 전업주부로",
+                    "speaker_id": "SD2300682",
+                    "start": 358.08642,
+                    "end": 361.25143,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.176",
+                    "form": "많이 인제 애들 키우고 그랬거든.",
+                    "original_form": "많이 인제 애들 키우고 그랬거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 361.88643,
+                    "end": 363.91643,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.177",
+                    "form": "그러니까 당연히 인제",
+                    "original_form": "그니까 당연히 인제",
+                    "speaker_id": "SD2300682",
+                    "start": 364.39643,
+                    "end": 365.43840,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.178",
+                    "form": "대학교 졸업하고 각자의 길을",
+                    "original_form": "대학교 졸업하고 각자의 길을",
+                    "speaker_id": "SD2300682",
+                    "start": 365.73144,
+                    "end": 368.04567,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.179",
+                    "form": "가게 되는 거지 인제 결혼해서",
+                    "original_form": "가게 되는 거지 인제 결혼해서",
+                    "speaker_id": "SD2300682",
+                    "start": 368.72144,
+                    "end": 370.47645,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.180",
+                    "form": "남편 따라서",
+                    "original_form": "남편 따라서",
+                    "speaker_id": "SD2300682",
+                    "start": 370.88645,
+                    "end": 372.01211,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.181",
+                    "form": "이제",
+                    "original_form": "이제",
+                    "speaker_id": "SD2300682",
+                    "start": 372.91145,
+                    "end": 373.31145,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.182",
+                    "form": "거주지로 가고",
+                    "original_form": "거주지로 가고",
+                    "speaker_id": "SD2300682",
+                    "start": 373.58645,
+                    "end": 374.60646,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.183",
+                    "form": "그러다 보니까",
+                    "original_form": "그러다 보니까",
+                    "speaker_id": "SD2300682",
+                    "start": 374.88646,
+                    "end": 375.93646,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.184",
+                    "form": "아기 낳고 그러다 보면 바쁘잖아.",
+                    "original_form": "애기 낳고 그러다 보면 바쁘잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 376.68646,
+                    "end": 378.68146,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.185",
+                    "form": "바쁘면 연락 안 하게 돼 안 하게 되고",
+                    "original_form": "바쁘면 연락 안 하게 돼 안 하게 되고",
+                    "speaker_id": "SD2300682",
+                    "start": 379.27147,
+                    "end": 381.52647,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.186",
+                    "form": "뭐 뜸해지다가 인제 애들을 어느 정도 키워 논 다음에",
+                    "original_form": "뭐~ 뜸해지다가 인제 애들을 어느 정도 키워 논 다음에",
+                    "speaker_id": "SD2300682",
+                    "start": 382.33162,
+                    "end": 386.43235,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.187",
+                    "form": "중간에 이제 연락을",
+                    "original_form": "중간에 이제 연락을",
+                    "speaker_id": "SD2300682",
+                    "start": 387.21248,
+                    "end": 388.34669,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.188",
+                    "form": "엄마가 했지.",
+                    "original_form": "엄마가 했지.",
+                    "speaker_id": "SD2300682",
+                    "start": 388.57249,
+                    "end": 389.75001,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.189",
+                    "form": "그래서 아줌마도 봐 그러니까 중간중간에는 연락을 했는데 인제 본격적으로 만나는 거는",
+                    "original_form": "그래서 아줌마도 봐 그니까 중간중간에는 연락을 했는데 인제 본격적으로 만나는 거는",
+                    "speaker_id": "SD2300682",
+                    "start": 390.39149,
+                    "end": 395.30650,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.190",
+                    "form": "인제",
+                    "original_form": "인제",
+                    "speaker_id": "SD2300682",
+                    "start": 395.83650,
+                    "end": 396.34150,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.191",
+                    "form": "애들 어느 정도 키워 논 다음에 우리 만나자.",
+                    "original_form": "애들 어느 정도 키워 논 다음에 우리 만나자.",
+                    "speaker_id": "SD2300682",
+                    "start": 396.49150,
+                    "end": 398.89651,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.192",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 399.71151,
+                    "end": 400.27651,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.193",
+                    "form": "작년",
+                    "original_form": "작년",
+                    "speaker_id": "SD2300682",
+                    "start": 400.67651,
+                    "end": 401.38436,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.194",
+                    "form": "작년인가",
+                    "original_form": "작년인가",
+                    "speaker_id": "SD2300682",
+                    "start": 401.74152,
+                    "end": 402.54731,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.195",
+                    "form": "올해 너 기억나니?",
+                    "original_form": "올해 너 기억나니?",
+                    "speaker_id": "SD2300682",
+                    "start": 402.83152,
+                    "end": 404.26652,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.196",
+                    "form": "호캉스 아 했던 거",
+                    "original_form": "호캉스 아~ 했던 거",
+                    "speaker_id": "SD2300682",
+                    "start": 405.00152,
+                    "end": 406.18132,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.197",
+                    "form": "송도 가서",
+                    "original_form": "송도 가서",
+                    "speaker_id": "SD2300682",
+                    "start": 406.42253,
+                    "end": 407.19153,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.198",
+                    "form": "",
+                    "original_form": "{laughing}",
+                    "speaker_id": "SD2300682",
+                    "start": 407.46653,
+                    "end": 407.81653,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.199",
+                    "form": "아줌마랑 약속 잡아서",
+                    "original_form": "아줌마랑 약속 잡아서",
+                    "speaker_id": "SD2300682",
+                    "start": 407.99653,
+                    "end": 409.49653,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.200",
+                    "form": "송도",
+                    "original_form": "송도",
+                    "speaker_id": "SD2300682",
+                    "start": 410.03153,
+                    "end": 410.74254,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.201",
+                    "form": "그 호텔 있잖아.",
+                    "original_form": "그~ 호텔 있잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 411.79654,
+                    "end": 412.74522,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.202",
+                    "form": "어 이름은 생각이 안 나네.",
+                    "original_form": "어~ 이름은 생각이 안 나네.",
+                    "speaker_id": "SD2300682",
+                    "start": 413.47022,
+                    "end": 414.91155,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.203",
+                    "form": "그 호텔에 잡아 갖고 1박 2일로",
+                    "original_form": "그~ 호텔에 잡아 갖고 일박 이 일로",
+                    "speaker_id": "SD2300682",
+                    "start": 415.36755,
+                    "end": 418.27755,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.204",
+                    "form": "이제 호캉스하러 인제 약속을 했는데 엄마가 대구에서",
+                    "original_form": "이제 호캉스하러 인제 약속을 했는데 엄마가 대구에서",
+                    "speaker_id": "SD2300682",
+                    "start": 418.85655,
+                    "end": 422.48156,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.205",
+                    "form": "인천까지 올라갔잖아.",
+                    "original_form": "인천까지 올라갔잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 422.95656,
+                    "end": 424.25101,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.206",
+                    "form": "그래서 아줌마는 인제 인천 사람이기 때문에",
+                    "original_form": "그래서 아줌마는 인제 인천 사람이기 때문에",
+                    "speaker_id": "SD2300682",
+                    "start": 424.95657,
+                    "end": 427.44657,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.207",
+                    "form": "그 맛집을 많이 알고 있거든.",
+                    "original_form": "그~ 맛집을 많이 알고 있거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 428.50157,
+                    "end": 430.00657,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.208",
+                    "form": "그래서 그 아줌마는 마 맛집 리스트 작성해서 나는 모르니까",
+                    "original_form": "그래서 그 아줌마는 마 맛집 리스트 작성해서 나는 모르니까",
+                    "speaker_id": "SD2300682",
+                    "start": 430.97158,
+                    "end": 434.77159,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.209",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 435.42159,
+                    "end": 435.85159,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.210",
+                    "form": "어 케이티엑스 타고 올라가서 아줌마하고 만나서",
+                    "original_form": "어~ 케이티엑스 타고 올라가서 아줌마하고 만나서",
+                    "speaker_id": "SD2300682",
+                    "start": 436.39159,
+                    "end": 439.57160,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.211",
+                    "form": "그 호텔에서",
+                    "original_form": "그~ 호텔에서",
+                    "speaker_id": "SD2300682",
+                    "start": 440.17160,
+                    "end": 441.08660,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.212",
+                    "form": "어 있다가",
+                    "original_form": "어~ 있다가",
+                    "speaker_id": "SD2300682",
+                    "start": 441.99160,
+                    "end": 442.95661,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.213",
+                    "form": "거기 근처 맛집 가서",
+                    "original_form": "거기 근처 맛집 가서",
+                    "speaker_id": "SD2300682",
+                    "start": 443.19161,
+                    "end": 444.53661,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.214",
+                    "form": "회포를 풀었지 스타벅스 근데 신기한 게",
+                    "original_form": "회포를 풀었지 스타벅스 근데 신기한 게",
+                    "speaker_id": "SD2300682",
+                    "start": 445.00661,
+                    "end": 448.17662,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.215",
+                    "form": "맨날 인제 전화로 얘기를 하잖아.",
+                    "original_form": "맨날 인제 전화로 얘기를 하잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 449.49162,
+                    "end": 451.11663,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.216",
+                    "form": "근데",
+                    "original_form": "근데",
+                    "speaker_id": "SD2300682",
+                    "start": 452.07663,
+                    "end": 452.53663,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.217",
+                    "form": "커피숍에서 만",
+                    "original_form": "커피숍에서 만",
+                    "speaker_id": "SD2300682",
+                    "start": 452.66163,
+                    "end": 453.53663,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.218",
+                    "form": "커피숍으로 갔어.",
+                    "original_form": "커피숍으로 갔어.",
+                    "speaker_id": "SD2300682",
+                    "start": 453.82163,
+                    "end": 454.93163,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.219",
+                    "form": "근데",
+                    "original_form": "근데",
+                    "speaker_id": "SD2300682",
+                    "start": 455.86164,
+                    "end": 456.44164,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.220",
+                    "form": "1시부터",
+                    "original_form": "한 시부터",
+                    "speaker_id": "SD2300682",
+                    "start": 456.54164,
+                    "end": 457.57835,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.221",
+                    "form": "6시 반까지",
+                    "original_form": "여섯 시 반까지",
+                    "speaker_id": "SD2300682",
+                    "start": 458.34664,
+                    "end": 459.67164,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.222",
+                    "form": "계속 얘기를 하는 거야.",
+                    "original_form": "계속 얘기를 하는 거야.",
+                    "speaker_id": "SD2300682",
+                    "start": 460.52665,
+                    "end": 462.01665,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.223",
+                    "form": "그 안 끊기고",
+                    "original_form": "그~ 안 끊기구",
+                    "speaker_id": "SD2300682",
+                    "start": 462.98665,
+                    "end": 464.12165,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.224",
+                    "form": "근데 그 시간이 이래 짧은 시간이 아니잖아.",
+                    "original_form": "근데 그 시간이 이래 짧은 시간이 아니잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 464.77166,
+                    "end": 466.94166,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.225",
+                    "form": "근데 계속 주제가 안 끊기고 계속 나온다는 자체가",
+                    "original_form": "근데 계속 주제가 안 끊기구 계속 나온다는 자체가",
+                    "speaker_id": "SD2300682",
+                    "start": 467.83666,
+                    "end": 471.38167,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.226",
+                    "form": "너무 엄마도 신기했거든.",
+                    "original_form": "너무 엄마두 신기했거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 471.84667,
+                    "end": 473.19193,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.227",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 474.08668,
+                    "end": 474.62668,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.228",
+                    "form": "맨날 연 연락하는데도 할 얘기가 있더라고",
+                    "original_form": "맨날 -연- 연락하는데도 할 얘기가 있더라구",
+                    "speaker_id": "SD2300682",
+                    "start": 475.29964,
+                    "end": 477.98669,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.229",
+                    "form": "그리고 인제 가서",
+                    "original_form": "그르구 인제 가서",
+                    "speaker_id": "SD2300682",
+                    "start": 479.10669,
+                    "end": 480.23169,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.230",
+                    "form": "고 근처에서",
+                    "original_form": "고 근처에서",
+                    "speaker_id": "SD2300682",
+                    "start": 480.60169,
+                    "end": 481.38540,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.231",
+                    "form": "저녁 먹고",
+                    "original_form": "저녁 먹고",
+                    "speaker_id": "SD2300682",
+                    "start": 482.19269,
+                    "end": 482.97769,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.232",
+                    "form": "또 호텔에 돌아왔어.",
+                    "original_form": "또 호텔에 돌아왔어.",
+                    "speaker_id": "SD2300682",
+                    "start": 483.80170,
+                    "end": 485.00237,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.233",
+                    "form": "근데 새벽 2시까지",
+                    "original_form": "근데 새벽 두 시까지",
+                    "speaker_id": "SD2300682",
+                    "start": 485.88737,
+                    "end": 487.49171,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.234",
+                    "form": "계속 또 얘기를 하는 거야.",
+                    "original_form": "계속 또 얘기를 하는 거야.",
+                    "speaker_id": "SD2300682",
+                    "start": 487.95671,
+                    "end": 489.48671,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.235",
+                    "form": "그 신기한 게",
+                    "original_form": "그~ 신기한 게",
+                    "speaker_id": "SD2300682",
+                    "start": 490.51171,
+                    "end": 491.55172,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.236",
+                    "form": "너무너무 재밌고",
+                    "original_form": "너무너무 재밌고",
+                    "speaker_id": "SD2300682",
+                    "start": 491.92672,
+                    "end": 493.05672,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.237",
+                    "form": "약간",
+                    "original_form": "약간",
+                    "speaker_id": "SD2300682",
+                    "start": 493.69672,
+                    "end": 494.16172,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.238",
+                    "form": "우리는 50",
+                    "original_form": "우리는 오십",
+                    "speaker_id": "SD2300682",
+                    "start": 495.59673,
+                    "end": 496.24173,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.239",
+                    "form": "거의 60이 다 됐잖아.",
+                    "original_form": "거의 육십이 다 됐잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 496.37173,
+                    "end": 497.66113,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.240",
+                    "form": "근데 고등학교",
+                    "original_form": "근데 고등학교",
+                    "speaker_id": "SD2300682",
+                    "start": 498.47673,
+                    "end": 499.61673,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.241",
+                    "form": "초중고등학교 때 시절에",
+                    "original_form": "초중고등학교 때 시절에",
+                    "speaker_id": "SD2300682",
+                    "start": 500.54173,
+                    "end": 502.66674,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.242",
+                    "form": "그런 마인드로",
+                    "original_form": "그런 마인드루",
+                    "speaker_id": "SD2300682",
+                    "start": 503.27174,
+                    "end": 504.25886,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.243",
+                    "form": "똑같이 얘기하고 있는 게 느껴졌어.",
+                    "original_form": "똑같이 얘기하고 있는 게 느껴졌어.",
+                    "speaker_id": "SD2300682",
+                    "start": 504.59675,
+                    "end": 506.56175,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.244",
+                    "form": "할머니에 가까운 나이인데도",
+                    "original_form": "할머니에 가까운 나이인데도",
+                    "speaker_id": "SD2300682",
+                    "start": 506.88175,
+                    "end": 509.04891,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.245",
+                    "form": "그때",
+                    "original_form": "그때",
+                    "speaker_id": "SD2300682",
+                    "start": 509.63676,
+                    "end": 510.32686,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.246",
+                    "form": "학창 시절에",
+                    "original_form": "학창 시절에",
+                    "speaker_id": "SD2300682",
+                    "start": 511.06176,
+                    "end": 511.93676,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.247",
+                    "form": "그 사춘기 소녀의",
+                    "original_form": "그~ 사춘기 소녀의",
+                    "speaker_id": "SD2300682",
+                    "start": 512.43676,
+                    "end": 514.06177,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.248",
+                    "form": "그 주제로 대화 주제로",
+                    "original_form": "그~ 주제로 대화 주제로",
+                    "speaker_id": "SD2300682",
+                    "start": 514.29677,
+                    "end": 515.91677,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.249",
+                    "form": "그다음에",
+                    "original_form": "그다음에",
+                    "speaker_id": "SD2300682",
+                    "start": 516.24677,
+                    "end": 516.81177,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.250",
+                    "form": "상대를 여기는",
+                    "original_form": "상대를 여기는",
+                    "speaker_id": "SD2300682",
+                    "start": 517.23177,
+                    "end": 518.75678,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.251",
+                    "form": "그런 생각이",
+                    "original_form": "그런 생각이",
+                    "speaker_id": "SD2300682",
+                    "start": 519.33178,
+                    "end": 520.42678,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.252",
+                    "form": "학생들",
+                    "original_form": "학생들",
+                    "speaker_id": "SD2300682",
+                    "start": 520.84178,
+                    "end": 521.49678,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.253",
+                    "form": "그때로 돌아간 거 같아.",
+                    "original_form": "그때로 돌아간 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 522.28178,
+                    "end": 523.59179,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.254",
+                    "form": "그래서 그런 감정이",
+                    "original_form": "그래서 그런 감정이",
+                    "speaker_id": "SD2300682",
+                    "start": 524.02679,
+                    "end": 525.40179,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.255",
+                    "form": "되게 신기했어 엄마가",
+                    "original_form": "되게 신기했어 엄마가",
+                    "speaker_id": "SD2300682",
+                    "start": 526.06179,
+                    "end": 527.35094,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.256",
+                    "form": "어",
+                    "original_form": "어~",
+                    "speaker_id": "SD2300682",
+                    "start": 528.26680,
+                    "end": 528.57957,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.257",
+                    "form": "나이는 들었는데 감정은",
+                    "original_form": "나이는 들었는데 감정은",
+                    "speaker_id": "SD2300682",
+                    "start": 528.77180,
+                    "end": 530.61180,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.258",
+                    "form": "청소년이었다는",
+                    "original_form": "청소년이었다는",
+                    "speaker_id": "SD2300682",
+                    "start": 531.14680,
+                    "end": 532.72950,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.259",
+                    "form": "그런 감정이었어.",
+                    "original_form": "그런 감정이었어.",
+                    "speaker_id": "SD2300682",
+                    "start": 533.33181,
+                    "end": 534.42272,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.260",
+                    "form": "사실 나랑 나는 name2랑 제일 단짝 친구지만",
+                    "original_form": "사실 나랑 나는 &name2&랑 제일 단짝 친구지만",
+                    "speaker_id": "SD2300681",
+                    "start": 534.57181,
+                    "end": 538.78782,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.261",
+                    "form": "나는 엄마처럼 이제 말을 많이 안 하는 스타일이기 때문에",
+                    "original_form": "나는 엄마처럼 이제 말을 많이 안 하는 스타일이기 때문에",
+                    "speaker_id": "SD2300681",
+                    "start": 539.50182,
+                    "end": 544.45183,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.262",
+                    "form": "name2랑 있으면 그렇게",
+                    "original_form": "&name2&랑 있으면 그렇게",
+                    "speaker_id": "SD2300681",
+                    "start": 545.28684,
+                    "end": 546.46184,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.263",
+                    "form": "말을 사실 많이 하진 않지만 그래도",
+                    "original_form": "말을 사실 많이 하진 않지만 그래도",
+                    "speaker_id": "SD2300681",
+                    "start": 546.91684,
+                    "end": 549.68451,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.264",
+                    "form": "name2랑 관계에서",
+                    "original_form": "&name2&랑 관계에서",
+                    "speaker_id": "SD2300681",
+                    "start": 550.15185,
+                    "end": 552.08685,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.265",
+                    "form": "그거를",
+                    "original_form": "그거를",
+                    "speaker_id": "SD2300681",
+                    "start": 552.86185,
+                    "end": 553.54685,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.266",
+                    "form": "그렇게 소중하게 생각하는 거는",
+                    "original_form": "그렇게 소중하게 생각하는 거는",
+                    "speaker_id": "SD2300681",
+                    "start": 553.89186,
+                    "end": 556.08686,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.267",
+                    "form": "이제 엄마처럼 같이 있으면 너무 편안하고 말은",
+                    "original_form": "이제 엄마처럼 같이 있으면 너무 편안하고 말은",
+                    "speaker_id": "SD2300681",
+                    "start": 556.52186,
+                    "end": 559.76482,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.268",
+                    "form": "그러니까 엄마는 말을 이렇게",
+                    "original_form": "그니까 엄마는 말을 이렇게",
+                    "speaker_id": "SD2300681",
+                    "start": 560.00982,
+                    "end": 561.80983,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.269",
+                    "form": "말이 이제 티키타카가 잘 되니까",
+                    "original_form": "말이 이제 티키타카가 잘 되니까",
+                    "speaker_id": "SD2300681",
+                    "start": 562.23687,
+                    "end": 564.75188,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.270",
+                    "form": "이제 편안하다고 생각을 하는 거고",
+                    "original_form": "이제 편안하다고 생각을 하는 거고",
+                    "speaker_id": "SD2300681",
+                    "start": 564.93688,
+                    "end": 566.94188,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.271",
+                    "form": "나는 오히려 말을 안 해도 편안하니까",
+                    "original_form": "나는 오히려 말을 안 해도 편안하니까",
+                    "speaker_id": "SD2300681",
+                    "start": 567.22288,
+                    "end": 569.44189,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.272",
+                    "form": "편안하다고 생각을 하는 건데",
+                    "original_form": "편안하다고 생각을 하는 건데",
+                    "speaker_id": "SD2300681",
+                    "start": 569.71689,
+                    "end": 571.67189,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.273",
+                    "form": "나도 엄마랑",
+                    "original_form": "나도 엄마랑",
+                    "speaker_id": "SD2300681",
+                    "start": 572.03190,
+                    "end": 573.24190,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.274",
+                    "form": "name1 아줌마랑 그렇게",
+                    "original_form": "&name1& 아줌마랑 그렇게",
+                    "speaker_id": "SD2300681",
+                    "start": 573.46690,
+                    "end": 574.81190,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.275",
+                    "form": "나이 이렇게 들어서까지",
+                    "original_form": "나이 이렇게 들어서까지",
+                    "speaker_id": "SD2300681",
+                    "start": 575.33690,
+                    "end": 577.38191,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.276",
+                    "form": "너무 즐겁게 노는 거 보니까 일단은 신기하기도 하고",
+                    "original_form": "너무 즐겁게 노는 거 보니까 일단은 신기하기도 하고",
+                    "speaker_id": "SD2300681",
+                    "start": 577.73191,
+                    "end": 581.20692,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.277",
+                    "form": "아 나도",
+                    "original_form": "아~ 나두",
+                    "speaker_id": "SD2300681",
+                    "start": 581.69692,
+                    "end": 582.34192,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.278",
+                    "form": "name2랑 나중에 저렇게까지 오랫동안",
+                    "original_form": "&name2&랑 나중에 저렇게까지 오랫동안",
+                    "speaker_id": "SD2300681",
+                    "start": 582.53692,
+                    "end": 584.92942,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.279",
+                    "form": "우정을 다졌으면 참 좋겠다라는 생각을 하지 사실",
+                    "original_form": "우정을 다졌으면 참 좋겠다라는 생각을 하지 사실",
+                    "speaker_id": "SD2300681",
+                    "start": 585.53193,
+                    "end": 589.99193,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.280",
+                    "form": "그 일생에 있어서 쪼금 그런 단짝 친구를 만나는 게 결국에 쉬운 일은 아니니까",
+                    "original_form": "그~ 일생에 있어서 쪼금 그런 단짝 친구를 만나는 게 결국에 쉬운 일은 아니니까",
+                    "speaker_id": "SD2300681",
+                    "start": 590.56194,
+                    "end": 596.29695,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.281",
+                    "form": "엄마도 지금",
+                    "original_form": "엄마도 지금",
+                    "speaker_id": "SD2300681",
+                    "start": 597.07695,
+                    "end": 598.08695,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.282",
+                    "form": "친구들 있잖아 솔직히 여기 성인 돼서 만난 친구들 있잖아.",
+                    "original_form": "친구들 있잖아 솔직히 여기 성인 돼서 만난 친구들 있잖아.",
+                    "speaker_id": "SD2300681",
+                    "start": 598.16195,
+                    "end": 602.41196,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.283",
+                    "form": "근데",
+                    "original_form": "근데",
+                    "speaker_id": "SD2300681",
+                    "start": 602.53196,
+                    "end": 602.93196,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.284",
+                    "form": "확실히",
+                    "original_form": "확실히",
+                    "speaker_id": "SD2300681",
+                    "start": 603.27696,
+                    "end": 603.93181,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.285",
+                    "form": "어렸을 때 아기 때 만난 친구들이랑 느낌이 많이 다를 거 같기는 해.",
+                    "original_form": "어렸을 때 애기 때 만난 친구들이랑 느낌이 많이 다를 거 같기는 해.",
+                    "speaker_id": "SD2300681",
+                    "start": 604.40182,
+                    "end": 608.24197,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.286",
+                    "form": "맞어.",
+                    "original_form": "맞어.",
+                    "speaker_id": "SD2300682",
+                    "start": 608.39198,
+                    "end": 608.84798,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.287",
+                    "form": "그거는",
+                    "original_form": "그거는",
+                    "speaker_id": "SD2300682",
+                    "start": 609.20198,
+                    "end": 609.71198,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.288",
+                    "form": "지금 사회에서 만난 친구도 모임도 있지만",
+                    "original_form": "지금 사회에서 만난 친구두 모임두 있지만",
+                    "speaker_id": "SD2300682",
+                    "start": 610.15698,
+                    "end": 612.93199,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.289",
+                    "form": "어떤 내 깊은",
+                    "original_form": "어떤 내 깊은",
+                    "speaker_id": "SD2300682",
+                    "start": 613.13699,
+                    "end": 614.43350,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.290",
+                    "form": "그런",
+                    "original_form": "그런",
+                    "speaker_id": "SD2300682",
+                    "start": 615.04199,
+                    "end": 615.55227,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.291",
+                    "form": "고민이라든가",
+                    "original_form": "고민이라든가",
+                    "speaker_id": "SD2300682",
+                    "start": 615.93799,
+                    "end": 617.05406,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.292",
+                    "form": "깊은 얘기를 하는 데는",
+                    "original_form": "깊은 얘기를 하는 데는",
+                    "speaker_id": "SD2300682",
+                    "start": 617.54406,
+                    "end": 619.56408,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.293",
+                    "form": "좀 한계가 있지.",
+                    "original_form": "좀 한계가 있지.",
+                    "speaker_id": "SD2300682",
+                    "start": 619.89700,
+                    "end": 620.94957,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.294",
+                    "form": "그렇다 그래서 뭐 그분 그 사람들이",
+                    "original_form": "그렇다 그래서 뭐~ 그분 그 사람들이",
+                    "speaker_id": "SD2300682",
+                    "start": 621.44801,
+                    "end": 623.87800,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.295",
+                    "form": "뭐 좋다 나쁘다는 아니고",
+                    "original_form": "뭐~ 좋다 나쁘다는 아니고",
+                    "speaker_id": "SD2300682",
+                    "start": 624.45701,
+                    "end": 626.55917,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.296",
+                    "form": "그냥 내가 그냥 자연스럽게",
+                    "original_form": "그냥 내가 그냥 자연스럽게",
+                    "speaker_id": "SD2300682",
+                    "start": 627.10702,
+                    "end": 629.18064,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.297",
+                    "form": "그게 아 그렇게 나오는 거 같아.",
+                    "original_form": "그게 아~ 그렇게 나오는 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 630.01113,
+                    "end": 631.76717,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.298",
+                    "form": "name1 아줌마한테는",
+                    "original_form": "&name1& 아줌마한테는",
+                    "speaker_id": "SD2300682",
+                    "start": 632.14739,
+                    "end": 633.38739,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.299",
+                    "form": "나를 지켜봤잖아 한 30년 동안",
+                    "original_form": "나를 지켜봤잖아 한 삼십 년 동안",
+                    "speaker_id": "SD2300682",
+                    "start": 633.76203,
+                    "end": 635.69204,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.300",
+                    "form": "그러니까 모든 것을 아니까",
+                    "original_form": "그러니까 모든 것을 아니까",
+                    "speaker_id": "SD2300682",
+                    "start": 635.93204,
+                    "end": 637.95704,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.301",
+                    "form": "편하게 얘기하는 거고",
+                    "original_form": "편하게 얘기하는 거고",
+                    "speaker_id": "SD2300682",
+                    "start": 638.25204,
+                    "end": 639.54594,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.302",
+                    "form": "이제 여기 모임에서 만난",
+                    "original_form": "이제 여기 모임에서 만난",
+                    "speaker_id": "SD2300682",
+                    "start": 640.04705,
+                    "end": 641.35285,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.303",
+                    "form": "그 친구들은",
+                    "original_form": "그~ 친구들은",
+                    "speaker_id": "SD2300682",
+                    "start": 642.27284,
+                    "end": 643.56784,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.304",
+                    "form": "그냥 좋은 분들인데",
+                    "original_form": "그냥 좋은 분들인데",
+                    "speaker_id": "SD2300682",
+                    "start": 644.35706,
+                    "end": 645.55206,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.305",
+                    "form": "어 그 시대가 좀 달랐던 거야 시대가 달라서 공유할 수 있는 게 별로 없으니까",
+                    "original_form": "어~ 그~ 시대가 좀 달랐던 거야 시대가 달라서 공유할 수 있는 게 별로 없으니까",
+                    "speaker_id": "SD2300682",
+                    "start": 646.51706,
+                    "end": 652.09707,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.306",
+                    "form": "어 인제 얘기하는데 제한이 있는 거 같아.",
+                    "original_form": "어~ 인제 얘기하는데 제한이 있는 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 652.64207,
+                    "end": 655.12141,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.307",
+                    "form": "그리고",
+                    "original_form": "그르구",
+                    "speaker_id": "SD2300682",
+                    "start": 655.98208,
+                    "end": 656.55208,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.308",
+                    "form": "친구 관계는",
+                    "original_form": "친구 관계는",
+                    "speaker_id": "SD2300682",
+                    "start": 657.37208,
+                    "end": 658.45709,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.309",
+                    "form": "노력을 누구",
+                    "original_form": "노력을 누구",
+                    "speaker_id": "SD2300682",
+                    "start": 659.67209,
+                    "end": 661.34639,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.310",
+                    "form": "서로 노력해야 되는 거 같아.",
+                    "original_form": "서로 노력해야 되는 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 661.52209,
+                    "end": 662.92210,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.311",
+                    "form": "어 나는 이러니까",
+                    "original_form": "어~ 나는 이러니까",
+                    "speaker_id": "SD2300682",
+                    "start": 663.40210,
+                    "end": 664.76711,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.312",
+                    "form": "뭐",
+                    "original_form": "뭐~",
+                    "speaker_id": "SD2300682",
+                    "start": 665.62710,
+                    "end": 666.10624,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.313",
+                    "form": "뭐 네가 노력해 줘.",
+                    "original_form": "뭐~ 니가 노력해 줘.",
+                    "speaker_id": "SD2300682",
+                    "start": 667.37164,
+                    "end": 668.66204,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.314",
+                    "form": "그러니까 나도 노 내가 노력을 안 하면",
+                    "original_form": "그니까 나도 노 내가 노력을 안 하면",
+                    "speaker_id": "SD2300682",
+                    "start": 668.87711,
+                    "end": 670.78211,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.315",
+                    "form": "응 상대방도 그렇게 생각할 수가 있잖아.",
+                    "original_form": "응~ 상대방도 그렇게 생각할 수가 있잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 671.95212,
+                    "end": 673.93668,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.316",
+                    "form": "근데 뭐",
+                    "original_form": "근데 뭐~",
+                    "speaker_id": "SD2300682",
+                    "start": 674.31212,
+                    "end": 674.87712,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.317",
+                    "form": "내가 내가",
+                    "original_form": "내가 내가",
+                    "speaker_id": "SD2300682",
+                    "start": 675.15212,
+                    "end": 676.50950,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.318",
+                    "form": "어 더 노력했다 그렇게 생각하지 말고",
+                    "original_form": "어~ 더 노력했다 그렇게 생각하지 말고",
+                    "speaker_id": "SD2300682",
+                    "start": 677.28451,
+                    "end": 679.58452,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.319",
+                    "form": "그냥 친구니까 내가 사랑하는 사람이니까",
+                    "original_form": "그냥 친구니까 내가 사랑하는 사람이니까",
+                    "speaker_id": "SD2300682",
+                    "start": 680.42714,
+                    "end": 682.73214,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.320",
+                    "form": "좀 더",
+                    "original_form": "좀 더",
+                    "speaker_id": "SD2300682",
+                    "start": 683.81214,
+                    "end": 684.43714,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.321",
+                    "form": "그냥 감정대로 움직이는 게",
+                    "original_form": "그냥 감정대로 움직이는 게",
+                    "speaker_id": "SD2300682",
+                    "start": 685.19215,
+                    "end": 686.78715,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.322",
+                    "form": "더",
+                    "original_form": "더",
+                    "speaker_id": "SD2300682",
+                    "start": 687.48215,
+                    "end": 687.89715,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.323",
+                    "form": "오래 지속할 수 있는",
+                    "original_form": "오래 지속할 수 있는",
+                    "speaker_id": "SD2300682",
+                    "start": 688.10715,
+                    "end": 689.51240,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.324",
+                    "form": "조건인 거 같아.",
+                    "original_form": "조건인 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 689.91716,
+                    "end": 690.88216,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.325",
+                    "form": "그러면 엄마는",
+                    "original_form": "그러면 엄마는",
+                    "speaker_id": "SD2300681",
+                    "start": 691.04716,
+                    "end": 692.87216,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.326",
+                    "form": "이제 오랜 시간을 같이 지내면 그만큼 말하질 말 말할 것도 많아지고",
+                    "original_form": "이제 오랜 시간을 같이 지내면 그만큼 말하질 -말- 말할 것도 많아지고",
+                    "speaker_id": "SD2300681",
+                    "start": 693.05216,
+                    "end": 698.88218,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.327",
+                    "form": "좀 더 사이가 각별 한다고 믿는다면 그러니까",
+                    "original_form": "좀 더 사이가 각별 한다고 믿는다면 그니까",
+                    "speaker_id": "SD2300681",
+                    "start": 699.26718,
+                    "end": 701.91218,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.328",
+                    "form": "시간이 길어질수록 우정이 깊어지는다고 믿는 쪽이야 아니면",
+                    "original_form": "시간이 길어질수록 우정이 깊어지는다고 믿는 쪽이야 아니면",
+                    "speaker_id": "SD2300681",
+                    "start": 702.15718,
+                    "end": 706.62308,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.329",
+                    "form": "시간이랑 상관없이",
+                    "original_form": "시간이랑 상관없이",
+                    "speaker_id": "SD2300681",
+                    "start": 706.73219,
+                    "end": 708.48720,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.330",
+                    "form": "그런 우정은 별개로 잘 맞는 사람이 있다라고 생각하는 거야?",
+                    "original_form": "그런 우정은 별개로 잘 맞는 사람이 있다라고 생각하는 거야?",
+                    "speaker_id": "SD2300681",
+                    "start": 708.87720,
+                    "end": 713.25821,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.331",
+                    "form": "한쪽만",
+                    "original_form": "한쪽만",
+                    "speaker_id": "SD2300682",
+                    "start": 713.54721,
+                    "end": 714.45592,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.332",
+                    "form": "한쪽 그러니까",
+                    "original_form": "한쪽 그니까",
+                    "speaker_id": "SD2300682",
+                    "start": 715.08593,
+                    "end": 716.14093,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.333",
+                    "form": "둘 다",
+                    "original_form": "둘 다",
+                    "speaker_id": "SD2300682",
+                    "start": 717.04222,
+                    "end": 717.79722,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.334",
+                    "form": "다 해당이 된다고 봐.",
+                    "original_form": "다 해당이 된다고 봐.",
+                    "speaker_id": "SD2300682",
+                    "start": 718.29222,
+                    "end": 719.87998,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.335",
+                    "form": "예를 들어서",
+                    "original_form": "예를 들어서",
+                    "speaker_id": "SD2300682",
+                    "start": 720.35722,
+                    "end": 721.44423,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.336",
+                    "form": "나랑",
+                    "original_form": "나랑",
+                    "speaker_id": "SD2300682",
+                    "start": 721.76223,
+                    "end": 722.40723,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.337",
+                    "form": "생각하는 거라든가 그러니까",
+                    "original_form": "생각하는 거라든가 그니까",
+                    "speaker_id": "SD2300682",
+                    "start": 722.71223,
+                    "end": 724.29003,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.338",
+                    "form": "오래 만나지 않았지만",
+                    "original_form": "오래 만나지 않았지만",
+                    "speaker_id": "SD2300682",
+                    "start": 724.78223,
+                    "end": 726.24579,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.339",
+                    "form": "생각하는 그런 공통점이라든가 주제가",
+                    "original_form": "생각하는 그런 공통점이라든가 주제가",
+                    "speaker_id": "SD2300682",
+                    "start": 726.59724,
+                    "end": 729.38224,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.340",
+                    "form": "어 같다거나",
+                    "original_form": "어~ 같다거나",
+                    "speaker_id": "SD2300682",
+                    "start": 730.17225,
+                    "end": 731.31028,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.341",
+                    "form": "아니면 성향이 좀 같다거나",
+                    "original_form": "아니면 성향이 좀 같다거나",
+                    "speaker_id": "SD2300682",
+                    "start": 731.71528,
+                    "end": 733.71530,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.342",
+                    "form": "어 그러면은",
+                    "original_form": "어~ 그러면은",
+                    "speaker_id": "SD2300682",
+                    "start": 734.61226,
+                    "end": 736.33226,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.343",
+                    "form": "그",
+                    "original_form": "그~",
+                    "speaker_id": "SD2300682",
+                    "start": 737.02226,
+                    "end": 737.77726,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.344",
+                    "form": "만난",
+                    "original_form": "만난",
+                    "speaker_id": "SD2300682",
+                    "start": 738.05226,
+                    "end": 738.91750,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.345",
+                    "form": "시간에 시간에 그런 것보다는",
+                    "original_form": "시간에 시간에 그런 것보다는",
+                    "speaker_id": "SD2300682",
+                    "start": 739.33727,
+                    "end": 741.85553,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.346",
+                    "form": "음",
+                    "original_form": "음~",
+                    "speaker_id": "SD2300682",
+                    "start": 742.71727,
+                    "end": 743.64227,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.347",
+                    "form": "훨씬 더 그러니까",
+                    "original_form": "훨씬 더 그니까",
+                    "speaker_id": "SD2300682",
+                    "start": 743.76227,
+                    "end": 745.04595,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.348",
+                    "form": "그거에 비례하지 않고",
+                    "original_form": "그거에 비례하지 않고",
+                    "speaker_id": "SD2300682",
+                    "start": 745.24106,
+                    "end": 746.66686,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.349",
+                    "form": "친해질 수도 있다고 생각하고",
+                    "original_form": "친해질 수두 있다고 생각하고",
+                    "speaker_id": "SD2300682",
+                    "start": 747.42728,
+                    "end": 749.70229,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.350",
+                    "form": "또",
+                    "original_form": "또",
+                    "speaker_id": "SD2300682",
+                    "start": 750.59329,
+                    "end": 750.99729,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.351",
+                    "form": "어 친구끼리 그런",
+                    "original_form": "어~ 친구끼리 그런",
+                    "speaker_id": "SD2300682",
+                    "start": 751.12729,
+                    "end": 752.82729,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.352",
+                    "form": "어 생각이 다르지만",
+                    "original_form": "어~ 생각이 달르지만",
+                    "speaker_id": "SD2300682",
+                    "start": 753.64230,
+                    "end": 755.25034,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.353",
+                    "form": "오랜 세월을 두고",
+                    "original_form": "오랜 세월을 두구",
+                    "speaker_id": "SD2300682",
+                    "start": 755.48730,
+                    "end": 757.02115,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.354",
+                    "form": "오래 만나다 보면 그 사람을 이해하게 되잖아.",
+                    "original_form": "오래 만나다 보면 그 사람을 이해하게 되잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 757.39231,
+                    "end": 760.16731,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.355",
+                    "form": "이해하게 되면",
+                    "original_form": "이해하게 되면",
+                    "speaker_id": "SD2300682",
+                    "start": 760.91731,
+                    "end": 761.82732,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.356",
+                    "form": "옛날에는 이해 못 했던 것들이",
+                    "original_form": "옛날에는 이해 못 했던 것들이",
+                    "speaker_id": "SD2300682",
+                    "start": 762.21232,
+                    "end": 764.40232,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.357",
+                    "form": "그 시간의 흐름 속에서",
+                    "original_form": "그~ 시간의 흐름 속에서",
+                    "speaker_id": "SD2300682",
+                    "start": 764.77732,
+                    "end": 766.61805,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.358",
+                    "form": "그 사람을 이해하게 되더라고",
+                    "original_form": "그 사람을 이해하게 되더라고",
+                    "speaker_id": "SD2300682",
+                    "start": 767.30944,
+                    "end": 769.27233,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.359",
+                    "form": "그게 익숙해진다고 할 수 있는 건데",
+                    "original_form": "그게 익숙해진다고 할 수 있는 건데",
+                    "speaker_id": "SD2300682",
+                    "start": 769.87233,
+                    "end": 772.29234,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.360",
+                    "form": "그 사람도 날 나를 그만 시간에 비례해서 나를 이해하게 되고 나도 또 그런 거 같아.",
+                    "original_form": "그 사람도 날 나를 그만 시간에 비례해서 나를 이해하게 되고 나도 또 그런 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 772.42234,
+                    "end": 777.73235,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.361",
+                    "form": "인간관계라는 게 그래서",
+                    "original_form": "인간관계라는 게 그래서",
+                    "speaker_id": "SD2300682",
+                    "start": 777.73235,
+                    "end": 779.61236,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.362",
+                    "form": "오랜 기간의 친구도",
+                    "original_form": "오랜 기간의 친구도",
+                    "speaker_id": "SD2300682",
+                    "start": 780.28736,
+                    "end": 781.79236,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.363",
+                    "form": "친구가 될 수 있고",
+                    "original_form": "친구가 될 수 있고",
+                    "speaker_id": "SD2300682",
+                    "start": 782.87236,
+                    "end": 784.01525,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.364",
+                    "form": "서로 생각이 같은",
+                    "original_form": "서로 생각이 같은",
+                    "speaker_id": "SD2300682",
+                    "start": 784.79737,
+                    "end": 786.20237,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.365",
+                    "form": "어 공통점을 가 가진 나랑 성향이 비슷한 사람도 짧은 시간이지만",
+                    "original_form": "어~ 공통점을 -가- 가진 나랑 성향이 비슷한 사람도 짧은 시간이지만",
+                    "speaker_id": "SD2300682",
+                    "start": 786.88237,
+                    "end": 791.52070,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.366",
+                    "form": "음 서로 생각이 같다 그러면 친해질 수 있을 거 같아.",
+                    "original_form": "음~ 서로 생각이 같다 그러면 친해질 수 있을 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 792.33238,
+                    "end": 796.60238,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.367",
+                    "form": "그러니까는",
+                    "original_form": "그니까는",
+                    "speaker_id": "SD2300682",
+                    "start": 797.03739,
+                    "end": 797.55740,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.368",
+                    "form": "이건 이거다.",
+                    "original_form": "이건 이거다.",
+                    "speaker_id": "SD2300682",
+                    "start": 798.27740,
+                    "end": 799.16740,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.369",
+                    "form": "뭐 이건 이거다라고 구분할 순 없고",
+                    "original_form": "뭐~ 이건 이거다라고 구분할 순 없고",
+                    "speaker_id": "SD2300682",
+                    "start": 800.18740,
+                    "end": 802.51899,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.370",
+                    "form": "하여튼",
+                    "original_form": "하이턴",
+                    "speaker_id": "SD2300682",
+                    "start": 803.33241,
+                    "end": 804.20241,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.371",
+                    "form": "친구 관계는 내가 좀",
+                    "original_form": "친구 관계는 내가 좀",
+                    "speaker_id": "SD2300682",
+                    "start": 804.81241,
+                    "end": 806.37084,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.372",
+                    "form": "적극적으로 노력해야 되는 부분은 있는 거 같아.",
+                    "original_form": "적극적으로 노력해야 되는 부분은 있는 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 807.05742,
+                    "end": 809.74565,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.373",
+                    "form": "나도",
+                    "original_form": "나두",
+                    "speaker_id": "SD2300681",
+                    "start": 809.95342,
+                    "end": 810.94116,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.374",
+                    "form": "나는",
+                    "original_form": "나는",
+                    "speaker_id": "SD2300681",
+                    "start": 811.31743,
+                    "end": 812.61363,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.375",
+                    "form": "오히려 중학교 때 친구들이 나보다 더 오랜",
+                    "original_form": "오히려 중학교 때 친구들이 나보다 더 오랜",
+                    "speaker_id": "SD2300681",
+                    "start": 813.12243,
+                    "end": 817.44744,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.376",
+                    "form": "시간 같이 있었고",
+                    "original_form": "시간 같이 있었고",
+                    "speaker_id": "SD2300681",
+                    "start": 818.08244,
+                    "end": 819.69245,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.377",
+                    "form": "어 그 친구들이랑 아직도 연락하고 지내고 연락이 오긴 하지만",
+                    "original_form": "어~ 그~ 친구들이랑 아직도 연락하고 지내고 연락이 오긴 하지만",
+                    "speaker_id": "SD2300681",
+                    "start": 820.25245,
+                    "end": 825.42246,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.378",
+                    "form": "근데 확실히",
+                    "original_form": "근데 확실히",
+                    "speaker_id": "SD2300681",
+                    "start": 825.92246,
+                    "end": 826.96746,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.379",
+                    "form": "어 대학교 친구들이랑",
+                    "original_form": "어~ 대학교 친구들이랑",
+                    "speaker_id": "SD2300681",
+                    "start": 827.41746,
+                    "end": 830.49747,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.380",
+                    "form": "좀 더 많은 일을 겪다 보니까",
+                    "original_form": "좀 더 많은 일을 겪다 보니까",
+                    "speaker_id": "SD2300681",
+                    "start": 830.78747,
+                    "end": 832.93247,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.381",
+                    "form": "인생 친구를 꼽으라 하면 오히려 오래된 그 친구들보다는 좀 최근에 만난",
+                    "original_form": "인생 친구를 꼽으라 하면 오히려 오래된 그 친구들보다는 좀 최근에 만난",
+                    "speaker_id": "SD2300681",
+                    "start": 833.44748,
+                    "end": 838.58747,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.382",
+                    "form": "대학교 동기들이 나랑 되게 잘 맞는다고 생각을 했어.",
+                    "original_form": "대학교 동기들이 나랑 되게 잘 맞는다고 생각을 했어.",
+                    "speaker_id": "SD2300681",
+                    "start": 838.84247,
+                    "end": 842.17746,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.383",
+                    "form": "그래 가지고 뭔가",
+                    "original_form": "그래 가주구 뭔가",
+                    "speaker_id": "SD2300681",
+                    "start": 842.34250,
+                    "end": 844.05750,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.384",
+                    "form": "오래될수록 좀 더 각별해진다 이거는",
+                    "original_form": "오래될수록 좀 더 각별해진다 이거는",
+                    "speaker_id": "SD2300681",
+                    "start": 845.06250,
+                    "end": 848.12251,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.385",
+                    "form": "또",
+                    "original_form": "또",
+                    "speaker_id": "SD2300681",
+                    "start": 848.26751,
+                    "end": 848.76251,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.386",
+                    "form": "상황이 바뀌어서 그 친구들이랑 가까워지면 또 말이 달라질 수도 있는데",
+                    "original_form": "상황이 바뀌'어서 그 친구들이랑 가까워지면 또 말이 달라질 수도 있는데",
+                    "speaker_id": "SD2300681",
+                    "start": 849.47751,
+                    "end": 853.77752,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.387",
+                    "form": "확실히 이제 내가",
+                    "original_form": "확실히 이제 내가",
+                    "speaker_id": "SD2300681",
+                    "start": 854.12252,
+                    "end": 855.37352,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.388",
+                    "form": "대구에 있다가 또 다른 곳으로 가고 이렇게 하다 보니까",
+                    "original_form": "대구에 있다가 또 다른 곳으로 가고 이렇게 하다 보니까",
+                    "speaker_id": "SD2300681",
+                    "start": 855.73253,
+                    "end": 859.10253,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.389",
+                    "form": "멀어질 친구들은 좀 멀어지게 되더라고 처음엔 그게 되게 속상하고 서운했는데",
+                    "original_form": "멀어질 친구들은 좀 멀어지게 되드라구 처음엔 그게 되게 속상하고 서운했는데",
+                    "speaker_id": "SD2300681",
+                    "start": 859.79753,
+                    "end": 865.52252,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.390",
+                    "form": "왜냐하면",
+                    "original_form": "왜냐하면",
+                    "speaker_id": "SD2300681",
+                    "start": 865.89252,
+                    "end": 866.58049,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.391",
+                    "form": "마음의 그 속도가 다르니까",
+                    "original_form": "마음의 그~ 속도가 다르니까",
+                    "speaker_id": "SD2300681",
+                    "start": 866.84755,
+                    "end": 868.80755,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.392",
+                    "form": "그리고 친구들은 남자 친구가 생기면 소홀해져",
+                    "original_form": "그리고 친구들은 남자 친구가 생기면 소홀해져",
+                    "speaker_id": "SD2300681",
+                    "start": 869.69256,
+                    "end": 872.30256,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.393",
+                    "form": "사실",
+                    "original_form": "사실",
+                    "speaker_id": "SD2300681",
+                    "start": 872.47756,
+                    "end": 873.00256,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.394",
+                    "form": "그게 나는 되게",
+                    "original_form": "그게 나는 되게",
+                    "speaker_id": "SD2300681",
+                    "start": 873.58757,
+                    "end": 874.65757,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.395",
+                    "form": "처음에는 되게 서운하고 속상하고 이랬는데",
+                    "original_form": "처음에는 되게 서운하고 속상하고 이랬는데",
+                    "speaker_id": "SD2300681",
+                    "start": 874.81757,
+                    "end": 877.44257,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.396",
+                    "form": "나중에 지나고 보니까",
+                    "original_form": "나중에 지나고 보니까",
+                    "speaker_id": "SD2300681",
+                    "start": 877.89257,
+                    "end": 879.69258,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.397",
+                    "form": "내 할 일에 집중을 하면서 뭐 각자의 방향으로 성장하다 보니까 좀",
+                    "original_form": "내 할 일에 집중을 하면서 뭐~ 각자의 방향으로 성장하다 보니까 좀",
+                    "speaker_id": "SD2300681",
+                    "start": 880.10258,
+                    "end": 884.22872,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.398",
+                    "form": "이해가 되더라고 엄마도",
+                    "original_form": "이해가 되드라구 엄마두",
+                    "speaker_id": "SD2300681",
+                    "start": 885.11259,
+                    "end": 887.21260,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.399",
+                    "form": "뭐 누군가한테 서운함을 분명 느꼈겠지 엄마도 우정을 누군가",
+                    "original_form": "뭐~ 누군가한테 서운함을 분명 느꼈겠지 엄마두 우정을 누군가",
+                    "speaker_id": "SD2300681",
+                    "start": 888.40260,
+                    "end": 893.13761,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.400",
+                    "form": "다루면서 좀 서운한 적도 있고 엄마가 서운하게 만든 적도 있었겠지 아마",
+                    "original_form": "다루면서 좀 서운한 적도 있고 엄마가 서운하게 만든 적도 있었겠지 아마",
+                    "speaker_id": "SD2300681",
+                    "start": 893.26261,
+                    "end": 897.57262,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.401",
+                    "form": "어 당연히",
+                    "original_form": "어~ 당연히",
+                    "speaker_id": "SD2300682",
+                    "start": 897.75262,
+                    "end": 898.90449,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.402",
+                    "form": "있겠지 엄마도 모르지만 상대편이 느낄 수도 있겠지.",
+                    "original_form": "있겠지 엄마도 모르지만 상대편이 느낄 수도 있겠지.",
+                    "speaker_id": "SD2300682",
+                    "start": 899.33762,
+                    "end": 903.93606,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.403",
+                    "form": "근데 또한 엄마도 느낄 때가 있었는데",
+                    "original_form": "근데 또한 엄마두 느낄 때가 있었는데",
+                    "speaker_id": "SD2300682",
+                    "start": 904.36263,
+                    "end": 906.98710,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.404",
+                    "form": "뭐 이",
+                    "original_form": "뭐~ 이~",
+                    "speaker_id": "SD2300682",
+                    "start": 907.68764,
+                    "end": 908.07805,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.405",
+                    "form": "음",
+                    "original_form": "음~",
+                    "speaker_id": "SD2300682",
+                    "start": 908.36764,
+                    "end": 909.11764,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.406",
+                    "form": "대 너 말대로 친구들이 남자 친구 사귀면",
+                    "original_form": "대 너 말대로 친구들이 남자 친구 사귀면",
+                    "speaker_id": "SD2300682",
+                    "start": 909.47264,
+                    "end": 913.50765,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.407",
+                    "form": "소홀해진다는 거는",
+                    "original_form": "소홀해진다는 거는",
+                    "speaker_id": "SD2300682",
+                    "start": 914.50766,
+                    "end": 915.87266,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.408",
+                    "form": "어 자연스럽게 받아들여야 될 것 같아.",
+                    "original_form": "어~ 자연스럽게 받아들여야 될 것 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 916.77266,
+                    "end": 919.58650,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.409",
+                    "form": "왜냐하면",
+                    "original_form": "왜냐하면",
+                    "speaker_id": "SD2300682",
+                    "start": 920.12367,
+                    "end": 920.92767,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.410",
+                    "form": "그 친구는",
+                    "original_form": "그~ 친구는",
+                    "speaker_id": "SD2300682",
+                    "start": 921.59267,
+                    "end": 922.53265,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.411",
+                    "form": "혀 현실에",
+                    "original_form": "혀 현실에",
+                    "speaker_id": "SD2300682",
+                    "start": 923.34768,
+                    "end": 924.44768,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.412",
+                    "form": "엄청 열정적으로",
+                    "original_form": "엄청 열정적으루",
+                    "speaker_id": "SD2300682",
+                    "start": 924.76268,
+                    "end": 926.42524,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.413",
+                    "form": "충실한 거라고 엄마는 생각이 들거든.",
+                    "original_form": "충실한 거라고 엄마는 생각이 들거든.",
+                    "speaker_id": "SD2300682",
+                    "start": 926.80268,
+                    "end": 929.27944,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.414",
+                    "form": "그래서 그 친구는 연애를 열심히 하는 거고",
+                    "original_form": "그래서 그 친구는 연애를 열심히 하는 거고",
+                    "speaker_id": "SD2300682",
+                    "start": 929.39769,
+                    "end": 932.03766,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.415",
+                    "form": "당연히",
+                    "original_form": "당연히",
+                    "speaker_id": "SD2300682",
+                    "start": 932.96270,
+                    "end": 933.95270,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.416",
+                    "form": "동성한테는",
+                    "original_form": "동성한테는",
+                    "speaker_id": "SD2300682",
+                    "start": 934.89270,
+                    "end": 936.03270,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.417",
+                    "form": "소홀해질 수밖에 없는 거 같아.",
+                    "original_form": "소홀해질 수밖에 없는 거 같애.",
+                    "speaker_id": "SD2300682",
+                    "start": 936.67771,
+                    "end": 939.35611,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.418",
+                    "form": "아까도 얘기했듯이",
+                    "original_form": "아까도 얘기했듯이",
+                    "speaker_id": "SD2300682",
+                    "start": 940.60271,
+                    "end": 941.87770,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.419",
+                    "form": "엄마도 결혼해서",
+                    "original_form": "엄마도 결혼해서",
+                    "speaker_id": "SD2300682",
+                    "start": 942.15270,
+                    "end": 943.52685,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.420",
+                    "form": "각자 아기를 낳잖아.",
+                    "original_form": "각자 애기를 낳잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 944.12872,
+                    "end": 945.74745,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.421",
+                    "form": "낳다 보면 그 생활에 충실해야지.",
+                    "original_form": "낳다 보면 그~ 생활에 충실해야지.",
+                    "speaker_id": "SD2300682",
+                    "start": 946.67273,
+                    "end": 949.11773,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.422",
+                    "form": "자꾸",
+                    "original_form": "자꾸",
+                    "speaker_id": "SD2300682",
+                    "start": 949.69773,
+                    "end": 950.24463,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.423",
+                    "form": "친구를 생각한다거나",
+                    "original_form": "친구를 생각한다거나",
+                    "speaker_id": "SD2300682",
+                    "start": 951.45774,
+                    "end": 952.92274,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.424",
+                    "form": "어",
+                    "original_form": "어~",
+                    "speaker_id": "SD2300682",
+                    "start": 953.84774,
+                    "end": 954.44774,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.425",
+                    "form": "섭섭함을 느낀다거나",
+                    "original_form": "섭섭함을 느낀다거나",
+                    "speaker_id": "SD2300682",
+                    "start": 954.61774,
+                    "end": 956.13576,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.426",
+                    "form": "그러면",
+                    "original_form": "그러면",
+                    "speaker_id": "SD2300682",
+                    "start": 956.81275,
+                    "end": 957.51274,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.427",
+                    "form": "현 생활에 충실하지 못한 거잖아.",
+                    "original_form": "현 생활에 충실하지 못한 거잖아.",
+                    "speaker_id": "SD2300682",
+                    "start": 957.87274,
+                    "end": 960.26772,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.428",
+                    "form": "그렇기 때문에",
+                    "original_form": "그렇기 때문에",
+                    "speaker_id": "SD2300682",
+                    "start": 960.81776,
+                    "end": 961.78986,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.429",
+                    "form": "건강한 거라고 생각이 들어.",
+                    "original_form": "건강한 거라고 생각이 들어.",
+                    "speaker_id": "SD2300682",
+                    "start": 962.50776,
+                    "end": 964.37777,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.430",
+                    "form": "그 친구로서 이해해 줘야 된다고 생각을 해.",
+                    "original_form": "그~ 친구로서 이해해 줘야 된다고 생각을 해.",
+                    "speaker_id": "SD2300682",
+                    "start": 964.66777,
+                    "end": 967.04774,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.431",
+                    "form": "그래 좀 이해를 해야 되는 부분이라고",
+                    "original_form": "그래 좀 이해를 해야 되는 부분이라고",
+                    "speaker_id": "SD2300681",
+                    "start": 967.19274,
+                    "end": 970.24771,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.432",
+                    "form": "생각을 해.",
+                    "original_form": "생각을 해.",
+                    "speaker_id": "SD2300681",
+                    "start": 970.91778,
+                    "end": 972.63378,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.433",
+                    "form": "근데 지금은 내가",
+                    "original_form": "근데 지금은 내가",
+                    "speaker_id": "SD2300681",
+                    "start": 972.86779,
+                    "end": 974.24777,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.434",
+                    "form": "나이가",
+                    "original_form": "나이가",
+                    "speaker_id": "SD2300681",
+                    "start": 974.44792,
+                    "end": 975.08341,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.435",
+                    "form": "20대기 때문에",
+                    "original_form": "이십 대기 때문에",
+                    "speaker_id": "SD2300681",
+                    "start": 975.56879,
+                    "end": 976.70874,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.436",
+                    "form": "충분히 이해할 정도로 내가 마음이 넓지는 않지만",
+                    "original_form": "충분히 이해할 정도로 내가 마음이 넓지는 않지만",
+                    "speaker_id": "SD2300681",
+                    "start": 976.95779,
+                    "end": 980.46280,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.437",
+                    "form": "그래도 뭐 이해를 하려고 앞으로 노력을 할 거고",
+                    "original_form": "그래도 뭐~ 이해를 하려고 앞으로 노력을 할 거고",
+                    "speaker_id": "SD2300681",
+                    "start": 981.20280,
+                    "end": 984.36781,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.438",
+                    "form": "뭐 그 친구들은 남자 친구들이랑 뭐 평생 백년해로 하면 되니까",
+                    "original_form": "뭐~ 그~ 친구들은 남자 친구들이랑 뭐~ 평생 백년해로 하면 되니까",
+                    "speaker_id": "SD2300681",
+                    "start": 984.99281,
+                    "end": 989.39272,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.439",
+                    "form": "근데 이제",
+                    "original_form": "근데 이제",
+                    "speaker_id": "SD2300681",
+                    "start": 990.15782,
+                    "end": 990.90883,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.440",
+                    "form": "근데 그런 생각은 들어.",
+                    "original_form": "근데 그런 생각은 들어.",
+                    "speaker_id": "SD2300681",
+                    "start": 991.47783,
+                    "end": 993.03783,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.441",
+                    "form": "그래도",
+                    "original_form": "그래두",
+                    "speaker_id": "SD2300681",
+                    "start": 993.23783,
+                    "end": 993.70283,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.442",
+                    "form": "쪼금",
+                    "original_form": "쪼금",
+                    "speaker_id": "SD2300681",
+                    "start": 994.04783,
+                    "end": 994.62283,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.443",
+                    "form": "아무래도",
+                    "original_form": "아무래도",
+                    "speaker_id": "SD2300681",
+                    "start": 994.91783,
+                    "end": 995.74784,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.444",
+                    "form": "아무래도 그래도",
+                    "original_form": "아무래도 그래도",
+                    "speaker_id": "SD2300681",
+                    "start": 995.86284,
+                    "end": 997.07175,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.445",
+                    "form": "그렇게",
+                    "original_form": "그렇게",
+                    "speaker_id": "SD2300681",
+                    "start": 997.32284,
+                    "end": 998.25784,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.446",
+                    "form": "어쨌든 남자 친구도 하나의 친구의",
+                    "original_form": "어쨌든 남자 친구도 하나의 친구의",
+                    "speaker_id": "SD2300681",
+                    "start": 999.06784,
+                    "end": 1001.71785,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.447",
+                    "form": "범주에 있으니까",
+                    "original_form": "범주에 있으니까",
+                    "speaker_id": "SD2300681",
+                    "start": 1001.94785,
+                    "end": 1003.11285,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.448",
+                    "form": "그 남자 친구도 이제 친구와의 우정을 쌓는 것처럼 그 남자 친구하고도 좋은 관계를",
+                    "original_form": "그 남자 친구도 이제 친구와의 우정을 쌓는 것처럼 그 남자 친구하고도 좋은 관계를",
+                    "speaker_id": "SD2300681",
+                    "start": 1003.74785,
+                    "end": 1009.64787,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300000730.1.1.449",
+                    "form": "맺어가면 그것도 되게 보기 좋다고 생각을 해.",
+                    "original_form": "맺어가면 그것도 되게 보기 좋다고 생각을 해.",
+                    "speaker_id": "SD2300681",
+                    "start": 1010.18287,
+                    "end": 1013.16225,
+                    "note": ""
+                }
+            ]
+        }
+    ]
+}

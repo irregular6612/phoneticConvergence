@@ -1,0 +1,4572 @@
+{
+    "id": "SDRW2300001913",
+    "metadata": {
+        "title": "국립국어원 구어 말뭉치 SDRW2300001913",
+        "creator": "국립국어원",
+        "distributor": "국립국어원",
+        "year": "2023",
+        "category": "구어 > 사적대화 > 일상대화",
+        "annotation_level": [
+            "원시"
+        ],
+        "sampling": "본문 전체"
+    },
+    "document": [
+        {
+            "id": "SDRW2300001913.1",
+            "metadata": {
+                "title": "2인 일상 대화",
+                "author": "개인 발화자",
+                "publisher": "개인 발화 녹음",
+                "date": "20231205",
+                "topic": "건강/다이어트 > 건강",
+                "speaker": [
+                    {
+                        "id": "SD2302056",
+                        "age": "60대 이상",
+                        "occupation": "기타",
+                        "sex": "남성",
+                        "birthplace": "경북",
+                        "principal_residence": "경북",
+                        "current_residence": "경기",
+                        "education": "대졸"
+                    },
+                    {
+                        "id": "SD2302057",
+                        "age": "60대 이상",
+                        "occupation": "기타",
+                        "sex": "남성",
+                        "birthplace": "전북",
+                        "principal_residence": "전북",
+                        "current_residence": "경기",
+                        "education": "중졸"
+                    }
+                ],
+                "setting": {
+                    "relation": "모임·동아리 지인",
+                    "contact_frequency": "2"
+                }
+            },
+            "utterance": [
+                {
+                    "id": "SDRW2300001913.1.1.1",
+                    "form": "저는",
+                    "original_form": "저는",
+                    "speaker_id": "SD2302056",
+                    "start": 0.00000,
+                    "end": 0.96837,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.2",
+                    "form": "경북 울진",
+                    "original_form": "경북 울진",
+                    "speaker_id": "SD2302056",
+                    "start": 1.56022,
+                    "end": 3.05408,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.3",
+                    "form": "후포면에서",
+                    "original_form": "후포면에서",
+                    "speaker_id": "SD2302056",
+                    "start": 3.70307,
+                    "end": 4.95307,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.4",
+                    "form": "횟집을 30년 운영했습니다.",
+                    "original_form": "횟집을 삼십 년 운영했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 5.11930,
+                    "end": 8.01020,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.5",
+                    "form": "그 운영하면서",
+                    "original_form": "그 운영하면서",
+                    "speaker_id": "SD2302056",
+                    "start": 8.12838,
+                    "end": 9.43747,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.6",
+                    "form": "너무 일을 많이 해서",
+                    "original_form": "너무 일을 많이 해서",
+                    "speaker_id": "SD2302056",
+                    "start": 9.57124,
+                    "end": 11.57902,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.7",
+                    "form": "몸이 많이 망가졌습니다.",
+                    "original_form": "몸이 마이 망가졌습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 11.74266,
+                    "end": 13.98898,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.8",
+                    "form": "다리에는",
+                    "original_form": "다리에는",
+                    "speaker_id": "SD2302056",
+                    "start": 14.11192,
+                    "end": 14.89655,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.9",
+                    "form": "통증이 많이 왔고",
+                    "original_form": "통증이 많이 왔고",
+                    "speaker_id": "SD2302056",
+                    "start": 15.01433,
+                    "end": 16.57793,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.10",
+                    "form": "어깨도",
+                    "original_form": "어깨도",
+                    "speaker_id": "SD2302056",
+                    "start": 17.21676,
+                    "end": 17.95758,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.11",
+                    "form": "석회성 건염이 생겨서",
+                    "original_form": "석회성 건염이 생겨서",
+                    "speaker_id": "SD2302056",
+                    "start": 18.09069,
+                    "end": 19.95562,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.12",
+                    "form": "팔을 들 수가 없었습니다.",
+                    "original_form": "팔을 들 수가 없었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 20.07767,
+                    "end": 21.73562,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.13",
+                    "form": "그래서 장사를 그만두고",
+                    "original_form": "그래서 장사를 그만두고",
+                    "speaker_id": "SD2302056",
+                    "start": 21.91276,
+                    "end": 23.53730,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.14",
+                    "form": "5년 전에 용인으로 왔습니다.",
+                    "original_form": "오 년 전에 용인으로 왔습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 23.68938,
+                    "end": 25.91015,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.15",
+                    "form": "용인은 올 때는",
+                    "original_form": "용인은 올 때는",
+                    "speaker_id": "SD2302056",
+                    "start": 26.38093,
+                    "end": 27.74067,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.16",
+                    "form": "100미터 이상 걸음도 걸을 수가 없었습니다.",
+                    "original_form": "백 메다 이상 걸음도 걸을 수가 없었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 28.86209,
+                    "end": 31.68706,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.17",
+                    "form": "다리의 통증과",
+                    "original_form": "다리의 통증과",
+                    "speaker_id": "SD2302056",
+                    "start": 31.85299,
+                    "end": 33.06782,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.18",
+                    "form": "어깨",
+                    "original_form": "어깨",
+                    "speaker_id": "SD2302056",
+                    "start": 33.41079,
+                    "end": 34.07377,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.19",
+                    "form": "기타 허리도 아프고",
+                    "original_form": "기타 허리도 아프고",
+                    "speaker_id": "SD2302056",
+                    "start": 34.60975,
+                    "end": 35.95500,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.20",
+                    "form": "근데 우연히",
+                    "original_form": "근데 우연히",
+                    "speaker_id": "SD2302056",
+                    "start": 36.12884,
+                    "end": 37.08627,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.21",
+                    "form": "집사람이",
+                    "original_form": "집사람이",
+                    "speaker_id": "SD2302056",
+                    "start": 38.33238,
+                    "end": 39.15701,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.22",
+                    "form": "주민센터에서",
+                    "original_form": "주민센터에서",
+                    "speaker_id": "SD2302056",
+                    "start": 39.70466,
+                    "end": 41.16298,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.23",
+                    "form": "자세 교정하는 운동을 한다고",
+                    "original_form": "자세 교정하는 운동을 한다고",
+                    "speaker_id": "SD2302056",
+                    "start": 41.53464,
+                    "end": 43.80539,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.24",
+                    "form": "한번 가 보라고 권고를 했습니다.",
+                    "original_form": "한번 가 보라고 권고를 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 44.15174,
+                    "end": 46.22252,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.25",
+                    "form": "그런데",
+                    "original_form": "그런데",
+                    "speaker_id": "SD2302056",
+                    "start": 47.01399,
+                    "end": 47.66334,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.26",
+                    "form": "내가 무슨",
+                    "original_form": "내가 무슨",
+                    "speaker_id": "SD2302056",
+                    "start": 47.80554,
+                    "end": 48.81047,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.27",
+                    "form": "그 운동을 하겠나",
+                    "original_form": "그 운동을 하겠나",
+                    "speaker_id": "SD2302056",
+                    "start": 48.91203,
+                    "end": 50.22372,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.28",
+                    "form": "거절했습니다.",
+                    "original_form": "거절했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 50.36398,
+                    "end": 51.51398,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.29",
+                    "form": "그랬더니 우리 집사람이",
+                    "original_form": "그랬더니 우리 집사람이",
+                    "speaker_id": "SD2302056",
+                    "start": 51.62047,
+                    "end": 52.91102,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.30",
+                    "form": "저 모르게",
+                    "original_form": "내 모르게",
+                    "speaker_id": "SD2302056",
+                    "start": 53.06657,
+                    "end": 53.99384,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.31",
+                    "form": "수강 신청을 했습니다.",
+                    "original_form": "수강 신청을 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 54.25098,
+                    "end": 55.91072,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.32",
+                    "form": "그 도움이 아까워서라도 한번 가 보 가봐야 되겠다",
+                    "original_form": "고 도움이 아까워거라도 한번 -가 보- 가봐야 되겠다",
+                    "speaker_id": "SD2302056",
+                    "start": 56.01656,
+                    "end": 59.12447,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.33",
+                    "form": "이래서",
+                    "original_form": "이래서",
+                    "speaker_id": "SD2302056",
+                    "start": 59.93797,
+                    "end": 60.56395,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.34",
+                    "form": "처음 한 1달 정도 다니니까",
+                    "original_form": "처음 한 한 달 정도 다니니까",
+                    "speaker_id": "SD2302056",
+                    "start": 60.70550,
+                    "end": 62.70810,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.35",
+                    "form": "상당히 좋은 것 같았어요.",
+                    "original_form": "상당히 좋은 것 같앴어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 62.85810,
+                    "end": 64.40723,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.36",
+                    "form": "그 무렵",
+                    "original_form": "그 무렵",
+                    "speaker_id": "SD2302056",
+                    "start": 65.52367,
+                    "end": 66.28373,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.37",
+                    "form": "다리의",
+                    "original_form": "다리의",
+                    "speaker_id": "SD2302056",
+                    "start": 66.96457,
+                    "end": 67.68990,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.38",
+                    "form": "연골이",
+                    "original_form": "연골이",
+                    "speaker_id": "SD2302056",
+                    "start": 67.83146,
+                    "end": 68.42002,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.39",
+                    "form": "찢어져서",
+                    "original_form": "찢어져서",
+                    "speaker_id": "SD2302056",
+                    "start": 68.67029,
+                    "end": 69.51003,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.40",
+                    "form": "분당척병원에 가서",
+                    "original_form": "분당척병원에 가서",
+                    "speaker_id": "SD2302056",
+                    "start": 69.64249,
+                    "end": 71.41456,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.41",
+                    "form": "수술을 해야 될 그런 입장이었는데",
+                    "original_form": "수술을 해야 될 그런 입장이었는데",
+                    "speaker_id": "SD2302056",
+                    "start": 71.56687,
+                    "end": 74.19378,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.42",
+                    "form": "수술 날짜를 받아 놓고",
+                    "original_form": "수술 날짜를 받아 놓고",
+                    "speaker_id": "SD2302056",
+                    "start": 75.18097,
+                    "end": 76.98791,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.43",
+                    "form": "운동을 시작했습니다.",
+                    "original_form": "운동을 시작했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 77.11893,
+                    "end": 78.70021,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.44",
+                    "form": "그랬더니 1달 다니니까",
+                    "original_form": "그랬더니 한 달 다니니까",
+                    "speaker_id": "SD2302056",
+                    "start": 78.83015,
+                    "end": 80.34504,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.45",
+                    "form": "그 다리가 쪼끔 괜찮은 것 같고 걸음걸이도",
+                    "original_form": "고 다리가 쪼끔 괜찮은 것 같고 걸음걸이도",
+                    "speaker_id": "SD2302056",
+                    "start": 80.54933,
+                    "end": 83.62498,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.46",
+                    "form": "좀 좋아졌습니다.",
+                    "original_form": "좀 좋아졌습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 84.29057,
+                    "end": 85.80004,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.47",
+                    "form": "그래서 어",
+                    "original_form": "그래서 어",
+                    "speaker_id": "SD2302056",
+                    "start": 86.64351,
+                    "end": 87.44778,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.48",
+                    "form": "이 운동을 계속하면은",
+                    "original_form": "이 운동을 계속하면은",
+                    "speaker_id": "SD2302056",
+                    "start": 87.56115,
+                    "end": 89.28521,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.49",
+                    "form": "건강이 안 좋아지겠나",
+                    "original_form": "건강이 안 좋아지겠나",
+                    "speaker_id": "SD2302056",
+                    "start": 89.55419,
+                    "end": 91.18574,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.50",
+                    "form": "팔 돌리기도 열심히 하고",
+                    "original_form": "팔 돌리기도 열심히 하고",
+                    "speaker_id": "SD2302056",
+                    "start": 91.31676,
+                    "end": 93.13146,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.51",
+                    "form": "다리 운동도 열심히 했더니",
+                    "original_form": "다리 운동도 열심히 했드니",
+                    "speaker_id": "SD2302056",
+                    "start": 93.81033,
+                    "end": 95.54883,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.52",
+                    "form": "석회성 건염도 거의 없어지고",
+                    "original_form": "석회성 건염도 거의 없어지고",
+                    "speaker_id": "SD2302056",
+                    "start": 95.85685,
+                    "end": 98.52088,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.53",
+                    "form": "다리도 걷는데",
+                    "original_form": "다리도 걷는데",
+                    "speaker_id": "SD2302056",
+                    "start": 98.88946,
+                    "end": 100.30055,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.54",
+                    "form": "별 불편이 없었습니다.",
+                    "original_form": "별 불편이 없었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 101.49373,
+                    "end": 103.16271,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.55",
+                    "form": "처음에는",
+                    "original_form": "처음에는",
+                    "speaker_id": "SD2302056",
+                    "start": 103.30771,
+                    "end": 104.01085,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.56",
+                    "form": "100미터도 못 갔는데",
+                    "original_form": "백 메다도 못 갔는데",
+                    "speaker_id": "SD2302056",
+                    "start": 104.06629,
+                    "end": 105.62849,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.57",
+                    "form": "차츰차츰 되니까",
+                    "original_form": "차츰차츰 되니까",
+                    "speaker_id": "SD2302056",
+                    "start": 106.46111,
+                    "end": 107.94239,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.58",
+                    "form": "가까운",
+                    "original_form": "가까운",
+                    "speaker_id": "SD2302056",
+                    "start": 108.08838,
+                    "end": 108.82099,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.59",
+                    "form": "산에 등산까지 하드",
+                    "original_form": "산에 등산꺼지 -하드-",
+                    "speaker_id": "SD2302056",
+                    "start": 108.96107,
+                    "end": 110.70975,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.60",
+                    "form": "하게 되었습니다.",
+                    "original_form": "하게 되었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 111.45842,
+                    "end": 112.60275,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.61",
+                    "form": "그래서 강사님한테",
+                    "original_form": "그래서 강사님한테",
+                    "speaker_id": "SD2302056",
+                    "start": 112.76323,
+                    "end": 114.11028,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.62",
+                    "form": "어 내 몸 이렇게 좋아졌다 이러니까 아 열심히 해서 그렇다",
+                    "original_form": "어~ 내 몸 이렇게 좋아졌다 이러니까 아 열심히 해서 그렇다",
+                    "speaker_id": "SD2302056",
+                    "start": 114.14771,
+                    "end": 118.12659,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.63",
+                    "form": "그러면서",
+                    "original_form": "그러면서",
+                    "speaker_id": "SD2302056",
+                    "start": 118.56964,
+                    "end": 119.32090,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.64",
+                    "form": "칭찬을 해 주셨어요.",
+                    "original_form": "칭찬을 해 주셨어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 120.00969,
+                    "end": 121.40937,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.65",
+                    "form": "그래서 제가 강사님께 이 운동을 더 하고 싶은데",
+                    "original_form": "그래서 제가 강사님께 이 운동을 더 하고 싶은데",
+                    "speaker_id": "SD2302056",
+                    "start": 122.42952,
+                    "end": 125.87817,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.66",
+                    "form": "어디 가서",
+                    "original_form": "어디 가서",
+                    "speaker_id": "SD2302056",
+                    "start": 126.44180,
+                    "end": 127.36158,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.67",
+                    "form": "더 할 수가 있느냐",
+                    "original_form": "더 할 수가 있느냐",
+                    "speaker_id": "SD2302056",
+                    "start": 128.25784,
+                    "end": 129.60970,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.68",
+                    "form": "했더니",
+                    "original_form": "했더니",
+                    "speaker_id": "SD2302056",
+                    "start": 130.13912,
+                    "end": 130.76921,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.69",
+                    "form": "강사님께서",
+                    "original_form": "강사님께서",
+                    "speaker_id": "SD2302056",
+                    "start": 131.13484,
+                    "end": 132.23965,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.70",
+                    "form": "그 운동 이름이 매치 무브먼트라는 운동인데 매치 무브먼트를",
+                    "original_form": "그 운동 이름이 매치 무브먼트라는 운동인데 매치 무브먼트를",
+                    "speaker_id": "SD2302056",
+                    "start": 132.37013,
+                    "end": 137.06851,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.71",
+                    "form": "상의한",
+                    "original_form": "상의한",
+                    "speaker_id": "SD2302056",
+                    "start": 137.36958,
+                    "end": 138.35608,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.72",
+                    "form": "name1 회장",
+                    "original_form": "&name1& 회장",
+                    "speaker_id": "SD2302056",
+                    "start": 139.07600,
+                    "end": 139.65728,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.73",
+                    "form": "찾아가면 된다",
+                    "original_form": "찾아가면 된다",
+                    "speaker_id": "SD2302056",
+                    "start": 139.77422,
+                    "end": 140.91610,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.74",
+                    "form": "그분이 지금 용인",
+                    "original_form": "그분이 지금 용인",
+                    "speaker_id": "SD2302056",
+                    "start": 141.24979,
+                    "end": 142.73584,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.75",
+                    "form": "대학교에서",
+                    "original_form": "대학교에서",
+                    "speaker_id": "SD2302056",
+                    "start": 143.03233,
+                    "end": 143.91970,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.76",
+                    "form": "강의를 하고 계신다",
+                    "original_form": "강의를 하고 계신다",
+                    "speaker_id": "SD2302056",
+                    "start": 144.08454,
+                    "end": 145.43682,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.77",
+                    "form": "그래서 제가",
+                    "original_form": "그래서 제가",
+                    "speaker_id": "SD2302056",
+                    "start": 145.56768,
+                    "end": 146.28454,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.78",
+                    "form": "그 용인대학교",
+                    "original_form": "그 용인대학교",
+                    "speaker_id": "SD2302056",
+                    "start": 146.31876,
+                    "end": 147.32571,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.79",
+                    "form": "찾아가서",
+                    "original_form": "찾아가서",
+                    "speaker_id": "SD2302056",
+                    "start": 147.56742,
+                    "end": 148.48453,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.80",
+                    "form": "강의를",
+                    "original_form": "강의를",
+                    "speaker_id": "SD2302056",
+                    "start": 149.11608,
+                    "end": 149.71180,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.81",
+                    "form": "들었습니다.",
+                    "original_form": "들었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 149.77597,
+                    "end": 150.58579,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.82",
+                    "form": "처음 6개월 들었는데",
+                    "original_form": "처음 육 개월 들었는데",
+                    "speaker_id": "SD2302056",
+                    "start": 150.95298,
+                    "end": 152.62368,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.83",
+                    "form": "6개월 만에",
+                    "original_form": "육 개월 만에",
+                    "speaker_id": "SD2302056",
+                    "start": 153.03746,
+                    "end": 153.94923,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.84",
+                    "form": "수료증을 주는데",
+                    "original_form": "수료증을 주는데",
+                    "speaker_id": "SD2302056",
+                    "start": 154.16420,
+                    "end": 155.53639,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.85",
+                    "form": "다시 듣네 한번 더 듣겠다 이래서 1년을 들었습니다.",
+                    "original_form": "다시 듣네 한번 더 듣겠다 이래가 일 년을 들었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 155.96728,
+                    "end": 159.33852,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.86",
+                    "form": "1년을 들었더니",
+                    "original_form": "일 년을 들었더니",
+                    "speaker_id": "SD2302056",
+                    "start": 159.45979,
+                    "end": 160.66717,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.87",
+                    "form": "그 몸도",
+                    "original_form": "그 몸도",
+                    "speaker_id": "SD2302056",
+                    "start": 161.27433,
+                    "end": 162.13102,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.88",
+                    "form": "좋아지고 우리",
+                    "original_form": "좋아지고 우리",
+                    "speaker_id": "SD2302056",
+                    "start": 162.26364,
+                    "end": 163.43851,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.89",
+                    "form": "가르치는",
+                    "original_form": "가르키는",
+                    "speaker_id": "SD2302056",
+                    "start": 164.72086,
+                    "end": 165.55722,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.90",
+                    "form": "name1 회장께서 저 뒷모습을 보더니",
+                    "original_form": "&name1& 회장께서 저 뒷모습을 보더니",
+                    "speaker_id": "SD2302056",
+                    "start": 166.32085,
+                    "end": 169.16255,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.91",
+                    "form": "어 완전히",
+                    "original_form": "어 완전히",
+                    "speaker_id": "SD2302056",
+                    "start": 170.24190,
+                    "end": 171.07592,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.92",
+                    "form": "어깨도 펴지고 자세도",
+                    "original_form": "어깨도 펴지고 자세도",
+                    "speaker_id": "SD2302056",
+                    "start": 171.29899,
+                    "end": 173.01121,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.93",
+                    "form": "달라졌다",
+                    "original_form": "달라졌다",
+                    "speaker_id": "SD2302056",
+                    "start": 174.14008,
+                    "end": 175.09783,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.94",
+                    "form": "처음에는 꾸부",
+                    "original_form": "처음에는 -꾸부-",
+                    "speaker_id": "SD2302056",
+                    "start": 175.42564,
+                    "end": 176.38072,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.95",
+                    "form": "구부정하게 다녔는데",
+                    "original_form": "꾸부정해 다녔는데",
+                    "speaker_id": "SD2302056",
+                    "start": 176.45612,
+                    "end": 177.89129,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.96",
+                    "form": "지금은 뒤태를 보니까 아주",
+                    "original_form": "지금은 뒤태를 보니까 아주",
+                    "speaker_id": "SD2302056",
+                    "start": 178.52242,
+                    "end": 180.28285,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.97",
+                    "form": "젊은 사람 못 모양 막",
+                    "original_form": "젊은 사람 -못- 모양 막",
+                    "speaker_id": "SD2302056",
+                    "start": 180.32456,
+                    "end": 181.78927,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.98",
+                    "form": "하고 맛",
+                    "original_form": "하고 -맛-",
+                    "speaker_id": "SD2302056",
+                    "start": 181.92081,
+                    "end": 182.63417,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.99",
+                    "form": "마찬가지더라",
+                    "original_form": "마찬가지더라",
+                    "speaker_id": "SD2302056",
+                    "start": 183.10759,
+                    "end": 184.06573,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.100",
+                    "form": "이렇게 칭찬을 해 주셨습니다.",
+                    "original_form": "이래 칭찬을 해 주셨습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 184.84647,
+                    "end": 186.46839,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.101",
+                    "form": "그리 열심히",
+                    "original_form": "그리 열심히",
+                    "speaker_id": "SD2302056",
+                    "start": 186.89406,
+                    "end": 187.89887,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.102",
+                    "form": "운동을 했더니",
+                    "original_form": "운동을 했더니",
+                    "speaker_id": "SD2302056",
+                    "start": 188.09246,
+                    "end": 189.22614,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.103",
+                    "form": "정식 대학",
+                    "original_form": "정식 대학",
+                    "speaker_id": "SD2302056",
+                    "start": 190.37160,
+                    "end": 191.38504,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.104",
+                    "form": "학장",
+                    "original_form": "학장",
+                    "speaker_id": "SD2302056",
+                    "start": 191.54378,
+                    "end": 192.20421,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.105",
+                    "form": "표창장까지 저한테",
+                    "original_form": "표창장까지 저한테",
+                    "speaker_id": "SD2302056",
+                    "start": 192.33255,
+                    "end": 193.73255,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.106",
+                    "form": "수여하도록",
+                    "original_form": "수여하도록",
+                    "speaker_id": "SD2302056",
+                    "start": 193.90314,
+                    "end": 194.70955,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.107",
+                    "form": "배려를 하셨습니다.",
+                    "original_form": "배려를 하셨습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 195.30527,
+                    "end": 196.62853,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.108",
+                    "form": "그래서 제가",
+                    "original_form": "그래서 제가",
+                    "speaker_id": "SD2302056",
+                    "start": 196.76724,
+                    "end": 197.58296,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.109",
+                    "form": "지도자 자격",
+                    "original_form": "지도자 자격",
+                    "speaker_id": "SD2302056",
+                    "start": 197.74163,
+                    "end": 198.82559,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.110",
+                    "form": "코스에 들어가서",
+                    "original_form": "코스에 들어가가",
+                    "speaker_id": "SD2302056",
+                    "start": 199.09992,
+                    "end": 200.20892,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.111",
+                    "form": "자격증을",
+                    "original_form": "자격증을",
+                    "speaker_id": "SD2302056",
+                    "start": 200.33788,
+                    "end": 201.21389,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.112",
+                    "form": "취득했습니다.",
+                    "original_form": "취득했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 202.37852,
+                    "end": 203.59134,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.113",
+                    "form": "그 자격증을",
+                    "original_form": "그 자격증을",
+                    "speaker_id": "SD2302056",
+                    "start": 204.94105,
+                    "end": 205.98361,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.114",
+                    "form": "갖고",
+                    "original_form": "갖고",
+                    "speaker_id": "SD2302056",
+                    "start": 206.36631,
+                    "end": 206.93447,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.115",
+                    "form": "가만히 생각하면 놀리니까 아 이",
+                    "original_form": "가만히 생각하면 놀리니까 아 이~",
+                    "speaker_id": "SD2302056",
+                    "start": 207.08683,
+                    "end": 209.28544,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.116",
+                    "form": "이건 아니다 싶어서",
+                    "original_form": "이건 아니다 싶어서",
+                    "speaker_id": "SD2302056",
+                    "start": 209.45978,
+                    "end": 211.01490,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.117",
+                    "form": "우리 아파트",
+                    "original_form": "우리 아파트",
+                    "speaker_id": "SD2302056",
+                    "start": 212.05122,
+                    "end": 213.09453,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.118",
+                    "form": "제가 아파트",
+                    "original_form": "제가 아파트",
+                    "speaker_id": "SD2302056",
+                    "start": 213.22555,
+                    "end": 214.16673,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.119",
+                    "form": "경로당의 노인 회장입니다.",
+                    "original_form": "경로당의 노인 회장입니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 214.22447,
+                    "end": 215.81645,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.120",
+                    "form": "우리 아파트",
+                    "original_form": "우리 아파트",
+                    "speaker_id": "SD2302056",
+                    "start": 216.41217,
+                    "end": 217.25870,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.121",
+                    "form": "체육관이 아주 넓습니다.",
+                    "original_form": "체육관이 아주 넓습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 217.43892,
+                    "end": 218.98464,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.122",
+                    "form": "그 체육관에서",
+                    "original_form": "그 체육관에서",
+                    "speaker_id": "SD2302056",
+                    "start": 219.15442,
+                    "end": 220.29612,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.123",
+                    "form": "노인들하고",
+                    "original_form": "노인들하고",
+                    "speaker_id": "SD2302056",
+                    "start": 221.34839,
+                    "end": 222.53624,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.124",
+                    "form": "주민들 몇 분 불러서",
+                    "original_form": "주민들 몇 분 불러가",
+                    "speaker_id": "SD2302056",
+                    "start": 222.76527,
+                    "end": 224.37633,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.125",
+                    "form": "무료로",
+                    "original_form": "무료로",
+                    "speaker_id": "SD2302056",
+                    "start": 224.61501,
+                    "end": 225.42658,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.126",
+                    "form": "코로나 전까지 한",
+                    "original_form": "코로나 전까지 한",
+                    "speaker_id": "SD2302056",
+                    "start": 226.68494,
+                    "end": 227.86081,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.127",
+                    "form": "1년 반 강의를 하였습니다.",
+                    "original_form": "일 년 반 강의를 하였습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 227.91964,
+                    "end": 229.90816,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.128",
+                    "form": "물론",
+                    "original_form": "물론",
+                    "speaker_id": "SD2302056",
+                    "start": 230.05010,
+                    "end": 230.67213,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.129",
+                    "form": "노인들도 다 저거하지만",
+                    "original_form": "노인들도 다 저거하지만",
+                    "speaker_id": "SD2302056",
+                    "start": 230.80892,
+                    "end": 232.69591,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.130",
+                    "form": "내 자신도",
+                    "original_form": "내 자신도",
+                    "speaker_id": "SD2302056",
+                    "start": 233.64507,
+                    "end": 234.56315,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.131",
+                    "form": "다시 운동을 할 수 있으니까",
+                    "original_form": "다시 운동을 할 수 있으니까",
+                    "speaker_id": "SD2302056",
+                    "start": 234.72424,
+                    "end": 236.35222,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.132",
+                    "form": "정말 좋았습니다.",
+                    "original_form": "정말 좋았습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 236.64689,
+                    "end": 237.88806,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.133",
+                    "form": "그래서 지금 아주 몸이",
+                    "original_form": "그래서 지금 아주 몸이",
+                    "speaker_id": "SD2302056",
+                    "start": 238.02281,
+                    "end": 239.53298,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.134",
+                    "form": "아주",
+                    "original_form": "아주",
+                    "speaker_id": "SD2302056",
+                    "start": 239.67768,
+                    "end": 240.13190,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.135",
+                    "form": "지금 옛날 옛날",
+                    "original_form": "지금 옛날 옛날",
+                    "speaker_id": "SD2302056",
+                    "start": 240.22763,
+                    "end": 241.63778,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.136",
+                    "form": "그런 몸이 아니고",
+                    "original_form": "그런 몸이 아니고",
+                    "speaker_id": "SD2302056",
+                    "start": 241.76558,
+                    "end": 242.82431,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.137",
+                    "form": "제2의 인생을",
+                    "original_form": "제이 의 인생을",
+                    "speaker_id": "SD2302056",
+                    "start": 243.04888,
+                    "end": 244.33106,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.138",
+                    "form": "사는 그런 건강을",
+                    "original_form": "사는 그런 건강을",
+                    "speaker_id": "SD2302056",
+                    "start": 244.94359,
+                    "end": 246.32334,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.139",
+                    "form": "얻었습니다.",
+                    "original_form": "얻었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 246.77947,
+                    "end": 247.66290,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.140",
+                    "form": "정말 나는 기뻤습니다.",
+                    "original_form": "정말 나는 기뻤습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 248.03349,
+                    "end": 249.49819,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.141",
+                    "form": "용인시 처인구",
+                    "original_form": "용인시 처인구",
+                    "speaker_id": "SD2302057",
+                    "start": 249.68683,
+                    "end": 251.18429,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.142",
+                    "form": "포곡에 사는",
+                    "original_form": "포곡에 사는",
+                    "speaker_id": "SD2302057",
+                    "start": 251.26983,
+                    "end": 252.39605,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.143",
+                    "form": "포곡에 사는데",
+                    "original_form": "포곡에 사는데",
+                    "speaker_id": "SD2302057",
+                    "start": 252.63079,
+                    "end": 253.63787,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.144",
+                    "form": "제가 지금",
+                    "original_form": "제가 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 253.77943,
+                    "end": 254.46893,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.145",
+                    "form": "3차 신경통이란 그런 병명을 가지고",
+                    "original_form": "삼 차 신경통이란 그런 병명을 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 254.69979,
+                    "end": 257.41626,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.146",
+                    "form": "지금",
+                    "original_form": "지금",
+                    "speaker_id": "SD2302057",
+                    "start": 257.93626,
+                    "end": 258.30031,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.147",
+                    "form": "지금까지 살아 오고 있는데",
+                    "original_form": "지금까지 살아 오고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 258.39923,
+                    "end": 259.98318,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.148",
+                    "form": "3차 신경통은",
+                    "original_form": "삼 차 신경통은",
+                    "speaker_id": "SD2302057",
+                    "start": 261.20888,
+                    "end": 262.54949,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.149",
+                    "form": "머리에서",
+                    "original_form": "머리에서",
+                    "speaker_id": "SD2302057",
+                    "start": 262.93881,
+                    "end": 263.95859,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.150",
+                    "form": "얼굴로 피 내려오는 선이 3개가 있는데",
+                    "original_form": "얼굴로 피 내려오는 선이 세 개가 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 264.13356,
+                    "end": 267.15109,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.151",
+                    "form": "코로 들어가고 입으로 내려가고 이마로 들어가는데 그건",
+                    "original_form": "코로 들어가고 입으로 내려가고 이마로 들어가는데 그건",
+                    "speaker_id": "SD2302057",
+                    "start": 267.23183,
+                    "end": 270.64786,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.152",
+                    "form": "3선이 있는데",
+                    "original_form": "삼 선이 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 271.27034,
+                    "end": 272.41712,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.153",
+                    "form": "세수할 때",
+                    "original_form": "세수헐 때",
+                    "speaker_id": "SD2302057",
+                    "start": 272.56390,
+                    "end": 273.68493,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.154",
+                    "form": "눈이 따갑고",
+                    "original_form": "눈이 따갑고",
+                    "speaker_id": "SD2302057",
+                    "start": 274.52541,
+                    "end": 276.05715,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.155",
+                    "form": "식사할 때는",
+                    "original_form": "식사헐 때는",
+                    "speaker_id": "SD2302057",
+                    "start": 276.46694,
+                    "end": 277.62871,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.156",
+                    "form": "입에서 그냥",
+                    "original_form": "입에서 그냥",
+                    "speaker_id": "SD2302057",
+                    "start": 277.77860,
+                    "end": 278.78847,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.157",
+                    "form": "뭐 씹지를 못합니다.",
+                    "original_form": "뭐 씹지를 못합니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 278.91524,
+                    "end": 280.02710,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.158",
+                    "form": "그 통증 때문에.",
+                    "original_form": "그 통증 때문에.",
+                    "speaker_id": "SD2302057",
+                    "start": 280.19704,
+                    "end": 281.29589,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.159",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2302057",
+                    "start": 281.89999,
+                    "end": 282.59385,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.160",
+                    "form": "이제 분당",
+                    "original_form": "이제 분당",
+                    "speaker_id": "SD2302057",
+                    "start": 282.92270,
+                    "end": 283.85257,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.161",
+                    "form": "서울대병원에 가서 인제",
+                    "original_form": "서울대병원에 가서 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 284.09703,
+                    "end": 285.99940,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.162",
+                    "form": "검사를 했는데",
+                    "original_form": "검사를 했는데",
+                    "speaker_id": "SD2302057",
+                    "start": 286.46159,
+                    "end": 287.40077,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.163",
+                    "form": "3차 신경통이라 병명이 나와 가지고",
+                    "original_form": "삼 차 신경통이라 병명이 나와 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 287.45959,
+                    "end": 289.47617,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.164",
+                    "form": "엑스레이도 찍고",
+                    "original_form": "엑스레이도 찍고",
+                    "speaker_id": "SD2302057",
+                    "start": 289.90603,
+                    "end": 291.39085,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.165",
+                    "form": "인제",
+                    "original_form": "인제",
+                    "speaker_id": "SD2302057",
+                    "start": 291.81360,
+                    "end": 292.37134,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.166",
+                    "form": "교수님이 이제",
+                    "original_form": "교수님이 이제",
+                    "speaker_id": "SD2302057",
+                    "start": 292.52162,
+                    "end": 293.53870,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.167",
+                    "form": "처방에 의해서 약도 먹고",
+                    "original_form": "처방에 의해서 약도 먹고",
+                    "speaker_id": "SD2302057",
+                    "start": 293.78685,
+                    "end": 295.86226,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.168",
+                    "form": "그 치료도 해도 안 나요.",
+                    "original_form": "그 치료도 해도 안 나요.",
+                    "speaker_id": "SD2302057",
+                    "start": 296.44913,
+                    "end": 298.43756,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.169",
+                    "form": "계속",
+                    "original_form": "계속",
+                    "speaker_id": "SD2302057",
+                    "start": 298.75976,
+                    "end": 299.33650,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.170",
+                    "form": "그걸 한 몇 개월 다녔습니다.",
+                    "original_form": "그걸 한 몇 개월 다녔습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 299.59971,
+                    "end": 301.10791,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.171",
+                    "form": "몇 개월 다니다보니까 또",
+                    "original_form": "몇 개월 다니다보니까 또",
+                    "speaker_id": "SD2302057",
+                    "start": 301.67520,
+                    "end": 303.26144,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.172",
+                    "form": "누가",
+                    "original_form": "누가",
+                    "speaker_id": "SD2302057",
+                    "start": 303.63227,
+                    "end": 304.12960,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.173",
+                    "form": "아는 사람이 침을 맞으라 그래서",
+                    "original_form": "아는 사람이 침을 맞으라 그래서",
+                    "speaker_id": "SD2302057",
+                    "start": 304.32760,
+                    "end": 306.28468,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.174",
+                    "form": "또 한약집에 가서 또 침을 맞는데",
+                    "original_form": "또 한약집에 가서 또 침을 맞는데",
+                    "speaker_id": "SD2302057",
+                    "start": 306.81476,
+                    "end": 308.73601,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.175",
+                    "form": "침을 반대쪽에 놉니다.",
+                    "original_form": "침을 반대쪽에 놉니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 308.91085,
+                    "end": 310.58520,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.176",
+                    "form": "왼쪽에",
+                    "original_form": "왼쪽에",
+                    "speaker_id": "SD2302057",
+                    "start": 310.87665,
+                    "end": 311.92371,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.177",
+                    "form": "인제 왼쪽으로 인제 침을 반대쪽으로 놓는데",
+                    "original_form": "인제 왼쪽으로 인제 침을 반대쪽으로 놓는데",
+                    "speaker_id": "SD2302057",
+                    "start": 311.98947,
+                    "end": 315.10497,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.178",
+                    "form": "한 놈 맞으면은",
+                    "original_form": "한 놈 맞으면은",
+                    "speaker_id": "SD2302057",
+                    "start": 315.47717,
+                    "end": 316.67477,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.179",
+                    "form": "괜찮다고 해서 인제 맞았",
+                    "original_form": "괜찮다고 해서 인제 맞았",
+                    "speaker_id": "SD2302057",
+                    "start": 317.34989,
+                    "end": 318.49428,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.180",
+                    "form": "꾸준히 맞았죠.",
+                    "original_form": "꾸준히 맞았죠.",
+                    "speaker_id": "SD2302057",
+                    "start": 318.73867,
+                    "end": 319.75820,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.181",
+                    "form": "꾸준히 맞다 보니까 좀 나요.",
+                    "original_form": "꾸준히 맞다 보니까 좀 나요.",
+                    "speaker_id": "SD2302057",
+                    "start": 320.10016,
+                    "end": 321.77768,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.182",
+                    "form": "나중에 그렇게",
+                    "original_form": "나중에 그르키",
+                    "speaker_id": "SD2302057",
+                    "start": 322.26913,
+                    "end": 323.16111,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.183",
+                    "form": "열심히 인제",
+                    "original_form": "열심히 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 323.47179,
+                    "end": 324.38059,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.184",
+                    "form": "출근하면서 인제 그 출퇴근하면서 이제",
+                    "original_form": "출근하면서 인제 그 출퇴근하면서 이제",
+                    "speaker_id": "SD2302057",
+                    "start": 324.46164,
+                    "end": 326.85361,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.185",
+                    "form": "받는데 그 받는",
+                    "original_form": "받는데 그 받는",
+                    "speaker_id": "SD2302057",
+                    "start": 327.73169,
+                    "end": 329.40280,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.186",
+                    "form": "한약방에",
+                    "original_form": "한약방에",
+                    "speaker_id": "SD2302057",
+                    "start": 329.61794,
+                    "end": 330.63168,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.187",
+                    "form": "저 양지에",
+                    "original_form": "저 양지에",
+                    "speaker_id": "SD2302057",
+                    "start": 331.03648,
+                    "end": 332.80762,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.188",
+                    "form": "예 있습니다 양지에.",
+                    "original_form": "예 있습니다 양지에.",
+                    "speaker_id": "SD2302057",
+                    "start": 333.23648,
+                    "end": 334.41724,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.189",
+                    "form": "거기 얼마 다니다가",
+                    "original_form": "거기 얼마 다니다가",
+                    "speaker_id": "SD2302057",
+                    "start": 334.56375,
+                    "end": 336.11402,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.190",
+                    "form": "또 안 나가지고 이제",
+                    "original_form": "또 안 나가지고 이제",
+                    "speaker_id": "SD2302057",
+                    "start": 336.58703,
+                    "end": 338.34664,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.191",
+                    "form": "용인에서 인제 또",
+                    "original_form": "용인에서 인제 또",
+                    "speaker_id": "SD2302057",
+                    "start": 338.88835,
+                    "end": 339.99315,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.192",
+                    "form": "한약방이 또 잘 놓는다고 해서",
+                    "original_form": "한약방이 또 잘 놓는다고 해서",
+                    "speaker_id": "SD2302057",
+                    "start": 340.50011,
+                    "end": 342.24447,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.193",
+                    "form": "또 인제 거기를 들어",
+                    "original_form": "또 인제 거기를 -들어-",
+                    "speaker_id": "SD2302057",
+                    "start": 342.29261,
+                    "end": 343.42898,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.194",
+                    "form": "들어가서 인제",
+                    "original_form": "들어가서 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 343.50973,
+                    "end": 344.33806,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.195",
+                    "form": "침을 맞는데",
+                    "original_form": "침을 맞는데",
+                    "speaker_id": "SD2302057",
+                    "start": 344.57174,
+                    "end": 345.51017,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.196",
+                    "form": "역시 거기도 인제",
+                    "original_form": "역시 거기도 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 346.17480,
+                    "end": 347.31133,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.197",
+                    "form": "배는 좀 낫다 안 낫다",
+                    "original_form": "배는 쫌 낫다 안 낫다",
+                    "speaker_id": "SD2302057",
+                    "start": 347.94501,
+                    "end": 350.50971,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.198",
+                    "form": "해 가지고",
+                    "original_form": "해 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 350.85463,
+                    "end": 351.60810,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.199",
+                    "form": "있는데",
+                    "original_form": "있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 351.79739,
+                    "end": 352.83163,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.200",
+                    "form": "이제 이",
+                    "original_form": "이제 -이-",
+                    "speaker_id": "SD2302057",
+                    "start": 353.06317,
+                    "end": 353.58135,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.201",
+                    "form": "아는 사람이",
+                    "original_form": "아는 사람이",
+                    "speaker_id": "SD2302057",
+                    "start": 354.14125,
+                    "end": 355.14267,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.202",
+                    "form": "아는 사람이",
+                    "original_form": "아는 사람이",
+                    "speaker_id": "SD2302057",
+                    "start": 355.25630,
+                    "end": 356.75620,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.203",
+                    "form": "약 이름을 잘 대 제가 모르겠는데",
+                    "original_form": "약 이름을 잘 -대- 제가 모르겠는데",
+                    "speaker_id": "SD2302057",
+                    "start": 357.41236,
+                    "end": 359.58189,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.204",
+                    "form": "아 산마",
+                    "original_form": "아 산마",
+                    "speaker_id": "SD2302057",
+                    "start": 359.76477,
+                    "end": 360.70795,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.205",
+                    "form": "산마를 뭐 산마 엑기스 산마 엑기스를 먹으라 해 가지고 인제",
+                    "original_form": "산마를 뭐 산마 엑기스 산마 엑기스를 먹으라 해 가지고 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 360.99953,
+                    "end": 364.78248,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.206",
+                    "form": "그 산마 엑기스를 먹었습니다.",
+                    "original_form": "그 산마 엑기스를 먹었습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 365.02732,
+                    "end": 366.61448,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.207",
+                    "form": "산마 엑기스 그 본사가",
+                    "original_form": "산마 엑기스 그 본사가",
+                    "speaker_id": "SD2302057",
+                    "start": 367.02036,
+                    "end": 368.82676,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.208",
+                    "form": "전라남도 무준가 어디 거기서 인제",
+                    "original_form": "전라남도 무준가 어디 거기서 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 369.33425,
+                    "end": 372.53428,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.209",
+                    "form": "그걸",
+                    "original_form": "그걸",
+                    "speaker_id": "SD2302057",
+                    "start": 373.16366,
+                    "end": 373.98879,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.210",
+                    "form": "제작하는 인제 큰 공장이 있어 가지고",
+                    "original_form": "제작하는 인제 큰 공장이 있어 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 374.20056,
+                    "end": 376.26646,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.211",
+                    "form": "전국에다 판매하고 있어요.",
+                    "original_form": "전국에다 판매하고 있어요.",
+                    "speaker_id": "SD2302057",
+                    "start": 376.60216,
+                    "end": 378.26259,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.212",
+                    "form": "그래서 그걸 인제 사 먹고 있는데",
+                    "original_form": "그래서 그걸 인제 사 먹고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 378.50268,
+                    "end": 380.01516,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.213",
+                    "form": "그걸 열심히 먹으니까",
+                    "original_form": "그걸 열심히 먹으니까",
+                    "speaker_id": "SD2302057",
+                    "start": 380.45886,
+                    "end": 381.91818,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.214",
+                    "form": "그냥 뭐 안 아프더라고요.",
+                    "original_form": "그냥 뭐 안 아프더라고요.",
+                    "speaker_id": "SD2302057",
+                    "start": 382.27220,
+                    "end": 384.36043,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.215",
+                    "form": "그걸 한",
+                    "original_form": "그걸 한",
+                    "speaker_id": "SD2302057",
+                    "start": 384.72833,
+                    "end": 385.77059,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.216",
+                    "form": "3개월 먹었는데",
+                    "original_form": "삼 개월 먹었는데",
+                    "speaker_id": "SD2302057",
+                    "start": 385.87539,
+                    "end": 387.45763,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.217",
+                    "form": "안 아프고 있다 그 약이 인제",
+                    "original_form": "안 아프고 있다 그 약이 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 388.00052,
+                    "end": 389.94222,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.218",
+                    "form": "다 먹고 예 끝나니까 또 아프기 시작해서",
+                    "original_form": "다 먹고 예 끝나니까 또 아프기 시작해서",
+                    "speaker_id": "SD2302057",
+                    "start": 390.59944,
+                    "end": 393.69837,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.219",
+                    "form": "이제 그",
+                    "original_form": "이제 그",
+                    "speaker_id": "SD2302057",
+                    "start": 394.07645,
+                    "end": 394.74504,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.220",
+                    "form": "산마 인제 그 회사를 한번 연락 할라고 지금",
+                    "original_form": "산마 인제 그 회사를 한번 연락 헐라고 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 395.30158,
+                    "end": 397.92346,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.221",
+                    "form": "하고 있는데 아직 통화를 제가 못 하고 있거 있는 있습니다.",
+                    "original_form": "허고 있는데 아직 통화를 제가 못 허고 -있거- -있는- 있습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 398.14808,
+                    "end": 401.54059,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.222",
+                    "form": "통화를 못 하고 있는데",
+                    "original_form": "통화를 못 허고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 401.91600,
+                    "end": 403.17854,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.223",
+                    "form": "그 약을",
+                    "original_form": "그 약을",
+                    "speaker_id": "SD2302057",
+                    "start": 403.34058,
+                    "end": 404.12616,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.224",
+                    "form": "누가 지어 수원 선생이 이제 판다고 저",
+                    "original_form": "누가 지어 수원 선생이 이제 판다고 저",
+                    "speaker_id": "SD2302057",
+                    "start": 404.56305,
+                    "end": 407.17853,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.225",
+                    "form": "대리점에서 판다고 해서 인제 수원을 이제 한번 갈려고 그러는데 이제",
+                    "original_form": "대리점에서 판다고 해서 인제 수원을 이제 한번 갈려고 그러는데 이제",
+                    "speaker_id": "SD2302057",
+                    "start": 407.48763,
+                    "end": 410.64484,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.226",
+                    "form": "아직 못 가고 있는 중인데",
+                    "original_form": "아직 못 가고 있는 중인데",
+                    "speaker_id": "SD2302057",
+                    "start": 410.88762,
+                    "end": 412.46027,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.227",
+                    "form": "산마가 제일",
+                    "original_form": "산마가 제일",
+                    "speaker_id": "SD2302057",
+                    "start": 412.99460,
+                    "end": 414.11170,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.228",
+                    "form": "약 효과는",
+                    "original_form": "약 효과는",
+                    "speaker_id": "SD2302057",
+                    "start": 414.24111,
+                    "end": 415.55401,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.229",
+                    "form": "많이 나는 거 같아요.",
+                    "original_form": "많이 나는 거 같애요.",
+                    "speaker_id": "SD2302057",
+                    "start": 415.97906,
+                    "end": 417.16035,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.230",
+                    "form": "예 그거 먹으면서 안 아프고",
+                    "original_form": "예 그거 먹으면서 안 아프고",
+                    "speaker_id": "SD2302057",
+                    "start": 417.44216,
+                    "end": 419.38496,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.231",
+                    "form": "몸이 전체가 다 좋아지니까",
+                    "original_form": "몸이 전체가 다 좋아지니까",
+                    "speaker_id": "SD2302057",
+                    "start": 420.41968,
+                    "end": 422.26301,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.232",
+                    "form": "그거 산마 엑기스는",
+                    "original_form": "그거 산마 엑기스는",
+                    "speaker_id": "SD2302057",
+                    "start": 422.67905,
+                    "end": 424.66471,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.233",
+                    "form": "풍이 있는 사람이 먹는 약인데",
+                    "original_form": "풍이 있는 사람이 먹는 약인데",
+                    "speaker_id": "SD2302057",
+                    "start": 425.80651,
+                    "end": 428.66002,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.234",
+                    "form": "그걸 먹음으로써 풍이 안 온다는 얘기를 들었습니다.",
+                    "original_form": "그걸 먹음으로써 풍이 안 온다는 얘기를 들었습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 428.92715,
+                    "end": 432.26354,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.235",
+                    "form": "예.",
+                    "original_form": "예.",
+                    "speaker_id": "SD2302057",
+                    "start": 432.38490,
+                    "end": 432.71376,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.236",
+                    "form": "풍이 안 오고",
+                    "original_form": "풍이 안 오고",
+                    "speaker_id": "SD2302057",
+                    "start": 432.86298,
+                    "end": 433.76031,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.237",
+                    "form": "아 제가 시골에 살 때",
+                    "original_form": "아 제가 시골에 살 때",
+                    "speaker_id": "SD2302056",
+                    "start": 433.94106,
+                    "end": 435.64050,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.238",
+                    "form": "화장실에서",
+                    "original_form": "화장실에서",
+                    "speaker_id": "SD2302056",
+                    "start": 435.77047,
+                    "end": 437.06037,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.239",
+                    "form": "그 목욕탕에서 목욕을 하다가",
+                    "original_form": "그 목욕탕에서 목욕을 하다가",
+                    "speaker_id": "SD2302056",
+                    "start": 437.64050,
+                    "end": 439.79559,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.240",
+                    "form": "밑에",
+                    "original_form": "밑에",
+                    "speaker_id": "SD2302056",
+                    "start": 439.96669,
+                    "end": 440.57312,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.241",
+                    "form": "비눗물이 있었어.",
+                    "original_form": "비눗물이 있었어.",
+                    "speaker_id": "SD2302056",
+                    "start": 440.70092,
+                    "end": 441.97082,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.242",
+                    "form": "미끄러져서 쓰러진 적이 있습니다.",
+                    "original_form": "미끄러져서 쓰러진 적이 있습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 442.10198,
+                    "end": 444.73020,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.243",
+                    "form": "처음 쓰러질 때",
+                    "original_form": "처음 쓰러질 때",
+                    "speaker_id": "SD2302056",
+                    "start": 444.84958,
+                    "end": 446.14803,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.244",
+                    "form": "넘어 넘어질 때",
+                    "original_form": "-넘어- 넘어질 때",
+                    "speaker_id": "SD2302056",
+                    "start": 446.37944,
+                    "end": 447.70840,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.245",
+                    "form": "머리가 멍 한 게",
+                    "original_form": "머리가 멍 한 게",
+                    "speaker_id": "SD2302056",
+                    "start": 447.89752,
+                    "end": 449.31875,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.246",
+                    "form": "아",
+                    "original_form": "아",
+                    "speaker_id": "SD2302056",
+                    "start": 449.82024,
+                    "end": 450.52362,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.247",
+                    "form": "이거 내가 이러면 내 죽는 게 아닌가.",
+                    "original_form": "이긴 내가 이러면 내 죽는 게 아닌가.",
+                    "speaker_id": "SD2302056",
+                    "start": 450.68219,
+                    "end": 453.04254,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.248",
+                    "form": "그런 생각이 언뜻 들었습니다.",
+                    "original_form": "그런 생각이 언뜻 들었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 453.18092,
+                    "end": 455.09289,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.249",
+                    "form": "머리에서 쐐에 소리가 나고",
+                    "original_form": "머리에서 쐐에 소리가 나고",
+                    "speaker_id": "SD2302056",
+                    "start": 455.26077,
+                    "end": 457.61526,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.250",
+                    "form": "하늘이 캄캄한 거 같고",
+                    "original_form": "하늘이 캄캄한 거 같고",
+                    "speaker_id": "SD2302056",
+                    "start": 457.77896,
+                    "end": 459.39347,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.251",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2302056",
+                    "start": 459.54205,
+                    "end": 460.00672,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.252",
+                    "form": "큰",
+                    "original_form": "큰",
+                    "speaker_id": "SD2302056",
+                    "start": 460.60464,
+                    "end": 461.16245,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.253",
+                    "form": "5분 내지 10분 있다가 정신을 차려보니까",
+                    "original_form": "오 분 내지 십 분 있다가 정신을 차려보니까",
+                    "speaker_id": "SD2302056",
+                    "start": 461.34793,
+                    "end": 464.36660,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.254",
+                    "form": "화장실",
+                    "original_form": "화장실",
+                    "speaker_id": "SD2302056",
+                    "start": 465.48588,
+                    "end": 466.33882,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.255",
+                    "form": "문지방에 제가 머리를 부딪혀서",
+                    "original_form": "문지방에 제가 머리를 부딪혀가",
+                    "speaker_id": "SD2302056",
+                    "start": 467.52539,
+                    "end": 469.73449,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.256",
+                    "form": "쓰러지고 있었습니다.",
+                    "original_form": "쓰러지고 있었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 469.99070,
+                    "end": 471.56505,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.257",
+                    "form": "그때 마침",
+                    "original_form": "그때 마침",
+                    "speaker_id": "SD2302056",
+                    "start": 472.46022,
+                    "end": 473.40489,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.258",
+                    "form": "우리 집사람은 용인",
+                    "original_form": "우리 집사람은 용인",
+                    "speaker_id": "SD2302056",
+                    "start": 473.56449,
+                    "end": 474.86021,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.259",
+                    "form": "딸 집에 왔 왔기 때문에 저 혼자 있었는데",
+                    "original_form": "딸 집에 -왔- 왔기 때문에 내 혼자 있었는데",
+                    "speaker_id": "SD2302056",
+                    "start": 474.88963,
+                    "end": 477.86448,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.260",
+                    "form": "처음에는",
+                    "original_form": "처음에는",
+                    "speaker_id": "SD2302056",
+                    "start": 478.53024,
+                    "end": 479.19922,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.261",
+                    "form": "꼼짝을 못 했습니다.",
+                    "original_form": "꼼짝을 못 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 479.33240,
+                    "end": 480.91686,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.262",
+                    "form": "그래 한참 1 20분 있다 정신을 차리고",
+                    "original_form": "그래 한참 일이십 분 있다 정신을 차리고",
+                    "speaker_id": "SD2302056",
+                    "start": 481.44255,
+                    "end": 484.36110,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.263",
+                    "form": "일어서는데",
+                    "original_form": "일어서는데",
+                    "speaker_id": "SD2302056",
+                    "start": 485.05109,
+                    "end": 486.02774,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.264",
+                    "form": "다리가 뻣뻣해서",
+                    "original_form": "다리가 뻣뻣해서",
+                    "speaker_id": "SD2302056",
+                    "start": 486.20830,
+                    "end": 487.47105,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.265",
+                    "form": "말을 안 들었습니다.",
+                    "original_form": "말을 안 들었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 487.65214,
+                    "end": 489.09384,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.266",
+                    "form": "그 미끄러지면서",
+                    "original_form": "그 미끄러지면서",
+                    "speaker_id": "SD2302056",
+                    "start": 489.59547,
+                    "end": 490.92125,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.267",
+                    "form": "다리를 다친 것 같았습니다.",
+                    "original_form": "다리를 다친 것 같았습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 491.21900,
+                    "end": 493.04394,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.268",
+                    "form": "그래 엉금엉금 기다시피 해서 집에",
+                    "original_form": "그래 엉금엉금 기다시피 해서 집이",
+                    "speaker_id": "SD2302056",
+                    "start": 493.21844,
+                    "end": 495.47041,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.269",
+                    "form": "방에 와서 옷 차려 입고",
+                    "original_form": "방에 와서 옷 차려 입고",
+                    "speaker_id": "SD2302056",
+                    "start": 495.84036,
+                    "end": 497.59792,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.270",
+                    "form": "그 시골에서",
+                    "original_form": "고 시골에서",
+                    "speaker_id": "SD2302056",
+                    "start": 497.79224,
+                    "end": 498.76053,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.271",
+                    "form": "택시를 불러서",
+                    "original_form": "택시를 불러서",
+                    "speaker_id": "SD2302056",
+                    "start": 498.92425,
+                    "end": 500.28276,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.272",
+                    "form": "시골 병원에 갔습니다.",
+                    "original_form": "시골 병원에 갔습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 500.74140,
+                    "end": 502.62963,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.273",
+                    "form": "갔더니",
+                    "original_form": "갔더니",
+                    "speaker_id": "SD2302056",
+                    "start": 503.31254,
+                    "end": 504.16275,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.274",
+                    "form": "의사 이야기가",
+                    "original_form": "의사 이야기가",
+                    "speaker_id": "SD2302056",
+                    "start": 504.87669,
+                    "end": 506.17217,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.275",
+                    "form": "뭐 괜찮아요 뭐",
+                    "original_form": "뭐 괜찮아요 뭐",
+                    "speaker_id": "SD2302056",
+                    "start": 506.71735,
+                    "end": 507.97457,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.276",
+                    "form": "다리가 놀래서 그러니까",
+                    "original_form": "다리가 놀래서 그러니까",
+                    "speaker_id": "SD2302056",
+                    "start": 508.73711,
+                    "end": 510.49684,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.277",
+                    "form": "주사 1대 맞으면 됩니다.",
+                    "original_form": "주사 한 대 맞으면 됩니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 510.97883,
+                    "end": 512.78954,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.278",
+                    "form": "이래서 주사를 주더라고요.",
+                    "original_form": "이래가 주사를 주더라고요.",
+                    "speaker_id": "SD2302056",
+                    "start": 513.75041,
+                    "end": 515.52395,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.279",
+                    "form": "그걸 맞고",
+                    "original_form": "그걸 맞고",
+                    "speaker_id": "SD2302056",
+                    "start": 515.72910,
+                    "end": 516.61555,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.280",
+                    "form": "집에 와서 누워 쉬었습니다.",
+                    "original_form": "집에 와가 누워 쉬었습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 517.66117,
+                    "end": 520.03549,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.281",
+                    "form": "그러고 3일 가도 다리가 안 났어 안 나았습니다.",
+                    "original_form": "그러고 삼 일 가도 다리가 안 났어 안 나았습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 521.11304,
+                    "end": 524.00567,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.282",
+                    "form": "그 또 가니까 또 주사를 놔줬어요.",
+                    "original_form": "그 또 가니까 또 주사를 놔줬어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 524.91037,
+                    "end": 526.92585,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.283",
+                    "form": "그래도 일주일 정도 돼도 안 나았어요.",
+                    "original_form": "그래도 일주일 정도 돼도 안 나았어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 527.11248,
+                    "end": 529.42912,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.284",
+                    "form": "그렇게 할 수 없이 우리 집사람한테",
+                    "original_form": "그래 할 수 없이 우리 집사람한테",
+                    "speaker_id": "SD2302056",
+                    "start": 529.90926,
+                    "end": 531.87564,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.285",
+                    "form": "전날 해서 내 용인 올라갈테니",
+                    "original_form": "전날 해서 내 용인 올라갈테니",
+                    "speaker_id": "SD2302056",
+                    "start": 532.07611,
+                    "end": 534.45958,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.286",
+                    "form": "내 다리가 이래서 갈테니",
+                    "original_form": "내 다리가 이래서 갈테니",
+                    "speaker_id": "SD2302056",
+                    "start": 534.58838,
+                    "end": 536.26161,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.287",
+                    "form": "병원을 좀",
+                    "original_form": "병원을 좀",
+                    "speaker_id": "SD2302056",
+                    "start": 536.36701,
+                    "end": 537.30335,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.288",
+                    "form": "데려다 다오.",
+                    "original_form": "데려다 다오.",
+                    "speaker_id": "SD2302056",
+                    "start": 538.02155,
+                    "end": 539.05346,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.289",
+                    "form": "이 용인",
+                    "original_form": "이 용인",
+                    "speaker_id": "SD2302056",
+                    "start": 539.21727,
+                    "end": 540.15362,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.290",
+                    "form": "접 억지로",
+                    "original_form": "-접- 억지로",
+                    "speaker_id": "SD2302056",
+                    "start": 541.13064,
+                    "end": 542.32099,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.291",
+                    "form": "버스 타고 용인 올라와서",
+                    "original_form": "버스 타고 용인 올라와서",
+                    "speaker_id": "SD2302056",
+                    "start": 542.63170,
+                    "end": 544.67226,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.292",
+                    "form": "그 병원에 갔더니",
+                    "original_form": "고 병원에 갔더니",
+                    "speaker_id": "SD2302056",
+                    "start": 545.42396,
+                    "end": 546.72153,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.293",
+                    "form": "아니 반월상 연골이 찢어져서 연골이 파열되서 이걸 수술해야 된다고 했습니다.",
+                    "original_form": "아니 반월상 연골이 찢어져가 연골이 파열되가 이걸 수술해야 된다고 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 546.87980,
+                    "end": 552.48305,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.294",
+                    "form": "그러니까 시골에서 그",
+                    "original_form": "그러니까 시골에서 그",
+                    "speaker_id": "SD2302056",
+                    "start": 552.66269,
+                    "end": 554.19108,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.295",
+                    "form": "무지한 그 의사한테",
+                    "original_form": "무지한 그 의사한테",
+                    "speaker_id": "SD2302056",
+                    "start": 554.39155,
+                    "end": 556.10075,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.296",
+                    "form": "어?",
+                    "original_form": "어?",
+                    "speaker_id": "SD2302056",
+                    "start": 556.41519,
+                    "end": 556.80441,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.297",
+                    "form": "그 말만 듣고 계속 앉아 있었으면",
+                    "original_form": "그 말만 듣고 계속 앉아 있었으면",
+                    "speaker_id": "SD2302056",
+                    "start": 556.91241,
+                    "end": 558.96323,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.298",
+                    "form": "잘못하면 큰",
+                    "original_form": "잘못하면 큰",
+                    "speaker_id": "SD2302056",
+                    "start": 559.79103,
+                    "end": 560.97177,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.299",
+                    "form": "일을 당할 뻔 했습니다.",
+                    "original_form": "일을 당할 뻔 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 561.06051,
+                    "end": 562.62843,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.300",
+                    "form": "우리 시골 사는 게 제일 어려운 게",
+                    "original_form": "우리 시골 사는 게 제일 어려운 게",
+                    "speaker_id": "SD2302056",
+                    "start": 563.88886,
+                    "end": 566.54760,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.301",
+                    "form": "의료 혜택을 못 받는 겁니다.",
+                    "original_form": "의료 혜택을 못 받는 겁니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 566.67925,
+                    "end": 568.48069,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.302",
+                    "form": "그리고 의사",
+                    "original_form": "그리고 의사",
+                    "speaker_id": "SD2302056",
+                    "start": 568.59207,
+                    "end": 569.54314,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.303",
+                    "form": "수준도 낮아서",
+                    "original_form": "수준도 낮아서",
+                    "speaker_id": "SD2302056",
+                    "start": 569.72092,
+                    "end": 570.96588,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.304",
+                    "form": "큰 화를 입을 뻔 했습니다.",
+                    "original_form": "큰 화를 입을 뻔 했습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 571.11242,
+                    "end": 573.21537,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.305",
+                    "form": "지금 협착증에 대해서 제가 말씀을 드리겠는데요.",
+                    "original_form": "지금 협착증에 대해서 제가 말씀을 드리겠는데요.",
+                    "speaker_id": "SD2302057",
+                    "start": 573.40703,
+                    "end": 575.90471,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.306",
+                    "form": "협착증이라는 것은",
+                    "original_form": "협착증이라는 것은",
+                    "speaker_id": "SD2302057",
+                    "start": 576.27922,
+                    "end": 577.68294,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.307",
+                    "form": "허리에서",
+                    "original_form": "허리에서",
+                    "speaker_id": "SD2302057",
+                    "start": 577.90702,
+                    "end": 578.69159,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.308",
+                    "form": "신경을 눌려 가지고",
+                    "original_form": "신경을 눌려 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 579.15353,
+                    "end": 580.79522,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.309",
+                    "form": "한쪽 다리가 저리는 걸 협착증이라고 그러는데",
+                    "original_form": "한쪽 다리가 저리는 걸 협착증이라고 그러는데",
+                    "speaker_id": "SD2302057",
+                    "start": 581.39576,
+                    "end": 583.84729,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.310",
+                    "form": "병원 어느 병원",
+                    "original_form": "병원 어느 병원",
+                    "speaker_id": "SD2302057",
+                    "start": 584.61395,
+                    "end": 585.84924,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.311",
+                    "form": "상도동 병원에 가서",
+                    "original_form": "상도동 병원에 가서",
+                    "speaker_id": "SD2302057",
+                    "start": 585.91983,
+                    "end": 587.32470,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.312",
+                    "form": "그",
+                    "original_form": "그",
+                    "speaker_id": "SD2302057",
+                    "start": 587.68986,
+                    "end": 588.10645,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.313",
+                    "form": "이제 엑스레이 찍고 하려고 보니까",
+                    "original_form": "이제 엑스레이 찍고 헐라 보니까",
+                    "speaker_id": "SD2302057",
+                    "start": 588.67648,
+                    "end": 590.61062,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.314",
+                    "form": "아주 심한 상태에서 인제",
+                    "original_form": "아주 심한 상태에서 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 591.27331,
+                    "end": 593.27990,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.315",
+                    "form": "술 수술 날짜를 받아 가지고",
+                    "original_form": "-술- 수술 날짜를 받아 가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 593.47059,
+                    "end": 595.60993,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.316",
+                    "form": "수술을 했습니다.",
+                    "original_form": "수술을 했습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 596.00859,
+                    "end": 597.13700,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.317",
+                    "form": "수술을 했는데도",
+                    "original_form": "수술을 했는데도",
+                    "speaker_id": "SD2302057",
+                    "start": 597.53800,
+                    "end": 598.85959,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.318",
+                    "form": "이게 빨리 아물질 않고 인제",
+                    "original_form": "이게 빨리 아물질 않고 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 599.71285,
+                    "end": 601.43349,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.319",
+                    "form": "한동안",
+                    "original_form": "한동안",
+                    "speaker_id": "SD2302057",
+                    "start": 601.73791,
+                    "end": 602.87893,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.320",
+                    "form": "이렇게 운동을 하면서 인제",
+                    "original_form": "이렇게 운동을 하면서 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 603.22245,
+                    "end": 604.81826,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.321",
+                    "form": "조정을 하는데",
+                    "original_form": "조정을 하는데",
+                    "speaker_id": "SD2302057",
+                    "start": 605.52988,
+                    "end": 606.73742,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.322",
+                    "form": "그래도 안 나가지고",
+                    "original_form": "그래도 안 나가지고",
+                    "speaker_id": "SD2302057",
+                    "start": 607.15452,
+                    "end": 608.64224,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.323",
+                    "form": "이제",
+                    "original_form": "이제",
+                    "speaker_id": "SD2302057",
+                    "start": 609.44652,
+                    "end": 610.06577,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.324",
+                    "form": "운동이 이제 많이 해야 된다 누가 그래 가지고 인제 운동을 많이 하기 시작하는데",
+                    "original_form": "운동이 이제 많이 해야 된다 누가 그래 가지고 인제 운동을 많이 하기 시작하는데",
+                    "speaker_id": "SD2302057",
+                    "start": 610.16310,
+                    "end": 614.26843,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.325",
+                    "form": "걷고",
+                    "original_form": "걸꼬",
+                    "speaker_id": "SD2302057",
+                    "start": 614.93685,
+                    "end": 616.43473,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.326",
+                    "form": "근육 운동 같은 거 해도",
+                    "original_form": "근육 운동 같은 거 해도",
+                    "speaker_id": "SD2302057",
+                    "start": 616.91442,
+                    "end": 618.73599,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.327",
+                    "form": "이게 빨리 낫질 않아요.",
+                    "original_form": "이게 빨리 낫질 않아요.",
+                    "speaker_id": "SD2302057",
+                    "start": 619.04272,
+                    "end": 620.38383,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.328",
+                    "form": "그래서 지금도 좀 안 좋은 편인데",
+                    "original_form": "그래서 지금도 좀 안 좋은 편인데",
+                    "speaker_id": "SD2302057",
+                    "start": 620.68978,
+                    "end": 622.60636,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.329",
+                    "form": "그리고 이게 협착증이라는 것은",
+                    "original_form": "그라고 이게 협착증이라는 것은",
+                    "speaker_id": "SD2302057",
+                    "start": 622.91441,
+                    "end": 625.01542,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.330",
+                    "form": "신경이 이렇게",
+                    "original_form": "신경이 이렇게",
+                    "speaker_id": "SD2302057",
+                    "start": 625.53843,
+                    "end": 626.51692,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.331",
+                    "form": "뼈와 뼈에서 딱 눌르고 있기 때문에 뼈가 눌르고 있기 때문에",
+                    "original_form": "뼈와 뼈에서 딱 눌르고 있기 때문에 뼈가 눌르고 있기 때문에",
+                    "speaker_id": "SD2302057",
+                    "start": 626.61757,
+                    "end": 630.06623,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.332",
+                    "form": "그걸 좀",
+                    "original_form": "그걸 좀",
+                    "speaker_id": "SD2302057",
+                    "start": 630.20368,
+                    "end": 631.25501,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.333",
+                    "form": "벌려 가지고 이 공구 이 공구리로 치는 그런",
+                    "original_form": "벌려 가지고 이 공구 이 공구리로 치는 그런",
+                    "speaker_id": "SD2302057",
+                    "start": 631.99674,
+                    "end": 635.38336,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.334",
+                    "form": "지금",
+                    "original_form": "지금",
+                    "speaker_id": "SD2302057",
+                    "start": 636.11327,
+                    "end": 636.89354,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.335",
+                    "form": "치료를 하고 있 하고 있기 때문에 그걸 인제",
+                    "original_form": "치료를 허고 -있- 허고 있기 때문에 그걸 인제",
+                    "speaker_id": "SD2302057",
+                    "start": 637.36249,
+                    "end": 639.91542,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.336",
+                    "form": "하려고 마음은 먹는데",
+                    "original_form": "헐려고 마음은 먹는데",
+                    "speaker_id": "SD2302057",
+                    "start": 640.17208,
+                    "end": 641.53467,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.337",
+                    "form": "그 하기 전에",
+                    "original_form": "그 허기 전에",
+                    "speaker_id": "SD2302057",
+                    "start": 641.69832,
+                    "end": 642.76996,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.338",
+                    "form": "회장님 운동만 계속 하면 좀 낫는다고 해서 지금 운동을 많이 허고 걸코 지금",
+                    "original_form": "회장님 운동만 계속 허면 좀 낫는다고 해서 지금 운동을 많이 허고 걷고 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 642.83361,
+                    "end": 648.12878,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.339",
+                    "form": "근육 운동을 많이 하고 있는데",
+                    "original_form": "근육 운동을 많이 하고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 648.24481,
+                    "end": 649.65069,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.340",
+                    "form": "협착증이라는 것이 참",
+                    "original_form": "협착증이라는 것이 참",
+                    "speaker_id": "SD2302057",
+                    "start": 649.81595,
+                    "end": 651.42363,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.341",
+                    "form": "사람한테 제일 다리가 저리고",
+                    "original_form": "사람한테 제일 다리가 재이고",
+                    "speaker_id": "SD2302057",
+                    "start": 652.18598,
+                    "end": 655.18009,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.342",
+                    "form": "잘 때도 다리가 막",
+                    "original_form": "잘 때도 다리가 막",
+                    "speaker_id": "SD2302057",
+                    "start": 655.89829,
+                    "end": 656.99718,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.343",
+                    "form": "꼬입니다 다리가.",
+                    "original_form": "꼬입니다 다리가.",
+                    "speaker_id": "SD2302057",
+                    "start": 657.06350,
+                    "end": 658.03247,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.344",
+                    "form": "예.",
+                    "original_form": "예.",
+                    "speaker_id": "SD2302057",
+                    "start": 658.26028,
+                    "end": 658.55494,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.345",
+                    "form": "꼬이다 보면은",
+                    "original_form": "꼬이다 보면은",
+                    "speaker_id": "SD2302057",
+                    "start": 658.80200,
+                    "end": 659.83529,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.346",
+                    "form": "그냥 고통이 아주 심해요.",
+                    "original_form": "그냥 고통이 아주 심해요.",
+                    "speaker_id": "SD2302057",
+                    "start": 660.28596,
+                    "end": 661.89518,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.347",
+                    "form": "심하다 보니까",
+                    "original_form": "심허다 보니까",
+                    "speaker_id": "SD2302057",
+                    "start": 662.32070,
+                    "end": 663.37062,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.348",
+                    "form": "좀",
+                    "original_form": "좀",
+                    "speaker_id": "SD2302057",
+                    "start": 663.92019,
+                    "end": 664.39928,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.349",
+                    "form": "어쩔 때는",
+                    "original_form": "어쩔 때는",
+                    "speaker_id": "SD2302057",
+                    "start": 664.98806,
+                    "end": 665.83202,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.350",
+                    "form": "다리를 그냥 좀",
+                    "original_form": "다리를 양 좀",
+                    "speaker_id": "SD2302057",
+                    "start": 665.95654,
+                    "end": 667.07179,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.351",
+                    "form": "절단했으면 그런 마음까지 드는데",
+                    "original_form": "절단했으면 그런 마음까지 드는데",
+                    "speaker_id": "SD2302057",
+                    "start": 667.27951,
+                    "end": 669.96125,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.352",
+                    "form": "그래도",
+                    "original_form": "그래도",
+                    "speaker_id": "SD2302057",
+                    "start": 670.88488,
+                    "end": 671.73354,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.353",
+                    "form": "살 길은",
+                    "original_form": "살 길은",
+                    "speaker_id": "SD2302057",
+                    "start": 672.50197,
+                    "end": 673.33671,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.354",
+                    "form": "걸어야 걸어야 되고",
+                    "original_form": "걸어야 걸어야 되고",
+                    "speaker_id": "SD2302057",
+                    "start": 673.38271,
+                    "end": 674.93082,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.355",
+                    "form": "근육 운동을 해야 된다",
+                    "original_form": "근육 운동을 해야 된다",
+                    "speaker_id": "SD2302057",
+                    "start": 675.32921,
+                    "end": 676.75258,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.356",
+                    "form": "이런 마음으로 지금",
+                    "original_form": "이런 마음으로 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 677.05274,
+                    "end": 678.32986,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.357",
+                    "form": "지금 하고 있는데",
+                    "original_form": "지금 허고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 678.57737,
+                    "end": 679.77838,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.358",
+                    "form": "협착증이 여간 낫질 않고",
+                    "original_form": "협착증이 여간 낫질 않고",
+                    "speaker_id": "SD2302057",
+                    "start": 680.63830,
+                    "end": 682.86987,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.359",
+                    "form": "허리에서 그거",
+                    "original_form": "허리에서 그거",
+                    "speaker_id": "SD2302057",
+                    "start": 683.12331,
+                    "end": 683.89229,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.360",
+                    "form": "통증이 오기 때문에",
+                    "original_form": "통증이 오기 때문에",
+                    "speaker_id": "SD2302057",
+                    "start": 683.99767,
+                    "end": 685.34523,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.361",
+                    "form": "힘이 듭니다.",
+                    "original_form": "힘이 듭니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 686.14633,
+                    "end": 687.11029,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.362",
+                    "form": "힘이 들고",
+                    "original_form": "힘이 들고",
+                    "speaker_id": "SD2302057",
+                    "start": 687.25809,
+                    "end": 688.28106,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.363",
+                    "form": "약으로는 낫질 않아요.",
+                    "original_form": "약으로는 낫질 않아요.",
+                    "speaker_id": "SD2302057",
+                    "start": 689.41742,
+                    "end": 691.23030,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.364",
+                    "form": "이게 약으로는 낫질 않고",
+                    "original_form": "이게 약으로는 낫질 않고",
+                    "speaker_id": "SD2302057",
+                    "start": 691.34632,
+                    "end": 692.93683,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.365",
+                    "form": "공구를 쳐서 거기 공구를",
+                    "original_form": "공구를 쳐서 거기 공구를",
+                    "speaker_id": "SD2302057",
+                    "start": 693.51690,
+                    "end": 694.98211,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.366",
+                    "form": "벌리면은 낫는다 그러는데 그것도",
+                    "original_form": "벌리면은 낫는다 그러는데 그것도",
+                    "speaker_id": "SD2302057",
+                    "start": 695.05913,
+                    "end": 697.36943,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.367",
+                    "form": "그건 무서워서 못 하고",
+                    "original_form": "그건 무서워서 못 허고",
+                    "speaker_id": "SD2302057",
+                    "start": 697.84414,
+                    "end": 699.40414,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.368",
+                    "form": "지금 운동하는 중인데",
+                    "original_form": "지금 운동하는 중인데",
+                    "speaker_id": "SD2302057",
+                    "start": 699.70512,
+                    "end": 701.80586,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.369",
+                    "form": "운동을",
+                    "original_form": "운동을",
+                    "speaker_id": "SD2302057",
+                    "start": 702.12970,
+                    "end": 702.95364,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.370",
+                    "form": "하루에 지금",
+                    "original_form": "하루에 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 703.66178,
+                    "end": 704.57265,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.371",
+                    "form": "1시간 2시간 정도 지금 하고 있습니다.",
+                    "original_form": "한 시간 두 시간 정도 지금 허고 있습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 704.70617,
+                    "end": 707.68882,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.372",
+                    "form": "하고 있다 보니까",
+                    "original_form": "허고 있다 보니까",
+                    "speaker_id": "SD2302057",
+                    "start": 708.10028,
+                    "end": 709.15910,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.373",
+                    "form": "굉장히 피곤해요 우리 나이",
+                    "original_form": "굉장히 피곤해요 우리 나이",
+                    "speaker_id": "SD2302057",
+                    "start": 709.31204,
+                    "end": 710.78478,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.374",
+                    "form": "나이 먹어 가지고 이게 운동 한다는 게",
+                    "original_form": "나이 먹어 가지고 이게 운동 한다는 게",
+                    "speaker_id": "SD2302057",
+                    "start": 710.89655,
+                    "end": 713.04430,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.375",
+                    "form": "피곤해서",
+                    "original_form": "피곤해서",
+                    "speaker_id": "SD2302057",
+                    "start": 713.37030,
+                    "end": 714.19633,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.376",
+                    "form": "지금",
+                    "original_form": "지금",
+                    "speaker_id": "SD2302057",
+                    "start": 714.46124,
+                    "end": 714.94088,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.377",
+                    "form": "어떻게 지금 해야 되겠을까 이런 마음도 먹고",
+                    "original_form": "어떻게 지금 해야 되겠을까 이런 마음도 먹고",
+                    "speaker_id": "SD2302057",
+                    "start": 715.89865,
+                    "end": 718.85586,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.378",
+                    "form": "지금",
+                    "original_form": "지금",
+                    "speaker_id": "SD2302057",
+                    "start": 719.24248,
+                    "end": 719.66817,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.379",
+                    "form": "병원에 또",
+                    "original_form": "병원에 또",
+                    "speaker_id": "SD2302057",
+                    "start": 719.99064,
+                    "end": 720.85263,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.380",
+                    "form": "다시",
+                    "original_form": "다시",
+                    "speaker_id": "SD2302057",
+                    "start": 720.98365,
+                    "end": 721.33554,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.381",
+                    "form": "지금 갈려고 마음을 먹고 있는데",
+                    "original_form": "지금 갈려고 마음을 먹고 있는데",
+                    "speaker_id": "SD2302057",
+                    "start": 721.45185,
+                    "end": 723.07083,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.382",
+                    "form": "협착증이라는 게 그렇게 지금",
+                    "original_form": "협착증이라는 게 그렇게 지금",
+                    "speaker_id": "SD2302057",
+                    "start": 723.40934,
+                    "end": 725.17922,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.383",
+                    "form": "무서운",
+                    "original_form": "무서운",
+                    "speaker_id": "SD2302057",
+                    "start": 725.59807,
+                    "end": 726.39168,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.384",
+                    "form": "큰",
+                    "original_form": "큰",
+                    "speaker_id": "SD2302057",
+                    "start": 727.19091,
+                    "end": 727.52054,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.385",
+                    "form": "고질병이라고 저는",
+                    "original_form": "고질병이라고 저는",
+                    "speaker_id": "SD2302057",
+                    "start": 727.65211,
+                    "end": 728.89918,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.386",
+                    "form": "생각하고 있습니다.",
+                    "original_form": "생각하고 있습니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 728.97348,
+                    "end": 729.93577,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.387",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2302057",
+                    "start": 730.12269,
+                    "end": 730.72747,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.388",
+                    "form": "거기 좀 아는 사람이",
+                    "original_form": "거기 좀 아는 사람이",
+                    "speaker_id": "SD2302057",
+                    "start": 731.16120,
+                    "end": 732.46276,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.389",
+                    "form": "협착증은",
+                    "original_form": "협착증은",
+                    "speaker_id": "SD2302057",
+                    "start": 732.55210,
+                    "end": 733.43551,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.390",
+                    "form": "공구를 쳐서 이렇게 낫는 게 아니라",
+                    "original_form": "공구를 쳐서 이렇게 낫는 게 아니라",
+                    "speaker_id": "SD2302057",
+                    "start": 733.60770,
+                    "end": 736.39198,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.391",
+                    "form": "꾸준히 운동 많이 해야 된다 그래서 지금 운동하는 주",
+                    "original_form": "꾸준히 운동 많이 해야 된다 그래서 지금 운동하는 -주-",
+                    "speaker_id": "SD2302057",
+                    "start": 737.27397,
+                    "end": 740.19487,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.392",
+                    "form": "중인데",
+                    "original_form": "중인데",
+                    "speaker_id": "SD2302057",
+                    "start": 740.57295,
+                    "end": 741.45214,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.393",
+                    "form": "운동할 때는 좀 들한데 가만 있으면은",
+                    "original_form": "운동헐 때는 좀 들헌데 가만 있으면은",
+                    "speaker_id": "SD2302057",
+                    "start": 741.58255,
+                    "end": 744.78110,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.394",
+                    "form": "통증이 툭 다시 와요.",
+                    "original_form": "통증이 툭 다시 와요.",
+                    "speaker_id": "SD2302057",
+                    "start": 744.93226,
+                    "end": 746.42266,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.395",
+                    "form": "다시 오기 때문에",
+                    "original_form": "다시 오기 때문에",
+                    "speaker_id": "SD2302057",
+                    "start": 746.67987,
+                    "end": 747.60712,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.396",
+                    "form": "심해진다는 걸 말씀드립니다.",
+                    "original_form": "심해진다는 걸 말씀드립니다.",
+                    "speaker_id": "SD2302057",
+                    "start": 747.84352,
+                    "end": 749.62179,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.397",
+                    "form": "그 협착증 운동하면",
+                    "original_form": "그 협착증 운동하면",
+                    "speaker_id": "SD2302056",
+                    "start": 749.69484,
+                    "end": 751.85621,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.398",
+                    "form": "방법이",
+                    "original_form": "방법이",
+                    "speaker_id": "SD2302056",
+                    "start": 753.20122,
+                    "end": 754.17236,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.399",
+                    "form": "중요하더라고요.",
+                    "original_form": "중요하더라고요.",
+                    "speaker_id": "SD2302056",
+                    "start": 754.22852,
+                    "end": 755.41994,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.400",
+                    "form": "우리 매치 무브먼트에서",
+                    "original_form": "우리 매치 무브먼트에서",
+                    "speaker_id": "SD2302056",
+                    "start": 755.53279,
+                    "end": 757.57178,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.401",
+                    "form": "등 구르기라는 운동이 있어요.",
+                    "original_form": "등 구르기라는 운동이 있어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 757.72957,
+                    "end": 759.71843,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.402",
+                    "form": "등을 구부려서 옴팡 구르는데",
+                    "original_form": "등을 꾸부려서 옴팡 구르는데",
+                    "speaker_id": "SD2302056",
+                    "start": 759.86752,
+                    "end": 762.57843,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.403",
+                    "form": "그게 참 그 운동이 참 좋더라고요.",
+                    "original_form": "그게 참 그 운동이 참 좋더라고요.",
+                    "speaker_id": "SD2302056",
+                    "start": 763.04077,
+                    "end": 765.64837,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.404",
+                    "form": "어 저도",
+                    "original_form": "어 저도",
+                    "speaker_id": "SD2302056",
+                    "start": 766.65092,
+                    "end": 767.46673,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.405",
+                    "form": "목 하고",
+                    "original_form": "목 하고",
+                    "speaker_id": "SD2302056",
+                    "start": 768.75734,
+                    "end": 769.67554,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.406",
+                    "form": "허리 쪽에",
+                    "original_form": "허리 쪽에",
+                    "speaker_id": "SD2302056",
+                    "start": 769.84824,
+                    "end": 770.65467,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.407",
+                    "form": "디스크가 있었는데",
+                    "original_form": "디스크가 있었는데",
+                    "speaker_id": "SD2302056",
+                    "start": 771.35040,
+                    "end": 772.90439,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.408",
+                    "form": "그 운동을 하고부터는",
+                    "original_form": "그 운동을 하고부터는",
+                    "speaker_id": "SD2302056",
+                    "start": 772.98463,
+                    "end": 774.51532,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.409",
+                    "form": "거의 지금은 뭐 완쾌됐다시피 해요.",
+                    "original_form": "거의 지금은 뭐 완쾌됐다시피 해요.",
+                    "speaker_id": "SD2302056",
+                    "start": 774.68780,
+                    "end": 776.99423,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.410",
+                    "form": "그리고 제가 시골살 때",
+                    "original_form": "그리고 제가 시골살 때",
+                    "speaker_id": "SD2302056",
+                    "start": 777.37548,
+                    "end": 779.11398,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.411",
+                    "form": "우연한 기회에",
+                    "original_form": "우연한 기회에",
+                    "speaker_id": "SD2302056",
+                    "start": 779.28089,
+                    "end": 780.51801,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.412",
+                    "form": "나이 60",
+                    "original_form": "나이 육십",
+                    "speaker_id": "SD2302056",
+                    "start": 780.87014,
+                    "end": 781.97719,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.413",
+                    "form": "60에",
+                    "original_form": "육십 에",
+                    "speaker_id": "SD2302056",
+                    "start": 782.14771,
+                    "end": 782.98355,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.414",
+                    "form": "스쿠버를 배우게 됐어요.",
+                    "original_form": "스쿠버를 배우게 됐어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 783.37068,
+                    "end": 785.24438,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.415",
+                    "form": "그 동기가",
+                    "original_form": "그 동기가",
+                    "speaker_id": "SD2302056",
+                    "start": 785.41507,
+                    "end": 786.53327,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.416",
+                    "form": "우리 저 제가 후포요 후푸 후포리에 사는데",
+                    "original_form": "우리 저 저가 후포요 -후푸- 후포리에 사는데",
+                    "speaker_id": "SD2302056",
+                    "start": 786.71562,
+                    "end": 790.35302,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.417",
+                    "form": "탄어호라는 배가 있어요.",
+                    "original_form": "탄어호라는 배가 있어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 791.33969,
+                    "end": 793.04070,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.418",
+                    "form": "그 배가",
+                    "original_form": "그 배가",
+                    "speaker_id": "SD2302056",
+                    "start": 793.45095,
+                    "end": 794.38465,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.419",
+                    "form": "에 옛날에",
+                    "original_form": "에 옛날에",
+                    "speaker_id": "SD2302056",
+                    "start": 794.74235,
+                    "end": 796.03591,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.420",
+                    "form": "세종기지에서",
+                    "original_form": "세종기지에서",
+                    "speaker_id": "SD2302056",
+                    "start": 796.40061,
+                    "end": 797.69363,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.421",
+                    "form": "태웠던",
+                    "original_form": "태웠던",
+                    "speaker_id": "SD2302056",
+                    "start": 797.75833,
+                    "end": 798.66421,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.422",
+                    "form": "그",
+                    "original_form": "그",
+                    "speaker_id": "SD2302056",
+                    "start": 799.04978,
+                    "end": 799.21660,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.423",
+                    "form": "독일산 배인데",
+                    "original_form": "독일산 배인데",
+                    "speaker_id": "SD2302056",
+                    "start": 799.26476,
+                    "end": 800.47537,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.424",
+                    "form": "한 25년 정도 됐어요.",
+                    "original_form": "한 이십오 년 정도 됐어요.",
+                    "speaker_id": "SD2302056",
+                    "start": 800.75776,
+                    "end": 803.04787,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.425",
+                    "form": "배에서",
+                    "original_form": "배에서",
+                    "speaker_id": "SD2302056",
+                    "start": 803.21714,
+                    "end": 803.76475,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.426",
+                    "form": "배에 맨 밑",
+                    "original_form": "배에 맨 밑",
+                    "speaker_id": "SD2302056",
+                    "start": 803.95731,
+                    "end": 804.83488,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.427",
+                    "form": "그 선주가",
+                    "original_form": "그 선주가",
+                    "speaker_id": "SD2302056",
+                    "start": 806.20326,
+                    "end": 807.33689,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.428",
+                    "form": "저",
+                    "original_form": "저",
+                    "speaker_id": "SD2302056",
+                    "start": 808.52356,
+                    "end": 809.06952,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.429",
+                    "form": "독도에",
+                    "original_form": "독도에",
+                    "speaker_id": "SD2302056",
+                    "start": 809.19737,
+                    "end": 809.97273,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.430",
+                    "form": "그때는 독도가",
+                    "original_form": "그때는 독도가",
+                    "speaker_id": "SD2302056",
+                    "start": 810.07760,
+                    "end": 811.23744,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.431",
+                    "form": "우리",
+                    "original_form": "우리",
+                    "speaker_id": "SD2302056",
+                    "start": 811.83321,
+                    "end": 812.29736,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.432",
+                    "form": "일본 사람들이 지금",
+                    "original_form": "일본 사람들이 지금",
+                    "speaker_id": "SD2302056",
+                    "start": 812.45673,
+                    "end": 813.57006,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.433",
+                    "form": "일본 놈들이 지들꺼라 자기네꺼라고 해서",
+                    "original_form": "일본 놈들이 지들꺼라 자기네꺼라고 해서",
+                    "speaker_id": "SD2302056",
+                    "start": 813.61767,
+                    "end": 816.48669,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.434",
+                    "form": "아주 시끄러웠습니다.",
+                    "original_form": "아주 시끄러웠습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 817.19091,
+                    "end": 818.79190,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.435",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2302056",
+                    "start": 818.91922,
+                    "end": 819.60491,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.436",
+                    "form": "어 우리나라 인제",
+                    "original_form": "어 우리나라 인제",
+                    "speaker_id": "SD2302056",
+                    "start": 820.28502,
+                    "end": 821.64677,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.437",
+                    "form": "저 한국 해양 연구원들",
+                    "original_form": "저 한국 해양 연구원들",
+                    "speaker_id": "SD2302056",
+                    "start": 821.73962,
+                    "end": 823.56525,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.438",
+                    "form": "이런 분들이 독도를 연구한다고",
+                    "original_form": "이런 분들이 독도를 연구한다꼬",
+                    "speaker_id": "SD2302056",
+                    "start": 824.22408,
+                    "end": 826.60693,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.439",
+                    "form": "보통 4박 5일씩 가는데 그",
+                    "original_form": "보통 사 박 오 일씩 가는데 그",
+                    "speaker_id": "SD2302056",
+                    "start": 827.62075,
+                    "end": 829.63050,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.440",
+                    "form": "배가 이제",
+                    "original_form": "배가 이제",
+                    "speaker_id": "SD2302056",
+                    "start": 829.68822,
+                    "end": 830.56058,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.441",
+                    "form": "그 배를 임대를 내서",
+                    "original_form": "그 배를 임대를 내서",
+                    "speaker_id": "SD2302056",
+                    "start": 830.70108,
+                    "end": 832.37136,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.442",
+                    "form": "타며 타며 오라면 됩니다.",
+                    "original_form": "타며 타며 오라면 됩니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 832.56680,
+                    "end": 834.11229,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.443",
+                    "form": "임대를 내서",
+                    "original_form": "임대를 내서",
+                    "speaker_id": "SD2302056",
+                    "start": 834.66946,
+                    "end": 835.83738,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.444",
+                    "form": "독도를 갈",
+                    "original_form": "독도를 -갈-",
+                    "speaker_id": "SD2302056",
+                    "start": 836.37910,
+                    "end": 837.16623,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.445",
+                    "form": "갑니다.",
+                    "original_form": "갑니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 837.58765,
+                    "end": 838.13369,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.446",
+                    "form": "거기는",
+                    "original_form": "거기는",
+                    "speaker_id": "SD2302056",
+                    "start": 838.32027,
+                    "end": 839.10892,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.447",
+                    "form": "해양 연구원 저",
+                    "original_form": "해양 연구원 저~",
+                    "speaker_id": "SD2302056",
+                    "start": 839.24003,
+                    "end": 840.86573,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.448",
+                    "form": "연구원부터",
+                    "original_form": "연구원부터",
+                    "speaker_id": "SD2302056",
+                    "start": 841.99995,
+                    "end": 843.22966,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.449",
+                    "form": "각 방송국",
+                    "original_form": "각 방송국",
+                    "speaker_id": "SD2302056",
+                    "start": 843.53414,
+                    "end": 844.62663,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.450",
+                    "form": "기자",
+                    "original_form": "기자",
+                    "speaker_id": "SD2302056",
+                    "start": 844.98285,
+                    "end": 845.55977,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.451",
+                    "form": "기자들까지 같이 가는데",
+                    "original_form": "기자들까지 같이 가는데",
+                    "speaker_id": "SD2302056",
+                    "start": 845.80105,
+                    "end": 847.49516,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.452",
+                    "form": "그 기자들이 전부",
+                    "original_form": "그 기자들이 전부",
+                    "speaker_id": "SD2302056",
+                    "start": 847.93091,
+                    "end": 849.47959,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.453",
+                    "form": "스쿠버를 할 줄 아는 기자들입니다.",
+                    "original_form": "스쿠버를 할 줄 아는 기자들입니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 849.57962,
+                    "end": 851.68324,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.454",
+                    "form": "그 물속에서 이제",
+                    "original_form": "그 물속에서 이제",
+                    "speaker_id": "SD2302056",
+                    "start": 852.34166,
+                    "end": 853.60941,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.455",
+                    "form": "독도",
+                    "original_form": "독도",
+                    "speaker_id": "SD2302056",
+                    "start": 854.09616,
+                    "end": 854.86518,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.456",
+                    "form": "바다 밑에",
+                    "original_form": "바다 밑에",
+                    "speaker_id": "SD2302056",
+                    "start": 855.06463,
+                    "end": 855.75985,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.457",
+                    "form": "지형을",
+                    "original_form": "지형을",
+                    "speaker_id": "SD2302056",
+                    "start": 855.82235,
+                    "end": 856.55799,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.458",
+                    "form": "그 바다 밑 지도를 그리는",
+                    "original_form": "그 바다 밑 지도를 그리는",
+                    "speaker_id": "SD2302056",
+                    "start": 857.27161,
+                    "end": 859.12399,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.459",
+                    "form": "그런 작업을 하는데",
+                    "original_form": "그런 작업을 하는데",
+                    "speaker_id": "SD2302056",
+                    "start": 859.21544,
+                    "end": 860.54002,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.460",
+                    "form": "저는",
+                    "original_form": "저는",
+                    "speaker_id": "SD2302056",
+                    "start": 861.08548,
+                    "end": 861.63676,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.461",
+                    "form": "어 식당을 했기 때문에",
+                    "original_form": "어~ 식당을 했기 때문에",
+                    "speaker_id": "SD2302056",
+                    "start": 862.74053,
+                    "end": 864.44724,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.462",
+                    "form": "저 조리장으로서 그때",
+                    "original_form": "저 조리장으로서 그때",
+                    "speaker_id": "SD2302056",
+                    "start": 864.84163,
+                    "end": 866.71565,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.463",
+                    "form": "따라갑니다.",
+                    "original_form": "따라갑니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 867.59795,
+                    "end": 868.63177,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.464",
+                    "form": "따라가서",
+                    "original_form": "따라가서",
+                    "speaker_id": "SD2302056",
+                    "start": 868.82342,
+                    "end": 869.70099,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.465",
+                    "form": "저 밑에는 이제",
+                    "original_form": "저 밑에는 이제",
+                    "speaker_id": "SD2302056",
+                    "start": 870.12231,
+                    "end": 871.26801,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.466",
+                    "form": "잠수하는 사람 데리고 가 갖고",
+                    "original_form": "잠수하는 사람 데리고 가 갖고",
+                    "speaker_id": "SD2302056",
+                    "start": 871.38334,
+                    "end": 873.16042,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.467",
+                    "form": "저는 밥만 해 주고",
+                    "original_form": "저는 밥만 해 주고",
+                    "speaker_id": "SD2302056",
+                    "start": 873.47046,
+                    "end": 874.87108,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.468",
+                    "form": "시간 나면 같이 이제",
+                    "original_form": "시간 나면 같이 이제",
+                    "speaker_id": "SD2302056",
+                    "start": 875.15814,
+                    "end": 876.76037,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.469",
+                    "form": "그 해양 연구원들하고",
+                    "original_form": "그 해양 연구원들하고",
+                    "speaker_id": "SD2302056",
+                    "start": 877.00465,
+                    "end": 878.58619,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.470",
+                    "form": "독도 바다 속에 들어갑니다.",
+                    "original_form": "독도 바다 속에 들어갑니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 878.89830,
+                    "end": 880.65516,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.471",
+                    "form": "들어가서",
+                    "original_form": "들어가서",
+                    "speaker_id": "SD2302056",
+                    "start": 880.80896,
+                    "end": 881.52376,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.472",
+                    "form": "그땐 거의 초보였기 때문에",
+                    "original_form": "그땐 거의 초보였기 때문에",
+                    "speaker_id": "SD2302056",
+                    "start": 882.08699,
+                    "end": 884.40684,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.473",
+                    "form": "뭐 잡는 거 이런 거는 모르고 바다 밑 구경하는 거",
+                    "original_form": "뭐 잡는 거 이런 거는 모르고 바다 밑 구경하는 거",
+                    "speaker_id": "SD2302056",
+                    "start": 884.71639,
+                    "end": 887.95012,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.474",
+                    "form": "참 구경하는 게 좋습니다 그",
+                    "original_form": "참 구경하는 게 좋습니다 그",
+                    "speaker_id": "SD2302056",
+                    "start": 889.41482,
+                    "end": 891.76353,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.475",
+                    "form": "세상에 소문 전능 없습니다 바다 속에",
+                    "original_form": "세상에 소문 전능 없습니다 바다 속에",
+                    "speaker_id": "SD2302056",
+                    "start": 893.07474,
+                    "end": 896.36131,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.476",
+                    "form": "그냥",
+                    "original_form": "그냥",
+                    "speaker_id": "SD2302056",
+                    "start": 896.96186,
+                    "end": 897.77720,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.477",
+                    "form": "내 솜씨면은",
+                    "original_form": "내 솜씨면은",
+                    "speaker_id": "SD2302056",
+                    "start": 897.92601,
+                    "end": 899.77835,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.478",
+                    "form": "그",
+                    "original_form": "그",
+                    "speaker_id": "SD2302056",
+                    "start": 900.06527,
+                    "end": 900.44420,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.479",
+                    "form": "물방울 소리만 나지",
+                    "original_form": "물방울 소리만 나지",
+                    "speaker_id": "SD2302056",
+                    "start": 900.77150,
+                    "end": 902.87884,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.480",
+                    "form": "그걸 보니까 천국입니다.",
+                    "original_form": "그걸 보니까 천국입니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 903.71589,
+                    "end": 905.17949,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.481",
+                    "form": "그걸 한",
+                    "original_form": "그걸 한",
+                    "speaker_id": "SD2302056",
+                    "start": 905.30945,
+                    "end": 906.07305,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.482",
+                    "form": "1년에 2번씩 해서 몇 년을 했는데",
+                    "original_form": "일 년에 두 번씩 해가 몇 년을 했는데",
+                    "speaker_id": "SD2302056",
+                    "start": 906.67893,
+                    "end": 909.58913,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.483",
+                    "form": "하고 나서 어느날",
+                    "original_form": "하고 나서 어느날",
+                    "speaker_id": "SD2302056",
+                    "start": 910.75117,
+                    "end": 912.17324,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.484",
+                    "form": "귀에서 쐐에 소리가 나는 겁니다.",
+                    "original_form": "귀에서 쐐에 소리가 나는 겁니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 913.74907,
+                    "end": 916.30575,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.485",
+                    "form": "그 이상하다 싶어서",
+                    "original_form": "그 이상하다 싶어서",
+                    "speaker_id": "SD2302056",
+                    "start": 917.70244,
+                    "end": 919.39232,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.486",
+                    "form": "그 시골에 인제",
+                    "original_form": "그 시골에 인제",
+                    "speaker_id": "SD2302056",
+                    "start": 919.52329,
+                    "end": 920.66873,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.487",
+                    "form": "큰 병원에 시골에서 제일 큰 병원에 갔습니다.",
+                    "original_form": "큰 병원에 시골에서 제일 큰 병원에 갔습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 921.12540,
+                    "end": 924.02062,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.488",
+                    "form": "갔더니",
+                    "original_form": "갔더니",
+                    "speaker_id": "SD2302056",
+                    "start": 924.15481,
+                    "end": 924.75325,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.489",
+                    "form": "코에",
+                    "original_form": "코에",
+                    "speaker_id": "SD2302056",
+                    "start": 924.89920,
+                    "end": 925.36124,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.490",
+                    "form": "확대경을 비춰보더니",
+                    "original_form": "확대경을 비춰보더니",
+                    "speaker_id": "SD2302056",
+                    "start": 925.65591,
+                    "end": 927.47856,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.491",
+                    "form": "그 뭐 괜찮아요 그러면 이 약 먹으면 낫습니다.",
+                    "original_form": "그 뭐 괜찮아요 그러면 이 약 먹으면 낫습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 927.79708,
+                    "end": 930.83054,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.492",
+                    "form": "그 약 먹고",
+                    "original_form": "그 약 먹고",
+                    "speaker_id": "SD2302056",
+                    "start": 930.96766,
+                    "end": 931.94941,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.493",
+                    "form": "그래도 다 나야",
+                    "original_form": "그래도 다 나야",
+                    "speaker_id": "SD2302056",
+                    "start": 932.80883,
+                    "end": 933.94617,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.494",
+                    "form": "또 갔더니 뭐 괜찮아요 이래.",
+                    "original_form": "또 갔더니 뭐 괜찮아요 이래.",
+                    "speaker_id": "SD2302056",
+                    "start": 934.64467,
+                    "end": 936.73662,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.495",
+                    "form": "1달 정도 지나니까",
+                    "original_form": "한 달 정도 지나니까",
+                    "speaker_id": "SD2302056",
+                    "start": 937.21847,
+                    "end": 938.84491,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.496",
+                    "form": "아 도저히 걱정이 돼서 안 돼요.",
+                    "original_form": "아 도저히 걱정이 되가 안 돼요.",
+                    "speaker_id": "SD2302056",
+                    "start": 939.47830,
+                    "end": 941.40881,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.497",
+                    "form": "그래서",
+                    "original_form": "그래서",
+                    "speaker_id": "SD2302056",
+                    "start": 941.78638,
+                    "end": 942.47829,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.498",
+                    "form": "그때 마침",
+                    "original_form": "그때 마침",
+                    "speaker_id": "SD2302056",
+                    "start": 943.20292,
+                    "end": 944.02307,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.499",
+                    "form": "우리 사위가",
+                    "original_form": "우리 사위가",
+                    "speaker_id": "SD2302056",
+                    "start": 944.13656,
+                    "end": 944.81947,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.500",
+                    "form": "대구에 와 있었기 때문에",
+                    "original_form": "대구에 와 있었기 때문에",
+                    "speaker_id": "SD2302056",
+                    "start": 944.85696,
+                    "end": 946.26652,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.501",
+                    "form": "대구 병원에 가서",
+                    "original_form": "대구 병원에 가서",
+                    "speaker_id": "SD2302056",
+                    "start": 946.38150,
+                    "end": 947.52699,
+                    "note": ""
+                },
+                {
+                    "id": "SDRW2300001913.1.1.502",
+                    "form": "고쳤습니다.",
+                    "original_form": "고쳤습니다.",
+                    "speaker_id": "SD2302056",
+                    "start": 947.69915,
+                    "end": 948.73300,
+                    "note": ""
+                }
+            ]
+        }
+    ]
+}

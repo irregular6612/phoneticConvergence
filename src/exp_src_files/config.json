@@ -1,12 +1,12 @@
 {
     "paths": {
         "word_file": "filtered_df.xlsx",
-        "audio_sample_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/audio-sample/short-version-phonetic",
-        "participant_data_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/experiment_data",
-        "images_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/img-GPT4o(250329)",
-        "main_word_list": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/exp_src_files/filtered_df copy.xlsx",
-        "practice_word_list": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/exp_src_files/practice_df.xlsx",
-        "practice_audio_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/practice_audio/4x"
+        "audio_sample_dir": "../audio-sample/short-version-phonetic",
+        "participant_data_dir": "../experiment_data",
+        "images_dir": "../img-GPT4o(250329)",
+        "main_word_list": "filtered_df copy.xlsx",
+        "practice_word_list": "practice_df.xlsx",
+        "practice_audio_dir": "../practice_audio/4x"
     },
     "recording": {
         "sample_rate": 44100,

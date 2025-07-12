@@ -1,0 +1,15 @@
+{
+    "paths": {
+        "word_file": "filtered_df.xlsx",
+        "audio_sample_dir": "../audio-sample/short-version-phonetic",
+        "participant_data_dir": "../experiment_data",
+        "images_dir": "../img-GPT4o(250329)",
+        "main_word_list": "filtered_df copy.xlsx",
+        "practice_word_list": "practice_df.xlsx",
+        "practice_audio_dir": "../practice_audio/4x"
+    },
+    "recording": {
+        "sample_rate": 44100,
+        "channels": 1
+    }
+}

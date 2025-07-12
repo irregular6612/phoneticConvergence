@@ -1,0 +1,10 @@
+{
+    "paths": {
+        "participant_data_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/experiment_data",
+        "images_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/img-GPT4o(250329)",
+        "audio_sample_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/audio-sample/short-version-phonetic",
+        "main_word_list": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/exp_src_files/filtered_df.xlsx",
+        "practice_word_list": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/exp_src_files/practice_df.xlsx",
+        "practice_audio_dir": "/Users/bagjuhyeon/Documents/WorkSpace/phoneticConvergence/practice_audio"
+    }
+}

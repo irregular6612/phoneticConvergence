@@ -5,4 +5,5 @@ data/video/
 src/exp_src_files/__pycache__/
 data/AI-emotion-perception-survey/
 .DS_Store
+data/.DS_Store
 src/.DS_Store

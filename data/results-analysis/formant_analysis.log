@@ -1,0 +1,518 @@
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage1_20250402_1859.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage2_20250402_1900.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage3_20250402_1901.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage4_20250402_1902.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage5_20250402_1907.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 1_stage6_20250402_1912.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage1_20250404_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage2_20250404_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage3_20250404_1350.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage4_20250404_1351.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage5_20250404_1357.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,678 - ERROR - Error processing 02_stage6_20250404_1401.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage1_20250401_1706.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage2_20250401_1706.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage3_20250401_1708.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage4_20250401_1708.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage1_20250407_1532.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage5_20250401_1715.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 3_stage6_20250401_1721.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage2_20250407_1533.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage3_20250407_1535.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage4_20250407_1535.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage5_20250407_1540.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing LY04_stage6_20250407_1544.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage1_20250411_1445.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage2_20250411_1446.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage3_20250411_1447.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage4_20250411_1448.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage5_20250411_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,679 - ERROR - Error processing 5_stage6_20250411_1500.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage1_20250404_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage2_20250404_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage3_20250404_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage4_20250404_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage5_20250404_1925.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,680 - ERROR - Error processing 6_stage6_20250404_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,681 - WARNING - Some processing failed
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage1_20250408_1112.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage1_20250403_1944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage2_20250408_1113.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage2_20250403_1944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage3_20250408_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage3_20250403_1946.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage4_20250408_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage4_20250403_1946.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage5_20250408_1118.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage5_20250403_1951.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing LY09_stage6_20250408_1123.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,682 - ERROR - Error processing 7_stage6_20250403_1956.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage1_20250403_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage2_20250403_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage3_20250403_1811.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage4_20250403_1812.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage5_20250403_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY011_stage6_20250403_1822.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage1_20250402_1514.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage2_20250402_1514.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage3_20250402_1516.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage1_20250411_1048.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage4_20250402_1517.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage2_20250411_1049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage5_20250402_1522.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY012_stage6_20250402_1527.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage3_20250411_1050.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage4_20250411_1051.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage5_20250411_1055.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,683 - ERROR - Error processing LY10_stage6_20250411_1059.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage1_20250403_1308.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage2_20250403_1309.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage3_20250403_1310.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage4_20250403_1311.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage5_20250403_1317.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 14_stage6_20250403_1323.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage1_20250404_1743.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage2_20250404_1744.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage3_20250404_1746.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage4_20250404_1747.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage5_20250404_1752.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 13_stage6_20250404_1757.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage1_20250410_2047.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage2_20250410_2047.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage3_20250410_2049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage4_20250410_2049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage5_20250410_2053.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY15_stage6_20250410_2058.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage1_20250402_1408.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage2_20250402_1409.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage3_20250402_1410.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage4_20250402_1411.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage5_20250402_1416.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing LY016_stage6_20250402_1420.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage1_20250404_1639.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage2_20250404_1639.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage3_20250404_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage4_20250404_1641.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage5_20250404_1645.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,684 - ERROR - Error processing 17_stage6_20250404_1650.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage1_20250403_1452.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage1_20250403_1041.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage2_20250403_1453.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage2_20250403_1041.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage3_20250403_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage3_20250403_1044.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage4_20250403_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage4_20250403_1045.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage5_20250403_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage5_20250403_1053.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY19_stage6_20250403_1503.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing LY018_stage6_20250403_1059.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage1_20250411_1346.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage2_20250411_1347.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage3_20250411_1348.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage4_20250411_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage5_20250411_1355.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 21_stage6_20250411_1400.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage1_20250404_1111.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage2_20250404_1112.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage3_20250404_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage4_20250404_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage5_20250404_1120.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 22_stage6_20250404_1125.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 23_stage1_20250408_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 23_stage2_20250408_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,685 - ERROR - Error processing 23_stage3_20250408_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 23_stage4_20250408_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 23_stage5_20250408_1351.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 23_stage6_20250408_1358.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage1_20250408_1636.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage2_20250408_1636.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage3_20250408_1638.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage4_20250408_1638.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage5_20250408_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 024_stage6_20250408_1647.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage1_20250407_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage2_20250407_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage3_20250407_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage4_20250407_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage5_20250407_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 25_stage6_20250407_1938.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage1_20250409_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage2_20250409_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage3_20250409_1642.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage4_20250409_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage5_20250409_1648.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY26_stage6_20250409_1653.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage1_20250410_1758.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage2_20250410_1759.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage3_20250410_1801.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage4_20250410_1802.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage5_20250410_1808.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing 27_stage6_20250410_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage1_20250410_1627.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage2_20250410_1628.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage3_20250410_1630.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage4_20250410_1630.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage5_20250410_1637.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,686 - ERROR - Error processing LY029_stage6_20250410_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage1_20250408_0942.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage2_20250408_0942.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage3_20250408_0944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage4_20250408_0944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage5_20250408_0950.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 28_stage6_20250408_0954.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage1_20250411_1622.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage2_20250411_1622.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage3_20250411_1624.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage4_20250411_1624.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage5_20250411_1629.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 31_stage6_20250411_1633.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage1_20250414_1322.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage2_20250414_1323.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage3_20250414_1325.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage4_20250414_1325.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage5_20250414_1330.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing LY033_stage6_20250414_1334.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage1_20250414_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage2_20250414_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage3_20250414_1921.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage4_20250414_1922.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage5_20250414_1927.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 32_stage6_20250414_1931.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage1_20250416_1457.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage2_20250416_1457.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage3_20250416_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage4_20250416_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage5_20250416_1503.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,687 - ERROR - Error processing 034_stage6_20250416_1507.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage1_20250415_1504.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage2_20250415_1505.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage3_20250415_1506.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage4_20250415_1506.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage5_20250415_1512.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 036_stage6_20250415_1517.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage1_20250411_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage2_20250411_1815.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage1_20250415_1922.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage3_20250411_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage2_20250415_1923.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage4_20250411_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage3_20250415_1924.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage5_20250411_1823.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage4_20250415_1925.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 35_stage6_20250411_1829.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage5_20250415_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing 37_stage6_20250415_1934.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage1_20250417_1341.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage2_20250417_1342.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage3_20250417_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage4_20250417_1344.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage5_20250417_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,688 - ERROR - Error processing LY39_stage6_20250417_1354.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage1_20250416_1807.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage2_20250416_1807.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage3_20250416_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage4_20250416_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage5_20250416_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 038_stage6_20250416_1819.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage1_20250418_1344.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage2_20250418_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage3_20250418_1347.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage4_20250418_1348.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage5_20250418_1353.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,689 - ERROR - Error processing 40_stage6_20250418_1359.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 18:59:19,787 - WARNING - Some processing failed
+2025-05-11 18:59:19,889 - WARNING - Some processing failed
+2025-05-11 18:59:19,993 - WARNING - Some processing failed
+2025-05-11 18:59:20,098 - WARNING - Some processing failed
+2025-05-11 18:59:20,201 - WARNING - Some processing failed
+2025-05-11 18:59:20,305 - WARNING - Some processing failed
+2025-05-11 18:59:20,411 - WARNING - Some processing failed
+2025-05-11 18:59:20,516 - WARNING - Some processing failed
+2025-05-11 18:59:20,621 - WARNING - Some processing failed
+2025-05-11 18:59:20,726 - WARNING - Some processing failed
+2025-05-11 18:59:20,832 - WARNING - Some processing failed
+2025-05-11 18:59:20,937 - WARNING - Some processing failed
+2025-05-11 18:59:21,042 - WARNING - Some processing failed
+2025-05-11 18:59:21,147 - WARNING - Some processing failed
+2025-05-11 18:59:21,253 - WARNING - Some processing failed
+2025-05-11 18:59:21,355 - WARNING - Some processing failed
+2025-05-11 18:59:21,461 - WARNING - Some processing failed
+2025-05-11 18:59:21,564 - WARNING - Some processing failed
+2025-05-11 18:59:21,667 - WARNING - Some processing failed
+2025-05-11 18:59:21,769 - WARNING - Some processing failed
+2025-05-11 18:59:21,871 - WARNING - Some processing failed
+2025-05-11 18:59:21,976 - WARNING - Some processing failed
+2025-05-11 18:59:22,078 - WARNING - Some processing failed
+2025-05-11 18:59:22,184 - WARNING - Some processing failed
+2025-05-11 18:59:22,287 - WARNING - Some processing failed
+2025-05-11 18:59:22,392 - WARNING - Some processing failed
+2025-05-11 18:59:22,498 - WARNING - Some processing failed
+2025-05-11 18:59:22,603 - WARNING - Some processing failed
+2025-05-11 18:59:22,707 - WARNING - Some processing failed
+2025-05-11 18:59:22,812 - WARNING - Some processing failed
+2025-05-11 18:59:22,917 - WARNING - Some processing failed
+2025-05-11 18:59:23,022 - WARNING - Some processing failed
+2025-05-11 18:59:23,124 - WARNING - Some processing failed
+2025-05-11 18:59:23,226 - WARNING - Some processing failed
+2025-05-11 18:59:23,331 - WARNING - Some processing failed
+2025-05-11 18:59:23,433 - WARNING - Some processing failed
+2025-05-11 19:01:24,484 - ERROR - Error processing 1_stage1_20250402_1859.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 1_stage2_20250402_1900.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 1_stage3_20250402_1901.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 1_stage4_20250402_1902.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 1_stage5_20250402_1907.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 1_stage6_20250402_1912.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 02_stage1_20250404_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - ERROR - Error processing 02_stage2_20250404_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 02_stage3_20250404_1350.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 02_stage4_20250404_1351.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 02_stage5_20250404_1357.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 02_stage6_20250404_1401.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,485 - WARNING - Some processing failed
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage1_20250401_1706.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage2_20250401_1706.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage3_20250401_1708.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage4_20250401_1708.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage5_20250401_1715.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,486 - ERROR - Error processing 3_stage6_20250401_1721.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage1_20250407_1532.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage2_20250407_1533.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage3_20250407_1535.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage4_20250407_1535.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage5_20250407_1540.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing LY04_stage6_20250407_1544.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage1_20250411_1445.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage2_20250411_1446.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage3_20250411_1447.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage4_20250411_1448.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage5_20250411_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,487 - ERROR - Error processing 5_stage6_20250411_1500.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage1_20250404_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage2_20250404_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage3_20250404_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage4_20250404_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage5_20250404_1925.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 6_stage6_20250404_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 7_stage1_20250403_1944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 7_stage2_20250403_1944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 7_stage3_20250403_1946.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 7_stage4_20250403_1946.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,488 - ERROR - Error processing 7_stage5_20250403_1951.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing 7_stage6_20250403_1956.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage1_20250408_1112.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage2_20250408_1113.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage3_20250408_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage4_20250408_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage5_20250408_1118.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,489 - ERROR - Error processing LY09_stage6_20250408_1123.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage1_20250411_1048.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage2_20250411_1049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage3_20250411_1050.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage4_20250411_1051.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage5_20250411_1055.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY10_stage6_20250411_1059.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,490 - ERROR - Error processing LY011_stage1_20250403_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY011_stage2_20250403_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY011_stage3_20250403_1811.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY011_stage4_20250403_1812.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY011_stage5_20250403_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY011_stage6_20250403_1822.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage1_20250402_1514.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage2_20250402_1514.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage3_20250402_1516.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage4_20250402_1517.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage5_20250402_1522.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,491 - ERROR - Error processing LY012_stage6_20250402_1527.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage1_20250404_1743.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage2_20250404_1744.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage3_20250404_1746.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage4_20250404_1747.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage5_20250404_1752.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 13_stage6_20250404_1757.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage1_20250403_1308.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage2_20250403_1309.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage3_20250403_1310.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage4_20250403_1311.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage5_20250403_1317.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,492 - ERROR - Error processing 14_stage6_20250403_1323.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage1_20250410_2047.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage2_20250410_2047.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage3_20250410_2049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage4_20250410_2049.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage5_20250410_2053.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,493 - ERROR - Error processing LY15_stage6_20250410_2058.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage1_20250402_1408.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage2_20250402_1409.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage3_20250402_1410.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage4_20250402_1411.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage5_20250402_1416.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,494 - ERROR - Error processing LY016_stage6_20250402_1420.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage1_20250404_1639.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage2_20250404_1639.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage3_20250404_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage4_20250404_1641.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage5_20250404_1645.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,495 - ERROR - Error processing 17_stage6_20250404_1650.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage1_20250403_1041.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage2_20250403_1041.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage3_20250403_1044.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage4_20250403_1045.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage5_20250403_1053.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY018_stage6_20250403_1059.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage1_20250403_1452.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage2_20250403_1453.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage3_20250403_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage4_20250403_1454.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage5_20250403_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,496 - ERROR - Error processing LY19_stage6_20250403_1503.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage1_20250411_1346.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage2_20250411_1347.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage3_20250411_1348.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage4_20250411_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage5_20250411_1355.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 21_stage6_20250411_1400.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,497 - ERROR - Error processing 22_stage1_20250404_1111.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 22_stage2_20250404_1112.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 22_stage3_20250404_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 22_stage4_20250404_1114.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 22_stage5_20250404_1120.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 22_stage6_20250404_1125.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage1_20250408_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage2_20250408_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage3_20250408_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage4_20250408_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage5_20250408_1351.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,498 - ERROR - Error processing 23_stage6_20250408_1358.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage1_20250408_1636.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage2_20250408_1636.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage3_20250408_1638.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage4_20250408_1638.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage5_20250408_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 024_stage6_20250408_1647.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage1_20250407_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage2_20250407_1917.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage3_20250407_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage4_20250407_1920.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage5_20250407_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing 25_stage6_20250407_1938.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing LY26_stage1_20250409_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing LY26_stage2_20250409_1640.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing LY26_stage3_20250409_1642.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,499 - ERROR - Error processing LY26_stage4_20250409_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing LY26_stage5_20250409_1648.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing LY26_stage6_20250409_1653.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage1_20250410_1758.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage2_20250410_1759.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage3_20250410_1801.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage4_20250410_1802.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage5_20250410_1808.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,500 - ERROR - Error processing 27_stage6_20250410_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage1_20250408_0942.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage2_20250408_0942.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage3_20250408_0944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage4_20250408_0944.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage5_20250408_0950.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,501 - ERROR - Error processing 28_stage6_20250408_0954.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage1_20250410_1627.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage2_20250410_1628.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage3_20250410_1630.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage4_20250410_1630.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage5_20250410_1637.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing LY029_stage6_20250410_1643.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage1_20250411_1622.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage2_20250411_1622.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage3_20250411_1624.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage4_20250411_1624.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage5_20250411_1629.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,502 - ERROR - Error processing 31_stage6_20250411_1633.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage1_20250414_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage2_20250414_1919.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage3_20250414_1921.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage4_20250414_1922.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage5_20250414_1927.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing 32_stage6_20250414_1931.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage1_20250414_1322.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage2_20250414_1323.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage3_20250414_1325.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage4_20250414_1325.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage5_20250414_1330.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,503 - ERROR - Error processing LY033_stage6_20250414_1334.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,504 - ERROR - Error processing 034_stage1_20250416_1457.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,504 - ERROR - Error processing 034_stage2_20250416_1457.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,504 - ERROR - Error processing 034_stage3_20250416_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,504 - ERROR - Error processing 034_stage4_20250416_1459.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,504 - ERROR - Error processing 034_stage5_20250416_1503.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 034_stage6_20250416_1507.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage1_20250411_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage2_20250411_1815.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage3_20250411_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage4_20250411_1817.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage5_20250411_1823.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,505 - ERROR - Error processing 35_stage6_20250411_1829.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage1_20250415_1504.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage2_20250415_1505.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage3_20250415_1506.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage4_20250415_1506.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage5_20250415_1512.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,506 - ERROR - Error processing 036_stage6_20250415_1517.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,507 - ERROR - Error processing 37_stage1_20250415_1922.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,507 - ERROR - Error processing 37_stage2_20250415_1923.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,508 - ERROR - Error processing 37_stage3_20250415_1924.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,508 - ERROR - Error processing 37_stage4_20250415_1925.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,508 - ERROR - Error processing 37_stage5_20250415_1930.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,508 - ERROR - Error processing 37_stage6_20250415_1934.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,511 - ERROR - Error processing 038_stage1_20250416_1807.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,511 - ERROR - Error processing 038_stage2_20250416_1807.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing 038_stage3_20250416_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing 038_stage4_20250416_1809.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing 038_stage5_20250416_1814.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing 038_stage6_20250416_1819.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage1_20250417_1341.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage2_20250417_1342.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage3_20250417_1343.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage4_20250417_1344.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage5_20250417_1349.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,512 - ERROR - Error processing LY39_stage6_20250417_1354.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage1_20250418_1344.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage2_20250418_1345.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage3_20250418_1347.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage4_20250418_1348.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage5_20250418_1353.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,513 - ERROR - Error processing 40_stage6_20250418_1359.TextGrid: name 'TextGridReader' is not defined
+2025-05-11 19:01:24,591 - WARNING - Some processing failed
+2025-05-11 19:01:24,697 - WARNING - Some processing failed
+2025-05-11 19:01:24,802 - WARNING - Some processing failed
+2025-05-11 19:01:24,907 - WARNING - Some processing failed
+2025-05-11 19:01:25,012 - WARNING - Some processing failed
+2025-05-11 19:01:25,116 - WARNING - Some processing failed
+2025-05-11 19:01:25,221 - WARNING - Some processing failed
+2025-05-11 19:01:25,326 - WARNING - Some processing failed
+2025-05-11 19:01:25,431 - WARNING - Some processing failed
+2025-05-11 19:01:25,536 - WARNING - Some processing failed
+2025-05-11 19:01:25,642 - WARNING - Some processing failed
+2025-05-11 19:01:25,747 - WARNING - Some processing failed
+2025-05-11 19:01:25,852 - WARNING - Some processing failed
+2025-05-11 19:01:25,958 - WARNING - Some processing failed
+2025-05-11 19:01:26,060 - WARNING - Some processing failed
+2025-05-11 19:01:26,161 - WARNING - Some processing failed
+2025-05-11 19:01:26,266 - WARNING - Some processing failed
+2025-05-11 19:01:26,371 - WARNING - Some processing failed
+2025-05-11 19:01:26,476 - WARNING - Some processing failed
+2025-05-11 19:01:26,581 - WARNING - Some processing failed
+2025-05-11 19:01:26,686 - WARNING - Some processing failed
+2025-05-11 19:01:26,792 - WARNING - Some processing failed
+2025-05-11 19:01:26,897 - WARNING - Some processing failed
+2025-05-11 19:01:27,002 - WARNING - Some processing failed
+2025-05-11 19:01:27,108 - WARNING - Some processing failed
+2025-05-11 19:01:27,210 - WARNING - Some processing failed
+2025-05-11 19:01:27,315 - WARNING - Some processing failed
+2025-05-11 19:01:27,420 - WARNING - Some processing failed
+2025-05-11 19:01:27,526 - WARNING - Some processing failed
+2025-05-11 19:01:27,631 - WARNING - Some processing failed
+2025-05-11 19:01:27,736 - WARNING - Some processing failed
+2025-05-11 19:01:27,841 - WARNING - Some processing failed
+2025-05-11 19:01:27,943 - WARNING - Some processing failed
+2025-05-11 19:01:28,048 - WARNING - Some processing failed
+2025-05-11 19:01:28,151 - WARNING - Some processing failed
+2025-05-11 19:01:28,251 - WARNING - Some processing failed

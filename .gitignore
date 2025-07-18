@@ -1,5 +1,5 @@
 data/audio/
-data/experiments_data/*
+data/experiments_data/
 data/research_data/
 data/video/
 src/exp_src_files/__pycache__/

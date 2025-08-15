@@ -1,8 +1,12 @@
 
 """
-TextGrid I/O Module
+TextGrid I/O Module (통합 버전)
 
-This module provides functions to read and write TextGrid files.
+TextGrid 파일을 읽고, 수정하고, 저장할 수 있는 통합 모듈입니다.
+- parse: TextGrid 파일 파싱
+- find_interval: 특정 tier_name과 text로 interval 찾기
+- boundary_fix: 전체 boundary 수정
+- validate_boundaries: boundary 무결성 검사
 
 Author: Juhyeon Park
 Date: 2025-08-14
@@ -12,309 +16,538 @@ import os
 import numpy as np
 import pandas as pd
 import parselmouth
-from typing import Tuple, List, Optional, Dict, Union
+from typing import Tuple, List, Optional, Dict, Union, Any
 import logging
 from pathlib import Path
 from tqdm import tqdm
+from dataclasses import dataclass
+import shutil
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+@dataclass
+class Interval:
+    """Interval 정보를 담는 데이터 클래스"""
+    xmin: float
+    xmax: float
+    text: str
+    interval_number: int
+
+@dataclass
+class Tier:
+    """Tier 정보를 담는 데이터 클래스"""
+    name: str
+    xmin: float
+    xmax: float
+    intervals: List[Interval]
+
+@dataclass
+class TextGridData:
+    """TextGrid 전체 데이터를 담는 데이터 클래스"""
+    xmin: float
+    xmax: float
+    tiers: Dict[str, Tier]
+
 class TextGridReader:
-    def __init__(self, textgrid_path, fix_boundary_integrity=False):
+    """
+    TextGrid 파일을 읽고, 수정하고, 저장할 수 있는 통합 클래스
+    """
+    
+    def __init__(self, textgrid_path: str, fix_boundary_integrity: bool = False):
+        """
+        TextGridReader 초기화
+        
+        Args:
+            textgrid_path (str): TextGrid 파일 경로
+            fix_boundary_integrity (bool): 초기화 시 boundary 무결성 자동 수정 여부
+        """
         self.textgrid_path = textgrid_path
         self.fix_boundary_integrity = fix_boundary_integrity
-        self.tiers_data = {}
+        self.textgrid_data = None
         self.file_info = {}
-        self.read()
-        # 무결점 검사 자동 실행
-        self.check_boundary_integrity()
         
-    def read(self):
+        # 파일이 존재하면 자동으로 읽기
+        if os.path.exists(textgrid_path):
+            self.read()
+            # 무결점 검사 자동 실행
+            if fix_boundary_integrity:
+                self.check_boundary_integrity()
+    
+    def read(self) -> TextGridData:
         """
         TextGrid 파일을 읽어서 구조화된 데이터로 변환
+        
+        Returns:
+            TextGridData: 파싱된 TextGrid 데이터
         """
         if not os.path.exists(self.textgrid_path):
-            raise FileNotFoundError(f"{self.textgrid_path} is not valid path. Please check the file path.")
+            raise FileNotFoundError(f"파일을 찾을 수 없습니다: {self.textgrid_path}")
+        
+        logger.info(f"TextGrid 파일 파싱 시작: {self.textgrid_path}")
         
         with open(self.textgrid_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
-            
-            # 파일 정보 읽기
-            self._read_file_info(lines)
-            
-            # tier 정보 읽기
-            self._read_tiers(lines)
-            
-        return self.tiers_data
-    
-    def _read_file_info(self, lines):
-        """
-        파일의 기본 정보 읽기
-        """
+        
+        # 파일 정보 파싱
+        self.file_info = {}
         for line in lines:
             line = line.strip()
-            if '=' in line:
+            if '=' in line and not line.startswith('item') and not line.startswith('intervals'):
                 key, value = line.split('=', 1)
                 key = key.strip()
                 value = value.strip().strip('"')
                 self.file_info[key] = value
-    
-    def _read_tiers(self, lines):
-        """
-        tier 정보 읽기
-        """
+        
+        xmin = float(self.file_info.get('xmin', 0))
+        xmax = float(self.file_info.get('xmax', 0))
+        
+        # Tier 정보 파싱
+        tiers = {}
         current_tier = None
         current_intervals = []
         reading_interval = False
         interval_data = {}
         interval_number = None
         
-        for line in lines:
-            line = line.strip()
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
             
-            # tier 시작
-            if 'name = "' in line:
-                if current_tier is not None:
-                    self.tiers_data[current_tier] = current_intervals
-                current_tier = line.split('"')[1]
-                current_intervals = []
-                reading_interval = False
+            # Tier 시작 - "item [1]:" 다음에 "class = "IntervalTier""와 "name = "xxx""가 있는지 확인
+            if line.startswith('item [') and i + 2 < len(lines):
+                # 다음 두 줄을 확인
+                next_line = lines[i + 1].strip()
+                next_next_line = lines[i + 2].strip()
+                
+                if ('class = "IntervalTier"' in next_line and 'name = "' in next_next_line):
+                    # 이전 tier 저장
+                    if current_tier is not None:
+                        tiers[current_tier] = Tier(
+                            name=current_tier,
+                            xmin=xmin,
+                            xmax=xmax,
+                            intervals=current_intervals
+                        )
+                    
+                    # 새 tier 시작
+                    current_tier = next_next_line.split('"')[1]
+                    current_intervals = []
+                    reading_interval = False
+                    logger.debug(f"새 tier 발견: {current_tier}")
             
-            # interval 시작 - 번호 추출
+            # Interval 시작
             elif 'intervals [' in line:
                 reading_interval = True
                 interval_data = {}
-                # interval 번호 추출: "intervals [1]:" -> 1
                 try:
                     interval_number = int(line.split('[')[1].split(']')[0])
                 except (IndexError, ValueError):
                     interval_number = None
             
-            # interval 데이터 읽기
+            # Interval 데이터 읽기
             elif reading_interval and '=' in line:
                 key, value = line.split('=', 1)
                 key = key.strip()
                 value = value.strip().strip('"')
                 interval_data[key] = value
                 
-                # interval 완성
-                if 'text' in interval_data:
+                # Interval 완성 (xmin, xmax, text 모두 있으면)
+                if 'xmin' in interval_data and 'xmax' in interval_data and 'text' in interval_data:
                     start = float(interval_data['xmin'])
                     end = float(interval_data['xmax'])
                     text = interval_data['text']
-                    # interval 번호를 포함하여 저장
-                    current_intervals.append((start, end, text, interval_number))
+                    
+                    current_intervals.append(Interval(
+                        xmin=start,
+                        xmax=end,
+                        text=text,
+                        interval_number=interval_number
+                    ))
                     reading_interval = False
+                    interval_data = {}
+            
+            i += 1
         
         # 마지막 tier 추가
         if current_tier is not None:
-            self.tiers_data[current_tier] = current_intervals
-    
-    def fix_boundary_integrity(self):
-        """
-        경계 무결성 수정
-        각 tier별로 경계 불일치 문제를 자동으로 수정하고 파일에 저장
-        """
-        logger.info("🔄 경계 무결성 수정 시작...")
+            tiers[current_tier] = Tier(
+                name=current_tier,
+                xmin=xmin,
+                xmax=xmax,
+                intervals=current_intervals
+            )
         
-        # 원본 파일 백업
-        backup_path = self.textgrid_path + '.backup'
-        try:
-            import shutil
-            shutil.copy2(self.textgrid_path, backup_path)
-            logger.info(f"원본 파일 백업 완료: {backup_path}")
-        except Exception as e:
-            logger.error(f"백업 실패: {e}")
+        self.textgrid_data = TextGridData(xmin=xmin, xmax=xmax, tiers=tiers)
+        
+        logger.info(f"파싱 완료: {len(tiers)}개 tier, 총 {sum(len(t.intervals) for t in tiers.values())}개 interval")
+        
+        return self.textgrid_data
+    
+    def find_interval(self, tier_name: str, text: str) -> Optional[Interval]:
+        """
+        특정 tier_name과 text로 해당 interval을 찾습니다.
+        
+        Args:
+            tier_name (str): 찾을 tier 이름
+            text (str): 찾을 텍스트
+            
+        Returns:
+            Optional[Interval]: 찾은 interval 또는 None
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
+            return None
+        
+        if tier_name not in self.textgrid_data.tiers:
+            logger.warning(f"Tier '{tier_name}'을 찾을 수 없습니다.")
+            return None
+        
+        tier = self.textgrid_data.tiers[tier_name]
+        
+        for interval in tier.intervals:
+            if interval.text == text:
+                logger.info(f"Interval 찾음: tier='{tier_name}', text='{text}', "
+                           f"xmin={interval.xmin:.3f}, xmax={interval.xmax:.3f}, "
+                           f"interval_number={interval.interval_number}")
+                return interval
+        
+        logger.warning(f"Tier '{tier_name}'에서 text '{text}'를 찾을 수 없습니다.")
+        return None
+    
+    def find_intervals_by_text(self, tier_name: str, text: str) -> List[Interval]:
+        """
+        특정 tier_name과 text로 해당하는 모든 interval을 찾습니다.
+        
+        Args:
+            tier_name (str): 찾을 tier 이름
+            text (str): 찾을 텍스트
+            
+        Returns:
+            List[Interval]: 찾은 interval들의 리스트
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
+            return []
+        
+        if tier_name not in self.textgrid_data.tiers:
+            logger.warning(f"Tier '{tier_name}'을 찾을 수 없습니다.")
+            return []
+        
+        tier = self.textgrid_data.tiers[tier_name]
+        found_intervals = []
+        
+        for interval in tier.intervals:
+            if interval.text == text:
+                found_intervals.append(interval)
+        
+        logger.info(f"Tier '{tier_name}'에서 text '{text}'를 가진 {len(found_intervals)}개 interval을 찾았습니다.")
+        return found_intervals
+    
+    def write(self, output_path: Optional[str] = None) -> bool:
+        """
+        TextGrid 데이터를 파일로 저장합니다.
+        
+        Args:
+            output_path (Optional[str]): 출력 파일 경로 (None이면 원본 파일에 저장)
+            
+        Returns:
+            bool: 저장 성공 여부
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
             return False
         
-        # 수정된 데이터 저장
+        if output_path is None:
+            output_path = self.textgrid_path
+        
         try:
-            self._write_textgrid_file()
-            logger.info("수정된 TextGrid 파일 저장 완료")
+            # 전체 파일의 xmin, xmax 계산 (모든 tier의 최소/최대값)
+            all_xmins = []
+            all_xmaxs = []
+            for tier in self.textgrid_data.tiers.values():
+                if tier.intervals:
+                    sorted_intervals = sorted(tier.intervals, key=lambda x: x.xmin)
+                    all_xmins.append(sorted_intervals[0].xmin)
+                    all_xmaxs.append(sorted_intervals[-1].xmax)
             
-            # 수정 후 다시 검사
-            logger.info("수정 결과 검증 중...")
-            self.read()  # 파일 다시 읽기
-            is_valid = self.check_boundary_integrity()
-            
-            if is_valid:
-                logger.info("✅ 경계 무결성 수정 완료!")
-                return True
+            if all_xmins and all_xmaxs:
+                file_xmin = min(all_xmins)
+                file_xmax = max(all_xmaxs)
             else:
-                logger.error("❌ 수정 후에도 문제가 남아있습니다.")
-                return False
-                
-        except Exception as e:
-            logger.error(f"파일 저장 실패: {e}")
-            # 백업에서 복원
-            try:
-                shutil.copy2(backup_path, self.textgrid_path)
-                logger.info("백업에서 원본 복원 완료")
-            except Exception as restore_error:
-                logger.error(f"복원 실패: {restore_error}")
-            return False
-    
-    def _write_textgrid_file(self):
-        """
-        수정된 데이터를 TextGrid 파일 형식으로 저장
-        """
-        try:
-            with open(self.textgrid_path, 'w', encoding='utf-8') as f:
-                # 파일 헤더 작성
+                file_xmin = self.textgrid_data.xmin
+                file_xmax = self.textgrid_data.xmax
+            
+            with open(output_path, 'w', encoding='utf-8') as f:
+                # 파일 헤더
                 f.write('File type = "ooTextFile"\n')
                 f.write('Object class = "TextGrid"\n\n')
                 
-                # 파일 정보 작성
-                for key, value in self.file_info.items():
-                    if key in ['xmin', 'xmax']:
-                        f.write(f'{key} = {value}\n')
+                # 파일 정보
+                f.write(f'xmin = {file_xmin}\n')
+                f.write(f'xmax = {file_xmax}\n')
+                f.write('tiers? <exists>\n')
+                f.write(f'size = {len(self.textgrid_data.tiers)}\n')
+                f.write('item []:\n')
+                
+                # Tier 정보
+                for tier_idx, (tier_name, tier) in enumerate(self.textgrid_data.tiers.items(), 1):
+                    # 각 tier의 xmin, xmax 계산 (해당 tier의 첫 번째/마지막 interval 기준)
+                    if tier.intervals:
+                        sorted_intervals = sorted(tier.intervals, key=lambda x: x.xmin)
+                        tier_xmin = sorted_intervals[0].xmin
+                        tier_xmax = sorted_intervals[-1].xmax
                     else:
-                        f.write(f'{key} = "{value}"\n')
-                
-                f.write('\n')
-                
-                # tier 정보 작성
-                for tier_name, intervals in self.tiers_data.items():
-                    f.write(f'tiers [1] size = {len(intervals)}\n')
-                    f.write(f'item [1]:\n')
-                    f.write(f'\tclass = "IntervalTier"\n')
-                    f.write(f'\tname = "{tier_name}"\n')
-                    f.write(f'\txmin = {self.file_info.get("xmin", 0)}\n')
-                    f.write(f'\txmax = {self.file_info.get("xmax", 0)}\n')
-                    f.write(f'\tintervals: size = {len(intervals)}\n')
+                        tier_xmin = tier.xmin
+                        tier_xmax = tier.xmax
                     
-                    # 수정된 interval 데이터 작성
-                    for i, (start, end, text, interval_num) in enumerate(intervals, 1):
-                        f.write(f'\tintervals [{i}]:\n')
-                        f.write(f'\t\txmin = {start}\n')
-                        f.write(f'\t\txmax = {end}\n')
-                        f.write(f'\t\ttext = "{text}"\n')
+                    f.write(f'    item [{tier_idx}]:\n')
+                    f.write('        class = "IntervalTier"\n')
+                    f.write(f'        name = "{tier.name}"\n')
+                    f.write(f'        xmin = {tier_xmin}\n')
+                    f.write(f'        xmax = {tier_xmax}\n')
+                    f.write(f'        intervals: size = {len(tier.intervals)}\n')
+                    
+                    # Interval 정보
+                    for interval_idx, interval in enumerate(tier.intervals, 1):
+                        f.write(f'        intervals [{interval_idx}]:\n')
+                        f.write(f'            xmin = {interval.xmin}\n')
+                        f.write(f'            xmax = {interval.xmax}\n')
+                        f.write(f'            text = "{interval.text}"\n')
             
-            logger.info("수정된 TextGrid 파일 저장 완료")
+            logger.info(f"TextGrid 파일 저장 완료: {output_path}")
+            logger.info(f"파일 범위: {file_xmin:.3f} ~ {file_xmax:.3f}")
             return True
             
         except Exception as e:
             logger.error(f"파일 저장 실패: {e}")
             return False
     
-    def _fix_tier_boundaries(self, tier_name, intervals):
+    def boundary_fix(self, output_path: Optional[str] = None, 
+                    backup: bool = True, inplace: bool = False) -> bool:
         """
-        특정 tier의 경계 문제를 수정
-        """
-        if not intervals:
-            return intervals
+        TextGrid 파일의 boundary 문제를 수정합니다.
         
-        fixed_intervals = []
-        #sorted_intervals = sorted(intervals, key=lambda x: x[0])  # 시작 시간 기준 정렬
-        sorted_intervals = intervals
-        
-        for i, (start, end, text, interval_num) in enumerate(sorted_intervals):
-            if i == 0:
-                # 첫 번째 interval은 그대로 유지
-                fixed_intervals.append((start, end, text, interval_num))
-            else:
-                # 이전 interval의 end_time을 현재 interval의 start_time으로 설정
-                prev_end = fixed_intervals[-1][1]
-                fixed_intervals.append((prev_end, end, text, interval_num))
-                logger.info(f"  수정: interval [{interval_num}] start_time을 {start:.3f}s에서 {prev_end:.3f}s로 조정")
-        
-        return fixed_intervals
-    
-    def check_boundary_integrity(self):
-        """
-        TextGrid 파일의 경계 무결점 검사
-        각 tier별로 연속된 interval들의 경계가 일치하는지 확인
-        """
-        logger.info(f"TextGrid 무결점 검사 시작: {self.textgrid_path}")
-        
-        total_issues = 0
-        
-        for tier_name, intervals in self.tiers_data.items():
-            if not intervals:
-                logger.warning(f"Tier '{tier_name}'에 interval이 없습니다.")
-                continue
-                
-            # interval들을 시작 시간 기준으로 정렬 -> 정렬 안하는게 맞음.
-            #sorted_intervals = sorted(intervals, key=lambda x: x[0])
-            sorted_intervals =intervals
-            tier_issues = 0
+        Args:
+            output_path (Optional[str]): 출력 파일 경로 (None이면 자동 생성)
+            backup (bool): 백업 파일 생성 여부
+            inplace (bool): 원본 파일에 덮어쓰기 여부
             
-            logger.info(f"\n=== Tier '{tier_name}' 검사 중 ===")
-            logger.info(f"총 {len(sorted_intervals)}개의 interval 발견")
+        Returns:
+            bool: 수정 성공 여부
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
+            return False
+        
+        logger.info(f"Boundary 수정 시작: {self.textgrid_path}")
+        
+        # 백업 생성
+        if backup and not inplace:
+            backup_path = self.textgrid_path + '.backup'
+            try:
+                shutil.copy2(self.textgrid_path, backup_path)
+                logger.info(f"백업 파일 생성: {backup_path}")
+            except Exception as e:
+                logger.error(f"백업 생성 실패: {e}")
+                return False
+        
+        # 각 tier별로 boundary 수정
+        total_fixes = 0
+        for tier_name, tier in self.textgrid_data.tiers.items():
+            if not tier.intervals:
+                continue
+            
+            logger.info(f"Tier '{tier_name}' boundary 수정 중...")
+            tier_fixes = 0
+            
+            # Interval들을 시작 시간 기준으로 정렬
+            sorted_intervals = sorted(tier.intervals, key=lambda x: x.xmin)
             
             for i in range(len(sorted_intervals) - 1):
-                current_interval = sorted_intervals[i]
+                current = sorted_intervals[i]
                 next_interval = sorted_intervals[i + 1]
                 
-                current_start, current_end, current_text, current_num = current_interval
-                next_start, next_end, next_text, next_num = next_interval
-                
-                # 경계 불일치 검사
-                if current_end != next_start:
-                    tier_issues += 1
-                    total_issues += 1
+                # 경계 불일치 검사 및 수정
+                if current.xmax != next_interval.xmin:
+                    old_current_xmax = current.xmax
+                    old_next_xmin = next_interval.xmin
                     
-                    logger.error(f"\n🚨 경계 불일치 발견!")
-                    logger.error(f"  위치: Tier '{tier_name}'")
-                    logger.error(f"  현재 interval [{current_num}]: {current_start:.3f}s ~ {current_end:.3f}s (텍스트: '{current_text}')")
-                    logger.error(f"  다음 interval [{next_num}]: {next_start:.3f}s ~ {next_end:.3f}s (텍스트: '{next_text}')")
-                    logger.error(f"  간격: {abs(current_end - next_start):.3f}초")
+                    #redefine boundary
+                    allowed_vowels = ['a', 'i', 'u', 'e', 'o']
+                    # 우선 순위: 모음 > 자음 > sp
+                    if current.text in allowed_vowels:
+                        new_boundary = current.xmax
+                    elif next_interval.text in allowed_vowels:
+                        new_boundary = next_interval.xmin
+                    elif current.text == 'sp':
+                        new_boundary = next_interval.xmin
+                    elif next_interval.text == 'sp':
+                        new_boundary = current.xmax
+                    else: # 자음 + 자음이겠지.
+                        new_boundary = (current.xmax + next_interval.xmin) / 2.0
+                        
+                    current.xmax = new_boundary
+                    next_interval.xmin = new_boundary
                     
-                    if current_end < next_start:
-                        logger.error(f"  문제: {current_end:.3f}s와 {next_start:.3f}s 사이에 {next_start - current_end:.3f}초의 빈 공간이 있습니다.")
-                    else:
-                        logger.error(f"  문제: {current_end:.3f}s와 {next_start:.3f}s 사이에 {current_end - next_start:.3f}초의 겹침이 있습니다.")
+                    logger.info(f"  Boundary 수정: interval {current.interval_number} ~ {next_interval.interval_number}")
+                    logger.info(f"    {old_current_xmax:.3f} ~ {old_next_xmin:.3f} -> {new_boundary:.3f}")
+                    tier_fixes += 1
             
-            if tier_issues == 0:
-                logger.info(f"✅ Tier '{tier_name}': 모든 경계가 정상입니다.")
-            else:
-                logger.warning(f"⚠️  Tier '{tier_name}': {tier_issues}개의 경계 문제 발견")
+            # 수정 후 tier의 xmin, xmax 자동 업데이트
+            if tier.intervals:
+                old_tier_xmin, old_tier_xmax = tier.xmin, tier.xmax
+                tier.xmin = sorted_intervals[0].xmin
+                tier.xmax = sorted_intervals[-1].xmax
+                
+                if old_tier_xmin != tier.xmin or old_tier_xmax != tier.xmax:
+                    logger.info(f"  Tier '{tier_name}' 범위 자동 업데이트:")
+                    logger.info(f"    xmin: {old_tier_xmin:.3f} -> {tier.xmin:.3f}")
+                    logger.info(f"    xmax: {old_tier_xmax:.3f} -> {tier.xmax:.3f}")
+            
+            total_fixes += tier_fixes
+            logger.info(f"Tier '{tier_name}': {tier_fixes}개 boundary 수정 완료")
         
-        # 전체 결과 요약
-        logger.info(f"\n=== 무결점 검사 완료 ===")
+        # 전체 파일의 xmin, xmax 자동 업데이트
+        all_xmins = []
+        all_xmaxs = []
+        for tier in self.textgrid_data.tiers.values():
+            if tier.intervals:
+                sorted_intervals = sorted(tier.intervals, key=lambda x: x.xmin)
+                all_xmins.append(sorted_intervals[0].xmin)
+                all_xmaxs.append(sorted_intervals[-1].xmax)
+        
+        if all_xmins and all_xmaxs:
+            old_file_xmin, old_file_xmax = self.textgrid_data.xmin, self.textgrid_data.xmax
+            self.textgrid_data.xmin = min(all_xmins)
+            self.textgrid_data.xmax = max(all_xmaxs)
+            
+            if old_file_xmin != self.textgrid_data.xmin or old_file_xmax != self.textgrid_data.xmax:
+                logger.info(f"파일 전체 범위 자동 업데이트:")
+                logger.info(f"  xmin: {old_file_xmin:.3f} -> {self.textgrid_data.xmin:.3f}")
+                logger.info(f"  xmax: {old_file_xmax:.3f} -> {self.textgrid_data.xmax:.3f}")
+        
+        # 출력 파일 경로 결정
+        if inplace:
+            final_output_path = self.textgrid_path
+        elif output_path:
+            final_output_path = output_path
+        else:
+            base_name = os.path.splitext(self.textgrid_path)[0]
+            final_output_path = f"{base_name}.TextGrid"
+        
+        # 수정된 파일 저장
+        success = self.write(final_output_path)
+        
+        if success:
+            logger.info(f"Boundary 수정 완료: {total_fixes}개 수정, 출력: {final_output_path}")
+        else:
+            logger.error("Boundary 수정 실패")
+        
+        return success
+    
+    def validate_boundaries(self, tolerance: float = None) -> Dict[str, List[Tuple[int, float, float]]]:
+        """
+        TextGrid 데이터의 boundary 무결성을 검사합니다.
+        
+        Args:
+            tolerance (float): 허용 오차 (None이면 허용치 않음.)
+            
+        Returns:
+            Dict[str, List[Tuple[int, float, float]]]: 각 tier별 문제점들
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
+            return {}
+        
+        issues = {}
+        
+        for tier_name, tier in self.textgrid_data.tiers.items():
+            if not tier.intervals:
+                continue
+            
+            tier_issues = []
+            sorted_intervals = sorted(tier.intervals, key=lambda x: x.xmin)
+            
+            for i in range(len(sorted_intervals) - 1):
+                current = sorted_intervals[i]
+                next_interval = sorted_intervals[i + 1]
+
+
+                if tolerance: 
+                    if abs(current.xmax - next_interval.xmin) > tolerance:
+                        tier_issues.append((
+                            current.interval_number,
+                            current.xmax,
+                            next_interval.xmin
+                        ))
+                else:              
+                    if current.xmax != next_interval.xmin: # 조건을 strict로 수정.
+                        tier_issues.append((
+                            current.interval_number,
+                            current.xmax,
+                            next_interval.xmin
+                        ))
+            
+            if tier_issues:
+                issues[tier_name] = tier_issues
+        
+        return issues
+    
+    def check_boundary_integrity(self) -> bool:
+        """
+        TextGrid 파일의 경계 무결점 검사 (기존 호환성을 위한 메서드)
+        
+        Returns:
+            bool: 무결성 검사 통과 여부
+        """
+        if not self.textgrid_data:
+            logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
+            return False
+        
+        logger.info(f"TextGrid 무결점 검사 시작: {self.textgrid_path}")
+        
+        issues = self.validate_boundaries()
+        total_issues = sum(len(issues_list) for issues_list in issues.values())
+        
+        for tier_name, tier_issues in issues.items():
+            logger.warning(f"Tier '{tier_name}': {len(tier_issues)}개 boundary 문제 발견")
+            for interval_num, xmax, next_xmin in tier_issues[:3]:  # 처음 3개만 표시
+                logger.error(f"  interval {interval_num}: {xmax:.3f} vs {next_xmin:.3f}")
+        
         if total_issues == 0:
             logger.info("🎉 모든 tier의 경계가 정상입니다!")
+            return True
         else:
             logger.error(f"❌ 총 {total_issues}개의 경계 문제가 발견되었습니다.")
             if self.fix_boundary_integrity:
                 logger.info("🔄 경계 무결성 수정 중...")
-                # 각 tier별로 경계 수정
-                for tier_name, intervals in self.tiers_data.items():
-                    if intervals:
-                        fixed_intervals = self._fix_tier_boundaries(tier_name, intervals)
-                        self.tiers_data[tier_name] = fixed_intervals
-                
-                # 수정된 데이터로 파일 저장
-                success = self._write_textgrid_file()
-                if success:
-                    logger.info("✅ 경계 무결성 수정 완료!")
-                    # 수정 후 다시 검사
-                    self.read()
-                    return self.check_boundary_integrity()
-                else:
-                    logger.error("❌ 경계 수정 실패")
-                    return False
+                return self.boundary_fix()
             else:
-                raise ValueError(f"❌ 총 {total_issues}개의 경계 문제가 발견되었습니다.")
-        
-        return total_issues == 0
+                return False
     
-    def get_tier_names(self):
+    def get_tier_names(self) -> List[str]:
         """
         tier 이름 목록 반환
         """
-        return list(self.tiers_data.keys())
+        if not self.textgrid_data:
+            return []
+        return list(self.textgrid_data.tiers.keys())
     
-    def get_intervals_by_tier(self, tier_name):
+    def get_intervals_by_tier(self, tier_name: str) -> List[Interval]:
         """
         특정 tier의 interval 목록 반환
         """
-        return self.tiers_data.get(tier_name, [])
+        if not self.textgrid_data:
+            return []
+        tier = self.textgrid_data.tiers.get(tier_name)
+        return tier.intervals if tier else []
     
-    def get_total_duration(self):
+    def get_total_duration(self) -> float:
         """
         전체 음성 길이 반환
         """
-        return float(self.file_info.get('xmax', 0))
+        if not self.textgrid_data:
+            return 0.0
+        return self.textgrid_data.xmax

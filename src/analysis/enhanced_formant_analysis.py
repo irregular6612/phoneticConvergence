@@ -18,11 +18,33 @@ import logging
 from pathlib import Path
 from tqdm import tqdm
 from textgrid_io import TextGridReader
-
+from dataclasses import dataclass
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+@dataclass
+class Interval:
+    """Interval 정보를 담는 데이터 클래스"""
+    xmin: float
+    xmax: float
+    text: str
+    interval_number: int
+
+@dataclass
+class Tier:
+    """Tier 정보를 담는 데이터 클래스"""
+    name: str
+    xmin: float
+    xmax: float
+    intervals: List[Interval]
+
+@dataclass
+class TextGridData:
+    """TextGrid 전체 데이터를 담는 데이터 클래스"""
+    xmin: float
+    xmax: float
+    tiers: Dict[str, Tier]
 class EnhancedFormantAnalyzer:
     """
     Enhanced Formant Analyzer with optimized time interval processing
@@ -95,19 +117,19 @@ class EnhancedFormantAnalyzer:
 
         try:
             # TextGridReader를 사용하여 TextGrid 파일 읽기
-            reader = TextGridReader(textgrid_path)
-            tiers_data = reader.read()
+            reader = TextGridReader(textgrid_path, fix_boundary_integrity=False, verbose=True)
             
             # phone tier와 word tier에서 구간 추출
-            phone_intervals = tiers_data.get(self.target_tier, [])
-            word_intervals = tiers_data.get('word', [])
+            phone_intervals = reader.get_intervals_by_tier('phone')
+            word_intervals = reader.get_intervals_by_tier('word')
             vowel_intervals = []
             
-            for start_time, end_time, vowel_label, interval_number in phone_intervals:
-                if vowel_label.lower() in [v.lower() for v in self.allowed_vowels]:
+            for phone_interval in phone_intervals:
+                start_time, end_time, label, interval_number = phone_interval.xmin, phone_interval.xmax, phone_interval.text, phone_interval.interval_number
+                if label.lower() in self.allowed_vowels:
                     # 해당 시간 구간에 포함되는 단어 찾기
                     word_label = self._find_word_for_time(start_time, end_time, word_intervals)
-                    vowel_intervals.append((start_time, end_time, vowel_label, word_label, interval_number))
+                    vowel_intervals.append((start_time, end_time, label, word_label, interval_number))
             
             logger.info(f"Found {len(vowel_intervals)} vowel intervals in {os.path.basename(textgrid_path)}")
             return vowel_intervals
@@ -115,7 +137,7 @@ class EnhancedFormantAnalyzer:
             logger.error(f"Error reading or processing TextGrid {textgrid_path}: {e}")
             return []
     
-    def _find_word_for_time(self, start_time: float, end_time: float, word_intervals: List[Tuple[float, float, str, int]]) -> str:
+    def _find_word_for_time(self, start_time: float, end_time: float, word_intervals: List[Interval]) -> str:
         """
         Find the word that contains the given time interval.
         
@@ -128,9 +150,10 @@ class EnhancedFormantAnalyzer:
             Word label that contains the vowel interval
         """
         # 모음 구간의 중간 시간을 기준으로 단어 찾기
-        vowel_center = (start_time + end_time) / 2
+        vowel_center = (start_time + end_time) / 2.0
         
-        for word_start, word_end, word_label, _ in word_intervals:  # interval_number는 무시
+        for word_interval in word_intervals:  # interval_number는 무시
+            word_start, word_end, word_label, _ = word_interval.xmin, word_interval.xmax, word_interval.text, word_interval.interval_number
             if word_start <= vowel_center <= word_end:
                 return word_label
         

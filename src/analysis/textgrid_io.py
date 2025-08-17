@@ -55,7 +55,7 @@ class TextGridReader:
     TextGrid 파일을 읽고, 수정하고, 저장할 수 있는 통합 클래스
     """
     
-    def __init__(self, textgrid_path: str, fix_boundary_integrity: bool = False):
+    def __init__(self, textgrid_path: str, fix_boundary_integrity: bool = False, verbose: bool = False):
         """
         TextGridReader 초기화
         
@@ -67,6 +67,11 @@ class TextGridReader:
         self.fix_boundary_integrity = fix_boundary_integrity
         self.textgrid_data = None
         self.file_info = {}
+        self.verbose = verbose
+        
+        # Logging 설정
+        if not verbose:
+            logging.disable(logging.CRITICAL)
         
         # 파일이 존재하면 자동으로 읽기
         if os.path.exists(textgrid_path):
@@ -85,7 +90,8 @@ class TextGridReader:
         if not os.path.exists(self.textgrid_path):
             raise FileNotFoundError(f"파일을 찾을 수 없습니다: {self.textgrid_path}")
         
-        logger.info(f"TextGrid 파일 파싱 시작: {self.textgrid_path}")
+        if self.verbose:
+            logger.info(f"TextGrid 파일 파싱 시작: {self.textgrid_path}")
         
         with open(self.textgrid_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
@@ -181,7 +187,8 @@ class TextGridReader:
         
         self.textgrid_data = TextGridData(xmin=xmin, xmax=xmax, tiers=tiers)
         
-        logger.info(f"파싱 완료: {len(tiers)}개 tier, 총 {sum(len(t.intervals) for t in tiers.values())}개 interval")
+        if self.verbose:
+            logger.info(f"파싱 완료: {len(tiers)}개 tier, 총 {sum(len(t.intervals) for t in tiers.values())}개 interval")
         
         return self.textgrid_data
     
@@ -316,12 +323,14 @@ class TextGridReader:
                         f.write(f'            xmax = {interval.xmax}\n')
                         f.write(f'            text = "{interval.text}"\n')
             
-            logger.info(f"TextGrid 파일 저장 완료: {output_path}")
-            logger.info(f"파일 범위: {file_xmin:.3f} ~ {file_xmax:.3f}")
+            if self.verbose:
+                logger.info(f"TextGrid 파일 저장 완료: {output_path}")
+                logger.info(f"파일 범위: {file_xmin:.3f} ~ {file_xmax:.3f}")
             return True
             
         except Exception as e:
-            logger.error(f"파일 저장 실패: {e}")
+            if self.verbose:
+                logger.error(f"파일 저장 실패: {e}")
             return False
     
     def boundary_fix(self, output_path: Optional[str] = None, 
@@ -341,16 +350,19 @@ class TextGridReader:
             logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
             return False
         
-        logger.info(f"Boundary 수정 시작: {self.textgrid_path}")
+        if self.verbose:
+            logger.info(f"Boundary 수정 시작: {self.textgrid_path}")
         
         # 백업 생성
         if backup and not inplace:
             backup_path = self.textgrid_path + '.backup'
             try:
                 shutil.copy2(self.textgrid_path, backup_path)
-                logger.info(f"백업 파일 생성: {backup_path}")
+                if self.verbose:
+                    logger.info(f"백업 파일 생성: {backup_path}")
             except Exception as e:
-                logger.error(f"백업 생성 실패: {e}")
+                if self.verbose:
+                    logger.error(f"백업 생성 실패: {e}")
                 return False
         
         # 각 tier별로 boundary 수정
@@ -359,7 +371,8 @@ class TextGridReader:
             if not tier.intervals:
                 continue
             
-            logger.info(f"Tier '{tier_name}' boundary 수정 중...")
+            if self.verbose:
+                logger.info(f"Tier '{tier_name}' boundary 수정 중...")
             tier_fixes = 0
             
             # Interval들을 시작 시간 기준으로 정렬
@@ -375,7 +388,7 @@ class TextGridReader:
                     old_next_xmin = next_interval.xmin
                     
                     #redefine boundary
-                    allowed_vowels = ['a', 'i', 'u', 'e', 'o']
+                    allowed_vowels = ['a', 'i', 'u', 'ae', 'o']
                     # 우선 순위: 모음 > 자음 > sp
                     if current.text in allowed_vowels:
                         new_boundary = current.xmax
@@ -391,8 +404,9 @@ class TextGridReader:
                     current.xmax = new_boundary
                     next_interval.xmin = new_boundary
                     
-                    logger.info(f"  Boundary 수정: interval {current.interval_number} ~ {next_interval.interval_number}")
-                    logger.info(f"    {old_current_xmax:.3f} ~ {old_next_xmin:.3f} -> {new_boundary:.3f}")
+                    if self.verbose:
+                        logger.info(f"  Boundary 수정: interval {current.interval_number} ~ {next_interval.interval_number}")
+                        logger.info(f"    {old_current_xmax:.3f} ~ {old_next_xmin:.3f} -> {new_boundary:.3f}")
                     tier_fixes += 1
             
             # 수정 후 tier의 xmin, xmax 자동 업데이트
@@ -402,12 +416,14 @@ class TextGridReader:
                 tier.xmax = sorted_intervals[-1].xmax
                 
                 if old_tier_xmin != tier.xmin or old_tier_xmax != tier.xmax:
-                    logger.info(f"  Tier '{tier_name}' 범위 자동 업데이트:")
-                    logger.info(f"    xmin: {old_tier_xmin:.3f} -> {tier.xmin:.3f}")
-                    logger.info(f"    xmax: {old_tier_xmax:.3f} -> {tier.xmax:.3f}")
+                    if self.verbose:
+                        logger.info(f"  Tier '{tier_name}' 범위 자동 업데이트:")
+                        logger.info(f"    xmin: {old_tier_xmin:.3f} -> {tier.xmin:.3f}")
+                        logger.info(f"    xmax: {old_tier_xmax:.3f} -> {tier.xmax:.3f}")
             
             total_fixes += tier_fixes
-            logger.info(f"Tier '{tier_name}': {tier_fixes}개 boundary 수정 완료")
+            if self.verbose:
+                logger.info(f"Tier '{tier_name}': {tier_fixes}개 boundary 수정 완료")
         
         # 전체 파일의 xmin, xmax 자동 업데이트
         all_xmins = []
@@ -424,9 +440,10 @@ class TextGridReader:
             self.textgrid_data.xmax = max(all_xmaxs)
             
             if old_file_xmin != self.textgrid_data.xmin or old_file_xmax != self.textgrid_data.xmax:
-                logger.info(f"파일 전체 범위 자동 업데이트:")
-                logger.info(f"  xmin: {old_file_xmin:.3f} -> {self.textgrid_data.xmin:.3f}")
-                logger.info(f"  xmax: {old_file_xmax:.3f} -> {self.textgrid_data.xmax:.3f}")
+                if self.verbose:
+                    logger.info(f"파일 전체 범위 자동 업데이트:")
+                    logger.info(f"  xmin: {old_file_xmin:.3f} -> {self.textgrid_data.xmin:.3f}")
+                    logger.info(f"  xmax: {old_file_xmax:.3f} -> {self.textgrid_data.xmax:.3f}")
         
         # 출력 파일 경로 결정
         if inplace:
@@ -441,9 +458,11 @@ class TextGridReader:
         success = self.write(final_output_path)
         
         if success:
-            logger.info(f"Boundary 수정 완료: {total_fixes}개 수정, 출력: {final_output_path}")
+            if self.verbose:
+                logger.info(f"Boundary 수정 완료: {total_fixes}개 수정, 출력: {final_output_path}")
         else:
-            logger.error("Boundary 수정 실패")
+            if self.verbose:
+                logger.error("Boundary 수정 실패")
         
         return success
     
@@ -506,7 +525,8 @@ class TextGridReader:
             logger.error("TextGrid 데이터가 로드되지 않았습니다. read() 메서드를 먼저 호출하세요.")
             return False
         
-        logger.info(f"TextGrid 무결점 검사 시작: {self.textgrid_path}")
+        if self.verbose:
+            logger.info(f"TextGrid 무결점 검사 시작: {self.textgrid_path}")
         
         issues = self.validate_boundaries()
         total_issues = sum(len(issues_list) for issues_list in issues.values())
@@ -517,12 +537,15 @@ class TextGridReader:
                 logger.error(f"  interval {interval_num}: {xmax:.3f} vs {next_xmin:.3f}")
         
         if total_issues == 0:
-            logger.info("🎉 모든 tier의 경계가 정상입니다!")
+            if self.verbose:
+                logger.info("🎉 모든 tier의 경계가 정상입니다!")
             return True
         else:
-            logger.error(f"❌ 총 {total_issues}개의 경계 문제가 발견되었습니다.")
+            if self.verbose:
+                logger.error(f"❌ 총 {total_issues}개의 경계 문제가 발견되었습니다.")
             if self.fix_boundary_integrity:
-                logger.info("🔄 경계 무결성 수정 중...")
+                if self.verbose:
+                    logger.info("🔄 경계 무결성 수정 중...")
                 return self.boundary_fix()
             else:
                 return False

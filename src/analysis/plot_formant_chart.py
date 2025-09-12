@@ -4,7 +4,7 @@ import matplotlib.lines as mlines
 from pathlib import Path
 import numpy as np
 
-def plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, save_dir=".", use_zscore=True):
+def plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, save_dir=".", use_zscore=True, zoom_to_trajectory=False):
     """
     모델과 특정 참가자의 모음별 F1, F2 포먼트 차트를 그립니다.
 
@@ -15,6 +15,7 @@ def plot_formant_chart(participant_id, model_data_path, participant_data_path, s
         survey_data_path (str): 설문조사 데이터 엑셀 파일 경로.
         save_dir (str): 이미지 저장 디렉토리.
         use_zscore (bool): True면 z-score 값 사용, False면 원본 Hz 값 사용.
+        zoom_to_trajectory (bool): True면 trajectory 영역으로 확대, False면 전체 범위 표시.
     """
     # 데이터 불러오기
     df_model = pd.read_excel(model_data_path)
@@ -73,17 +74,24 @@ def plot_formant_chart(participant_id, model_data_path, participant_data_path, s
         if not vowel_data.empty:
             points = vowel_data[[participant_f2_col, participant_f1_col]].values
             
-            # Scatter plot
+            # Scatter plot with transparency
             ax.scatter(points[:, 0], points[:, 1], c=[vowel_color_map[vowel]], 
-                        s=20, zorder=2)
+                        s=25, alpha=0.7, zorder=2)
+            
+            # Stage 번호 라벨 추가 (작은 글씨로)
+            for i, (x, y) in enumerate(points):
+                stage_num = vowel_data.iloc[i]['stage_num']
+                ax.text(x, y, f'{stage_num}', fontsize=8, ha='center', va='center', 
+                        color='white', weight='bold', zorder=4)
 
-            # 화살표 그리기 (annotate 사용)
+            # 화살표 그리기 (annotate 사용) - 개선된 스타일
             for i in range(len(points) - 1):
                 ax.annotate("",
                              xy=(points[i+1, 0], points[i+1, 1]), 
                              xytext=(points[i, 0], points[i, 1]),
                              arrowprops=dict(arrowstyle="->", color=vowel_color_map[vowel],
-                                             shrinkA=5, shrinkB=5,
+                                             linewidth=2.5, alpha=0.8,
+                                             shrinkA=3, shrinkB=3,
                                              patchA=None, patchB=None,
                                              connectionstyle="arc3,rad=0.1"))
 
@@ -94,6 +102,23 @@ def plot_formant_chart(participant_id, model_data_path, participant_data_path, s
     ax.invert_xaxis()
     ax.invert_yaxis()
     ax.grid(True, linestyle='--', alpha=0.6)
+    
+    # Trajectory 영역으로 확대 (선택적)
+    if zoom_to_trajectory:
+        # 참가자 데이터의 범위 계산
+        all_participant_f1 = df_participant_filtered[participant_f1_col].dropna()
+        all_participant_f2 = df_participant_filtered[participant_f2_col].dropna()
+        
+        if not all_participant_f1.empty and not all_participant_f2.empty:
+            # 10% 여백 추가
+            f1_margin = (all_participant_f1.max() - all_participant_f1.min()) * 0.1
+            f2_margin = (all_participant_f2.max() - all_participant_f2.min()) * 0.1
+            
+            ax.set_xlim(all_participant_f2.max() + f2_margin, all_participant_f2.min() - f2_margin)
+            ax.set_ylim(all_participant_f1.max() + f1_margin, all_participant_f1.min() - f1_margin)
+            
+            # 제목에 확대 표시 추가
+            ax.set_title(f'Formant Chart for Participant {participant_id} (Zoomed to Trajectory)', fontsize=16)
 
     # 커스텀 범례 생성
     legend_elements = [
@@ -214,17 +239,24 @@ def plot_all_participants_subplot(model_data_path, participant_data_path, survey
             if not vowel_data.empty:
                 points = vowel_data[[participant_f2_col, participant_f1_col]].values
                 
-                # Scatter plot
+                # Scatter plot with transparency
                 ax.scatter(points[:, 0], points[:, 1], c=[vowel_color_map[vowel]], 
-                            s=15, zorder=2)
+                            s=18, alpha=0.7, zorder=2)
                 
-                # 화살표 그리기
+                # Stage 번호 라벨 추가 (작은 글씨로)
+                for i, (x, y) in enumerate(points):
+                    stage_num = vowel_data.iloc[i]['stage_num']
+                    ax.text(x, y, f'{stage_num}', fontsize=6, ha='center', va='center', 
+                            color='white', weight='bold', zorder=4)
+                
+                # 화살표 그리기 - 개선된 스타일
                 for i in range(len(points) - 1):
                     ax.annotate("",
                                  xy=(points[i+1, 0], points[i+1, 1]), 
                                  xytext=(points[i, 0], points[i, 1]),
                                  arrowprops=dict(arrowstyle="->", color=vowel_color_map[vowel],
-                                                 shrinkA=3, shrinkB=3,
+                                                 linewidth=2.0, alpha=0.8,
+                                                 shrinkA=2, shrinkB=2,
                                                  patchA=None, patchB=None,
                                                  connectionstyle="arc3,rad=0.1"))
         
@@ -382,17 +414,24 @@ def plot_participants_by_gender_subplot(model_data_path, participant_data_path, 
                 if not vowel_data.empty:
                     points = vowel_data[[participant_f2_col, participant_f1_col]].values
                     
-                    # Scatter plot
+                    # Scatter plot with transparency
                     ax.scatter(points[:, 0], points[:, 1], c=[vowel_color_map[vowel]], 
-                                s=15, zorder=2)
+                                s=18, alpha=0.7, zorder=2)
                     
-                    # 화살표 그리기
+                    # Stage 번호 라벨 추가 (작은 글씨로)
+                    for i, (x, y) in enumerate(points):
+                        stage_num = vowel_data.iloc[i]['stage_num']
+                        ax.text(x, y, f'{stage_num}', fontsize=6, ha='center', va='center', 
+                                color='white', weight='bold', zorder=4)
+                    
+                    # 화살표 그리기 - 개선된 스타일
                     for i in range(len(points) - 1):
                         ax.annotate("",
                                      xy=(points[i+1, 0], points[i+1, 1]), 
                                      xytext=(points[i, 0], points[i, 1]),
                                      arrowprops=dict(arrowstyle="->", color=vowel_color_map[vowel],
-                                                     shrinkA=3, shrinkB=3,
+                                                     linewidth=2.0, alpha=0.8,
+                                                     shrinkA=2, shrinkB=2,
                                                      patchA=None, patchB=None,
                                                      connectionstyle="arc3,rad=0.1"))
             
@@ -482,7 +521,11 @@ if __name__ == '__main__':
         if len(participant_ids) > 0:
             participant_id = int(input(f"Enter participant ID (available: {list(participant_ids)}): "))
             if participant_id in participant_ids:
-                plot_formant_chart(participant_id, model_file, participant_file, survey_file, save_dir, use_zscore)
+                # Zoom 옵션 (단일 참가자 플롯에서만 사용 가능)
+                zoom_option = input("Zoom to trajectory area? (y/n, default: n): ").strip().lower()
+                zoom_to_trajectory = zoom_option == 'y'
+                
+                plot_formant_chart(participant_id, model_file, participant_file, survey_file, save_dir, use_zscore, zoom_to_trajectory)
             else:
                 print("Invalid participant ID")
         else:

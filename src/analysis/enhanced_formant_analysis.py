@@ -342,7 +342,7 @@ class EnhancedFormantAnalyzer:
                            results: Dict, 
                            output_path: str) -> None:
         """
-        Save analysis results to an xlsx file.
+        Save analysis results to an xlsx file with individual z-score normalization.
         """
         rows = []
         
@@ -356,22 +356,29 @@ class EnhancedFormantAnalyzer:
         
         if rows:
             df = pd.DataFrame(rows)
+            
+            # 개인별 z-score 계산 (참가자 번호 기준)
+            df = self._calculate_individual_zscore(df)
+            
             # Reorder columns for clarity
             cols = ['participant_id', 'file_id', 'word_label', 'vowel_label', 'interval_number', 'start_time', 'end_time', 'duration', 'gender', 'success_rate']
             
             # Mid-point 관련 컬럼들
             mid_point_cols = ['mid_point_time'] + [f'F{i}_mid_point' for i in range(1, 6) if f'F{i}_mid_point' in df.columns]
             
+            # Z-score 관련 컬럼들
+            zscore_cols = [f'F{i}_mid_point_zscore' for i in range(1, 6) if f'F{i}_mid_point_zscore' in df.columns]
+            
             # 통계 컬럼들
             stats_cols = [f'F{i}_{stat}' for i in range(1, 6) for stat in ['mean', 'median', 'std', 'min', 'max', 'count']]
             
-            # 컬럼 순서: 기본 정보 -> mid-point 값들 -> 통계 값들 -> 나머지
-            ordered_cols = cols + [c for c in mid_point_cols if c in df.columns] + [c for c in stats_cols if c in df.columns]
+            # 컬럼 순서: 기본 정보 -> mid-point 값들 -> z-score 값들 -> 통계 값들 -> 나머지
+            ordered_cols = cols + [c for c in mid_point_cols if c in df.columns] + [c for c in zscore_cols if c in df.columns] + [c for c in stats_cols if c in df.columns]
             remaining_cols = [c for c in df.columns if c not in ordered_cols]
             df = df[ordered_cols + remaining_cols]
 
             df.to_excel(output_path, index=False, engine='openpyxl')
-            logger.info(f"Results for {len(rows)} vowels saved to {output_path}")
+            logger.info(f"Results for {len(rows)} vowels saved to {output_path} with individual z-score normalization")
         else:
             logger.warning("No valid results to save")
     
@@ -415,6 +422,46 @@ class EnhancedFormantAnalyzer:
                     row[f"{formant}_mid_point"] = value
         
         rows.append(row)
+    
+    def _calculate_individual_zscore(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        개인별로 z-score를 계산하는 메서드 (참가자 번호 기준)
+        
+        Args:
+            df: 분석 결과 DataFrame
+            
+        Returns:
+            z-score가 추가된 DataFrame
+        """
+        df_copy = df.copy()
+        
+        # F1, F2 mid-point에 대해 z-score 계산
+        formant_cols = ['F1_mid_point', 'F2_mid_point']
+        
+        for col in formant_cols:
+            if col in df_copy.columns:
+                zscore_col = f'{col}_zscore'
+                df_copy[zscore_col] = np.nan
+                
+                # 각 참가자별로 z-score 계산
+                for participant_id in df_copy['participant_id'].unique():
+                    mask = df_copy['participant_id'] == participant_id
+                    participant_data = df_copy.loc[mask, col]
+                    
+                    # 해당 참가자의 평균과 표준편차 계산
+                    mean_val = participant_data.mean()
+                    std_val = participant_data.std()
+                    
+                    # z-score 계산: (값 - 평균) / 표준편차
+                    if std_val > 0 and not np.isnan(std_val):
+                        df_copy.loc[mask, zscore_col] = (participant_data - mean_val) / std_val
+                    else:
+                        # 표준편차가 0이거나 NaN인 경우 0으로 설정
+                        df_copy.loc[mask, zscore_col] = 0.0
+                
+                logger.debug(f"Calculated individual z-scores for {col}: {df_copy[zscore_col].notna().sum()} valid values")
+        
+        return df_copy
     
     def _extract_participant_id_from_filename(self, filename: str) -> str:
         """
@@ -555,8 +602,8 @@ def demo_usage():
 
         # Save the detailed results to an Excel file
         if all_results:
-            output_excel_path = "formant_results_all_vowels_with_midpoint.xlsx"
-            print(f"\nSaving detailed results with mid-point values to {output_excel_path}...")
+            output_excel_path = "formant_results_all_vowels_with_midpoint_zscore.xlsx"
+            print(f"\nSaving detailed results with mid-point values and individual z-scores to {output_excel_path}...")
             
             # Create a temporary analyzer for saving
             temp_analyzer = EnhancedFormantAnalyzer(
@@ -565,6 +612,7 @@ def demo_usage():
                 file_list=[]
             )
             temp_analyzer.save_results_to_xlsx(all_results, output_excel_path)
+            print("Z-score normalization applied: Individual participant normalization for F1 and F2 mid-point values")
         else:
             print("\nNo results to save.")
         

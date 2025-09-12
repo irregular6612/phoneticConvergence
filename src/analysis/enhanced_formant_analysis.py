@@ -253,6 +253,20 @@ class EnhancedFormantAnalyzer:
             
             formant_data['total_points'] = len(time_points) if time_points.size > 0 else 0
             
+            # Mid-point formant extraction (음성학적 표준 방법)
+            mid_point_time = (start_time + end_time) / 2.0
+            formant_data['mid_point'] = {
+                'time': mid_point_time,
+                'formants': {}
+            }
+            
+            for formant_num in range(1, params['max_formants'] + 1):
+                mid_point_value = formant.get_value_at_time(formant_num, mid_point_time)
+                if mid_point_value is not None and np.isfinite(mid_point_value) and mid_point_value > 0:
+                    formant_data['mid_point']['formants'][f'F{formant_num}'] = mid_point_value
+                else:
+                    formant_data['mid_point']['formants'][f'F{formant_num}'] = np.nan
+            
             formant_data['statistics'] = {}
             for i in range(1, params['max_formants'] + 1):
                 values = np.array(formant_data[f'F{i}'])
@@ -344,8 +358,15 @@ class EnhancedFormantAnalyzer:
             df = pd.DataFrame(rows)
             # Reorder columns for clarity
             cols = ['participant_id', 'file_id', 'word_label', 'vowel_label', 'interval_number', 'start_time', 'end_time', 'duration', 'gender', 'success_rate']
+            
+            # Mid-point 관련 컬럼들
+            mid_point_cols = ['mid_point_time'] + [f'F{i}_mid_point' for i in range(1, 6) if f'F{i}_mid_point' in df.columns]
+            
+            # 통계 컬럼들
             stats_cols = [f'F{i}_{stat}' for i in range(1, 6) for stat in ['mean', 'median', 'std', 'min', 'max', 'count']]
-            ordered_cols = cols + [c for c in stats_cols if c in df.columns]
+            
+            # 컬럼 순서: 기본 정보 -> mid-point 값들 -> 통계 값들 -> 나머지
+            ordered_cols = cols + [c for c in mid_point_cols if c in df.columns] + [c for c in stats_cols if c in df.columns]
             remaining_cols = [c for c in df.columns if c not in ordered_cols]
             df = df[ordered_cols + remaining_cols]
 
@@ -384,6 +405,14 @@ class EnhancedFormantAnalyzer:
                 if isinstance(stats, dict):
                     for stat_name, value in stats.items():
                         row[f"{formant}_{stat_name}"] = value
+        
+        # Mid-point formant values 추가
+        if 'mid_point' in result:
+            mid_point_data = result['mid_point']
+            row['mid_point_time'] = mid_point_data.get('time', np.nan)
+            if 'formants' in mid_point_data:
+                for formant, value in mid_point_data['formants'].items():
+                    row[f"{formant}_mid_point"] = value
         
         rows.append(row)
     
@@ -426,11 +455,11 @@ class EnhancedFormantAnalyzer:
 
 def demo_usage():
     """
-    Demonstration of the enhanced formant analyzer usage.
+    Demonstration of the enhanced formant analyzer usage with mid-point analysis.
     This demo now automatically finds and analyzes all vowels in the specified files.
     """
-    print("Enhanced Formant Analyzer Demo")
-    print("=" * 40)
+    print("Enhanced Formant Analyzer Demo with Mid-point Analysis")
+    print("=" * 60)
     
     # --- Configuration ---
     # Adjust these paths to your actual data directories
@@ -503,8 +532,8 @@ def demo_usage():
             if file_results:
                 all_results[wav_file] = file_results
         
-        # Print a summary of the results
-        print("\n--- Analysis Summary ---")
+        # Print a summary of the results with mid-point information
+        print("\n--- Analysis Summary with Mid-point Values ---")
         total_vowels = 0
         for filename, results in tqdm(all_results.items(), desc="Generating summary"):
             vowel_count = len(results)
@@ -512,13 +541,22 @@ def demo_usage():
             participant_id = next((pid for _, pid, _, __ in all_wav_files if filename in _), 'Unknown')
             gender = next((g for _, pid, g, __ in all_wav_files if filename in _ and pid == participant_id), 'Unknown')
             print(f"File: {filename} (Participant: {participant_id}, Gender: {gender}) - Found and analyzed {vowel_count} vowels.")
+            
+            # Show mid-point values for first few vowels as example
+            for i, (interval_key, result) in enumerate(results.items()):
+                if i < 2:  # Show first 2 vowels as example
+                    if 'mid_point' in result and 'formants' in result['mid_point']:
+                        f1_mid = result['mid_point']['formants'].get('F1', 'N/A')
+                        f2_mid = result['mid_point']['formants'].get('F2', 'N/A')
+                        vowel_label = result.get('vowel_label', 'Unknown')
+                        print(f"  - Vowel '{vowel_label}' mid-point: F1={f1_mid:.1f}Hz, F2={f2_mid:.1f}Hz")
 
         print(f"\nTotal vowels analyzed: {total_vowels}")
 
         # Save the detailed results to an Excel file
         if all_results:
-            output_excel_path = "formant_results_all_vowels.xlsx"
-            print(f"\nSaving detailed results to {output_excel_path}...")
+            output_excel_path = "formant_results_all_vowels_with_midpoint.xlsx"
+            print(f"\nSaving detailed results with mid-point values to {output_excel_path}...")
             
             # Create a temporary analyzer for saving
             temp_analyzer = EnhancedFormantAnalyzer(

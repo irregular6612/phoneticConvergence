@@ -23,7 +23,10 @@ def plot_formant_chart(participant_id, model_data_path, participant_data_path, s
     df_survey = pd.read_excel(survey_data_path)
 
     # 설문조사 데이터에서 참가자 정보 추출
-    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(int)
+    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(str)
+    df_survey['participant_num'] = pd.to_numeric(df_survey['participant_num'], errors='coerce')
+    df_survey = df_survey.dropna(subset=['participant_num'])
+    df_survey['participant_num'] = df_survey['participant_num'].astype(int)
     participant_info = df_survey[df_survey['participant_num'] == participant_id]
     
     gender = participant_info['Gender'].iloc[0] if not participant_info.empty else 'N/A'
@@ -138,8 +141,14 @@ def plot_formant_chart(participant_id, model_data_path, participant_data_path, s
 
     plt.tight_layout(rect=[0, 0, 0.85, 1]) # 범례가 들어갈 공간 확보
     
+    # 참가자별 폴더 생성
+    participant_dir = Path(save_dir) / f"participant_{participant_id}"
+    participant_dir.mkdir(parents=True, exist_ok=True)
+    
     # 이미지 저장
-    output_filename = Path(save_dir) / f"formant_chart_participant_{participant_id}.png"
+    data_type = "zscore" if use_zscore else "original"
+    zoom_suffix = "_zoomed" if zoom_to_trajectory else ""
+    output_filename = participant_dir / f"formant_chart_participant_{participant_id}_{data_type}{zoom_suffix}.png"
     plt.savefig(output_filename, dpi=300, bbox_inches='tight', facecolor='white')
     print(f"Image saved as: {output_filename}")
     plt.show()
@@ -164,7 +173,10 @@ def plot_all_participants_subplot(model_data_path, participant_data_path, survey
     df_survey = pd.read_excel(survey_data_path)
     
     # 설문조사 데이터에서 참가자 정보 추출
-    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(int)
+    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(str)
+    df_survey['participant_num'] = pd.to_numeric(df_survey['participant_num'], errors='coerce')
+    df_survey = df_survey.dropna(subset=['participant_num'])
+    df_survey['participant_num'] = df_survey['participant_num'].astype(int)
     
     # 참가자 ID 목록 가져오기
     participant_ids = sorted(df_participant['participant_id'].unique())
@@ -328,7 +340,10 @@ def plot_participants_by_list_subplot(model_data_path, participant_data_path, su
     df_survey = pd.read_excel(survey_data_path)
     
     # 설문조사 데이터에서 참가자 정보 추출
-    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(int)
+    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(str)
+    df_survey['participant_num'] = pd.to_numeric(df_survey['participant_num'], errors='coerce')
+    df_survey = df_survey.dropna(subset=['participant_num'])
+    df_survey['participant_num'] = df_survey['participant_num'].astype(int)
     
     # List별로 참가자 그룹화
     list_groups = {}
@@ -488,7 +503,10 @@ def plot_participants_by_gender_subplot(model_data_path, participant_data_path, 
     df_survey = pd.read_excel(survey_data_path)
     
     # 설문조사 데이터에서 참가자 정보 추출
-    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(int)
+    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(str)
+    df_survey['participant_num'] = pd.to_numeric(df_survey['participant_num'], errors='coerce')
+    df_survey = df_survey.dropna(subset=['participant_num'])
+    df_survey['participant_num'] = df_survey['participant_num'].astype(int)
     
     # 성별별로 참가자 그룹화
     male_participants = []
@@ -644,6 +662,50 @@ def plot_participants_by_gender_subplot(model_data_path, participant_data_path, 
         
         print(f"Generated {gender} subplot for {n_participants} participants in {n_rows}x{n_cols} grid")
 
+def generate_all_participant_plots(model_data_path, participant_data_path, survey_data_path, save_dir="."):
+    """
+    모든 참가자에 대해 z-score와 original 데이터 모두의 개별 plot을 생성합니다.
+    
+    Args:
+        model_data_path (str): 모델 데이터 엑셀 파일 경로
+        participant_data_path (str): 참가자 데이터 엑셀 파일 경로
+        survey_data_path (str): 설문조사 데이터 엑셀 파일 경로
+        save_dir (str): 이미지 저장 디렉토리
+    """
+    # 참가자 ID 목록 가져오기
+    df_participant_all = pd.read_excel(participant_data_path)
+    participant_ids = sorted(df_participant_all['participant_id'].unique())
+    
+    print(f"Generating individual plots for {len(participant_ids)} participants...")
+    print(f"Each participant will have 4 plots: z-score (normal + zoomed), original (normal + zoomed)")
+    
+    for i, participant_id in enumerate(participant_ids, 1):
+        print(f"\nProcessing participant {participant_id} ({i}/{len(participant_ids)})...")
+        
+        # z-score normal plot
+        print(f"  - Generating z-score normal plot...")
+        plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, 
+                          save_dir, use_zscore=True, zoom_to_trajectory=False)
+        
+        # z-score zoomed plot
+        print(f"  - Generating z-score zoomed plot...")
+        plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, 
+                          save_dir, use_zscore=True, zoom_to_trajectory=True)
+        
+        # original normal plot
+        print(f"  - Generating original normal plot...")
+        plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, 
+                          save_dir, use_zscore=False, zoom_to_trajectory=False)
+        
+        # original zoomed plot
+        print(f"  - Generating original zoomed plot...")
+        plot_formant_chart(participant_id, model_data_path, participant_data_path, survey_data_path, 
+                          save_dir, use_zscore=False, zoom_to_trajectory=True)
+    
+    print(f"\n✅ All plots generated successfully!")
+    print(f"📁 Plots saved in individual participant folders under: {save_dir}")
+    print(f"📊 Total plots generated: {len(participant_ids) * 4}")
+
 if __name__ == '__main__':
     # 파일 경로 설정
     model_file = Path.home() / 'Documents' / 'WorkSpace' / 'phoneticConvergence' / 'src' / 'analysis' / 'formant_results_all_vowels_model_standard.xlsx'
@@ -662,8 +724,9 @@ if __name__ == '__main__':
     print("2. All participants subplot")
     print("3. Participants by gender subplot")
     print("4. Participants by list subplot")
+    print("5. Generate all individual participant plots (z-score + original, normal + zoomed)")
     
-    choice = input("Enter your choice (1-4): ").strip()
+    choice = input("Enter your choice (1-5): ").strip()
     
     # 데이터 타입 선택
     data_option = input("Use z-score values? (y/n, default: y): ").strip().lower()
@@ -714,8 +777,16 @@ if __name__ == '__main__':
         plot_participants_by_list_subplot(model_file, participant_file, survey_file, 
                                          max_participants_per_row=max_per_row, save_dir=save_dir, use_zscore=use_zscore)
     
+    elif choice == '5':
+        # 모든 참가자 개별 plot 생성
+        confirm = input(f"This will generate {len(participant_ids) * 4} plots. Continue? (y/n): ").strip().lower()
+        if confirm == 'y':
+            generate_all_participant_plots(model_file, participant_file, survey_file, save_dir)
+        else:
+            print("Operation cancelled.")
+    
     else:
-        print("Invalid choice. Please run again and select 1, 2, 3, or 4.")
+        print("Invalid choice. Please run again and select 1, 2, 3, 4, or 5.")
 
 
 # z-score norm 개인 내.

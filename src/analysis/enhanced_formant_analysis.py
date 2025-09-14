@@ -160,13 +160,13 @@ class EnhancedFormantAnalyzer:
         # 단어를 찾지 못한 경우 빈 문자열 반환
         return ""
 
-    def analyze_all_vowels_in_file(self, filename: str, gender: str = 'male') -> Dict[str, Dict]:
+    def analyze_all_vowels_in_file(self, filename: str, gender: str = 'M') -> Dict[str, Dict]:
         """
         Analyzes all vowel intervals found in a file's corresponding TextGrid.
 
         Args:
             filename: Name of the file (e.g., 'example.wav').
-            gender: 'male' or 'female' for formant frequency ceiling.
+            gender: '.M' for model speaker, 'male' or 'female' for participants.
 
         Returns:
             A dictionary with unique vowel keys and their analysis results.
@@ -203,7 +203,7 @@ class EnhancedFormantAnalyzer:
     def formant_analysis_optimized(self, 
                                  filename: str, 
                                  interval: Tuple[float, float],
-                                 gender: str = 'male',
+                                 gender: str = 'M',
                                  method: str = 'burg',
                                  analysis_params: Optional[Dict] = None) -> Dict[str, Union[List[float], float, int]]:
         """
@@ -223,7 +223,13 @@ class EnhancedFormantAnalyzer:
         
         try:
             audio_segment = self.extract_audio_segment(wav_path, start_time, end_time, buffer_time=0.0)
-            max_formant = params['female_max_formant'] if gender.lower() == 'female' else params['male_max_formant']
+            # Set max_formant based on gender
+            if gender == 'M':
+                max_formant = params['male_max_formant']  # Model speaker uses male formant ceiling
+            elif gender.lower() == 'female':
+                max_formant = params['female_max_formant']
+            else:
+                max_formant = params['male_max_formant']
             
             formant = audio_segment.to_formant_burg(
                 time_step=params['time_step'],
@@ -302,7 +308,7 @@ class EnhancedFormantAnalyzer:
     def analyze_vowel_intervals(self, 
                               filename: str, 
                               vowel_intervals: List[Tuple[float, float, str, str, int]],
-                              gender: str = 'male') -> Dict[str, Dict]:
+                              gender: str = 'M') -> Dict[str, Dict]:
         """
         Analyze multiple vowel intervals from a single file.
         """
@@ -320,12 +326,12 @@ class EnhancedFormantAnalyzer:
                 logger.warning(f"Failed to analyze vowel '{vowel_label}' in word '{word_label}' (interval {interval_number}) at {start_time:.3f}-{end_time:.3f}s: {e}")
         return results
     
-    def batch_analyze_all_vowels(self, gender: str = 'male') -> Dict[str, Dict]:
+    def batch_analyze_all_vowels(self, gender: str = 'M') -> Dict[str, Dict]:
         """
         Batch analyzes all vowels for all files in the file_list.
 
         Args:
-            gender: 'male' or 'female' for formant frequency ceiling.
+            gender: 'M' for model speaker, 'male' or 'female' for participants.
 
         Returns:
             A dictionary with filenames as keys and their vowel analysis results as values.
@@ -340,7 +346,8 @@ class EnhancedFormantAnalyzer:
 
     def save_results_to_xlsx(self, 
                            results: Dict, 
-                           output_path: str) -> None:
+                           output_path: str,
+                           participant_gender_map: Optional[Dict[str, str]] = None) -> None:
         """
         Save analysis results to an xlsx file with individual z-score normalization.
         """
@@ -350,9 +357,16 @@ class EnhancedFormantAnalyzer:
             # Extract participant ID from filename
             participant_id = self._extract_participant_id_from_filename(filename)
             
+            # Get gender information
+            gender = 'Unknown'
+            if participant_gender_map:
+                # Convert participant_id from '044' format to 'LY044' format for lookup
+                ly_participant_id = f'LY{participant_id.zfill(3)}'
+                gender = participant_gender_map.get(ly_participant_id, 'Unknown')
+            
             for interval_key, result in file_results.items():
                 if isinstance(result, dict) and 'statistics' in result:
-                    self._extract_result_row(result, rows, interval_key, participant_id)
+                    self._extract_result_row(result, rows, interval_key, participant_id, gender)
         
         if rows:
             df = pd.DataFrame(rows)
@@ -382,7 +396,7 @@ class EnhancedFormantAnalyzer:
         else:
             logger.warning("No valid results to save")
     
-    def _extract_result_row(self, result: Dict, rows: List, interval_key: str, participant_id: str = '') -> None:
+    def _extract_result_row(self, result: Dict, rows: List, interval_key: str, participant_id: str = '', gender: str = 'Unknown') -> None:
         """Helper method to extract data from a single result dictionary"""
         row = {}
         metadata = result.get('metadata', {})
@@ -394,7 +408,7 @@ class EnhancedFormantAnalyzer:
             'start_time': metadata.get('interval', [0, 0])[0],
             'end_time': metadata.get('interval', [0, 0])[1],
             'duration': metadata.get('duration', 0),
-            'gender': metadata.get('gender', ''),
+            'gender': gender,  # Use the passed gender parameter instead of metadata
             'success_rate': metadata.get('success_rate', 0)
         })
         
@@ -543,6 +557,7 @@ def demo_usage():
         participant_id = participant_dir.replace('participant_', '')
         
         # Get gender for this participant
+        # participant_id is in format 'LY044', but we need to match with survey data
         gender = gender_info.get(participant_id, 'male')  # default to male if not found
         participant_gender_map[participant_id] = gender
         
@@ -585,9 +600,15 @@ def demo_usage():
         for filename, results in tqdm(all_results.items(), desc="Generating summary"):
             vowel_count = len(results)
             total_vowels += vowel_count
-            participant_id = next((pid for _, pid, _, __ in all_wav_files if filename in _), 'Unknown')
-            gender = next((g for _, pid, g, __ in all_wav_files if filename in _ and pid == participant_id), 'Unknown')
-            print(f"File: {filename} (Participant: {participant_id}, Gender: {gender}) - Found and analyzed {vowel_count} vowels.")
+            # Find participant and gender info by matching the filename
+            participant_id = 'Unknown'
+            gender = 'Unknown'
+            for full_path, pid, g, _ in all_wav_files:
+                if filename == full_path:
+                    participant_id = pid
+                    gender = g
+                    break
+            print(f"File: {os.path.basename(filename)} (Participant: {participant_id}, Gender: {gender}) - Found and analyzed {vowel_count} vowels.")
             
             # Show mid-point values for first few vowels as example
             for i, (interval_key, result) in enumerate(results.items()):
@@ -611,7 +632,7 @@ def demo_usage():
                 annotation_dir=annotation_dir,
                 file_list=[]
             )
-            temp_analyzer.save_results_to_xlsx(all_results, output_excel_path)
+            temp_analyzer.save_results_to_xlsx(all_results, output_excel_path, participant_gender_map)
             print("Z-score normalization applied: Individual participant normalization for F1 and F2 mid-point values")
         else:
             print("\nNo results to save.")

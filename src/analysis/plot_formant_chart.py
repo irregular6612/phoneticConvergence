@@ -260,8 +260,10 @@ def plot_all_participants_subplot(model_data_path, participant_data_path, survey
                                                  patchA=None, patchB=None,
                                                  connectionstyle="arc3,rad=0.1"))
         
-        # subplot 설정
-        ax.set_title(f'P{participant_id} ({gender})', fontsize=12)
+        # subplot 설정 (list 정보 포함)
+        participant_info = df_survey[df_survey['participant_num'] == participant_id]
+        list_num = participant_info['Actual_list_Num'].iloc[0] if not participant_info.empty else 'N/A'
+        ax.set_title(f'P{participant_id} ({gender}) - List {list_num}', fontsize=12)
         ax.set_xlabel(f2_label, fontsize=10)
         ax.set_ylabel(f1_label, fontsize=10)
         ax.invert_xaxis()
@@ -305,6 +307,166 @@ def plot_all_participants_subplot(model_data_path, participant_data_path, survey
     plt.show()
     
     print(f"Generated subplot for {n_participants} participants in {n_rows}x{n_cols} grid")
+
+def plot_participants_by_list_subplot(model_data_path, participant_data_path, survey_data_path, 
+                                     max_participants_per_row=5, figsize_per_subplot=(6, 4.5), save_dir=".", use_zscore=True):
+    """
+    List별로 구분하여 모든 참가자의 포먼트 차트를 subplot으로 그립니다.
+    
+    Args:
+        model_data_path (str): 모델 데이터 엑셀 파일 경로
+        participant_data_path (str): 참가자 데이터 엑셀 파일 경로
+        survey_data_path (str): 설문조사 데이터 엑셀 파일 경로
+        max_participants_per_row (int): 한 행에 표시할 최대 참가자 수 (기본값: 5)
+        figsize_per_subplot (tuple): 각 subplot의 크기 (기본값: (6, 4.5))
+        save_dir (str): 이미지 저장 디렉토리
+        use_zscore (bool): True면 z-score 값 사용, False면 원본 Hz 값 사용
+    """
+    # 데이터 불러오기
+    df_model = pd.read_excel(model_data_path)
+    df_participant = pd.read_excel(participant_data_path)
+    df_survey = pd.read_excel(survey_data_path)
+    
+    # 설문조사 데이터에서 참가자 정보 추출
+    df_survey['participant_num'] = df_survey['1. 참가자 번호'].str.replace('LY', '').astype(int)
+    
+    # List별로 참가자 그룹화
+    list_groups = {}
+    for _, row in df_survey.iterrows():
+        participant_id = row['participant_num']
+        list_num = row['Actual_list_Num']
+        gender = row['Gender']
+        
+        if list_num not in list_groups:
+            list_groups[list_num] = []
+        list_groups[list_num].append((participant_id, gender))
+    
+    # 사용할 데이터 컬럼 선택
+    if use_zscore:
+        model_f1_col = 'F1_mid_mean(z)'
+        model_f2_col = 'F2_mid_mean(z)'
+        participant_f1_col = 'F1_mid_point_zscore'
+        participant_f2_col = 'F2_mid_point_zscore'
+        f1_label = 'F1 (z-score)'
+        f2_label = 'F2 (z-score)'
+    else:
+        model_f1_col = 'F1_mid_mean'
+        model_f2_col = 'F2_mid_mean'
+        participant_f1_col = 'F1_mid_point'
+        participant_f2_col = 'F2_mid_point'
+        f1_label = 'F1 (Hz)'
+        f2_label = 'F2 (Hz)'
+    
+    # 모음 종류 및 색상 설정
+    vowels = sorted(df_model['vowel_label'].unique())
+    colors = plt.cm.tab10(range(len(vowels)))
+    vowel_color_map = {vowel: color for vowel, color in zip(vowels, colors)}
+    
+    # 각 List에 대해 subplot 생성
+    for list_num, participants in sorted(list_groups.items()):
+        if not participants:
+            continue
+            
+        n_participants = len(participants)
+        n_rows = int(np.ceil(n_participants / max_participants_per_row))
+        n_cols = min(max_participants_per_row, n_participants)
+        
+        # 전체 figure 크기 계산 (여백을 고려하여 더 크게)
+        fig_width = n_cols * figsize_per_subplot[0] + 2  # 여백 추가
+        fig_height = n_rows * figsize_per_subplot[1] + 3  # 여백 추가
+        
+        # figure 생성
+        fig, axes = plt.subplots(n_rows, n_cols, figsize=(fig_width, fig_height))
+        
+        # axes를 1차원 배열로 변환 (단일 subplot인 경우 처리)
+        if n_participants == 1:
+            axes = [axes]
+        elif n_rows == 1:
+            axes = axes if isinstance(axes, list) else [axes]
+        else:
+            axes = axes.flatten()
+        
+        # 전체 제목 설정
+        fig.suptitle(f'Formant Charts - List {list_num} ({n_participants} participants)', fontsize=16, y=0.95)
+        
+        # 각 참가자에 대해 subplot 생성
+        for idx, (participant_id, gender) in enumerate(participants):
+            ax = axes[idx]
+            
+            # 특정 참가자 데이터 필터링
+            df_participant_filtered = df_participant[df_participant['participant_id'] == participant_id].copy()
+            
+            # stage 순서 정렬을 위해 stage 번호 추출
+            df_participant_filtered['stage_num'] = df_participant_filtered['stage'].str.replace('stage', '').astype(int)
+            df_participant_filtered = df_participant_filtered.sort_values(by=['vowel_label', 'stage_num'])
+            
+            # 모델 데이터 플롯 (기준점)
+            for _, row in df_model.iterrows():
+                ax.scatter(row[model_f2_col], row[model_f1_col], c=[vowel_color_map[row['vowel_label']]], 
+                            marker='D', s=40, edgecolor='k', linewidth=0.5, zorder=3)
+                ax.text(row[model_f2_col] + 0.1, row[model_f1_col], row['vowel_label'], 
+                         fontsize=9, ha='left', va='center', weight='bold')
+            
+            # 참가자 데이터 플롯 (경로)
+            for vowel in vowels:
+                vowel_data = df_participant_filtered[df_participant_filtered['vowel_label'] == vowel]
+                if not vowel_data.empty:
+                    points = vowel_data[[participant_f2_col, participant_f1_col]].values
+                    
+                    # Scatter plot with transparency
+                    ax.scatter(points[:, 0], points[:, 1], c=[vowel_color_map[vowel]], 
+                                s=18, alpha=0.7, zorder=2)
+                    
+                    # Stage 번호 라벨 추가 (작은 글씨로)
+                    for i, (x, y) in enumerate(points):
+                        stage_num = vowel_data.iloc[i]['stage_num']
+                        ax.text(x, y, f'{stage_num}', fontsize=6, ha='center', va='center', 
+                                color='white', weight='bold', zorder=4)
+                    
+                    # 화살표 그리기 - 개선된 스타일
+                    for i in range(len(points) - 1):
+                        ax.annotate("",
+                                     xy=(points[i+1, 0], points[i+1, 1]), 
+                                     xytext=(points[i, 0], points[i, 1]),
+                                     arrowprops=dict(arrowstyle="->", color=vowel_color_map[vowel],
+                                                     linewidth=2.0, alpha=0.8,
+                                                     shrinkA=2, shrinkB=2,
+                                                     patchA=None, patchB=None,
+                                                     connectionstyle="arc3,rad=0.1"))
+            
+            # subplot 설정 (list 정보 포함)
+            ax.set_title(f'P{participant_id} ({gender})', fontsize=12)
+            ax.set_xlabel(f2_label, fontsize=10)
+            ax.set_ylabel(f1_label, fontsize=10)
+            ax.invert_xaxis()
+            ax.invert_yaxis()
+            ax.grid(True, linestyle='--', alpha=0.4)
+            ax.tick_params(labelsize=8)
+        
+        # 사용하지 않는 subplot 숨기기
+        for idx in range(n_participants, len(axes)):
+            axes[idx].set_visible(False)
+        
+        # 범례 추가 (첫 번째 subplot에만)
+        if n_participants > 0:
+            legend_elements = [
+                mlines.Line2D([0], [0], marker='D', color='w', label='Model',
+                              markerfacecolor='gray', markeredgecolor='k', markersize=8),
+                mlines.Line2D([0], [0], marker='o', color='w', label='Participant',
+                              markerfacecolor='lightblue', markeredgecolor='k', markersize=6)
+            ]
+            axes[0].legend(handles=legend_elements, loc='upper right', fontsize=8)
+        
+        # 수동으로 subplot 간격 조정
+        plt.subplots_adjust(left=0.12, right=0.95, top=0.88, bottom=0.12, hspace=0.6, wspace=0.4)
+        
+        # 이미지 저장
+        output_filename = Path(save_dir) / f"formant_chart_list_{list_num}.png"
+        plt.savefig(output_filename, dpi=300, bbox_inches='tight', facecolor='white')
+        print(f"Image saved as: {output_filename}")
+        plt.show()
+        
+        print(f"Generated subplot for List {list_num}: {n_participants} participants in {n_rows}x{n_cols} grid")
 
 def plot_participants_by_gender_subplot(model_data_path, participant_data_path, survey_data_path, 
                                        max_participants_per_row=5, figsize_per_subplot=(20, 20), save_dir=".", use_zscore=True):
@@ -435,8 +597,10 @@ def plot_participants_by_gender_subplot(model_data_path, participant_data_path, 
                                                      patchA=None, patchB=None,
                                                      connectionstyle="arc3,rad=0.1"))
             
-            # subplot 설정
-            ax.set_title(f'P{participant_id}', fontsize=12)
+            # subplot 설정 (list 정보 포함)
+            participant_info = df_survey[df_survey['participant_num'] == participant_id]
+            list_num = participant_info['Actual_list_Num'].iloc[0] if not participant_info.empty else 'N/A'
+            ax.set_title(f'P{participant_id} - List {list_num}', fontsize=12)
             ax.set_xlabel(f2_label, fontsize=10)
             ax.set_ylabel(f1_label, fontsize=10)
             ax.invert_xaxis()
@@ -497,8 +661,9 @@ if __name__ == '__main__':
     print("1. Single participant plot")
     print("2. All participants subplot")
     print("3. Participants by gender subplot")
+    print("4. Participants by list subplot")
     
-    choice = input("Enter your choice (1-3): ").strip()
+    choice = input("Enter your choice (1-4): ").strip()
     
     # 데이터 타입 선택
     data_option = input("Use z-score values? (y/n, default: y): ").strip().lower()
@@ -543,8 +708,14 @@ if __name__ == '__main__':
         plot_participants_by_gender_subplot(model_file, participant_file, survey_file, 
                                            max_participants_per_row=max_per_row, save_dir=save_dir, use_zscore=use_zscore)
     
+    elif choice == '4':
+        # List별 참가자 subplot
+        max_per_row = int(input("Enter max participants per row (default 4): ") or "4")
+        plot_participants_by_list_subplot(model_file, participant_file, survey_file, 
+                                         max_participants_per_row=max_per_row, save_dir=save_dir, use_zscore=use_zscore)
+    
     else:
-        print("Invalid choice. Please run again and select 1, 2, or 3.")
+        print("Invalid choice. Please run again and select 1, 2, 3, or 4.")
 
 
 # z-score norm 개인 내.

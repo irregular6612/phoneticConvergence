@@ -18,5 +18,6 @@ dependencies = [
     "scipy>=1.16.2",
     "seaborn>=0.13.2",
     "sounddevice>=0.5.2",
+    "statsmodels>=0.14.5",
     "tqdm>=4.67.1",
 ]
